@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.googlecode.plist:dd-plist:1.16" type="repository">
+    <properties maven-id="com.googlecode.plist:dd-plist:1.16" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/googlecode/plist/dd-plist/1.16/dd-plist-1.16.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

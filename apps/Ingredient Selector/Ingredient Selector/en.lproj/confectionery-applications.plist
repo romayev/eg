@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<integer>0</integer>
+		<key>title</key>
+		<string>All</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>1</integer>
+		<key>title</key>
+		<string>Caramel</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>2</integer>
+		<key>title</key>
+		<string>Chewing Gum</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>3</integer>
+		<key>title</key>
+		<string>Chocolate/ Compound Coating</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>4</integer>
+		<key>title</key>
+		<string>Fondant/ Cremes/ Marzipan</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>5</integer>
+		<key>title</key>
+		<string>Hard Candy/ Lozenges</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>6</integer>
+		<key>title</key>
+		<string>Liquid Candy</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>7</integer>
+		<key>title</key>
+		<string>Marshmallow</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>8</integer>
+		<key>title</key>
+		<string>Panning</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>9</integer>
+		<key>title</key>
+		<string>Pulp Fruit Candy</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>10</integer>
+		<key>title</key>
+		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>11</integer>
+		<key>title</key>
+		<string>Tableted/ Pressed Mints</string>
+	</dict>
+</array>
+</plist>

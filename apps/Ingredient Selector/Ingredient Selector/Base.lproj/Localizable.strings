@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  Ingredient Selector
+
+  Created by Alex Romayev on 11/15/16.
+  Copyright © 2016 Alex Romayev. All rights reserved.
+*/
+
+
+"ingredion" = "Ingredion";
+"all" = "All";
+"applications" = "Applications";
+"instructions" = "Instructions";
+
+// Index
+"index.title.0" = "Yogurt";
+"index.title.1" = "Processed Cheese";
+"index.title.2" = "Creamy Salad Dressing";
+"index.title.3" = "Carrageenan";
+"index.title.4" = "Beverages";
+"index.title.5" = "Meat";
+"index.title.6" = "Batters & Breadings";
+"index.title.7" = "Hydrocolloids";
+"index.title.8" = "Confectionery";
+"index.title.9" = "Tomato-Based Sauces";
+"index.title.10" = "Thickener Module";
+
+// Confectionary
+"confectionary.search.instructions" = "<Some instructions or maybe total number of results?>";
+"confectionery.search.title.0" = "Region";
+"confectionery.search.title.1" = "Value Proposition";
+"confectionery.search.title.2" = "Application";
