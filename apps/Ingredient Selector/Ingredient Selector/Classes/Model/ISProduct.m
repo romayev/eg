@@ -22,20 +22,25 @@
     return self;
 }
 
-+ (NSArray *) products {
++ (NSArray *) products {    
     return nil;
 }
 
-+ (NSArray *) regions: (NSArray *) products {
-    return [self uniqueValuesWithProperty: @"region" products: products];
++ (NSArray *) regions {
+    return [self uniqueValuesWithProperty: @"region" products: [self products]];
 }
 
-+ (NSArray *) valuePropositions: (NSArray *) products {
-    return [self uniqueValuesWithProperty: @"valueProposition" products: products];
++ (NSArray *) valuePropositions {
+    return [self uniqueValuesWithProperty: @"valueProposition" products: [self products]];
 }
 
-+ (NSArray *) applications: (NSArray *) products {
-    return [self uniqueValuesWithProperty: @"application" products: products];
++ (NSArray *) applications {
+    return [self uniqueValuesWithProperty: @"application" products: [self products]];
+}
+
++ (NSArray *) uniquePropertyValuesForProperty: (NSString *) property withSearchCriteria: (NSDictionary *) searchCriteria {
+    NSArray *products = [self productsWithSearchCriteria: searchCriteria];
+    return [self uniqueValuesWithProperty: property products: products];
 }
 
 + (NSArray *) uniqueValuesWithProperty: (NSString *) property products: (NSArray *) products {
@@ -47,19 +52,27 @@
     return [array copy];
 }
 
-+ (NSArray *) productsWithRegion: (NSString *) region inArray: (NSArray *) array {
-    NSPredicate *p = [NSPredicate predicateWithFormat: @"region = %@", region];
-    return [array filteredArrayUsingPredicate: p];
++ (NSArray *) productsWithSearchCriteria: (NSDictionary *) searchCriteria {
+    NSArray *products = [self products];
+
+    NSMutableArray *predicates = [NSMutableArray array];
+    for (NSString *key in [searchCriteria allKeys]) {
+        NSArray *criteria = searchCriteria[key];
+        if (![self isAll: criteria]) {
+            NSPredicate *p = [NSPredicate predicateWithFormat: @"%K IN %@", key, criteria];
+            [predicates addObject: p];
+        }
+    }
+    if ([predicates count] == 0) return products;
+
+    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates: predicates];
+    return [products filteredArrayUsingPredicate: predicate];
 }
 
-+ (NSArray *) productsWithValueProposition: (NSString *) valueProposition inArray: (NSArray *) array {
-    NSPredicate *p = [NSPredicate predicateWithFormat: @"valueProposition = %@", valueProposition];
-    return [array filteredArrayUsingPredicate: p];
-}
-
-+ (NSArray *) productsWithApplication: (NSString *) application inArray: (NSArray *) array {
-    NSPredicate *p = [NSPredicate predicateWithFormat: @"application = %@", application];
-    return [array filteredArrayUsingPredicate: p];
++ (BOOL) isAll: (NSArray *) criteria {
+    if (criteria == nil) return YES;
+    NSInteger count = [criteria count];
+    return count == 1 && [[criteria firstObject] isEqualToString: kAll];
 }
 
 @end

@@ -26,7 +26,7 @@
 @protocol ISSearchTableViewCellDataSource
 
 - (NSArray *) editorItems;
-- (NSInteger) selectedItemForCell: (UITableViewCell *) cell;
+- (NSArray *) selectedItemsForCell: (UITableViewCell *) cell;
 @end
 
 

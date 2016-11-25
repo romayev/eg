@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+
+#define kAll @"All"
+
+
 @interface ISProduct : NSObject
 
 @property (nonatomic, readonly) NSString *name;
@@ -20,12 +24,14 @@
 - (id) initWithPlist: (NSDictionary *) plist;
 
 + (NSArray *) products;
-+ (NSArray *) regions: (NSArray *) products;
-+ (NSArray *) applications: (NSArray *) products;
 
-+ (NSArray *) valuePropositions: (NSArray *) products;
-+ (NSArray *) productsWithRegion: (NSString *) region inArray: (NSArray *) array;
-+ (NSArray *) productsWithValueProposition: (NSString *) valueProposition inArray: (NSArray *) array;
-+ (NSArray *) productsWithApplication: (NSString *) application inArray: (NSArray *) array;
++ (NSArray *) productsWithSearchCriteria: (NSDictionary *) searchCriteria;
++ (NSArray *) uniquePropertyValuesForProperty: (NSString *) property withSearchCriteria: (NSDictionary *) searchCriteria;
+
++ (NSArray *) regions;
++ (NSArray *) applications;
++ (NSArray *) valuePropositions;
+
++ (BOOL) isAll: (NSArray *) criteria;
 
 @end

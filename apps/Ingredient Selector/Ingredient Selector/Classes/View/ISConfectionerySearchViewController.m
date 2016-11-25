@@ -18,7 +18,6 @@
 
 
 @implementation ISConfectionerySearchViewController {
-    NSInteger   _mode;
     NSIndexPath *_editorPath;
 
     NSArray     *_products;
@@ -26,22 +25,22 @@
     NSArray     *_valuePropositions;
     NSArray     *_applications;
 
-    NSArray     *_selectedRegions;
-    NSArray     *_selectedValuePropositions;
-    NSArray     *_selectedApplications;
+    NSMutableArray  *_selectedRegions;
+    NSMutableArray  *_selectedValuePropositions;
+    NSMutableArray  *_selectedApplications;
 }
 
 - (void) awakeFromNib {
     [super awakeFromNib];
 
     _products = [ISConfectionery products];
-    _regions = [ISProduct regions: _products];
-    _valuePropositions = [ISProduct valuePropositions: _products];
-    _applications = [ISProduct applications: _products];
+    _regions = [ISConfectionery regions];
+    _valuePropositions = [ISConfectionery valuePropositions];
+    _applications = [ISConfectionery applications];
 
-    _selectedRegions = [NSArray arrayWithObject: [_regions firstObject]];
-    _selectedValuePropositions = [NSArray arrayWithObject: [_valuePropositions firstObject]];
-    _selectedApplications = [NSArray arrayWithObject: [_applications firstObject]];
+    _selectedRegions = [NSMutableArray arrayWithObject: [_regions firstObject]];
+    _selectedValuePropositions = [NSMutableArray arrayWithObject: [_valuePropositions firstObject]];
+    _selectedApplications = [NSMutableArray arrayWithObject: [_applications firstObject]];
 }
 
 - (void) viewDidLoad {
@@ -178,9 +177,6 @@
 
 
 - (void) refresh {
-    _regions = [ISProduct regions: _products];
-    _valuePropositions = [ISProduct valuePropositions: _products];
-    _applications = [ISProduct applications: _products];
     _headerLabel.text = [NSString stringWithFormat: @"Products: %zi", [_products count]];
     [_tableView reloadData];
 }
@@ -225,15 +221,15 @@
     }
 }
 
-- (NSInteger) selectedItemForCell: (UITableViewCell *) cell {
+- (NSArray *) selectedItemsForCell: (UITableViewCell *) cell {
     NSInteger editorRow = [_editorPath row];
     switch (editorRow) {
         case 1:
-            return [_regions indexOfObject: [_selectedRegions firstObject]];
+            return _selectedRegions;
         case 2:
-            return [_valuePropositions indexOfObject: [_selectedValuePropositions firstObject]];
+            return _selectedValuePropositions;
         case 3:
-            return [_applications indexOfObject: [_selectedApplications firstObject]];
+            return _selectedApplications;
         default:
             return 0;
     }
@@ -243,27 +239,61 @@
     NSInteger editorRow = [_editorPath row];
     switch (editorRow) {
         case 1: {
-            NSString *region = _regions[row];
-            _selectedRegions = [NSArray arrayWithObject: region];
-            _products = [ISProduct productsWithRegion: region inArray: _products];
+            [self processSelectedIndex: row inArray: _regions withSelected: _selectedRegions];
+            [self updateValuePropositions];
+            [self updateApplications];
         }
             break;
         case 2: {
-            NSString *valueProposition = _valuePropositions[row];
-            _selectedValuePropositions = [NSArray arrayWithObject: valueProposition];
-            _products = [ISProduct productsWithValueProposition: valueProposition inArray: _products];
+            [self processSelectedIndex: row inArray: _valuePropositions withSelected: _selectedValuePropositions];
+            [self updateRegions];
+            [self updateApplications];
         }
             break;
         case 3: {
-            NSString *application = _applications[row];
-            _selectedApplications = [NSArray arrayWithObject: application];
-            _products = [ISProduct productsWithApplication: application inArray: _products];
+            [self processSelectedIndex: row inArray: _applications withSelected: _selectedApplications];
+            [self updateRegions];
+            [self updateValuePropositions];
         }
+            break;
         default:
             break;
     }
-    [self refresh];
-    //[_tableView reloadRowsAtIndexPaths: @[[self editorParentPath], _editorPath] withRowAnimation: UITableViewRowAnimationAutomatic];
+    [_tableView reloadRowsAtIndexPaths: @[[self editorParentPath], _editorPath] withRowAnimation: UITableViewRowAnimationAutomatic];
+}
+
+- (void) processSelectedIndex: (NSInteger) row inArray: (NSArray *) array withSelected: (NSMutableArray *) selectedArray {
+    NSString *selectedValue = array[row];
+    if ([selectedValue isEqualToString: kAll]) {
+        [selectedArray removeAllObjects];
+        [selectedArray addObject: kAll];
+    } else {
+        [selectedArray removeObject: kAll];
+        if ([selectedArray containsObject: selectedValue]) {
+            [selectedArray removeObject: selectedValue];
+        } else {
+            [selectedArray addObject: selectedValue];
+        }
+        if ([selectedArray count] == 0 || [selectedArray count] == [array count] - 1) {
+            [selectedArray removeAllObjects];
+            [selectedArray addObject: kAll];
+        }
+    }
+}
+
+- (void) updateRegions {
+    NSDictionary *criteria = @{ @"valueProposition" : _selectedValuePropositions, @"application" : _selectedApplications };
+    _regions = [ISConfectionery uniquePropertyValuesForProperty: @"region" withSearchCriteria: criteria];
+}
+
+- (void) updateValuePropositions {
+    NSDictionary *criteria = @{ @"region" : _selectedRegions, @"application" : _selectedApplications };
+    _valuePropositions = [ISConfectionery uniquePropertyValuesForProperty: @"valueProposition" withSearchCriteria: criteria];
+}
+
+- (void) updateApplications {
+    NSDictionary *criteria = @{ @"region" : _selectedRegions, @"valueProposition" : _selectedValuePropositions };
+    _applications = [ISConfectionery uniquePropertyValuesForProperty: @"application" withSearchCriteria: criteria];
 }
 
 - (void) cellFinished: (ISSearchTableViewCell *) cell {

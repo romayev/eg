@@ -38,11 +38,13 @@
 - (UITableViewCell *) tableView: (UITableView *) tableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {
     const NSInteger row = [indexPath row];
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"Cell" forIndexPath: indexPath];
-    NSInteger selected = [[self delegate] selectedItemForCell: self];
-    BOOL checked = row == selected;
+    NSArray *items = [self items];
 
-    NSString *title = [self items][row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"Cell" forIndexPath: indexPath];
+    NSArray *selected = [[self delegate] selectedItemsForCell: self];
+    BOOL checked = [selected containsObject: items[row]];
+
+    NSString *title = items[row];
     cell.textLabel.text = title;
     cell.accessoryType = checked ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 
@@ -51,14 +53,15 @@
 
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
     const NSInteger row = [indexPath row];
+    BOOL all = row == 0;
 
     for (NSInteger other = 0; other < [[self items] count]; other ++) {
         NSIndexPath *otherPath = [NSIndexPath indexPathForRow: other inSection: 0];
         UITableViewCell *cell = [tableView cellForRowAtIndexPath: otherPath];
-        BOOL checked = other == row;
+        BOOL checked = (all && other == 0) || (!all && other == row);
         [cell setAccessoryType: checked ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone];
     }
-    [[self delegate] cell: self didSelectCellAtRow: row];
+   [[self delegate] cell: self didSelectCellAtRow: row];
 
     [tableView deselectRowAtIndexPath: indexPath animated: YES];
 }
