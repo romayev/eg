@@ -9,8 +9,9 @@
 
 "ingredion" = "Ingredion";
 "all" = "All";
-"applications" = "Applications";
-"instructions" = "Instructions";
+"view" = "View";
+"products" = "Products";
+"product-count" = "Products: %zi";
 
 // Index
 "index.title.0" = "Yogurt";

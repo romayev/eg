@@ -8,12 +8,15 @@
 
 #import "ISConfectionerySearchViewController.h"
 #import "ISSearchTableViewCell.h"
+#import "ISProductsViewController.h"
 #import "ISSearchItem.h"
 #import "ISConfectionery.h"
+
 
 @interface ISConfectionerySearchViewController () <ISSearchTableViewCellDataSource, ISSearchTableViewCellDelegate>
 @property (nonatomic, weak) IBOutlet UILabel *headerLabel;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIButton *viewButton;
 @end
 
 
@@ -46,29 +49,18 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = NSLocalizedString(@"index.title.8", nil);
-    _headerLabel.text = NSLocalizedString(@"confectionary.search.instructions", nil);
-    _headerLabel.text = [NSString stringWithFormat: @"Products: %zi", [_products count]];
-    [_headerLabel sizeToFit];
-
-    UIView *headerView = [_headerLabel superview];
-    CGRect frame = [headerView frame];
-    frame.size.height = _headerLabel.frame.size.height + 6.0;
-    headerView.frame = frame;
-
-    UIEdgeInsets insets = [_tableView contentInset];
-    insets.bottom = 44.0;
-    [_tableView setContentInset: insets];
-    [_tableView setScrollIndicatorInsets: insets];
+    _headerLabel.text = [NSString stringWithFormat: NSLocalizedString(@"product-count", nil), [_products count]];
+    [_viewButton setTitle: NSLocalizedString(@"view",  nil) forState: UIControlStateNormal];
 }
 
-- (void) viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
+- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender {
+    [super prepareForSegue: segue sender: sender];
 
-    UIView *header = [_headerLabel superview];
-    CGRect frame = [header frame];
-    CGSize size = [_headerLabel sizeThatFits: CGSizeMake(frame.size.width - 30.0, CGFLOAT_MAX)];
-    frame.size.height = ceil(size.height) + 8.0;
-    [header setFrame: frame];
+    NSString *identifier = [segue identifier];
+    if ([identifier isEqualToString: @"products"]) {
+        ISProductsViewController *c = [segue destinationViewController];
+        [c setProducts: _products];
+    }
 }
 
 
@@ -176,11 +168,6 @@
 #pragma mark Helpers
 
 
-- (void) refresh {
-    _headerLabel.text = [NSString stringWithFormat: @"Products: %zi", [_products count]];
-    [_tableView reloadData];
-}
-
 - (NSString *) titleForRow: (NSInteger) row {
     NSString *key = [NSString stringWithFormat: @"%@%zi", @"confectionery.search.title.", row];
     return NSLocalizedString(key, nil);
@@ -260,6 +247,7 @@
             break;
     }
     [_tableView reloadRowsAtIndexPaths: @[[self editorParentPath], _editorPath] withRowAnimation: UITableViewRowAnimationAutomatic];
+    [self updateProdutcs];
 }
 
 - (void) processSelectedIndex: (NSInteger) row inArray: (NSArray *) array withSelected: (NSMutableArray *) selectedArray {
@@ -279,6 +267,12 @@
             [selectedArray addObject: kAll];
         }
     }
+}
+
+- (void) updateProdutcs {
+    NSDictionary *criteria = @{ @"region" : _selectedRegions, @"valueProposition" : _selectedValuePropositions, @"application" : _selectedApplications };
+    _products = [ISConfectionery productsWithSearchCriteria: criteria];
+    _headerLabel.text = [NSString stringWithFormat: NSLocalizedString(@"product-count", nil), [_products count]];
 }
 
 - (void) updateRegions {
@@ -309,35 +303,6 @@
 //        NSIndexPath *indexPath = [NSIndexPath indexPathForRow: row inSection: section];
 //        [self tableView: _tableView didSelectRowAtIndexPath: indexPath];
 //    }
-}
-
-
-+ (UIView *) tableSectionHeaderWithTitle: (NSString *) title grouped: (BOOL) grouped {
-    UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(15, grouped ? 0 : 3, 0, 0)];
-    if (grouped) {
-        label.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
-    }
-    //label.font = [SFFont groupedTableHeaderFont];
-    //label.textColor = grouped ? [SFColor darkPurpleColor] : [SFColor grayColor];
-    label.text = [title uppercaseString];
-    [label sizeToFit];
-
-    // NOTE: Adjust label frame to fix issue with custom fonts (VAGRounded).
-    // Font was fixed with ftxdumperfuser, so this adjustment shouldn't be needed anymore.
-    // "ftxdumperfuser -t hhea -A d <file.otf>"
-    // "ftxdumperfuser -t hhea -A f <file.otf>"
-    // http://www.andyyardley.com/2012/04/24/custom-ios-fonts-and-how-to-fix-the-vertical-position-problem/
-    CGRect frame = [label frame];
-    frame.size.height += 4.0;
-    [label setFrame: frame];
-
-    UIView *header = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 0, frame.size.height + (grouped ? 6.0 : 0.0))];
-    //header.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
-    if (!grouped) {
-        //header.backgroundColor = [SFColor lightGreyBackgroundColor];
-    }
-    [header addSubview: label];
-    return header;
 }
 
 @end

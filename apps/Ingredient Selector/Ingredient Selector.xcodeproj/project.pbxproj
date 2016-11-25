@@ -28,6 +28,7 @@
 		FABF91601DDE2F2100C6FF62 /* confectionery-applications.plist in Resources */ = {isa = PBXBuildFile; fileRef = FABF915A1DDE2F2100C6FF62 /* confectionery-applications.plist */; };
 		FABF91611DDE2F2100C6FF62 /* confectionery-records.plist in Resources */ = {isa = PBXBuildFile; fileRef = FABF915C1DDE2F2100C6FF62 /* confectionery-records.plist */; };
 		FABF91621DDE2F2100C6FF62 /* confectionery-value-propositions.plist in Resources */ = {isa = PBXBuildFile; fileRef = FABF915E1DDE2F2100C6FF62 /* confectionery-value-propositions.plist */; };
+		FAF8264F1DE8B025002589D9 /* ISProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF8264E1DE8B025002589D9 /* ISProductsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		FABF915B1DDE2F2100C6FF62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "Ingredient Selector/en.lproj/confectionery-applications.plist"; sourceTree = SOURCE_ROOT; };
 		FABF915D1DDE2F2100C6FF62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "Ingredient Selector/en.lproj/confectionery-records.plist"; sourceTree = SOURCE_ROOT; };
 		FABF915F1DDE2F2100C6FF62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "Ingredient Selector/en.lproj/confectionery-value-propositions.plist"; sourceTree = SOURCE_ROOT; };
+		FAF8264D1DE8B025002589D9 /* ISProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISProductsViewController.h; path = Classes/View/ISProductsViewController.h; sourceTree = "<group>"; };
+		FAF8264E1DE8B025002589D9 /* ISProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISProductsViewController.m; path = Classes/View/ISProductsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +189,8 @@
 				FA6F37ED1DDB89EE00E2D43F /* ISHomeSplitViewController.m */,
 				FA6F37F51DDB8D0D00E2D43F /* ISViewController.h */,
 				FA6F37F61DDB8D0D00E2D43F /* ISViewController.m */,
+				FAF8264D1DE8B025002589D9 /* ISProductsViewController.h */,
+				FAF8264E1DE8B025002589D9 /* ISProductsViewController.m */,
 				FA6F37F81DDB8D2A00E2D43F /* ISIndexViewController.h */,
 				FA6F37F91DDB8D2A00E2D43F /* ISIndexViewController.m */,
 				FA6FA9F11DDE824B00CEF665 /* ISConfectionerySearchViewController.h */,
@@ -283,6 +288,7 @@
 				FA6FA9FD1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.m in Sources */,
 				FA6F37F71DDB8D0D00E2D43F /* ISViewController.m in Sources */,
 				FA6F37EE1DDB89EE00E2D43F /* ISHomeSplitViewController.m in Sources */,
+				FAF8264F1DE8B025002589D9 /* ISProductsViewController.m in Sources */,
 				FAAEA7381DDA67DF008EA91E /* ISDataProcessor.m in Sources */,
 				FA6F37FA1DDB8D2A00E2D43F /* ISIndexViewController.m in Sources */,
 				FAAEA7241DDA4E24008EA91E /* Ingredient_Selector.xcdatamodeld in Sources */,

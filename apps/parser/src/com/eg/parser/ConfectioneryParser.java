@@ -6,10 +6,8 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
+import java.nio.charset.Charset;
 import java.util.*;
 
 /**
@@ -24,15 +22,11 @@ public class ConfectioneryParser extends Parser {
         applications.add("All");
         ArrayList<Product> records = new ArrayList<Product>();
 
-        Reader reader = new BufferedReader(new FileReader("csv/Confectionery_CSV_Macintosh_NotepadPlus.csv"));
-        CSVParser parser = new CSVParser(reader, CSVFormat.EXCEL.withHeader().withAllowMissingColumnNames().withIgnoreHeaderCase().withIgnoreEmptyLines(true));
+        File file = new File("csv/Confectionery.csv");
+        CSVParser parser = CSVParser.parse(file, Charset.forName("x-MacRoman"), CSVFormat.EXCEL.withHeader().withAllowMissingColumnNames().withIgnoreHeaderCase().withIgnoreEmptyLines(true));
 
-        Map headers = parser.getHeaderMap();
+        Map<String, Integer> headers = parser.getHeaderMap();
         System.out.println("Headers: " + headers.keySet());
-
-        TreeMap h = new TreeMap(headers);
-        Boolean equals = headers.containsKey("Value Proposition");
-        System.out.println("equals: " + equals);
         try {
             for (CSVRecord record : parser) {
                 // FIXME: withIgnoreEmptyLines(true) isn't ignoring empty lines
