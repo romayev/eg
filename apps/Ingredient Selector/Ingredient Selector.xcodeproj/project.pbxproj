@@ -29,6 +29,7 @@
 		FABF91611DDE2F2100C6FF62 /* confectionery-records.plist in Resources */ = {isa = PBXBuildFile; fileRef = FABF915C1DDE2F2100C6FF62 /* confectionery-records.plist */; };
 		FABF91621DDE2F2100C6FF62 /* confectionery-value-propositions.plist in Resources */ = {isa = PBXBuildFile; fileRef = FABF915E1DDE2F2100C6FF62 /* confectionery-value-propositions.plist */; };
 		FAF8264F1DE8B025002589D9 /* ISProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF8264E1DE8B025002589D9 /* ISProductsViewController.m */; };
+		FAF826551DE8F51D002589D9 /* ISProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF826541DE8F51D002589D9 /* ISProductViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,8 @@
 		FABF915F1DDE2F2100C6FF62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "Ingredient Selector/en.lproj/confectionery-value-propositions.plist"; sourceTree = SOURCE_ROOT; };
 		FAF8264D1DE8B025002589D9 /* ISProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISProductsViewController.h; path = Classes/View/ISProductsViewController.h; sourceTree = "<group>"; };
 		FAF8264E1DE8B025002589D9 /* ISProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISProductsViewController.m; path = Classes/View/ISProductsViewController.m; sourceTree = "<group>"; };
+		FAF826531DE8F51D002589D9 /* ISProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISProductViewController.h; path = Classes/View/ISProductViewController.h; sourceTree = "<group>"; };
+		FAF826541DE8F51D002589D9 /* ISProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISProductViewController.m; path = Classes/View/ISProductViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,10 +192,12 @@
 				FA6F37ED1DDB89EE00E2D43F /* ISHomeSplitViewController.m */,
 				FA6F37F51DDB8D0D00E2D43F /* ISViewController.h */,
 				FA6F37F61DDB8D0D00E2D43F /* ISViewController.m */,
-				FAF8264D1DE8B025002589D9 /* ISProductsViewController.h */,
-				FAF8264E1DE8B025002589D9 /* ISProductsViewController.m */,
 				FA6F37F81DDB8D2A00E2D43F /* ISIndexViewController.h */,
 				FA6F37F91DDB8D2A00E2D43F /* ISIndexViewController.m */,
+				FAF8264D1DE8B025002589D9 /* ISProductsViewController.h */,
+				FAF8264E1DE8B025002589D9 /* ISProductsViewController.m */,
+				FAF826531DE8F51D002589D9 /* ISProductViewController.h */,
+				FAF826541DE8F51D002589D9 /* ISProductViewController.m */,
 				FA6FA9F11DDE824B00CEF665 /* ISConfectionerySearchViewController.h */,
 				FA6FA9F21DDE824B00CEF665 /* ISConfectionerySearchViewController.m */,
 				FA6FA9F81DDF9BAA00CEF665 /* ISSearchTableViewCell.h */,
@@ -289,6 +294,7 @@
 				FA6F37F71DDB8D0D00E2D43F /* ISViewController.m in Sources */,
 				FA6F37EE1DDB89EE00E2D43F /* ISHomeSplitViewController.m in Sources */,
 				FAF8264F1DE8B025002589D9 /* ISProductsViewController.m in Sources */,
+				FAF826551DE8F51D002589D9 /* ISProductViewController.m in Sources */,
 				FAAEA7381DDA67DF008EA91E /* ISDataProcessor.m in Sources */,
 				FA6F37FA1DDB8D2A00E2D43F /* ISIndexViewController.m in Sources */,
 				FAAEA7241DDA4E24008EA91E /* Ingredient_Selector.xcdatamodeld in Sources */,

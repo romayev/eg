@@ -8,8 +8,12 @@
 
 #import "ISViewController.h"
 
+@protocol ISProductsViewControllerDelegate <NSObject>
+- (NSArray *) products;
+@end
+
 @interface ISProductsViewController : ISViewController
 
-@property (nonnull, nonatomic, strong) NSArray *products;
+@property (weak, nonatomic) NSObject<ISProductsViewControllerDelegate> *delegate;
 
 @end

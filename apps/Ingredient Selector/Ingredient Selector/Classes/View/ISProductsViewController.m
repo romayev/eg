@@ -7,20 +7,39 @@
 //
 
 #import "ISProductsViewController.h"
+#import "ISProductViewController.h"
 #import "ISProduct.h"
 
 
-@interface ISProductsViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ISProductsViewController () <UITableViewDelegate, UITableViewDataSource, ISProductsViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
+@property (strong, readonly) NSArray *products;
 @end
+
 
 @implementation ISProductsViewController
 
 - (void) viewDidLoad {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"products", nil);
-//    [_tableView registerClass: [UITableViewCell class] forCellReuseIdentifier: @"Cell"];
+    _products = [_delegate products];
+}
+
+- (void) viewDidAppear: (BOOL) animated {
+    [super viewDidAppear: animated];
+    [_tableView deselectRowAtIndexPath: [_tableView indexPathForSelectedRow] animated: YES];
+}
+
+- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender {
+    [super prepareForSegue: segue sender: sender];
+
+    NSString *identifier = [segue identifier];
+    if ([identifier isEqualToString: @"product"]) {
+        ISProductViewController *c = [segue destinationViewController];
+        NSIndexPath *indexPath = [_tableView indexPathForSelectedRow];
+        ISProduct *product = _products[indexPath.row];
+        [c setProduct: product];
+    }
 }
 
 
@@ -40,6 +59,10 @@
     cell.textLabel.text = product.name;
     cell.detailTextLabel.text = product.detail;
     return cell;
+}
+
+- (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
+    [self performSegueWithIdentifier: @"product" sender: [tableView cellForRowAtIndexPath: indexPath]];
 }
 
 @end

@@ -13,17 +13,17 @@
 #import "ISConfectionery.h"
 
 
-@interface ISConfectionerySearchViewController () <ISSearchTableViewCellDataSource, ISSearchTableViewCellDelegate>
+@interface ISConfectionerySearchViewController () <ISSearchTableViewCellDataSource, ISSearchTableViewCellDelegate, ISProductsViewControllerDelegate>
 @property (nonatomic, weak) IBOutlet UILabel *headerLabel;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIButton *viewButton;
+@property (strong, readonly, nonatomic) NSArray *products;
 @end
 
 
 @implementation ISConfectionerySearchViewController {
     NSIndexPath *_editorPath;
 
-    NSArray     *_products;
     NSArray     *_regions;
     NSArray     *_valuePropositions;
     NSArray     *_applications;
@@ -59,7 +59,7 @@
     NSString *identifier = [segue identifier];
     if ([identifier isEqualToString: @"products"]) {
         ISProductsViewController *c = [segue destinationViewController];
-        [c setProducts: _products];
+        [c setDelegate: self];
     }
 }
 
