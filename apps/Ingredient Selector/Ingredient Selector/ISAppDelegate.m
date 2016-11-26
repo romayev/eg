@@ -7,7 +7,6 @@
 //
 
 #import "ISAppDelegate.h"
-#import "ISDataProcessor.h"
 
 
 @interface ISAppDelegate ()
@@ -18,7 +17,6 @@
 
 
 - (BOOL) application: (UIApplication *) application didFinishLaunchingWithOptions: (NSDictionary *) launchOptions {
-    [ISDataProcessor process];
     return YES;
 }
 

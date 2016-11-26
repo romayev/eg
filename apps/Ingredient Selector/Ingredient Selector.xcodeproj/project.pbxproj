@@ -23,7 +23,6 @@
 		FAAEA7241DDA4E24008EA91E /* Ingredient_Selector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAAEA7221DDA4E24008EA91E /* Ingredient_Selector.xcdatamodeld */; };
 		FAAEA7261DDA4E24008EA91E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA7251DDA4E24008EA91E /* Assets.xcassets */; };
 		FAAEA7291DDA4E24008EA91E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA7271DDA4E24008EA91E /* LaunchScreen.storyboard */; };
-		FAAEA7381DDA67DF008EA91E /* ISDataProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAEA7371DDA67DF008EA91E /* ISDataProcessor.m */; };
 		FAAEA7471DDB8388008EA91E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA7451DDB8388008EA91E /* Localizable.strings */; };
 		FABF91601DDE2F2100C6FF62 /* confectionery-applications.plist in Resources */ = {isa = PBXBuildFile; fileRef = FABF915A1DDE2F2100C6FF62 /* confectionery-applications.plist */; };
 		FABF91611DDE2F2100C6FF62 /* confectionery-records.plist in Resources */ = {isa = PBXBuildFile; fileRef = FABF915C1DDE2F2100C6FF62 /* confectionery-records.plist */; };
@@ -61,8 +60,6 @@
 		FAAEA7251DDA4E24008EA91E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAAEA7281DDA4E24008EA91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAAEA72A1DDA4E24008EA91E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAAEA7361DDA67DF008EA91E /* ISDataProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISDataProcessor.h; path = Classes/Service/ISDataProcessor.h; sourceTree = "<group>"; };
-		FAAEA7371DDA67DF008EA91E /* ISDataProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISDataProcessor.m; path = Classes/Service/ISDataProcessor.m; sourceTree = "<group>"; };
 		FAAEA7481DDB8392008EA91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FABF915B1DDE2F2100C6FF62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "Ingredient Selector/en.lproj/confectionery-applications.plist"; sourceTree = SOURCE_ROOT; };
 		FABF915D1DDE2F2100C6FF62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "Ingredient Selector/en.lproj/confectionery-records.plist"; sourceTree = SOURCE_ROOT; };
@@ -163,8 +160,6 @@
 		FAAEA7351DDA6782008EA91E /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				FAAEA7361DDA67DF008EA91E /* ISDataProcessor.h */,
-				FAAEA7371DDA67DF008EA91E /* ISDataProcessor.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -295,7 +290,6 @@
 				FA6F37EE1DDB89EE00E2D43F /* ISHomeSplitViewController.m in Sources */,
 				FAF8264F1DE8B025002589D9 /* ISProductsViewController.m in Sources */,
 				FAF826551DE8F51D002589D9 /* ISProductViewController.m in Sources */,
-				FAAEA7381DDA67DF008EA91E /* ISDataProcessor.m in Sources */,
 				FA6F37FA1DDB8D2A00E2D43F /* ISIndexViewController.m in Sources */,
 				FAAEA7241DDA4E24008EA91E /* Ingredient_Selector.xcdatamodeld in Sources */,
 				FAAEA7181DDA4E24008EA91E /* main.m in Sources */,
