@@ -33,7 +33,6 @@
 @protocol ISSearchTableViewCellDelegate
 
 - (void) cell: (ISSearchTableViewCell *) cell didSelectCellAtRow: (NSInteger) row;
-- (void) cellFinished: (ISSearchTableViewCell *) cell;
 
 @end
 

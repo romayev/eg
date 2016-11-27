@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Confectionery Search View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="TSe-EC-5ai">
             <objects>
-                <viewController storyboardIdentifier="confectionery" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ecB-w6-t8h" customClass="ISConfectionerySearchViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="confectionery" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ecB-w6-t8h" customClass="ISSearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ixu-9t-LnX"/>
                         <viewControllerLayoutGuide type="bottom" id="y6p-fl-ibn"/>
@@ -212,7 +212,7 @@
                                 <rect key="frame" x="16" y="36" width="343" height="47"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWq-cr-aNb">
-                                        <rect key="frame" x="144.5" y="0.0" width="54" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -224,6 +224,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="pWq-cr-aNb" firstAttribute="leading" secondItem="jzJ-hh-x6h" secondAttribute="leading" id="56L-zs-4vy"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

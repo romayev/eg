@@ -26,6 +26,10 @@
     return __products;
 }
 
++ (NSArray *) searchCriteria {
+    return @[ @"region", @"valueProposition", @"application" ];
+}
+
 - (id) initWithPlist: (NSDictionary *) plist {
     if (self = [super initWithPlist: plist]) {
         _selectionCriteria = plist[@"selectionCriteria"];

@@ -1,56 +1,77 @@
 //
-//  ISConfectionerySearchViewController.m
+//  ISSearchViewController.m
 //  Ingredient Selector
 //
 //  Created by Alex Romayev on 11/17/16.
 //  Copyright © 2016 Alex Romayev. All rights reserved.
 //
 
-#import "ISConfectionerySearchViewController.h"
+#import "ISSearchViewController.h"
 #import "ISSearchTableViewCell.h"
 #import "ISProductsViewController.h"
 #import "ISSearchItem.h"
-#import "ISConfectionery.h"
+#import "ISProduct.h"
 
-
-@interface ISConfectionerySearchViewController () <ISSearchTableViewCellDataSource, ISSearchTableViewCellDelegate, ISProductsViewControllerDelegate>
+@interface ISSearchViewController () <ISSearchTableViewCellDataSource, ISSearchTableViewCellDelegate, ISProductsViewControllerDelegate>
 @property (nonatomic, weak) IBOutlet UILabel *headerLabel;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIButton *viewButton;
 @property (strong, readonly, nonatomic) NSArray *products;
+@property (strong, nonatomic) NSArray *criteria;
+@property (strong, nonatomic) NSMutableArray *availableValues;
+@property (strong, nonatomic) NSMutableArray *selectedValues;
 @end
 
 
-@implementation ISConfectionerySearchViewController {
+@implementation ISSearchViewController {
+    NSInteger   _productIndex;
+    NSInteger   _count;
     NSIndexPath *_editorPath;
-
-    NSArray     *_regions;
-    NSArray     *_valuePropositions;
-    NSArray     *_applications;
-
-    NSMutableArray  *_selectedRegions;
-    NSMutableArray  *_selectedValuePropositions;
-    NSMutableArray  *_selectedApplications;
-}
-
-- (void) awakeFromNib {
-    [super awakeFromNib];
-
-    _products = [ISConfectionery products];
-    _regions = [ISConfectionery regions];
-    _valuePropositions = [ISConfectionery valuePropositions];
-    _applications = [ISConfectionery applications];
-
-    _selectedRegions = [NSMutableArray arrayWithObject: [_regions firstObject]];
-    _selectedValuePropositions = [NSMutableArray arrayWithObject: [_valuePropositions firstObject]];
-    _selectedApplications = [NSMutableArray arrayWithObject: [_applications firstObject]];
 }
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+
+    _productIndex = [_delegate productIndex];
+    [self load];
     self.navigationItem.title = NSLocalizedString(@"index.title.8", nil);
     _headerLabel.text = [NSString stringWithFormat: NSLocalizedString(@"product-count", nil), [_products count]];
     [_viewButton setTitle: NSLocalizedString(@"view",  nil) forState: UIControlStateNormal];
+}
+
+- (void) encodeRestorableStateWithCoder: (NSCoder *) coder {
+    [coder encodeObject: @(_productIndex) forKey: @"idx"];
+    [super encodeRestorableStateWithCoder: coder];
+}
+
+- (void) decodeRestorableStateWithCoder: (NSCoder *) coder {
+    _productIndex = [[coder decodeObjectForKey: @"idx"] integerValue];
+    [self load];
+    [super decodeRestorableStateWithCoder: coder];
+}
+
+- (void) load {
+    Class product = [self product];
+    _products = [product products];
+    _criteria = [product searchCriteria];
+    _count = [_criteria count];
+    _availableValues = [[NSMutableArray alloc] initWithCapacity: _count];
+    for (NSInteger i = 0; i < _count; i++) {
+        NSMutableArray *a = [NSMutableArray array];
+        [_availableValues addObject: a];
+    }
+
+    // Initialize selected with "All"
+    _selectedValues = [[NSMutableArray alloc] initWithCapacity: _count];
+    for (NSInteger i = 0; i < _count; i++) {
+        NSMutableArray *a = [NSMutableArray array];
+        [a addObject: @"All"];
+        [_selectedValues addObject: a];
+    }
+
+    for (NSInteger i = 0; i < _count; i++) {
+        [self updateAvailableValuesAtIndex: i];
+    }
 }
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender {
@@ -77,14 +98,9 @@
 - (NSInteger) tableView: (UITableView *) tableView numberOfRowsInSection: (NSInteger) section {
     const NSInteger editorSection = _editorPath ? [_editorPath section] : NSNotFound;
     const NSInteger editor = (section == editorSection) ? 1 : 0;
-    NSInteger base = 3;
-    return base + editor;
+    return _count + editor;
 }
 
-//- (CGFloat) tableView: (UITableView *) tableView heightForHeaderInSection: (NSInteger) section {
-//    return section < 2 ? 38.0 : 0.0;
-//}
-//
 - (CGFloat) tableView: (UITableView *) tableView heightForRowAtIndexPath: (NSIndexPath *) indexPath {
     const NSInteger section = [indexPath section];
     NSInteger row = [indexPath row];
@@ -168,22 +184,19 @@
 #pragma mark Helpers
 
 
+- (Class) product {
+    return NSClassFromString(@"ISConfectionery");
+}
+
 - (NSString *) titleForRow: (NSInteger) row {
     NSString *key = [NSString stringWithFormat: @"%@%zi", @"confectionery.search.title.", row];
     return NSLocalizedString(key, nil);
 }
 
 - (NSString *) descriptionForRow: (NSInteger) row {
-    switch (row) {
-        case 0:
-            return [_selectedRegions componentsJoinedByString: @", "];
-        case 1:
-            return [_selectedValuePropositions componentsJoinedByString: @", "];
-        case 2:
-            return [_selectedApplications componentsJoinedByString: @", "];
-        default:
-            return @"Oops";
-    }
+    if (row >= [_selectedValues count]) return nil;
+    NSArray *selected = _selectedValues[row];
+    return [selected componentsJoinedByString: @", "];
 }
 
 - (NSIndexPath *) editorParentPath {
@@ -196,62 +209,35 @@
 
 - (NSArray *) editorItems {
     NSInteger editorRow = [_editorPath row];
-    switch (editorRow) {
-        case 1:
-            return _regions;
-        case 2:
-            return _valuePropositions;
-        case 3:
-            return _applications;
-        default:
-            return nil;
-    }
+    if (editorRow - 1 >= [_availableValues count]) return nil;
+    return _availableValues[editorRow - 1];
 }
 
 - (NSArray *) selectedItemsForCell: (UITableViewCell *) cell {
     NSInteger editorRow = [_editorPath row];
-    switch (editorRow) {
-        case 1:
-            return _selectedRegions;
-        case 2:
-            return _selectedValuePropositions;
-        case 3:
-            return _selectedApplications;
-        default:
-            return 0;
-    }
+    if (editorRow - 1 >= [_availableValues count]) return nil;
+    return _selectedValues[editorRow - 1];
 }
 
 - (void) cell: (ISSearchTableViewCell *) cell didSelectCellAtRow: (NSInteger) row {
     NSInteger editorRow = [_editorPath row];
-    switch (editorRow) {
-        case 1: {
-            [self processSelectedIndex: row inArray: _regions withSelected: _selectedRegions];
-            [self updateValuePropositions];
-            [self updateApplications];
-        }
-            break;
-        case 2: {
-            [self processSelectedIndex: row inArray: _valuePropositions withSelected: _selectedValuePropositions];
-            [self updateRegions];
-            [self updateApplications];
-        }
-            break;
-        case 3: {
-            [self processSelectedIndex: row inArray: _applications withSelected: _selectedApplications];
-            [self updateRegions];
-            [self updateValuePropositions];
-        }
-            break;
-        default:
-            break;
+    NSInteger editorParentRow = editorRow - 1;
+
+    // Process current selection
+    [self processSelectedRow: row atIndex: editorParentRow];
+
+    for (NSInteger i = 0; i < _count; i++) {
+        if (i == editorParentRow) continue;
+        [self updateAvailableValuesAtIndex: i];
     }
     [_tableView reloadRowsAtIndexPaths: @[[self editorParentPath], _editorPath] withRowAnimation: UITableViewRowAnimationAutomatic];
     [self updateProdutcs];
 }
 
-- (void) processSelectedIndex: (NSInteger) row inArray: (NSArray *) array withSelected: (NSMutableArray *) selectedArray {
-    NSString *selectedValue = array[row];
+- (void) processSelectedRow: (NSInteger) row atIndex: (NSInteger) idx {
+    NSArray *availableValues = _availableValues[idx];
+    NSMutableArray *selectedArray = _selectedValues[idx];
+    NSString *selectedValue = availableValues[row];
     if ([selectedValue isEqualToString: kAll]) {
         [selectedArray removeAllObjects];
         [selectedArray addObject: kAll];
@@ -262,7 +248,7 @@
         } else {
             [selectedArray addObject: selectedValue];
         }
-        if ([selectedArray count] == 0 || [selectedArray count] == [array count] - 1) {
+        if ([selectedArray count] == 0 || [selectedArray count] == [availableValues count] - 1) {
             [selectedArray removeAllObjects];
             [selectedArray addObject: kAll];
         }
@@ -270,39 +256,23 @@
 }
 
 - (void) updateProdutcs {
-    NSDictionary *criteria = @{ @"region" : _selectedRegions, @"valueProposition" : _selectedValuePropositions, @"application" : _selectedApplications };
-    _products = [ISConfectionery productsWithSearchCriteria: criteria];
+    NSMutableDictionary *criteria = [NSMutableDictionary dictionaryWithCapacity: _count];
+    for (NSInteger i = 0; i < _count; i++) {
+        [criteria setObject: _selectedValues[i] forKey: _criteria[i]];
+    }
+    _products = [[self product] productsWithSearchCriteria: criteria];
     _headerLabel.text = [NSString stringWithFormat: NSLocalizedString(@"product-count", nil), [_products count]];
 }
 
-- (void) updateRegions {
-    NSDictionary *criteria = @{ @"valueProposition" : _selectedValuePropositions, @"application" : _selectedApplications };
-    _regions = [ISConfectionery uniquePropertyValuesForProperty: @"region" withSearchCriteria: criteria];
-}
-
-- (void) updateValuePropositions {
-    NSDictionary *criteria = @{ @"region" : _selectedRegions, @"application" : _selectedApplications };
-    _valuePropositions = [ISConfectionery uniquePropertyValuesForProperty: @"valueProposition" withSearchCriteria: criteria];
-}
-
-- (void) updateApplications {
-    NSDictionary *criteria = @{ @"region" : _selectedRegions, @"valueProposition" : _selectedValuePropositions };
-    _applications = [ISConfectionery uniquePropertyValuesForProperty: @"application" withSearchCriteria: criteria];
-}
-
-- (void) cellFinished: (ISSearchTableViewCell *) cell {
-//    NSInteger section = [_editorPath section];
-//    if (section == 1) {
-//        NSInteger row = [_editorPath row];
-//        if (row < 4) {
-//            row++;
-//        } else {
-//            row--;
-//        }
-//
-//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow: row inSection: section];
-//        [self tableView: _tableView didSelectRowAtIndexPath: indexPath];
-//    }
+- (void) updateAvailableValuesAtIndex: (NSInteger) idx {
+    // Create a dictionary of criteria that includes all other selected values
+    NSMutableDictionary *criteria = [NSMutableDictionary dictionaryWithCapacity: _count - 1];
+    for (NSInteger i = 0; i < _count; i++) {
+        if (i == idx) continue;
+        [criteria setObject: _selectedValues[i] forKey: _criteria[i]];
+    }
+    // Update available values at the passed in index
+    _availableValues[idx] = [[self product] uniquePropertyValuesForProperty: _criteria[idx] withSearchCriteria: criteria];
 }
 
 @end

@@ -24,6 +24,7 @@
 - (id) initWithPlist: (NSDictionary *) plist;
 
 + (NSArray *) products;
++ (NSArray *) searchCriteria;
 
 + (NSArray *) productsWithSearchCriteria: (NSDictionary *) searchCriteria;
 + (NSArray *) uniquePropertyValuesForProperty: (NSString *) property withSearchCriteria: (NSDictionary *) searchCriteria;

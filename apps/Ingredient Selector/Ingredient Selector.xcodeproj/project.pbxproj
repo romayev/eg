@@ -10,7 +10,7 @@
 		FA6F37EE1DDB89EE00E2D43F /* ISHomeSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F37ED1DDB89EE00E2D43F /* ISHomeSplitViewController.m */; };
 		FA6F37F71DDB8D0D00E2D43F /* ISViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F37F61DDB8D0D00E2D43F /* ISViewController.m */; };
 		FA6F37FA1DDB8D2A00E2D43F /* ISIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F37F91DDB8D2A00E2D43F /* ISIndexViewController.m */; };
-		FA6FA9F31DDE824B00CEF665 /* ISConfectionerySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FA9F21DDE824B00CEF665 /* ISConfectionerySearchViewController.m */; };
+		FA6FA9F31DDE824B00CEF665 /* ISSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FA9F21DDE824B00CEF665 /* ISSearchViewController.m */; };
 		FA6FA9FA1DDF9BAA00CEF665 /* ISSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FA9F91DDF9BAA00CEF665 /* ISSearchTableViewCell.m */; };
 		FA6FA9FD1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FA9FC1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.m */; };
 		FA6FAA001DE0E79800CEF665 /* regions.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA6FA9FE1DE0E79800CEF665 /* regions.plist */; };
@@ -38,8 +38,8 @@
 		FA6F37F61DDB8D0D00E2D43F /* ISViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISViewController.m; path = Classes/View/ISViewController.m; sourceTree = "<group>"; };
 		FA6F37F81DDB8D2A00E2D43F /* ISIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISIndexViewController.h; sourceTree = "<group>"; };
 		FA6F37F91DDB8D2A00E2D43F /* ISIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISIndexViewController.m; sourceTree = "<group>"; };
-		FA6FA9F11DDE824B00CEF665 /* ISConfectionerySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISConfectionerySearchViewController.h; path = Classes/View/ISConfectionerySearchViewController.h; sourceTree = "<group>"; };
-		FA6FA9F21DDE824B00CEF665 /* ISConfectionerySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISConfectionerySearchViewController.m; path = Classes/View/ISConfectionerySearchViewController.m; sourceTree = "<group>"; };
+		FA6FA9F11DDE824B00CEF665 /* ISSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISSearchViewController.h; path = Classes/View/ISSearchViewController.h; sourceTree = "<group>"; };
+		FA6FA9F21DDE824B00CEF665 /* ISSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISSearchViewController.m; path = Classes/View/ISSearchViewController.m; sourceTree = "<group>"; };
 		FA6FA9F81DDF9BAA00CEF665 /* ISSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISSearchTableViewCell.h; path = Classes/View/ISSearchTableViewCell.h; sourceTree = "<group>"; };
 		FA6FA9F91DDF9BAA00CEF665 /* ISSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISSearchTableViewCell.m; path = Classes/View/ISSearchTableViewCell.m; sourceTree = "<group>"; };
 		FA6FA9FB1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISSearchDropDownTableViewCell.h; path = Classes/View/ISSearchDropDownTableViewCell.h; sourceTree = "<group>"; };
@@ -193,8 +193,8 @@
 				FAF8264E1DE8B025002589D9 /* ISProductsViewController.m */,
 				FAF826531DE8F51D002589D9 /* ISProductViewController.h */,
 				FAF826541DE8F51D002589D9 /* ISProductViewController.m */,
-				FA6FA9F11DDE824B00CEF665 /* ISConfectionerySearchViewController.h */,
-				FA6FA9F21DDE824B00CEF665 /* ISConfectionerySearchViewController.m */,
+				FA6FA9F11DDE824B00CEF665 /* ISSearchViewController.h */,
+				FA6FA9F21DDE824B00CEF665 /* ISSearchViewController.m */,
 				FA6FA9F81DDF9BAA00CEF665 /* ISSearchTableViewCell.h */,
 				FA6FA9F91DDF9BAA00CEF665 /* ISSearchTableViewCell.m */,
 				FA6FA9FB1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.h */,
@@ -281,7 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAAEA71B1DDA4E24008EA91E /* ISAppDelegate.m in Sources */,
-				FA6FA9F31DDE824B00CEF665 /* ISConfectionerySearchViewController.m in Sources */,
+				FA6FA9F31DDE824B00CEF665 /* ISSearchViewController.m in Sources */,
 				FA6FAA041DE0E8EB00CEF665 /* ISSearchItem.m in Sources */,
 				FA6FAA161DE3BE2200CEF665 /* ISConfectionery.m in Sources */,
 				FA6FAA131DE3BD3700CEF665 /* ISProduct.m in Sources */,

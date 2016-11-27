@@ -7,11 +7,12 @@
 //
 
 #import "ISIndexViewController.h"
+#import "ISSearchViewController.h"
 
 
 #define kNumberOfTools  11
 
-@interface ISIndexViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ISIndexViewController () <UITableViewDelegate, UITableViewDataSource, ISSearchViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
@@ -35,6 +36,15 @@
     }
 }
 
+- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender {
+    [super prepareForSegue: segue sender: sender];
+
+    NSString *identifier = [segue identifier];
+    if ([identifier isEqualToString: @"confectionery"]) {
+        ISSearchViewController *c = [segue destinationViewController];
+        [c setDelegate: self];
+    }
+}
 
 
 #pragma mark -
@@ -112,6 +122,14 @@
         }
         [self performSegueWithIdentifier: segue sender: nil];
     }
+}
+
+
+#pragma mark -
+#pragma mark ISSearchViewControllerDelegate
+
+- (NSInteger) productIndex {
+    return [[_tableView indexPathForSelectedRow] row];
 }
 
 @end

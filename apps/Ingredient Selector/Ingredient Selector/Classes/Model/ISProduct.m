@@ -26,6 +26,10 @@
     return nil;
 }
 
++ (NSArray *) searchCriteria {
+    return nil;
+}
+
 + (NSArray *) regions {
     return [self uniqueValuesWithProperty: @"region" products: [self products]];
 }
@@ -54,6 +58,7 @@
 
 + (NSArray *) productsWithSearchCriteria: (NSDictionary *) searchCriteria {
     NSArray *products = [self products];
+    if (searchCriteria == nil) return products;
 
     NSMutableArray *predicates = [NSMutableArray array];
     for (NSString *key in [searchCriteria allKeys]) {
