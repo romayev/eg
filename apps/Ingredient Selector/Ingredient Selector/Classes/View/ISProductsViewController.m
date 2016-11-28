@@ -11,6 +11,12 @@
 #import "ISProduct.h"
 
 
+@interface ISProductsCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *detailLabel;
+@end
+
+
 @interface ISProductsViewController () <UITableViewDelegate, UITableViewDataSource, ISProductsViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, readonly) NSArray *products;
@@ -46,18 +52,19 @@
 #pragma mark -
 #pragma mark UITableViewDataSource & Delegate
 
+- (CGFloat) tableView:(UITableView *) tableView heightForRowAtIndexPath: (NSIndexPath *) indexPath {
+    return 100;
+}
+
 - (NSInteger) tableView: (UITableView *) tableView numberOfRowsInSection: (NSInteger) section {
     return [_products count];
 }
 
 - (UITableViewCell *) tableView: (UITableView *) tableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"Cell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier: @"Cell"];
-    }
+    ISProductsCell *cell = [tableView dequeueReusableCellWithIdentifier: @"Cell" forIndexPath: indexPath];
     ISProduct *product = _products[indexPath.row];
-    cell.textLabel.text = product.name;
-    cell.detailTextLabel.text = product.detail;
+    cell.nameLabel.text = product.name;
+    cell.detailLabel.text = product.detail;
     return cell;
 }
 
@@ -65,4 +72,8 @@
     [self performSegueWithIdentifier: @"product" sender: [tableView cellForRowAtIndexPath: indexPath]];
 }
 
+@end
+
+
+@implementation ISProductsCell
 @end
