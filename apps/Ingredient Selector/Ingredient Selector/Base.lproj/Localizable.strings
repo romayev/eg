@@ -11,7 +11,7 @@
 "all" = "All";
 "view" = "View";
 "products" = "Products";
-"product-count" = "Products: %zi";
+"product-count" = "Products: ";
 
 // Index
 "index.title.0" = "Yogurt";

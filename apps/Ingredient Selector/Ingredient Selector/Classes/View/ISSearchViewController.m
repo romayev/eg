@@ -14,6 +14,7 @@
 
 @interface ISSearchViewController () <ISSearchTableViewCellDataSource, ISSearchTableViewCellDelegate, ISProductsViewControllerDelegate>
 @property (nonatomic, weak) IBOutlet UILabel *headerLabel;
+@property (strong, nonatomic) IBOutlet UILabel *productCountLabel;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIButton *viewButton;
 @property (strong, readonly, nonatomic) NSArray *products;
@@ -35,7 +36,8 @@
     _productIndex = [_delegate productIndex];
     [self load];
     self.navigationItem.title = NSLocalizedString(@"index.title.8", nil);
-    _headerLabel.text = [NSString stringWithFormat: NSLocalizedString(@"product-count", nil), [_products count]];
+    _headerLabel.text = NSLocalizedString(@"product-count", nil);
+    _productCountLabel.text = [NSString stringWithFormat: @"%zi", [_products count]];
     [_viewButton setTitle: NSLocalizedString(@"view",  nil) forState: UIControlStateNormal];
 }
 
@@ -261,7 +263,9 @@
         [criteria setObject: _selectedValues[i] forKey: _criteria[i]];
     }
     _products = [[self product] productsWithSearchCriteria: criteria];
-    _headerLabel.text = [NSString stringWithFormat: NSLocalizedString(@"product-count", nil), [_products count]];
+    _headerLabel.text = NSLocalizedString(@"product-count", nil);
+    _productCountLabel.text = [NSString stringWithFormat: @"%zi", [_products count]];
+    [_viewButton setTitle: NSLocalizedString(@"view",  nil) forState: UIControlStateNormal];
 }
 
 - (void) updateAvailableValuesAtIndex: (NSInteger) idx {

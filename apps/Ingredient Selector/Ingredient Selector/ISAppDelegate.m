@@ -17,9 +17,25 @@
 
 
 - (BOOL) application: (UIApplication *) application didFinishLaunchingWithOptions: (NSDictionary *) launchOptions {
+    // Setup appearance
+    UIColor *greenColor = [UIColor colorWithRed: 0.42 green: 0.70 blue: 0.24 alpha: 1.0];
+    //UIColor *darkGreyColor = [UIColor colorWithRed: 0.20 green: 0.20 blue: 0.20 alpha: 1.0];
+    [_window setTintColor: greenColor];
+    UITabBar *tabBar = [UITabBar appearance];
+    [tabBar setTintColor: [UIColor whiteColor]];
+    [tabBar setBarTintColor: [UIColor blackColor]];
+    UINavigationBar *navigationBar = [UINavigationBar appearance];
+    [navigationBar setTintColor: [UIColor whiteColor]];
+    [navigationBar setBarTintColor: greenColor];
+
+    //[navigationBar setTranslucent: NO];
+    [navigationBar setTitleTextAttributes: @{
+                                             NSForegroundColorAttributeName: [UIColor whiteColor],
+                                             NSFontAttributeName:            [UIFont fontWithName: @"MiloOT-Black" size: 22.0]
+                                             }];
+
     return YES;
 }
-
 
 - (void) applicationWillResignActive: (UIApplication *) application {
 }

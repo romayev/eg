@@ -111,7 +111,7 @@
 
     // FIXME: Remove
     if (tag != 8) {
-        segue = nil;
+        segue = @"confectionery";
     }
 
     if (segue) {

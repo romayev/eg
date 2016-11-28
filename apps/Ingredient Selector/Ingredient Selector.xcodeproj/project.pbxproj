@@ -17,6 +17,7 @@
 		FA6FAA041DE0E8EB00CEF665 /* ISSearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAA031DE0E8EB00CEF665 /* ISSearchItem.m */; };
 		FA6FAA131DE3BD3700CEF665 /* ISProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAA121DE3BD3700CEF665 /* ISProduct.m */; };
 		FA6FAA161DE3BE2200CEF665 /* ISConfectionery.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAA151DE3BE2200CEF665 /* ISConfectionery.m */; };
+		FAA03CFA1DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAA03CF91DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf */; };
 		FAAEA7181DDA4E24008EA91E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAEA7171DDA4E24008EA91E /* main.m */; };
 		FAAEA71B1DDA4E24008EA91E /* ISAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAEA71A1DDA4E24008EA91E /* ISAppDelegate.m */; };
 		FAAEA7211DDA4E24008EA91E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA71F1DDA4E24008EA91E /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		FA6FAA121DE3BD3700CEF665 /* ISProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISProduct.m; path = Classes/Model/ISProduct.m; sourceTree = "<group>"; };
 		FA6FAA141DE3BE2200CEF665 /* ISConfectionery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISConfectionery.h; path = Classes/Model/ISConfectionery.h; sourceTree = "<group>"; };
 		FA6FAA151DE3BE2200CEF665 /* ISConfectionery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISConfectionery.m; path = Classes/Model/ISConfectionery.m; sourceTree = "<group>"; };
+		FAA03CF91DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ufonts.com_miloot-black-opentype.otf"; path = "Resources/Fonts/ufonts.com_miloot-black-opentype.otf"; sourceTree = "<group>"; };
 		FAAEA7131DDA4E23008EA91E /* Ingredient Selector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ingredient Selector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAEA7171DDA4E24008EA91E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FAAEA7191DDA4E24008EA91E /* ISAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISAppDelegate.h; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 				FA6FAA151DE3BE2200CEF665 /* ISConfectionery.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		FAA03CF61DEBC00E001EA461 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FAA03CF91DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		FAAEA70A1DDA4E23008EA91E = {
@@ -167,6 +177,7 @@
 		FAAEA7401DDB82D8008EA91E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAA03CF61DEBC00E001EA461 /* Fonts */,
 				FAAEA7411DDB8303008EA91E /* Content */,
 			);
 			name = Resources;
@@ -262,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA03CFA1DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf in Resources */,
 				FAAEA7471DDB8388008EA91E /* Localizable.strings in Resources */,
 				FAAEA7291DDA4E24008EA91E /* LaunchScreen.storyboard in Resources */,
 				FABF91611DDE2F2100C6FF62 /* confectionery-records.plist in Resources */,
