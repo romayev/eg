@@ -23,7 +23,7 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"ingredion", nil);
+    self.navigationItem.title = NSLocalizedString(@"search", nil);
 }
 - (void) viewDidAppear: (BOOL) animated {
     [super viewDidAppear: animated];

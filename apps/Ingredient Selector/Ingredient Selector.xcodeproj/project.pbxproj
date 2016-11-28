@@ -18,6 +18,7 @@
 		FA6FAA131DE3BD3700CEF665 /* ISProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAA121DE3BD3700CEF665 /* ISProduct.m */; };
 		FA6FAA161DE3BE2200CEF665 /* ISConfectionery.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAA151DE3BE2200CEF665 /* ISConfectionery.m */; };
 		FAA03CFA1DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAA03CF91DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf */; };
+		FAA03CFD1DEBE352001EA461 /* ISMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA03CFC1DEBE352001EA461 /* ISMoreViewController.m */; };
 		FAAEA7181DDA4E24008EA91E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAEA7171DDA4E24008EA91E /* main.m */; };
 		FAAEA71B1DDA4E24008EA91E /* ISAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAEA71A1DDA4E24008EA91E /* ISAppDelegate.m */; };
 		FAAEA7211DDA4E24008EA91E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA71F1DDA4E24008EA91E /* Main.storyboard */; };
@@ -53,6 +54,8 @@
 		FA6FAA141DE3BE2200CEF665 /* ISConfectionery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISConfectionery.h; path = Classes/Model/ISConfectionery.h; sourceTree = "<group>"; };
 		FA6FAA151DE3BE2200CEF665 /* ISConfectionery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISConfectionery.m; path = Classes/Model/ISConfectionery.m; sourceTree = "<group>"; };
 		FAA03CF91DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ufonts.com_miloot-black-opentype.otf"; path = "Resources/Fonts/ufonts.com_miloot-black-opentype.otf"; sourceTree = "<group>"; };
+		FAA03CFB1DEBE352001EA461 /* ISMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISMoreViewController.h; path = Classes/View/ISMoreViewController.h; sourceTree = "<group>"; };
+		FAA03CFC1DEBE352001EA461 /* ISMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISMoreViewController.m; path = Classes/View/ISMoreViewController.m; sourceTree = "<group>"; };
 		FAAEA7131DDA4E23008EA91E /* Ingredient Selector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ingredient Selector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAEA7171DDA4E24008EA91E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FAAEA7191DDA4E24008EA91E /* ISAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISAppDelegate.h; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 				FA6FA9F91DDF9BAA00CEF665 /* ISSearchTableViewCell.m */,
 				FA6FA9FB1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.h */,
 				FA6FA9FC1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.m */,
+				FAA03CFB1DEBE352001EA461 /* ISMoreViewController.h */,
+				FAA03CFC1DEBE352001EA461 /* ISMoreViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				FA6FAA161DE3BE2200CEF665 /* ISConfectionery.m in Sources */,
 				FA6FAA131DE3BD3700CEF665 /* ISProduct.m in Sources */,
 				FA6FA9FD1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.m in Sources */,
+				FAA03CFD1DEBE352001EA461 /* ISMoreViewController.m in Sources */,
 				FA6F37F71DDB8D0D00E2D43F /* ISViewController.m in Sources */,
 				FA6F37EE1DDB89EE00E2D43F /* ISHomeSplitViewController.m in Sources */,
 				FAF8264F1DE8B025002589D9 /* ISProductsViewController.m in Sources */,
