@@ -14,6 +14,11 @@
 "products" = "Products";
 "product-count" = "Products: ";
 
+// More
+"company.meet-company" = "Meet Ingredion";
+"company.locations-title" = "Worldwide locations";
+"company.locations-desc" = "Browse a map of our global locations and connect with our teams around the world.";
+
 // Index
 "index.title.0" = "Yogurt";
 "index.title.1" = "Processed Cheese";
