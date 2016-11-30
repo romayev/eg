@@ -15,9 +15,11 @@
 "product-count" = "Products: ";
 
 // More
-"company.meet-company" = "Meet Ingredion";
-"company.locations-title" = "Worldwide locations";
-"company.locations-desc" = "Browse a map of our global locations and connect with our teams around the world.";
+"more.title" = "About";
+"more.desc" = "This tool will assist you in finding any matching products from the master database. If you need assistance, please contact us.";
+"more.questions.title" = "Questions?";
+"more.questions.desc" = "If you need assistance, please contact us:";
+"more.contact" = "Erhan Yildiz\nGlobal Applications Director\nerhan.yildiz@ingredion.com\n+1 908-685-5271";
 
 // Index
 "index.title.0" = "Yogurt";

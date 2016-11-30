@@ -31,7 +31,7 @@
     //[navigationBar setTranslucent: NO];
     [navigationBar setTitleTextAttributes: @{
                                              NSForegroundColorAttributeName: [UIColor whiteColor],
-                                             NSFontAttributeName:            [UIFont fontWithName: @"MiloOT-Black" size: 22.0]
+                                             NSFontAttributeName:            [UIFont fontWithName: @"GillSans" size: 22.0]
                                              }];
 
     return YES;
