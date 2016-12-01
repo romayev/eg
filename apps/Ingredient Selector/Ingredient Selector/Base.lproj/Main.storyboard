@@ -379,7 +379,7 @@
         <scene sceneID="34Y-n1-Ybt">
             <objects>
                 <navigationController storyboardIdentifier="indexNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rQD-Ca-wpG" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="suN-kV-Uch">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="suN-kV-Uch">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -531,7 +531,7 @@
                 <navigationController storyboardIdentifier="moreNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mSV-z1-ArX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="0PG-0Y-O1N"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Az5-ks-B2B">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Az5-ks-B2B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

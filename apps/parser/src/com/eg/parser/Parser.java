@@ -18,18 +18,6 @@ abstract public class Parser {
     abstract public void parse() throws IOException;
     abstract String packageName();
 
-    void savePlistArray(Collection<String> list, String fileName) throws IOException {
-        NSArray array = new NSArray(list.size());
-        int i = 0;
-        for (String value : list) {
-            Map<String, Object> plist = plistFromString(value, i);
-            array.setValue(i++, plist);
-        }
-
-        File file = getFile(fileName);
-        PropertyListParser.saveAsXML(array, file);
-    }
-
     void savePlistProducts(Collection<Product> products, String fileName) throws IOException {
         NSArray array = new NSArray(products.size());
         int i = 0;
@@ -41,12 +29,6 @@ abstract public class Parser {
         PropertyListParser.saveAsXML(array, file);
     }
 
-    private Map<String, Object> plistFromString(String string, int index) {
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("id", index);
-        map.put("title", string);
-        return map;
-    }
     private File getFile(String fileName) throws IOException {
         File dir = new File("plist");
         if (!dir.exists()) {

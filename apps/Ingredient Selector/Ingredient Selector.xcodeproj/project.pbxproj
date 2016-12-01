@@ -13,7 +13,6 @@
 		FA6FA9F31DDE824B00CEF665 /* ISSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FA9F21DDE824B00CEF665 /* ISSearchViewController.m */; };
 		FA6FA9FA1DDF9BAA00CEF665 /* ISSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FA9F91DDF9BAA00CEF665 /* ISSearchTableViewCell.m */; };
 		FA6FA9FD1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FA9FC1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.m */; };
-		FA6FAA001DE0E79800CEF665 /* regions.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA6FA9FE1DE0E79800CEF665 /* regions.plist */; };
 		FA6FAA041DE0E8EB00CEF665 /* ISSearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAA031DE0E8EB00CEF665 /* ISSearchItem.m */; };
 		FA6FAA131DE3BD3700CEF665 /* ISProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAA121DE3BD3700CEF665 /* ISProduct.m */; };
 		FA6FAA161DE3BE2200CEF665 /* ISConfectionery.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAA151DE3BE2200CEF665 /* ISConfectionery.m */; };
@@ -26,9 +25,7 @@
 		FAAEA7261DDA4E24008EA91E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA7251DDA4E24008EA91E /* Assets.xcassets */; };
 		FAAEA7291DDA4E24008EA91E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA7271DDA4E24008EA91E /* LaunchScreen.storyboard */; };
 		FAAEA7471DDB8388008EA91E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA7451DDB8388008EA91E /* Localizable.strings */; };
-		FABF91601DDE2F2100C6FF62 /* confectionery-applications.plist in Resources */ = {isa = PBXBuildFile; fileRef = FABF915A1DDE2F2100C6FF62 /* confectionery-applications.plist */; };
-		FABF91611DDE2F2100C6FF62 /* confectionery-records.plist in Resources */ = {isa = PBXBuildFile; fileRef = FABF915C1DDE2F2100C6FF62 /* confectionery-records.plist */; };
-		FABF91621DDE2F2100C6FF62 /* confectionery-value-propositions.plist in Resources */ = {isa = PBXBuildFile; fileRef = FABF915E1DDE2F2100C6FF62 /* confectionery-value-propositions.plist */; };
+		FAF2D4021DEFC8880095434B /* confectionery.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF2D4001DEFC8880095434B /* confectionery.plist */; };
 		FAF8264F1DE8B025002589D9 /* ISProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF8264E1DE8B025002589D9 /* ISProductsViewController.m */; };
 		FAF826551DE8F51D002589D9 /* ISProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF826541DE8F51D002589D9 /* ISProductViewController.m */; };
 /* End PBXBuildFile section */
@@ -46,7 +43,6 @@
 		FA6FA9F91DDF9BAA00CEF665 /* ISSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISSearchTableViewCell.m; path = Classes/View/ISSearchTableViewCell.m; sourceTree = "<group>"; };
 		FA6FA9FB1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISSearchDropDownTableViewCell.h; path = Classes/View/ISSearchDropDownTableViewCell.h; sourceTree = "<group>"; };
 		FA6FA9FC1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISSearchDropDownTableViewCell.m; path = Classes/View/ISSearchDropDownTableViewCell.m; sourceTree = "<group>"; };
-		FA6FA9FF1DE0E79800CEF665 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "Ingredient Selector/en.lproj/regions.plist"; sourceTree = SOURCE_ROOT; };
 		FA6FAA021DE0E8EB00CEF665 /* ISSearchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISSearchItem.h; path = Classes/Model/ISSearchItem.h; sourceTree = "<group>"; };
 		FA6FAA031DE0E8EB00CEF665 /* ISSearchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISSearchItem.m; path = Classes/Model/ISSearchItem.m; sourceTree = "<group>"; };
 		FA6FAA111DE3BD3700CEF665 /* ISProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISProduct.h; path = Classes/Model/ISProduct.h; sourceTree = "<group>"; };
@@ -66,9 +62,7 @@
 		FAAEA7281DDA4E24008EA91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAAEA72A1DDA4E24008EA91E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAAEA7481DDB8392008EA91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FABF915B1DDE2F2100C6FF62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "Ingredient Selector/en.lproj/confectionery-applications.plist"; sourceTree = SOURCE_ROOT; };
-		FABF915D1DDE2F2100C6FF62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "Ingredient Selector/en.lproj/confectionery-records.plist"; sourceTree = SOURCE_ROOT; };
-		FABF915F1DDE2F2100C6FF62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "Ingredient Selector/en.lproj/confectionery-value-propositions.plist"; sourceTree = SOURCE_ROOT; };
+		FAF2D4011DEFC8880095434B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "Ingredient Selector/en.lproj/confectionery.plist"; sourceTree = SOURCE_ROOT; };
 		FAF8264D1DE8B025002589D9 /* ISProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISProductsViewController.h; path = Classes/View/ISProductsViewController.h; sourceTree = "<group>"; };
 		FAF8264E1DE8B025002589D9 /* ISProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISProductsViewController.m; path = Classes/View/ISProductsViewController.m; sourceTree = "<group>"; };
 		FAF826531DE8F51D002589D9 /* ISProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISProductViewController.h; path = Classes/View/ISProductViewController.h; sourceTree = "<group>"; };
@@ -152,10 +146,7 @@
 		FAAEA7311DDA6744008EA91E /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				FABF915A1DDE2F2100C6FF62 /* confectionery-applications.plist */,
-				FABF915C1DDE2F2100C6FF62 /* confectionery-records.plist */,
-				FABF915E1DDE2F2100C6FF62 /* confectionery-value-propositions.plist */,
-				FA6FA9FE1DE0E79800CEF665 /* regions.plist */,
+				FAF2D4001DEFC8880095434B /* confectionery.plist */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -281,12 +272,9 @@
 				FAA03CFA1DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf in Resources */,
 				FAAEA7471DDB8388008EA91E /* Localizable.strings in Resources */,
 				FAAEA7291DDA4E24008EA91E /* LaunchScreen.storyboard in Resources */,
-				FABF91611DDE2F2100C6FF62 /* confectionery-records.plist in Resources */,
 				FAAEA7261DDA4E24008EA91E /* Assets.xcassets in Resources */,
-				FABF91601DDE2F2100C6FF62 /* confectionery-applications.plist in Resources */,
+				FAF2D4021DEFC8880095434B /* confectionery.plist in Resources */,
 				FAAEA7211DDA4E24008EA91E /* Main.storyboard in Resources */,
-				FA6FAA001DE0E79800CEF665 /* regions.plist in Resources */,
-				FABF91621DDE2F2100C6FF62 /* confectionery-value-propositions.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,14 +306,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FA6FA9FE1DE0E79800CEF665 /* regions.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA6FA9FF1DE0E79800CEF665 /* en */,
-			);
-			name = regions.plist;
-			sourceTree = "<group>";
-		};
 		FAAEA71F1DDA4E24008EA91E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -350,28 +330,12 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		FABF915A1DDE2F2100C6FF62 /* confectionery-applications.plist */ = {
+		FAF2D4001DEFC8880095434B /* confectionery.plist */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FABF915B1DDE2F2100C6FF62 /* en */,
+				FAF2D4011DEFC8880095434B /* en */,
 			);
-			name = "confectionery-applications.plist";
-			sourceTree = "<group>";
-		};
-		FABF915C1DDE2F2100C6FF62 /* confectionery-records.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FABF915D1DDE2F2100C6FF62 /* en */,
-			);
-			name = "confectionery-records.plist";
-			sourceTree = "<group>";
-		};
-		FABF915E1DDE2F2100C6FF62 /* confectionery-value-propositions.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FABF915F1DDE2F2100C6FF62 /* en */,
-			);
-			name = "confectionery-value-propositions.plist";
+			name = confectionery.plist;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

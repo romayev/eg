@@ -16,7 +16,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSMutableArray *products = [NSMutableArray array];
-        NSArray *data = [[NSArray alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"confectionery-records" ofType: @"plist"]];
+        NSArray *data = [[NSArray alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"confectionery" ofType: @"plist"]];
         for (NSDictionary *plist in data) {
             ISConfectionery *region = [[ISConfectionery alloc] initWithPlist: plist];
             [products addObject: region];

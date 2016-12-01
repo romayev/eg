@@ -15,11 +15,6 @@ import java.util.*;
  */
 public class ConfectioneryParser extends Parser {
     public void parse() throws IOException {
-        Set<String> valuePropositions = new TreeSet<String>();
-        valuePropositions.add("All");
-
-        Set<String> applications = new TreeSet<String>();
-        applications.add("All");
         ArrayList<Product> records = new ArrayList<Product>();
 
         File file = new File("csv/Confectionery.csv");
@@ -32,18 +27,6 @@ public class ConfectioneryParser extends Parser {
                 // FIXME: withIgnoreEmptyLines(true) isn't ignoring empty lines
                 if (record.get(0).isEmpty()) break;
 
-                // Value proposition
-                String value = record.get("Value Proposition");
-                if (!value.isEmpty()) {
-                    valuePropositions.add(value);
-                }
-
-                // Application
-                value = record.get("Application");
-                if (!value.isEmpty()) {
-                    applications.add(value);
-                }
-
                 // Records
                 records.add(new Confectionery(record));
             }
@@ -52,9 +35,7 @@ public class ConfectioneryParser extends Parser {
         }
 
         // Add "All"
-        savePlistArray(valuePropositions, packageName() + "-value-propositions.plist");
-        savePlistArray(applications, packageName() + "-applications.plist");
-        savePlistProducts(records, packageName() + "-records.plist");
+        savePlistProducts(records, packageName() + ".plist");
     }
 
     @Override
