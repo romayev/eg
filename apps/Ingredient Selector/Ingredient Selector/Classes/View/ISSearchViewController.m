@@ -13,9 +13,9 @@
 #import "ISProduct.h"
 
 @interface ISSearchViewController () <ISSearchTableViewCellDataSource, ISSearchTableViewCellDelegate, ISProductsViewControllerDelegate>
-@property (nonatomic, weak) IBOutlet UILabel *headerLabel;
+@property (strong, nonatomic) IBOutlet UILabel *headerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *productCountLabel;
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIButton *viewButton;
 @property (strong, readonly, nonatomic) NSArray *products;
 @property (strong, nonatomic) NSArray *criteria;

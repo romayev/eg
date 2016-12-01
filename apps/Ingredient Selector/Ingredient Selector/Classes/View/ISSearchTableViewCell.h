@@ -16,7 +16,7 @@
 
 
 @property (nonatomic, weak) IBOutlet id<ISSearchTableViewCellDataSource, ISSearchTableViewCellDelegate> delegate;
-@property (nonatomic, weak) NSArray *items;
+@property (strong, nonatomic) NSArray *items;
 
 - (void) update;
 

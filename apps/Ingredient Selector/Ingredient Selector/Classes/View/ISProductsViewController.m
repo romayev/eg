@@ -12,8 +12,8 @@
 
 
 @interface ISProductsCell : UITableViewCell
-@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
-@property (nonatomic, weak) IBOutlet UILabel *detailLabel;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *detailLabel;
 @end
 
 

@@ -13,7 +13,7 @@
 #define kNumberOfTools  11
 
 @interface ISIndexViewController () <UITableViewDelegate, UITableViewDataSource, ISSearchViewControllerDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 

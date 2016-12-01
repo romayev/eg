@@ -36,7 +36,13 @@
 "index.title.10" = "Thickener Module";
 
 // Confectionary
-"confectionary.search.instructions" = "<Some instructions or maybe total number of results?>";
 "confectionery.search.title.0" = "Region";
 "confectionery.search.title.1" = "Value Proposition";
 "confectionery.search.title.2" = "Application";
+
+// Product - Confectionery
+"product.notes" = "Other Relevant Information";
+"product.confectionery.selection-criteria" = "Selection Criteria";
+"product.confectionery.suggested-usage-level-in-formulations" = "Suggested Usage Level In Formulations";
+"product.confectionery.recommended-max-usage" = "Recommended Max Usage";
+"product.confectionery.label-declaration" = "Label Declaration";

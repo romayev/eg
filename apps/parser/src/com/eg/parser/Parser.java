@@ -1,15 +1,12 @@
 package com.eg.parser;
 
 import com.dd.plist.NSArray;
-import com.dd.plist.NSDictionary;
 import com.dd.plist.PropertyListParser;
 import com.eg.model.Product;
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.Collection;
 
 /**
  * Created by Alex Romayev on 11/16/16.

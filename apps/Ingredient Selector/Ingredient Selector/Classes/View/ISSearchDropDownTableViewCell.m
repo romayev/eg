@@ -11,7 +11,7 @@
 
 @interface ISSearchDropDownTableViewCell () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
