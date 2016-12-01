@@ -15,11 +15,12 @@
 "product-count" = "Products: ";
 
 // More
-"more.title" = "About";
+"more.title-about" = "About";
+"more.title-contact" = "& Contact";
 "more.desc" = "This tool will assist you in finding any matching products from the master database. If you need assistance, please contact us.";
-"more.questions.title" = "Questions?";
-"more.questions.desc" = "If you need assistance, please contact us:";
-"more.contact" = "Erhan Yildiz\nGlobal Applications Director\nerhan.yildiz@ingredion.com\n+1 908-685-5271";
+"more.contact.name" = "Erhan Yildiz";
+"more.contact.title" = "Global Applications Director";
+"more.contact.email-phone" = "nerhan.yildiz@ingredion.com\n+1 908-685-5271";
 
 // Index
 "index.title.0" = "Yogurt";

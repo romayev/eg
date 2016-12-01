@@ -379,7 +379,7 @@
         <scene sceneID="34Y-n1-Ybt">
             <objects>
                 <navigationController storyboardIdentifier="indexNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rQD-Ca-wpG" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="suN-kV-Uch">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="suN-kV-Uch">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -480,11 +480,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="lqu-IQ-Xt2"/>
                     <connections>
+                        <outlet property="contactNameLabel" destination="auw-iA-JAP" id="hbR-RM-xgA"/>
                         <outlet property="contactTextView" destination="Khc-Qg-EFV" id="c5d-zv-Y1R"/>
-                        <outlet property="moreDescLabel" destination="lhd-xh-byb" id="k7h-9s-YnB"/>
-                        <outlet property="moreQuestionsDescLabel" destination="auw-iA-JAP" id="YZ5-Wa-Grm"/>
-                        <outlet property="moreQuestionsTitleLabel" destination="tMp-Ib-Buh" id="ObM-vG-4mr"/>
-                        <outlet property="moreTitleLabel" destination="VI5-Mu-HFi" id="DSX-LN-PBi"/>
+                        <outlet property="contactTitleLabel" destination="EAf-d8-o8Y" id="o8l-lG-egp"/>
+                        <outlet property="descLabel" destination="lhd-xh-byb" id="PHl-hc-7ds"/>
+                        <outlet property="titleAboutLabel" destination="VI5-Mu-HFi" id="DIt-Kw-68c"/>
+                        <outlet property="titleContactLabel" destination="tMp-Ib-Buh" id="iKs-ns-a8z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wN6-b5-Ifm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -530,7 +531,7 @@
                 <navigationController storyboardIdentifier="moreNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mSV-z1-ArX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="0PG-0Y-O1N"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Az5-ks-B2B">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Az5-ks-B2B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -21,7 +21,11 @@
             ISConfectionery *region = [[ISConfectionery alloc] initWithPlist: plist];
             [products addObject: region];
         }
-        __products = [products copy];
+
+        NSSortDescriptor *prioritySort = [NSSortDescriptor sortDescriptorWithKey: @"priority" ascending: YES];
+        NSSortDescriptor *nameSort = [NSSortDescriptor sortDescriptorWithKey: @"name" ascending: YES];
+
+        __products = [products sortedArrayUsingDescriptors: @[prioritySort, nameSort]];
     });
     return __products;
 }

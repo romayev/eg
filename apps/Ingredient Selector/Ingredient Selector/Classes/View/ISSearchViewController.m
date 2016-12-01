@@ -54,7 +54,7 @@
 
 - (void) load {
     Class product = [self product];
-    _products = [product products];
+    _products = [product productsWithSearchCriteria: nil];
     _criteria = [product searchCriteria];
     _count = [_criteria count];
     _availableValues = [[NSMutableArray alloc] initWithCapacity: _count];

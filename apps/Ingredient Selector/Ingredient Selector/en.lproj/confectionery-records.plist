@@ -15,6 +15,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 55%</string>
 		<key>productName</key>
@@ -37,6 +39,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>15% - 20%</string>
 		<key>productName</key>
@@ -59,6 +63,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As needed for topical/dusting application</string>
 		<key>productName</key>
@@ -81,6 +87,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -103,6 +111,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -125,6 +135,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>15% - 20%</string>
 		<key>productName</key>
@@ -147,6 +159,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 55%</string>
 		<key>productName</key>
@@ -169,6 +183,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>98% - 99%</string>
 		<key>productName</key>
@@ -191,6 +207,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>98% - 99%</string>
 		<key>productName</key>
@@ -213,6 +231,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>98% - 99%</string>
 		<key>productName</key>
@@ -235,6 +255,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>98% - 99%</string>
 		<key>productName</key>
@@ -257,6 +279,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>98% - 99%</string>
 		<key>productName</key>
@@ -279,6 +303,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.010% - 0.016%</string>
 		<key>productName</key>
@@ -301,6 +327,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.010% - 0.016%</string>
 		<key>productName</key>
@@ -323,6 +351,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>30% - 55%</string>
 		<key>productName</key>
@@ -345,6 +375,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -367,6 +399,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -389,6 +423,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>30% - 55% </string>
 		<key>productName</key>
@@ -411,6 +447,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>7.5% - 15%</string>
 		<key>productName</key>
@@ -433,6 +471,8 @@
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>7.5% - 15%</string>
 		<key>productName</key>
@@ -459,6 +499,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>Up to 98%</string>
 		<key>productName</key>
@@ -485,6 +527,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>Up to 98%</string>
 		<key>productName</key>
@@ -511,6 +555,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>Up to 98%</string>
 		<key>productName</key>
@@ -533,6 +579,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>10% - 40%</string>
 		<key>productName</key>
@@ -555,6 +603,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -577,6 +627,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -601,6 +653,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 50%</string>
 		<key>productName</key>
@@ -625,6 +679,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 50%</string>
 		<key>productName</key>
@@ -649,6 +705,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 50%</string>
 		<key>productName</key>
@@ -671,6 +729,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -693,6 +753,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -717,6 +779,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As desired</string>
 		<key>productName</key>
@@ -741,6 +805,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As desired</string>
 		<key>productName</key>
@@ -763,6 +829,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -785,6 +853,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -809,6 +879,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>40% - 45%</string>
 		<key>productName</key>
@@ -833,6 +905,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>40% - 45%</string>
 		<key>productName</key>
@@ -855,6 +929,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>40% - 45%</string>
 		<key>productName</key>
@@ -877,6 +953,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -899,6 +977,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -921,6 +1001,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>100% in 70% solution</string>
 		<key>productName</key>
@@ -943,6 +1025,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>100% in 70% solution</string>
 		<key>productName</key>
@@ -965,6 +1049,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>100% in 70% solution</string>
 		<key>productName</key>
@@ -987,6 +1073,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As desired</string>
 		<key>productName</key>
@@ -1009,6 +1097,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As desired</string>
 		<key>productName</key>
@@ -1031,6 +1121,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As desired</string>
 		<key>productName</key>
@@ -1053,6 +1145,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -1075,6 +1169,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -1097,6 +1193,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 50%</string>
 		<key>productName</key>
@@ -1119,6 +1217,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>10% - 40%</string>
 		<key>productName</key>
@@ -1146,6 +1246,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>Up to 98%</string>
 		<key>productName</key>
@@ -1168,6 +1270,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 50%</string>
 		<key>productName</key>
@@ -1190,6 +1294,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 50%</string>
 		<key>productName</key>
@@ -1214,6 +1320,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 50%</string>
 		<key>productName</key>
@@ -1238,6 +1346,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As desired</string>
 		<key>productName</key>
@@ -1262,6 +1372,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As desired</string>
 		<key>productName</key>
@@ -1284,6 +1396,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 55%</string>
 		<key>productName</key>
@@ -1306,6 +1420,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 55%</string>
 		<key>productName</key>
@@ -1328,6 +1444,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As needed for topical/dusting application</string>
 		<key>productName</key>
@@ -1350,6 +1468,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As needed for topical/dusting application</string>
 		<key>productName</key>
@@ -1372,6 +1492,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 55%</string>
 		<key>productName</key>
@@ -1394,6 +1516,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>15% - 20%</string>
 		<key>productName</key>
@@ -1416,6 +1540,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -1438,6 +1564,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -1460,6 +1588,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>98% - 99%</string>
 		<key>productName</key>
@@ -1482,6 +1612,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>98% - 99%</string>
 		<key>productName</key>
@@ -1504,6 +1636,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>98% - 99%</string>
 		<key>productName</key>
@@ -1526,6 +1660,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.010% - 0.016%</string>
 		<key>productName</key>
@@ -1548,6 +1684,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.010% - 0.016%</string>
 		<key>productName</key>
@@ -1570,6 +1708,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>10% - 15%</string>
 		<key>productName</key>
@@ -1592,6 +1732,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>30% - 55%</string>
 		<key>productName</key>
@@ -1614,6 +1756,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>30% - 55%</string>
 		<key>productName</key>
@@ -1636,6 +1780,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>7.5% - 15%</string>
 		<key>productName</key>
@@ -1658,6 +1804,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -1680,6 +1828,8 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -1706,6 +1856,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>Up to 98%</string>
 		<key>productName</key>
@@ -1728,6 +1880,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 60%</string>
 		<key>productName</key>
@@ -1750,6 +1904,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -1772,6 +1928,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -1794,6 +1952,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>10% - 15%</string>
 		<key>productName</key>
@@ -1818,6 +1978,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 50%</string>
 		<key>productName</key>
@@ -1840,6 +2002,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 50%</string>
 		<key>productName</key>
@@ -1862,6 +2026,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 60%</string>
 		<key>productName</key>
@@ -1884,6 +2050,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -1906,6 +2074,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -1930,6 +2100,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As desired</string>
 		<key>productName</key>
@@ -1952,6 +2124,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -1974,6 +2148,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -1996,6 +2172,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 60%</string>
 		<key>productName</key>
@@ -2018,6 +2196,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2040,6 +2220,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2062,6 +2244,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As desired</string>
 		<key>productName</key>
@@ -2084,6 +2268,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As desired</string>
 		<key>productName</key>
@@ -2106,6 +2292,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2128,6 +2316,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2150,6 +2340,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.05% - 0.06%</string>
 		<key>productName</key>
@@ -2172,6 +2364,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>98% - 99%</string>
 		<key>productName</key>
@@ -2194,6 +2388,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.010% - 0.016%</string>
 		<key>productName</key>
@@ -2216,6 +2412,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.010% - 0.016%</string>
 		<key>productName</key>
@@ -2238,6 +2436,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.08% - 0.40%</string>
 		<key>productName</key>
@@ -2264,6 +2464,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>Up to 98%</string>
 		<key>productName</key>
@@ -2286,6 +2488,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2308,6 +2512,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2330,6 +2536,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.03% - 0.09%</string>
 		<key>productName</key>
@@ -2354,6 +2562,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>45% - 50%</string>
 		<key>productName</key>
@@ -2376,6 +2586,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2398,6 +2610,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2420,6 +2634,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.03% - 0.09%</string>
 		<key>productName</key>
@@ -2444,6 +2660,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>As desired</string>
 		<key>productName</key>
@@ -2466,6 +2684,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2488,6 +2708,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2510,6 +2732,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.03% - 0.09%</string>
 		<key>productName</key>
@@ -2532,6 +2756,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2554,6 +2780,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2576,6 +2804,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.03% - 0.09%</string>
 		<key>productName</key>
@@ -2598,6 +2828,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>100% in 70% solution</string>
 		<key>productName</key>
@@ -2620,6 +2852,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2642,6 +2876,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.01% - 0.06%</string>
 		<key>productName</key>
@@ -2664,6 +2900,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.03% - 0.09%</string>
 		<key>productName</key>
@@ -2686,6 +2924,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>5% - 8%</string>
 		<key>productName</key>
@@ -2708,6 +2948,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>5% - 8%</string>
 		<key>productName</key>
@@ -2730,6 +2972,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>5% - 8%
 </string>
@@ -2753,6 +2997,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>2% - 5%</string>
 		<key>productName</key>
@@ -2775,6 +3021,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>2% - 5%</string>
 		<key>productName</key>
@@ -2797,6 +3045,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>2% - 5%</string>
 		<key>productName</key>
@@ -2819,6 +3069,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>2% - 5%</string>
 		<key>productName</key>
@@ -2841,6 +3093,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string><![CDATA[US & Canada]]></string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>2% - 14%</string>
 		<key>productName</key>
@@ -2863,6 +3117,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.2%</string>
 		<key>productName</key>
@@ -2885,6 +3141,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>1.5% - 2.5%</string>
 		<key>productName</key>
@@ -2907,6 +3165,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>11% - 14%</string>
 		<key>productName</key>
@@ -2929,6 +3189,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>2% - 14%</string>
 		<key>productName</key>
@@ -2951,6 +3213,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>3% - 6%</string>
 		<key>productName</key>
@@ -2973,6 +3237,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>3% - 6%</string>
 		<key>productName</key>
@@ -2995,6 +3261,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>5% - 8%</string>
 		<key>productName</key>
@@ -3017,6 +3285,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>5% - 8%</string>
 		<key>productName</key>
@@ -3039,6 +3309,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>5% - 8%
 </string>
@@ -3062,6 +3334,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>2% - 14%</string>
 		<key>productName</key>
@@ -3084,6 +3358,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>13%</string>
 		<key>productName</key>
@@ -3106,6 +3382,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>2% - 14%</string>
 		<key>productName</key>
@@ -3128,6 +3406,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>2%</string>
 		<key>productName</key>
@@ -3150,6 +3430,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>4%</string>
 		<key>productName</key>
@@ -3172,6 +3454,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>5% - 8%</string>
 		<key>productName</key>
@@ -3194,6 +3478,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>5% - 8%</string>
 		<key>productName</key>
@@ -3216,6 +3502,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>SA</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>3%</string>
 		<key>productName</key>
@@ -3238,6 +3526,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>2%</string>
 		<key>productName</key>
@@ -3260,6 +3550,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>APAC</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>2%</string>
 		<key>productName</key>
@@ -3282,6 +3574,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.1% - 1%</string>
 		<key>productName</key>
@@ -3304,6 +3598,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>0.1% - 1%</string>
 		<key>productName</key>
@@ -3326,6 +3622,8 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gelatin replacement</string>
 		<key>region</key>
 		<string>MEX</string>
+		<key>priority</key>
+		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
 		<string>1% - 2%</string>
 		<key>productName</key>

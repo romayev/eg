@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) NSString *region;
 @property (nonatomic, readonly) NSString *valueProposition;
 @property (nonatomic, readonly) NSString *application;
+@property (nonatomic, readonly) NSNumber *priority;
 
 - (id) initWithPlist: (NSDictionary *) plist;
 

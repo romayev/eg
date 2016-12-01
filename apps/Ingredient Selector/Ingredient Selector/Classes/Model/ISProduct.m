@@ -18,8 +18,23 @@
         _region = plist[@"region"];
         _valueProposition = plist[@"valueProposition"];
         _application = plist[@"application"];
+        _priority = plist[@"priority"];
     }
     return self;
+}
+
+- (BOOL) isEqual: (id) object {
+    if (self == object) {
+        return YES;
+    }
+    if (![object isKindOfClass: [ISProduct class]]) {
+        return NO;
+    }
+    return [self.name isEqualToString: ((ISProduct *) object).name];
+}
+
+- (NSUInteger) hash {
+    return [self.name hash];
 }
 
 + (NSArray *) products {    
@@ -58,20 +73,25 @@
 
 + (NSArray *) productsWithSearchCriteria: (NSDictionary *) searchCriteria {
     NSArray *products = [self products];
-    if (searchCriteria == nil) return products;
-
-    NSMutableArray *predicates = [NSMutableArray array];
-    for (NSString *key in [searchCriteria allKeys]) {
-        NSArray *criteria = searchCriteria[key];
-        if (![self isAll: criteria]) {
-            NSPredicate *p = [NSPredicate predicateWithFormat: @"%K IN %@", key, criteria];
-            [predicates addObject: p];
+    if (searchCriteria != nil) {
+        NSMutableArray *predicates = [NSMutableArray array];
+        for (NSString *key in [searchCriteria allKeys]) {
+            NSArray *criteria = searchCriteria[key];
+            if (![self isAll: criteria]) {
+                NSPredicate *p = [NSPredicate predicateWithFormat: @"%K IN %@", key, criteria];
+                [predicates addObject: p];
+            }
         }
-    }
-    if ([predicates count] == 0) return products;
+        if ([predicates count] == 0) return products;
 
-    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates: predicates];
-    return [products filteredArrayUsingPredicate: predicate];
+        NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates: predicates];
+        products = [products filteredArrayUsingPredicate: predicate];
+    }
+
+    NSSet *unique = [NSSet setWithArray: products];
+    NSSortDescriptor *prioritySort = [NSSortDescriptor sortDescriptorWithKey: @"priority" ascending: YES];
+    NSSortDescriptor *nameSort = [NSSortDescriptor sortDescriptorWithKey: @"name" ascending: YES];
+    return [[unique allObjects] sortedArrayUsingDescriptors: @[prioritySort, nameSort]];
 }
 
 + (BOOL) isAll: (NSArray *) criteria {

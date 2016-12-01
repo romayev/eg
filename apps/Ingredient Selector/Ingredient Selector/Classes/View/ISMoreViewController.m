@@ -9,10 +9,11 @@
 #import "ISMoreViewController.h"
 
 @interface ISMoreViewController ()
-@property (strong, nonatomic) IBOutlet UILabel *moreTitleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *moreDescLabel;
-@property (strong, nonatomic) IBOutlet UILabel *moreQuestionsTitleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *moreQuestionsDescLabel;
+@property (strong, nonatomic) IBOutlet UILabel *titleAboutLabel;
+@property (strong, nonatomic) IBOutlet UILabel *titleContactLabel;
+@property (strong, nonatomic) IBOutlet UILabel *descLabel;
+@property (strong, nonatomic) IBOutlet UILabel *contactNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *contactTitleLabel;
 @property (strong, nonatomic) IBOutlet UITextView *contactTextView;
 @end
 
@@ -21,11 +22,12 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = NSLocalizedString(@"ingredion", nil);
-//    _moreTitleLabel.text = NSLocalizedString(@"more.title", nil);
-    _moreDescLabel.text = NSLocalizedString(@"more.desc", nil);
-//    _moreQuestionsTitleLabel.text = NSLocalizedString(@"more.questions.title", nil);
-//    _moreQuestionsDescLabel.text = NSLocalizedString(@"more.questions.desc", nil);
-//    _contactTextView.text = NSLocalizedString(@"more.contact", nil);
+    _titleAboutLabel.text = NSLocalizedString(@"more.title-about", nil);
+    _titleContactLabel.text = NSLocalizedString(@"more.title-contact", nil);
+    _descLabel.text = NSLocalizedString(@"more.desc", nil);
+    _contactNameLabel.text = NSLocalizedString(@"more.contact.name", nil);
+    _contactTitleLabel.text = NSLocalizedString(@"more.contact.title", nil);
+    _contactTextView.text = NSLocalizedString(@"more.contact.email-phone", nil);
 }
 
 @end

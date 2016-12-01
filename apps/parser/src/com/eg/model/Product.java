@@ -16,6 +16,7 @@ public class Product {
     private String valueProposition;
     private String application;
     private String region;
+    private String priority;
 
     Product(CSVRecord record) {
         this.productName = record.get("Product Name");
@@ -23,6 +24,7 @@ public class Product {
         this.productNotes = record.get("Additional Key Features/Benefits/Notes");
         this.valueProposition = record.get("Value Proposition");
         this.application = record.get("Application");
+        this.priority = record.get("Priority");
         String region;
         if (!record.get("APAC").isEmpty()) {
             region = "APAC";
@@ -58,6 +60,7 @@ public class Product {
         map.put("valueProposition", valueProposition);
         map.put("application", application);
         map.put("region", region);
+        map.put("priority", priority);
         return map;
     }
 }
