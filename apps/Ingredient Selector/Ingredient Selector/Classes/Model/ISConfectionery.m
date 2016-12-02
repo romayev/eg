@@ -40,6 +40,21 @@
         _suggestedUsageLevelInFormulations = plist[@"suggestedUsageLevelInFormulations"];
         _recommendedMaxUsage = plist[@"recommendedMaxUsage"];
         _labelDeclaration = plist[@"labelDeclaration"];
+        NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary: self.attributes];
+
+        if (_selectionCriteria.length > 0) {
+            attributes[@"selectionCriteria"] = _selectionCriteria;
+        }
+        if (_suggestedUsageLevelInFormulations.length > 0) {
+            attributes[@"suggestedUsageLevelInFormulations"] = _suggestedUsageLevelInFormulations;
+        }
+        if (_recommendedMaxUsage.length > 0) {
+            attributes[@"recommendedMaxUsage"] = _recommendedMaxUsage;
+        }
+        if (_labelDeclaration.length > 0) {
+            attributes[@"labelDeclaration"] = _labelDeclaration;
+        }
+        _attributes = [attributes copy];
     }
     return self;
 }

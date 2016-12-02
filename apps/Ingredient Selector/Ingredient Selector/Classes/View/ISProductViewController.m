@@ -10,65 +10,81 @@
 #import "ISConfectionery.h"
 
 
-@interface ISProductViewController ()
-@property (strong, nonatomic) IBOutlet UILabel *productNameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *productDetailLabel;
-@property (strong, nonatomic) IBOutlet UILabel *productNotesTitleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *productNotesLabel;
-@property (strong, nonatomic) IBOutlet UILabel *selectionCriteriaTitleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *selectionCriteriaLabel;
-@property (strong, nonatomic) IBOutlet UILabel *suggestedUsageLevelInFormulationsTitleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *suggestedUsageLevelInFormulationsLabel;
-@property (strong, nonatomic) IBOutlet UILabel *recommendedMaxUsageTitleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *recommendedMaxUsageLabel;
-@property (strong, nonatomic) IBOutlet UILabel *labelDeclarationTitleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *labelDeclarationLabel;
-@property (strong, nonatomic) IBOutlet UIStackView *mainStack;
-@property (strong, nonatomic) IBOutlet UIStackView *productNotesStack;
-@property (strong, nonatomic) IBOutlet UIStackView *selectionCriteriaStack;
-@property (strong, nonatomic) IBOutlet UIStackView *suggestedUsageLevelInFormulationsStack;
-@property (strong, nonatomic) IBOutlet UIStackView *recommendedMaxUsageStack;
-@property (strong, nonatomic) IBOutlet UIStackView *labelDeclarationStack;
+@interface ISProductAttributeCell :  UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *detailLabel;
+@end
+
+
+@interface ISProductViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *attributes;
 @end
 
 
 @implementation ISProductViewController
 
+- (void) viewDidLoad {
+    [super viewDidLoad];
+
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+    _tableView.estimatedRowHeight = 100;
+    _tableView.alwaysBounceVertical = NO;
+
+    NSArray *allAttributes = @[@"productNotes", @"selectionCriteria", @"recommendedMaxUsage", @"labelDeclaration"];
+    NSMutableArray *attributes = [NSMutableArray arrayWithCapacity: [allAttributes count]];
+
+    NSDictionary *attributesDict = _product.attributes;
+    for (NSString *key in allAttributes) {
+        NSString *value = attributesDict[key];
+        if (value.length > 0) {
+            [attributes addObject: key];
+        }
+    }
+    _attributes = [attributes copy];
+    NSLog(@"a: %@", _attributes);
+}
+
 - (void) viewWillAppear: (BOOL) animated {
     [super viewWillAppear: animated];
     self.title = _product.name;
-
-    // Title labels
-    _productNotesTitleLabel.text = NSLocalizedString(@"product.notes", nil);
-    _selectionCriteriaTitleLabel.text = NSLocalizedString(@"product.confectionery.selection-criteria", nil);
-    _suggestedUsageLevelInFormulationsTitleLabel.text = NSLocalizedString(@"product.confectionery.suggested-usage-level-in-formulations", nil);
-    _recommendedMaxUsageLabel.text = NSLocalizedString(@"product.confectionery.recommended-max-usage", nil);
-    _labelDeclarationTitleLabel.text = NSLocalizedString(@"product.confectionery.label-declaration", nil);
-
-    _productNameLabel.text = _product.name;
-    _productDetailLabel.text = _product.detail;
-    _productNotesLabel.text = _product.notes;
-    ISConfectionery *c = (ISConfectionery *) _product;
-    _selectionCriteriaLabel.text = c.selectionCriteria;
-    _suggestedUsageLevelInFormulationsLabel.text = c.suggestedUsageLevelInFormulations;
-    _recommendedMaxUsageLabel.text = c.recommendedMaxUsage;
-    _labelDeclarationLabel.text = c.labelDeclaration;
-
-    if (_product.notes.length == 0) {
-        [_mainStack removeArrangedSubview: _productNotesStack];
-    }
-    if (c.selectionCriteria.length == 0) {
-        [_mainStack removeArrangedSubview: _selectionCriteriaStack];
-    }
-    if (c.suggestedUsageLevelInFormulations.length == 0) {
-        [_mainStack removeArrangedSubview: _suggestedUsageLevelInFormulationsStack];
-    }
-    if (c.recommendedMaxUsage.length == 0) {
-        [_mainStack removeArrangedSubview: _recommendedMaxUsageStack];
-    }
-    if (c.labelDeclaration.length == 0) {
-        [_mainStack removeArrangedSubview: _labelDeclarationStack];
-    }
 }
 
+- (void) viewDidAppear: (BOOL) animated {
+    [super viewDidAppear: animated];
+    [_tableView reloadData];
+}
+
+
+#pragma mark -
+#pragma mark UITableViewDelegate and DataSource
+
+- (NSInteger) tableView: (UITableView *) tableView numberOfRowsInSection: (NSInteger) section {
+    return [_attributes count] + 1;
+}
+
+- (UITableViewCell *) tableView: (UITableView *) tableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {
+    static NSString *__nameCell = @"ProductNameCell";
+    static NSString *__attributeCell = @"ProductAttributeCell";
+    NSInteger row = [indexPath row];
+    ISProductAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier: row == 0 ? __nameCell : __attributeCell forIndexPath: indexPath];
+
+    if (row == 0) {
+        cell.titleLabel.text = _product.name;
+        cell.detailLabel.text = _product.detail;
+    } else {
+        NSString *attribute = _attributes[row - 1];
+        NSString *key = [@"product.attribute." stringByAppendingString: attribute];
+        cell.titleLabel.text = NSLocalizedString(key, nil);
+        cell.detailLabel.text = [_product.attributes objectForKey: attribute];
+
+        NSLog(@"Row: %zi attribute: %@ : detail: %@", row, attribute, [_product.attributes objectForKey: attribute]);
+    }
+    return cell;
+}
+
+@end
+
+
+@implementation ISProductAttributeCell
 @end

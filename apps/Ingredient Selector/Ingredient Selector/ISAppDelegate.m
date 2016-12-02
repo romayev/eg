@@ -19,8 +19,9 @@
 - (BOOL) application: (UIApplication *) application didFinishLaunchingWithOptions: (NSDictionary *) launchOptions {
     // Setup appearance
     UIColor *greenColor = [UIColor colorWithRed: 0.42 green: 0.70 blue: 0.24 alpha: 1.0];
-    //UIColor *darkGreyColor = [UIColor colorWithRed: 0.20 green: 0.20 blue: 0.20 alpha: 1.0];
-    [_window setTintColor: greenColor];
+    //UIColor *pinkColor = [UIColor colorWithRed: 0.71 green: 0.12 blue: 0.46 alpha: 1.0];
+    UIColor *darkGrayColor = [UIColor colorWithRed: 0.33 green: 0.33 blue: 0.33 alpha: 1.0];
+    //  [_window setTintColor: darkGrayColor];
     UITabBar *tabBar = [UITabBar appearance];
     [tabBar setTintColor: [UIColor whiteColor]];
     [tabBar setBarTintColor: [UIColor blackColor]];
@@ -28,6 +29,7 @@
     [navigationBar setTintColor: [UIColor whiteColor]];
     [navigationBar setBarTintColor: greenColor];
 
+    [[UIToolbar appearance] setBarTintColor: darkGrayColor];
     //[navigationBar setTranslucent: NO];
     [navigationBar setTitleTextAttributes: @{
                                              NSForegroundColorAttributeName: [UIColor whiteColor],

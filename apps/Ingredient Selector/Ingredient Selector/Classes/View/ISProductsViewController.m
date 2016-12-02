@@ -18,6 +18,7 @@
 
 
 @interface ISProductsViewController () <UITableViewDelegate, UITableViewDataSource, ISProductsViewControllerDelegate>
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, readonly) NSArray *products;
 @end
@@ -28,6 +29,8 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"products", nil);
+    [_segmentedControl setTitle: NSLocalizedString(@"top", nil) forSegmentAtIndex: 0];
+    [_segmentedControl setTitle: NSLocalizedString(@"All", nil) forSegmentAtIndex: 1];
     _products = [_delegate products];
 }
 

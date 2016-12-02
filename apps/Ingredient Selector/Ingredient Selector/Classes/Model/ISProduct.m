@@ -19,6 +19,7 @@
         _valueProposition = plist[@"valueProposition"];
         _application = plist[@"application"];
         _priority = plist[@"priority"];
+        _attributes = @{ @"productNotes" : _notes };
     }
     return self;
 }
@@ -35,6 +36,13 @@
 
 - (NSUInteger) hash {
     return [self.name hash];
+}
+
+- (NSInteger) attibuteCount {
+    NSInteger count = 1; // name
+    if (_detail.length != 0) count++;
+    if (_notes.length != 0) count++;
+    return count;
 }
 
 + (NSArray *) products {    

@@ -35,14 +35,19 @@
 "index.title.9" = "Tomato-Based Sauces";
 "index.title.10" = "Thickener Module";
 
+// Search
+"top" = "Top";
+"all" = "All";
+
+
 // Confectionary
 "confectionery.search.title.0" = "Region";
 "confectionery.search.title.1" = "Value Proposition";
 "confectionery.search.title.2" = "Application";
 
 // Product - Confectionery
-"product.notes" = "Other Relevant Information";
-"product.confectionery.selection-criteria" = "Selection Criteria";
-"product.confectionery.suggested-usage-level-in-formulations" = "Suggested Usage Level In Formulations";
-"product.confectionery.recommended-max-usage" = "Recommended Max Usage";
-"product.confectionery.label-declaration" = "Label Declaration";
+"product.attribute.productNotes" = "Other Relevant Information";
+"product.attribute.selectionCriteria" = "Selection Criteria";
+"product.attribute.suggestedUsageLevelInFormulations" = "Suggested Usage Level In Formulations";
+"product.attribute.recommendedMaxUsage" = "Recommended Max Usage";
+"product.attribute.labelDeclaration" = "Label Declaration";

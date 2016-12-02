@@ -12,15 +12,18 @@
 #define kAll @"All"
 
 
-@interface ISProduct : NSObject
+@interface ISProduct : NSObject {
+    NSDictionary *_attributes;
+}
 
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *detail;
-@property (nonatomic, readonly) NSString *notes;
-@property (nonatomic, readonly) NSString *region;
-@property (nonatomic, readonly) NSString *valueProposition;
-@property (nonatomic, readonly) NSString *application;
-@property (nonatomic, readonly) NSNumber *priority;
+@property (readonly, nonatomic) NSString *name;
+@property (readonly, nonatomic) NSString *detail;
+@property (readonly, nonatomic) NSString *notes;
+@property (readonly, nonatomic) NSString *region;
+@property (readonly, nonatomic) NSString *valueProposition;
+@property (readonly, nonatomic) NSString *application;
+@property (readonly, nonatomic) NSNumber *priority;
+@property (readonly, nonatomic) NSDictionary *attributes;
 
 - (id) initWithPlist: (NSDictionary *) plist;
 
