@@ -29,13 +29,10 @@
 
 + (NSArray *) products;
 + (NSArray *) searchCriteria;
++ (BOOL) usesPriority;
 
 + (NSArray *) productsWithSearchCriteria: (NSDictionary *) searchCriteria;
 + (NSArray *) uniquePropertyValuesForProperty: (NSString *) property withSearchCriteria: (NSDictionary *) searchCriteria;
-
-+ (NSArray *) regions;
-+ (NSArray *) applications;
-+ (NSArray *) valuePropositions;
 
 + (BOOL) isAll: (NSArray *) criteria;
 

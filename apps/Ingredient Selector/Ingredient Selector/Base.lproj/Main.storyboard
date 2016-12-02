@@ -74,7 +74,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YLX-pR-gtg">
-                                <rect key="frame" x="0.0" y="141" width="375" height="526"/>
+                                <rect key="frame" x="0.0" y="141" width="375" height="482"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="1GH-ca-NYN" detailTextLabel="Oxh-wW-Qyz" style="IBUITableViewCellStyleValue1" id="Tey-2w-SIa">
@@ -154,15 +154,30 @@
                                     <outlet property="delegate" destination="ecB-w6-t8h" id="7qi-tD-rHY"/>
                                 </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLN-PJ-YSe">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="7fJ-Ns-tbp"/>
+                                    <barButtonItem style="plain" id="xYG-BL-Fco">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="0hb-iP-i07">
+                                            <rect key="frame" x="337" y="11" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="y6p-fl-ibn" firstAttribute="top" secondItem="YLX-pR-gtg" secondAttribute="bottom" id="19b-XG-70w"/>
+                            <constraint firstAttribute="trailing" secondItem="CLN-PJ-YSe" secondAttribute="trailing" id="21t-kh-1CL"/>
+                            <constraint firstItem="CLN-PJ-YSe" firstAttribute="leading" secondItem="SZU-0L-jYF" secondAttribute="leading" id="2JO-w8-rYM"/>
                             <constraint firstItem="YLX-pR-gtg" firstAttribute="leading" secondItem="SZU-0L-jYF" secondAttribute="leading" id="3W2-Hr-NDH"/>
                             <constraint firstItem="3mw-b3-6ee" firstAttribute="top" secondItem="8Qc-s7-Zkp" secondAttribute="bottom" id="8x0-RR-gEe"/>
                             <constraint firstAttribute="trailing" secondItem="3mw-b3-6ee" secondAttribute="trailing" id="Ca1-Zi-Egg"/>
                             <constraint firstItem="8Qc-s7-Zkp" firstAttribute="top" secondItem="SZU-0L-jYF" secondAttribute="top" id="FdG-vl-hiZ"/>
                             <constraint firstItem="3mw-b3-6ee" firstAttribute="leading" secondItem="SZU-0L-jYF" secondAttribute="leading" id="Gxy-df-bYI"/>
+                            <constraint firstItem="y6p-fl-ibn" firstAttribute="top" secondItem="CLN-PJ-YSe" secondAttribute="bottom" id="RXX-2o-2j7"/>
+                            <constraint firstItem="CLN-PJ-YSe" firstAttribute="top" secondItem="YLX-pR-gtg" secondAttribute="bottom" id="f3x-2k-Sfe"/>
                             <constraint firstItem="YLX-pR-gtg" firstAttribute="top" secondItem="3mw-b3-6ee" secondAttribute="bottom" id="rne-Lw-oJe"/>
                             <constraint firstAttribute="trailing" secondItem="YLX-pR-gtg" secondAttribute="trailing" id="uIA-OP-oej"/>
                             <constraint firstAttribute="trailing" secondItem="8Qc-s7-Zkp" secondAttribute="trailing" id="uuU-fr-xgo"/>
@@ -253,6 +268,7 @@
                                         </segmentedControl>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="S2a-ma-XwO"/>
+                                    <barButtonItem systemItem="action" id="WHa-GX-OUj"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -270,7 +286,9 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="segmentedControl" destination="jn8-1W-xoB" id="z52-hj-26Y"/>
+                        <outlet property="segmentedControlItem" destination="bd2-Hw-UWR" id="vRM-Ls-fV8"/>
                         <outlet property="tableView" destination="kFn-Bj-ATd" id="4rX-tf-gcM"/>
+                        <outlet property="toolbar" destination="OWF-tV-Ino" id="4Rb-93-wpL"/>
                         <segue destination="m0Y-Vf-pjZ" kind="show" identifier="product" id="VSw-jl-jk7"/>
                     </connections>
                 </viewController>

@@ -17,10 +17,12 @@
 @end
 
 
-@interface ISProductsViewController () <UITableViewDelegate, UITableViewDataSource, ISProductsViewControllerDelegate>
+@interface ISProductsViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *segmentedControlItem;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, readonly) NSArray *products;
+@property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
 @end
 
 
@@ -32,6 +34,12 @@
     [_segmentedControl setTitle: NSLocalizedString(@"top", nil) forSegmentAtIndex: 0];
     [_segmentedControl setTitle: NSLocalizedString(@"All", nil) forSegmentAtIndex: 1];
     _products = [_delegate products];
+
+    if (![_delegate usePriority]) {
+        NSMutableArray *items = [NSMutableArray arrayWithArray: _toolbar.items];
+        [items removeObject: _segmentedControlItem];
+        [_toolbar setItems: items];
+    }
 }
 
 - (void) viewDidAppear: (BOOL) animated {

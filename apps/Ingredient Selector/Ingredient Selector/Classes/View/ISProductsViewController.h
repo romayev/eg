@@ -10,6 +10,7 @@
 
 @protocol ISProductsViewControllerDelegate <NSObject>
 - (NSArray *) products;
+- (BOOL) usePriority;
 @end
 
 @interface ISProductsViewController : ISViewController

@@ -17,10 +17,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *productCountLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIButton *viewButton;
-@property (strong, readonly, nonatomic) NSArray *products;
 @property (strong, nonatomic) NSArray *criteria;
 @property (strong, nonatomic) NSMutableArray *availableValues;
 @property (strong, nonatomic) NSMutableArray *selectedValues;
+
+// ISProductsViewControllerDelegate
+@property (strong, readonly, nonatomic) NSArray *products;
+@property (readonly, nonatomic) BOOL usePriority;
 @end
 
 
@@ -55,6 +58,7 @@
 - (void) load {
     Class product = [self product];
     _products = [product productsWithSearchCriteria: nil];
+    _usePriority = [product usesPriority];
     _criteria = [product searchCriteria];
     _count = [_criteria count];
     _availableValues = [[NSMutableArray alloc] initWithCapacity: _count];

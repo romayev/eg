@@ -53,16 +53,10 @@
     return nil;
 }
 
-+ (NSArray *) regions {
-    return [self uniqueValuesWithProperty: @"region" products: [self products]];
-}
-
-+ (NSArray *) valuePropositions {
-    return [self uniqueValuesWithProperty: @"valueProposition" products: [self products]];
-}
-
-+ (NSArray *) applications {
-    return [self uniqueValuesWithProperty: @"application" products: [self products]];
++ (BOOL) usesPriority {
+    NSString *keypath = [NSString stringWithFormat: @"@distinctUnionOfObjects.%@", @"priority"];
+    NSArray *unique = [[self products] valueForKeyPath: keypath];
+    return [unique count] > 1; // empty
 }
 
 + (NSArray *) uniquePropertyValuesForProperty: (NSString *) property withSearchCriteria: (NSDictionary *) searchCriteria {
