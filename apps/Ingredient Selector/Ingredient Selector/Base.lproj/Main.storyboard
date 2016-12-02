@@ -162,6 +162,11 @@
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="0hb-iP-i07">
                                             <rect key="frame" x="337" y="11" width="22" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <segue destination="bc5-o6-fUt" kind="popoverPresentation" identifier="info" popoverAnchorView="0hb-iP-i07" id="d8V-Uy-Sca">
+                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                </segue>
+                                            </connections>
                                         </button>
                                     </barButtonItem>
                                 </items>
@@ -389,7 +394,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBg-pr-J6R" userLabel="Content Label">
-                                                    <rect key="frame" x="16" y="62" width="343" height="18"/>
+                                                    <rect key="frame" x="16" y="55" width="343" height="25"/>
                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                                     <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -403,7 +408,7 @@
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="rBg-pr-J6R" firstAttribute="top" secondItem="jDT-9Z-vlt" secondAttribute="bottom" constant="7" id="HMW-Ad-MYz"/>
+                                                <constraint firstItem="rBg-pr-J6R" firstAttribute="top" secondItem="jDT-9Z-vlt" secondAttribute="bottom" id="HMW-Ad-MYz"/>
                                                 <constraint firstAttribute="trailing" secondItem="jDT-9Z-vlt" secondAttribute="trailing" constant="16" id="JJ2-t9-V1a"/>
                                                 <constraint firstItem="jDT-9Z-vlt" firstAttribute="top" secondItem="H0y-vQ-bcU" secondAttribute="bottom" constant="5" id="LDf-iR-Zkf"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0S8-3x-Lex" secondAttribute="trailing" constant="4" id="QP8-bv-HLZ"/>
@@ -659,6 +664,32 @@
             </objects>
             <point key="canvasLocation" x="660" y="1670.9145427286358"/>
         </scene>
+        <!--Information-->
+        <scene sceneID="QvH-w6-QtN">
+            <objects>
+                <viewController id="7Zl-oJ-fXv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e9x-Dt-njl"/>
+                        <viewControllerLayoutGuide type="bottom" id="JVy-et-XY7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m4O-oQ-mUh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Information" id="QPO-WI-COR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Peb-z7-u0x">
+                            <connections>
+                                <segue destination="iLY-3h-7JU" kind="unwind" unwindAction="dismiss:" id="6e1-zI-iLd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMz-Nx-1j5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iLY-3h-7JU" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2607.1999999999998" y="1670.9145427286358"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6Yn-uZ-79e">
             <objects>
@@ -710,6 +741,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4R-mG-FxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-279.19999999999999" y="1670.9145427286358"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ocY-h4-rTw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bc5-o6-fUt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="00f-lq-UCS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7Zl-oJ-fXv" kind="relationship" relationship="rootViewController" id="Ehz-jk-Huz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jnz-Wk-FjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1668" y="1670.9145427286358"/>
         </scene>
     </scenes>
     <resources>

@@ -52,4 +52,20 @@ static BOOL __isPhone6Plus;
     return !__isPad;
 }
 
+
+#pragma mark -
+#pragma mark Done / Dismiss
+
+- (void) done: (id) sender {
+    [self dismissViewControllerAnimated: YES completion: NULL];
+}
+
+- (IBAction) dismiss: (UIStoryboardSegue *) segue {
+    NSLog(@"Dismiss from %@", segue.sourceViewController);
+    // nothing
+    if (__isPad) {
+        [self dismissViewControllerAnimated: YES completion: NULL];
+    }
+}
+
 @end

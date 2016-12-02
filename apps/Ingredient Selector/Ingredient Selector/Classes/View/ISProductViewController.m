@@ -42,7 +42,6 @@
         }
     }
     _attributes = [attributes copy];
-    NSLog(@"a: %@", _attributes);
 }
 
 - (void) viewWillAppear: (BOOL) animated {
@@ -77,8 +76,6 @@
         NSString *key = [@"product.attribute." stringByAppendingString: attribute];
         cell.titleLabel.text = NSLocalizedString(key, nil);
         cell.detailLabel.text = [_product.attributes objectForKey: attribute];
-
-        NSLog(@"Row: %zi attribute: %@ : detail: %@", row, attribute, [_product.attributes objectForKey: attribute]);
     }
     return cell;
 }
