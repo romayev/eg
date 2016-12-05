@@ -31,12 +31,12 @@
     _tableView.estimatedRowHeight = 100;
     _tableView.alwaysBounceVertical = NO;
 
-    NSArray *allAttributes = @[@"productNotes", @"selectionCriteria", @"recommendedMaxUsage", @"labelDeclaration"];
+    NSArray *allAttributes = @[@"regions", @"valuePropositions", @"applications", @"notes", @"labelDeclaration", @"selectionCriteria", @"recommendedMaxUsage"];
     NSMutableArray *attributes = [NSMutableArray arrayWithCapacity: [allAttributes count]];
 
-    NSDictionary *attributesDict = _product.attributes;
     for (NSString *key in allAttributes) {
-        NSString *value = attributesDict[key];
+        NSString *value = [_product valueForKey: key];
+        NSLog(@"key: %@ value: %@", key, value);
         if (value.length > 0) {
             [attributes addObject: key];
         }
@@ -75,7 +75,7 @@
         NSString *attribute = _attributes[row - 1];
         NSString *key = [@"product.attribute." stringByAppendingString: attribute];
         cell.titleLabel.text = NSLocalizedString(key, nil);
-        cell.detailLabel.text = [_product.attributes objectForKey: attribute];
+        cell.detailLabel.text = [_product valueForKey: attribute];
     }
     return cell;
 }

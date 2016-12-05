@@ -23,7 +23,9 @@
 @property (readonly, nonatomic) NSString *valueProposition;
 @property (readonly, nonatomic) NSString *application;
 @property (readonly, nonatomic) NSNumber *priority;
-@property (readonly, nonatomic) NSDictionary *attributes;
+@property (readonly, nonatomic) NSString *regions;
+@property (readonly, nonatomic) NSString *valuePropositions;
+@property (readonly, nonatomic) NSString *applications;
 
 - (id) initWithPlist: (NSDictionary *) plist;
 

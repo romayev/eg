@@ -19,7 +19,6 @@
         _valueProposition = plist[@"valueProposition"];
         _application = plist[@"application"];
         _priority = plist[@"priority"];
-        _attributes = @{ @"productNotes" : _notes };
     }
     return self;
 }
@@ -38,11 +37,24 @@
     return [self.name hash];
 }
 
-- (NSInteger) attibuteCount {
-    NSInteger count = 1; // name
-    if (_detail.length != 0) count++;
-    if (_notes.length != 0) count++;
-    return count;
+- (NSString *) regions {
+    return [self valuesForProperty: @"region"];
+}
+
+- (NSString *) valuePropositions {
+    return [self valuesForProperty: @"valueProposition"];
+}
+
+- (NSString *) applications {
+    return [self valuesForProperty: @"application"];
+}
+
+- (NSString *) valuesForProperty: (NSString *) property {
+    NSPredicate *p = [NSPredicate predicateWithFormat: @"name = %@", _name];
+    NSArray *products = [[[self class] products] filteredArrayUsingPredicate: p];
+    NSArray *values = [products valueForKeyPath: [NSString stringWithFormat: @"@distinctUnionOfObjects.%@", property]];
+    NSArray *sorted = [values sortedArrayUsingSelector: @selector(localizedCaseInsensitiveCompare:)];
+    return [sorted componentsJoinedByString: @", "];
 }
 
 + (NSArray *) products {    

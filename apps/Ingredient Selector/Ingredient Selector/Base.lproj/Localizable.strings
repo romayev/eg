@@ -20,7 +20,7 @@
 "more.desc" = "This tool will assist you in finding any matching products from the master database. If you need assistance, please contact us.";
 "more.contact.name" = "Erhan Yildiz";
 "more.contact.title" = "Global Applications Director";
-"more.contact.email-phone" = "nerhan.yildiz@ingredion.com\n+1 908-685-5271";
+"more.contact.email-phone" = "erhan.yildiz@ingredion.com\n+1 908-685-5271";
 
 // Index
 "index.title.0" = "Yogurt";
@@ -45,8 +45,12 @@
 "confectionery.search.title.1" = "Value Proposition";
 "confectionery.search.title.2" = "Application";
 
+"product.attribute.regions" = "Regions";
+"product.attribute.valuePropositions" = "Value Propositions";
+"product.attribute.applications" = "Applications";
+
 // Product - Confectionery
-"product.attribute.productNotes" = "Other Relevant Information";
+"product.attribute.notes" = "Additional Features And Benefits";
 "product.attribute.selectionCriteria" = "Selection Criteria";
 "product.attribute.suggestedUsageLevelInFormulations" = "Suggested Usage Level In Formulations";
 "product.attribute.recommendedMaxUsage" = "Recommended Max Usage";
