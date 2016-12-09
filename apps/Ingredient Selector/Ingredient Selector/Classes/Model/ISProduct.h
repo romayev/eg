@@ -21,14 +21,15 @@
 @property (readonly, nonatomic) NSString *notes;
 @property (readonly, nonatomic) NSString *region;
 @property (readonly, nonatomic) NSString *valueProposition;
-@property (readonly, nonatomic) NSString *application;
 @property (readonly, nonatomic) NSNumber *priority;
 @property (readonly, nonatomic) NSString *regions;
 @property (readonly, nonatomic) NSString *valuePropositions;
-@property (readonly, nonatomic) NSString *applications;
+@property (readonly, nonatomic) NSString *labelDeclaration;
+@property (readonly, nonatomic) NSArray *displayAttributes;
 
 - (id) initWithPlist: (NSDictionary *) plist;
 
++ (NSString *) moduleName;
 + (NSArray *) products;
 + (NSArray *) searchCriteria;
 + (BOOL) usesPriority;
@@ -37,5 +38,8 @@
 + (NSArray *) uniquePropertyValuesForProperty: (NSString *) property withSearchCriteria: (NSDictionary *) searchCriteria;
 
 + (BOOL) isAll: (NSArray *) criteria;
+
+// Protected
+- (NSString *) valuesForProperty: (NSString *) property;
 
 @end

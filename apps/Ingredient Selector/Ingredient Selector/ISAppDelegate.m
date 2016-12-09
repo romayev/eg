@@ -24,7 +24,7 @@
 //    UIColor *blueColor = [UIColor colorWithRed: 0.00 green: 0.42 blue: 0.44 alpha: 1.0];
     UIColor *orangeColor = [UIColor colorWithRed:0.96 green:0.48 blue:0.13 alpha:1.0];
 
-    [_window setTintColor: [UIColor whiteColor]];
+    [_window setTintColor: greenColor];
     UITabBar *tabBar = [UITabBar appearance];
     [tabBar setTintColor: [UIColor whiteColor]];
     [tabBar setBarTintColor: [UIColor blackColor]];
@@ -33,6 +33,7 @@
     [navigationBar setBarTintColor: greenColor];
 
     [[UIToolbar appearance] setBarTintColor: orangeColor];
+    [[UIToolbar appearance] setTintColor: [UIColor whiteColor]];
     //[navigationBar setTranslucent: NO];
     [navigationBar setTitleTextAttributes: @{
                                              NSForegroundColorAttributeName: [UIColor whiteColor],

@@ -14,32 +14,16 @@ import java.util.*;
  * Created by Alex Romayev on 11/16/16.
  */
 public class ConfectioneryParser extends Parser {
-    public void parse() throws IOException {
-        ArrayList<Product> records = new ArrayList<Product>();
-
-        File file = new File("csv/Confectionery.csv");
-        CSVParser parser = CSVParser.parse(file, Charset.forName("x-MacRoman"), CSVFormat.EXCEL.withHeader().withAllowMissingColumnNames().withIgnoreHeaderCase().withIgnoreEmptyLines(true));
-
-        Map<String, Integer> headers = parser.getHeaderMap();
-        System.out.println("Headers: " + headers.keySet());
-        try {
-            for (CSVRecord record : parser) {
-                // FIXME: withIgnoreEmptyLines(true) isn't ignoring empty lines
-                if (record.get(0).isEmpty()) break;
-
-                // Records
-                records.add(new Confectionery(record));
-            }
-        } finally {
-            parser.close();
-        }
-
-        // Add "All"
-        savePlistProducts(records, packageName() + ".plist");
-    }
 
     @Override
     String packageName() {
         return "confectionery";
+    }
+
+    @Override
+    List<Product> product(CSVRecord record) {
+        List<Product> list = new ArrayList<Product>();
+        list.add(new Confectionery(record));
+        return list;
     }
 }

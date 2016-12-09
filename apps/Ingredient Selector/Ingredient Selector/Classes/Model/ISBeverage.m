@@ -1,14 +1,15 @@
 //
-//  ISConfectionery.m
+//  ISBeverage.m
 //  Ingredient Selector
 //
-//  Created by Alex Romayev on 11/21/16.
+//  Created by Alex Romayev on 12/5/16.
 //  Copyright © 2016 Alex Romayev. All rights reserved.
 //
 
-#import "ISConfectionery.h"
+#import "ISBeverage.h"
 
-@implementation ISConfectionery
+@implementation ISBeverage
+
 
 + (NSArray *) products {
     static NSArray *__products;
@@ -16,9 +17,9 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSMutableArray *products = [NSMutableArray array];
-        NSArray *data = [[NSArray alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"confectionery" ofType: @"plist"]];
+        NSArray *data = [[NSArray alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"beverages" ofType: @"plist"]];
         for (NSDictionary *plist in data) {
-            ISConfectionery *product = [[ISConfectionery alloc] initWithPlist: plist];
+            ISBeverage *product = [[ISBeverage alloc] initWithPlist: plist];
             [products addObject: product];
         }
 
@@ -31,27 +32,26 @@
 }
 
 - (NSArray *) displayAttributes {
-    return @[@"regions", @"valuePropositions", @"applications", @"notes", @"labelDeclaration", @"selectionCriteria", @"recommendedMaxUsage"];
-}
-
-- (NSString *) applications {
-    return [self valuesForProperty: @"application"];
+    return @[@"base", @"labelDeclaration", @"regions", @"starchUseLabel", @"valuePropositions", @"fatContent", @"proteinContent", @"features", @"productDescription"];
 }
 
 + (NSString *) moduleName {
-    return @"confectionery";
+    return @"beverages";
 }
 
 + (NSArray *) searchCriteria {
-    return @[ @"region", @"valueProposition", @"application" ];
+    return @[ @"region", @"segment", @"valueProposition", @"labelDeclaration", @"base" ];
 }
 
 - (id) initWithPlist: (NSDictionary *) plist {
     if (self = [super initWithPlist: plist]) {
-        _application = plist[@"application"];
-        _selectionCriteria = plist[@"selectionCriteria"];
-        _suggestedUsageLevelInFormulations = plist[@"suggestedUsageLevelInFormulations"];
-        _recommendedMaxUsage = plist[@"recommendedMaxUsage"];
+        _segment = plist[@"segment"];
+        _base = plist[@"base"];
+        _starchUseLabel = plist[@"starchUseLabel"];
+        _fatContent = plist[@"fatContent"];
+        _proteinContent = plist[@"proteinContent"];
+        _features = plist[@"features"];
+        _productDescription = plist[@"productDescription"];
     }
     return self;
 }

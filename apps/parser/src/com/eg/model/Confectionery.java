@@ -8,26 +8,30 @@ import java.util.Map;
  * Created by Alex Romayev on 11/16/16.
  */
 public class Confectionery extends Product {
+    private String application;
     private String selectionCriteria;
     private String suggestedUsageLevelInFormulations;
     private String recommendedMaxUsage;
-    private String labelDeclaration;
+    private String features;
 
     public Confectionery(CSVRecord record) {
         super(record);
-        selectionCriteria = record.get("Selection criteria");
-        suggestedUsageLevelInFormulations = record.get("Suggested % usage level in formulations");
-        recommendedMaxUsage = record.get("Recommended max usage %");
-        labelDeclaration = record.get("Label declaration");
+        application = get(record, "Application");
+        selectionCriteria = get(record, "Selection criteria");
+        suggestedUsageLevelInFormulations = get(record, "Suggested % usage level in formulations");
+        recommendedMaxUsage = get(record, "Recommended max usage %");
+        features = get(record, "Additional Key Features/Benefits/Notes");
+        readValueProposition(record);
     }
 
     @Override
     public Map<String, Object> plist() {
         Map<String, Object> map = super.plist();
+        map.put("application", application);
         map.put("selectionCriteria", selectionCriteria);
         map.put("suggestedUsageLevelInFormulations", suggestedUsageLevelInFormulations);
         map.put("recommendedMaxUsage", recommendedMaxUsage);
-        map.put("labelDeclaration", labelDeclaration);
+        map.put("features", features);
         return map;
     }
 
@@ -35,10 +39,11 @@ public class Confectionery extends Product {
     public String toString() {
         return  super.toString() + "\n" +
                 "Confectionery{" +
+                " application='" + application + "\n" +
                 " selectionCriteria='" + selectionCriteria + '\'' + "\n" +
                 " suggestedUsageLevelInFormulations='" + suggestedUsageLevelInFormulations + '\'' + "\n" +
                 " recommendedMaxUsage='" + recommendedMaxUsage + '\'' + "\n" +
-                " labelDeclaration='" + labelDeclaration + '\'' +
+                " features='" + features + "\n" +
                 "\n" +
                 "} ";
     }

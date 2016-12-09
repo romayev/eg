@@ -12,6 +12,7 @@
 #import "ISSearchItem.h"
 #import "ISProduct.h"
 
+
 @interface ISSearchViewController () <ISSearchTableViewCellDataSource, ISSearchTableViewCellDelegate, ISProductsViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *headerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *productCountLabel;
@@ -28,15 +29,15 @@
 
 
 @implementation ISSearchViewController {
-    NSInteger   _productIndex;
-    NSInteger   _count;
-    NSIndexPath *_editorPath;
+    ISProductType   _productType;
+    NSInteger       _count;
+    NSIndexPath     *_editorPath;
 }
 
 - (void) viewDidLoad {
     [super viewDidLoad];
 
-    _productIndex = [_delegate productIndex];
+    _productType = [_delegate productType];
     [self load];
     self.navigationItem.title = NSLocalizedString(@"index.title.8", nil);
     _headerLabel.text = NSLocalizedString(@"product-count", nil);
@@ -45,12 +46,12 @@
 }
 
 - (void) encodeRestorableStateWithCoder: (NSCoder *) coder {
-    [coder encodeObject: @(_productIndex) forKey: @"idx"];
+    [coder encodeObject: @(_productType) forKey: @"idx"];
     [super encodeRestorableStateWithCoder: coder];
 }
 
 - (void) decodeRestorableStateWithCoder: (NSCoder *) coder {
-    _productIndex = [[coder decodeObjectForKey: @"idx"] integerValue];
+    _productType = [[coder decodeObjectForKey: @"idx"] integerValue];
     [self load];
     [super decodeRestorableStateWithCoder: coder];
 }
@@ -148,8 +149,13 @@
     cell.textLabel.text = title;
     cell.detailTextLabel.text = detail;
 
+    BOOL enabled = [self isCellEnabledAtIndexPath: [NSIndexPath indexPathForRow: row inSection: section]];
+    [cell setUserInteractionEnabled: enabled];
+    cell.textLabel.alpha = cell.detailTextLabel.alpha = enabled ? 1 : 0.5;
+
     return cell;
 }
+
 - (BOOL) tableView: (UITableView *) tableView shouldHighlightRowAtIndexPath: (NSIndexPath *) indexPath {
     if (_editorPath) {
         return [indexPath section] != [_editorPath section] || [indexPath row] != [_editorPath row];
@@ -191,12 +197,29 @@
 
 
 - (Class) product {
-    return NSClassFromString(@"ISConfectionery");
+    switch (_productType) {
+        default:
+        case ISConfectionery:
+            return NSClassFromString(@"ISConfectionery");
+        case ISBeverages:
+            return NSClassFromString(@"ISBeverage");
+    }
 }
 
 - (NSString *) titleForRow: (NSInteger) row {
-    NSString *key = [NSString stringWithFormat: @"%@%zi", @"confectionery.search.title.", row];
+    NSString *moduleName = [[self product] moduleName];
+    NSString *key = [NSString stringWithFormat: @"%@%zi", [moduleName stringByAppendingString: @".search.title."], row];
     return NSLocalizedString(key, nil);
+}
+
+- (BOOL) isCellEnabledAtIndexPath: (NSIndexPath *) indexPath {
+    if (_productType == ISBeverages) {
+        NSArray *selectedSegments = _selectedValues[1];
+        if ([selectedSegments count] == 1 && [[selectedSegments firstObject] isEqualToString: kAll]) {
+            return indexPath.row < 2;
+        }
+    }
+    return YES;
 }
 
 - (NSString *) descriptionForRow: (NSInteger) row {
@@ -230,17 +253,23 @@
     NSInteger editorParentRow = editorRow - 1;
 
     // Process current selection
-    [self processSelectedRow: row atIndex: editorParentRow];
+    BOOL reloadAll = [self processSelectedRow: row atIndex: editorParentRow];
 
     for (NSInteger i = 0; i < _count; i++) {
         if (i == editorParentRow) continue;
         [self updateAvailableValuesAtIndex: i];
     }
-    [_tableView reloadRowsAtIndexPaths: @[[self editorParentPath], _editorPath] withRowAnimation: UITableViewRowAnimationAutomatic];
+    if (reloadAll) {
+        [_tableView reloadData];
+    } else {
+        [_tableView reloadRowsAtIndexPaths: @[[self editorParentPath], _editorPath] withRowAnimation: UITableViewRowAnimationAutomatic];
+    }
     [self updateProdutcs];
 }
 
-- (void) processSelectedRow: (NSInteger) row atIndex: (NSInteger) idx {
+- (BOOL) processSelectedRow: (NSInteger) row atIndex: (NSInteger) idx {
+    BOOL reloadAll = NO;
+
     NSArray *availableValues = _availableValues[idx];
     NSMutableArray *selectedArray = _selectedValues[idx];
     NSString *selectedValue = availableValues[row];
@@ -259,6 +288,17 @@
             [selectedArray addObject: kAll];
         }
     }
+    if (_productType == ISBeverages && idx == 1) { // Segment
+        if ([selectedArray count] == 1 && [[selectedArray firstObject] isEqualToString: kAll]) {
+            reloadAll = YES;
+            for (NSInteger i = 2; i < _count; i++) {
+                NSMutableArray *selectedArray = _selectedValues[i];
+                [selectedArray removeAllObjects];
+                [selectedArray addObject: kAll];
+            }
+        }
+    }
+    return reloadAll;
 }
 
 - (void) updateProdutcs {

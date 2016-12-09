@@ -31,17 +31,16 @@
     _tableView.estimatedRowHeight = 100;
     _tableView.alwaysBounceVertical = NO;
 
-    NSArray *allAttributes = @[@"regions", @"valuePropositions", @"applications", @"notes", @"labelDeclaration", @"selectionCriteria", @"recommendedMaxUsage"];
-    NSMutableArray *attributes = [NSMutableArray arrayWithCapacity: [allAttributes count]];
+    NSArray *attributes = [_product displayAttributes];
+    NSMutableArray *availableAttributes = [NSMutableArray arrayWithCapacity: [attributes count]];
 
-    for (NSString *key in allAttributes) {
+    for (NSString *key in attributes) {
         NSString *value = [_product valueForKey: key];
-        NSLog(@"key: %@ value: %@", key, value);
         if (value.length > 0) {
-            [attributes addObject: key];
+            [availableAttributes addObject: key];
         }
     }
-    _attributes = [attributes copy];
+    _attributes = [availableAttributes copy];
 }
 
 - (void) viewWillAppear: (BOOL) animated {

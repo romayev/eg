@@ -8,8 +8,23 @@
 
 #import "ISViewController.h"
 
+typedef enum {
+    ISYogurt,
+    ISProcessedCheese,
+    ISCreamySalad,
+    ISCarrageenan,
+    ISBeverages,
+    ISMeat,
+    ISBattersAndBreadings,
+    ISHydrocolloids,
+    ISConfectionery,
+    ISTomatoBasedSauses,
+    ISThickener
+} ISProductType;
+
+
 @protocol ISSearchViewControllerDelegate <NSObject>
-- (NSInteger) productIndex;
+- (ISProductType) productType;
 @end
 
 @interface ISSearchViewController : ISViewController

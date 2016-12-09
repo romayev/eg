@@ -10,10 +10,11 @@
 
 @interface ISConfectionery : ISProduct
 
-@property (nonatomic, readonly) NSString *selectionCriteria;
-@property (nonatomic, readonly) NSString *suggestedUsageLevelInFormulations;
-@property (nonatomic, readonly) NSString *recommendedMaxUsage;
-@property (nonatomic, readonly) NSString *labelDeclaration;
+@property (readonly, nonatomic) NSString *application;
+@property (readonly, nonatomic) NSString *selectionCriteria;
+@property (readonly, nonatomic) NSString *suggestedUsageLevelInFormulations;
+@property (readonly, nonatomic) NSString *recommendedMaxUsage;
+@property (readonly, nonatomic) NSString *applications;
 
 + (NSArray *) products;
 

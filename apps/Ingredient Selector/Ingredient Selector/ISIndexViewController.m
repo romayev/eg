@@ -72,48 +72,7 @@
 
 - (void) showToolViewController: (NSInteger) tag animated: (BOOL) animated {
     NSString *segue = nil;
-    switch (tag) {
-        default:
-        case 0:
-            segue = @"yogurt";
-            break;
-        case 1:
-            segue = @"cheese";
-            break;
-        case 2:
-            segue = @"creamy";
-            break;
-        case 3:
-            segue = @"carrageenan";
-            break;
-        case 4:
-            segue = @"beverages";
-            break;
-        case 5:
-            segue = @"meat";
-            break;
-        case 6:
-            segue = @"batters";
-            break;
-        case 7:
-            segue = @"hydrocolloids";
-            break;
-        case 8:
-            segue = @"confectionery";
-            break;
-        case 9:
-            segue = @"tomato";
-            break;
-        case 10:
-            segue = @"thickener";
-            break;
-    }
-
-    // FIXME: Remove
-    if (tag != 8) {
-        segue = @"confectionery";
-    }
-
+    segue = @"confectionery";
     if (segue) {
         _selected = tag;
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow: _selected inSection: 0];
@@ -128,8 +87,8 @@
 #pragma mark -
 #pragma mark ISSearchViewControllerDelegate
 
-- (NSInteger) productIndex {
-    return [[_tableView indexPathForSelectedRow] row];
+- (ISProductType) productType {
+    return (ISProductType) [[_tableView indexPathForSelectedRow] row];
 }
 
 @end

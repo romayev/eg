@@ -17,8 +17,8 @@
         _notes = plist[@"productNotes"];
         _region = plist[@"region"];
         _valueProposition = plist[@"valueProposition"];
-        _application = plist[@"application"];
         _priority = plist[@"priority"];
+        _labelDeclaration = plist[@"labelDeclaration"];
     }
     return self;
 }
@@ -37,6 +37,10 @@
     return [self.name hash];
 }
 
+- (NSArray *) displayAttributes {
+    return nil;
+}
+
 - (NSString *) regions {
     return [self valuesForProperty: @"region"];
 }
@@ -45,16 +49,16 @@
     return [self valuesForProperty: @"valueProposition"];
 }
 
-- (NSString *) applications {
-    return [self valuesForProperty: @"application"];
-}
-
 - (NSString *) valuesForProperty: (NSString *) property {
     NSPredicate *p = [NSPredicate predicateWithFormat: @"name = %@", _name];
     NSArray *products = [[[self class] products] filteredArrayUsingPredicate: p];
     NSArray *values = [products valueForKeyPath: [NSString stringWithFormat: @"@distinctUnionOfObjects.%@", property]];
     NSArray *sorted = [values sortedArrayUsingSelector: @selector(localizedCaseInsensitiveCompare:)];
     return [sorted componentsJoinedByString: @", "];
+}
+
++ (NSString *) moduleName {
+    return @"product";
 }
 
 + (NSArray *) products {    
@@ -96,10 +100,10 @@
                 [predicates addObject: p];
             }
         }
-        if ([predicates count] == 0) return products;
-
-        NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates: predicates];
-        products = [products filteredArrayUsingPredicate: predicate];
+        if ([predicates count] > 0) {
+            NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates: predicates];
+            products = [products filteredArrayUsingPredicate: predicate];
+        }
     }
 
     NSSet *unique = [NSSet setWithArray: products];

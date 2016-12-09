@@ -26,6 +26,8 @@
 		FAAEA7291DDA4E24008EA91E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA7271DDA4E24008EA91E /* LaunchScreen.storyboard */; };
 		FAAEA7471DDB8388008EA91E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA7451DDB8388008EA91E /* Localizable.strings */; };
 		FAF2D4021DEFC8880095434B /* confectionery.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF2D4001DEFC8880095434B /* confectionery.plist */; };
+		FAF2D4231DF651CA0095434B /* beverages.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF2D4211DF651CA0095434B /* beverages.plist */; };
+		FAF2D4261DF6527B0095434B /* ISBeverage.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D4251DF6527B0095434B /* ISBeverage.m */; };
 		FAF8264F1DE8B025002589D9 /* ISProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF8264E1DE8B025002589D9 /* ISProductsViewController.m */; };
 		FAF826551DE8F51D002589D9 /* ISProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF826541DE8F51D002589D9 /* ISProductViewController.m */; };
 /* End PBXBuildFile section */
@@ -63,6 +65,9 @@
 		FAAEA72A1DDA4E24008EA91E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAAEA7481DDB8392008EA91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAF2D4011DEFC8880095434B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "Ingredient Selector/en.lproj/confectionery.plist"; sourceTree = SOURCE_ROOT; };
+		FAF2D4221DF651CA0095434B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "Ingredient Selector/en.lproj/beverages.plist"; sourceTree = SOURCE_ROOT; };
+		FAF2D4241DF6527B0095434B /* ISBeverage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISBeverage.h; path = Classes/Model/ISBeverage.h; sourceTree = "<group>"; };
+		FAF2D4251DF6527B0095434B /* ISBeverage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISBeverage.m; path = Classes/Model/ISBeverage.m; sourceTree = "<group>"; };
 		FAF8264D1DE8B025002589D9 /* ISProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISProductsViewController.h; path = Classes/View/ISProductsViewController.h; sourceTree = "<group>"; };
 		FAF8264E1DE8B025002589D9 /* ISProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISProductsViewController.m; path = Classes/View/ISProductsViewController.m; sourceTree = "<group>"; };
 		FAF826531DE8F51D002589D9 /* ISProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISProductViewController.h; path = Classes/View/ISProductViewController.h; sourceTree = "<group>"; };
@@ -89,6 +94,8 @@
 				FA6FAA121DE3BD3700CEF665 /* ISProduct.m */,
 				FA6FAA141DE3BE2200CEF665 /* ISConfectionery.h */,
 				FA6FAA151DE3BE2200CEF665 /* ISConfectionery.m */,
+				FAF2D4241DF6527B0095434B /* ISBeverage.h */,
+				FAF2D4251DF6527B0095434B /* ISBeverage.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -146,6 +153,7 @@
 		FAAEA7311DDA6744008EA91E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FAF2D4211DF651CA0095434B /* beverages.plist */,
 				FAF2D4001DEFC8880095434B /* confectionery.plist */,
 			);
 			path = Data;
@@ -269,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF2D4231DF651CA0095434B /* beverages.plist in Resources */,
 				FAA03CFA1DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf in Resources */,
 				FAAEA7471DDB8388008EA91E /* Localizable.strings in Resources */,
 				FAAEA7291DDA4E24008EA91E /* LaunchScreen.storyboard in Resources */,
@@ -289,6 +298,7 @@
 				FA6FA9F31DDE824B00CEF665 /* ISSearchViewController.m in Sources */,
 				FA6FAA041DE0E8EB00CEF665 /* ISSearchItem.m in Sources */,
 				FA6FAA161DE3BE2200CEF665 /* ISConfectionery.m in Sources */,
+				FAF2D4261DF6527B0095434B /* ISBeverage.m in Sources */,
 				FA6FAA131DE3BD3700CEF665 /* ISProduct.m in Sources */,
 				FA6FA9FD1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.m in Sources */,
 				FAA03CFD1DEBE352001EA461 /* ISMoreViewController.m in Sources */,
@@ -336,6 +346,14 @@
 				FAF2D4011DEFC8880095434B /* en */,
 			);
 			name = confectionery.plist;
+			sourceTree = "<group>";
+		};
+		FAF2D4211DF651CA0095434B /* beverages.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAF2D4221DF651CA0095434B /* en */,
+			);
+			name = beverages.plist;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

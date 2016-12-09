@@ -12,19 +12,26 @@ import java.util.Map;
 public class Product {
     private String productName;
     private String productDescription;
-    private String productNotes;
-    private String valueProposition;
-    private String application;
+    String valueProposition;
     private String region;
     private String priority;
+    private String labelDeclaration;
+
+    Product(Product other) {
+        productName = other.productName;
+        productDescription = other.productDescription;
+        valueProposition = other.valueProposition;
+        region = other.region;
+        priority = other.priority;
+        labelDeclaration = other.labelDeclaration;
+    }
 
     Product(CSVRecord record) {
-        this.productName = record.get("Product Name");
-        this.productDescription = record.get("Product Description");
-        this.productNotes = record.get("Additional Key Features/Benefits/Notes");
-        this.valueProposition = record.get("Value Proposition");
-        this.application = record.get("Application");
-        this.priority = record.get("Priority");
+        productName = get(record, "Product Name");
+        productDescription = get(record, "Product Description");
+        priority = get(record, "Priority");
+        labelDeclaration = get(record, "Label declaration");
+
         String region;
         if (!record.get("APAC").isEmpty()) {
             region = "APAC";
@@ -40,27 +47,40 @@ public class Product {
         this.region = region;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" + "\n" +
-                " productName='" + productName + "\n" +
-                " productDescription='" + productDescription + "\n" +
-                " productNotes='" + productNotes + "\n" +
-                " valueProposition='" + valueProposition + "\n" +
-                " application='" + application + "\n" +
-                " regions=" + region+ "\n" +
-                '}';
+    void readValueProposition(CSVRecord record) {
+        valueProposition = get(record, "Value Proposition");
+    }
+
+    String get(CSVRecord record, String column) {
+        try {
+            String text = record.get(column);
+            text = text.replace("\n", " ").replace("\r", " ");
+            return text;
+        } catch (Exception ignored) {
+            System.out.println("WARN: Column not found: " + column);
+        }
+        return null;
     }
 
     public Map<String, Object> plist() {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("productName", productName);
         map.put("productDescription", productDescription);
-        map.put("productNotes", productNotes);
         map.put("valueProposition", valueProposition);
-        map.put("application", application);
         map.put("region", region);
         map.put("priority", priority);
+        map.put("labelDeclaration", labelDeclaration);
         return map;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" + "\n" +
+                " productName='" + productName + "\n" +
+                " productDescription='" + productDescription + "\n" +
+                " labelDeclaration='" + labelDeclaration + '\'' +
+                " valueProposition='" + valueProposition + "\n" +
+                " regions=" + region+ "\n" +
+                '}';
     }
 }

@@ -3,14 +3,14 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>features</key>
+		<string>Crystalline sorbitol with small particle size. 60% sweetness vs. sucrose. 2.6kcal/gr (d.b.).</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Best sorbitol for chewing gum, best combination of cost, functionality and stability</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Crystalline sorbitol with small particle size. 60% sweetness vs. sucrose. 2.6kcal/gr (d.b.).</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -27,14 +27,14 @@
 		<string>Sorbitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Liquid solution that contains 70% sorbitol providing bulking and humectancy. 60% sweetness vs. sucrose (d.b.). 2.6kcal/gr (d.b.).</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Cost effective, provides desired texture in gum</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Liquid solution that contains 70% sorbitol providing bulking and humectancy. 60% sweetness vs. sucrose (d.b.). 2.6kcal/gr (d.b.).</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -51,14 +51,14 @@
 		<string>Sorbitol Solution</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-hygroscopic nature, Low solubility, Non- reactive, Non- cariogenic, Pleasant cooling effect.</string>
 		<key>recommendedMaxUsage</key>
 		<string>As needed for topical/dusting application</string>
 		<key>selectionCriteria</key>
 		<string>Low hygroscopicitiy</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Non-hygroscopic nature, Low solubility, Non- reactive, Non- cariogenic, Pleasant cooling effect.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -75,14 +75,14 @@
 		<string>Mannitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -99,14 +99,14 @@
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -123,14 +123,14 @@
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Liquid solution that contains 70% sorbitol providing bulking and humectancy. 60% sweetness vs. sucrose (d.b.). 2.6kcal/gr (d.b.).</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>TrueTrace™ certified non-GM</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Liquid solution that contains 70% sorbitol providing bulking and humectancy. 60% sweetness vs. sucrose (d.b.). 2.6kcal/gr (d.b.).</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -147,14 +147,14 @@
 		<string>Sorbitol Solution</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Crystalline sorbitol produced under Ingredion Incorporated’s TrueTrace™ Program for non-GM products.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>TrueTrace™ certified non-GM</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Crystalline sorbitol produced under Ingredion Incorporated’s TrueTrace™ Program for non-GM products.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -171,14 +171,14 @@
 		<string>Sorbitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Crystalline sorbitol with coarse, uniform (heart cut) particle size distribution, well suited for tableting. 60% sweetness vs. sucrose. 2.6kcal/gr (d.b.).</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Best crystalline sorbitol for directly compressible tablets. More expensive than SORBOGEM® 1162. Excellent flow property, producing hard tablets at lower compression forces.</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Crystalline sorbitol with coarse, uniform (heart cut) particle size distribution, well suited for tableting. 60% sweetness vs. sucrose. 2.6kcal/gr (d.b.).</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -195,14 +195,14 @@
 		<string>Sorbitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Crystalline sorbitol with coarse particle size distribution, well suited for tableting. 60% sweetness vs. sucrose. 2.6kcal/gr (d.b.).</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Good performance for directly compressible sorbitol. Less expensive compared to SORBOGEM® 834. Excellent flow properties and compressibility. Excellent flow for high speed presses.</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Crystalline sorbitol with coarse particle size distribution, well suited for tableting. 60% sweetness vs. sucrose. 2.6kcal/gr (d.b.).</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -219,14 +219,14 @@
 		<string>Sorbitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Unique coarse particle size, rounded, porous particle shape, no added binders, free flowing, carrier for flavors, colors, spices, low dusting.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Very compressible with unique particle size and rounded shape. Good flow properties for high speed tableting.</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Unique coarse particle size, rounded, porous particle shape, no added binders, free flowing, carrier for flavors, colors, spices, low dusting.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -243,14 +243,14 @@
 		<string>Dextrose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Very uniform, coarse particle size profile, porous, spherical particle shape, free flowing, carrier for flavors, colors, spices, low dusting</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Very compressible with excellent friability with above average hardness. Good flow properties for high speed tableting. Very uniform particle size.</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Very uniform, coarse particle size profile, porous, spherical particle shape, free flowing, carrier for flavors, colors, spices, low dusting</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -267,14 +267,14 @@
 		<string>Dextrose with Maltodextrin</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Porous, spherical particle shape, free flowing, carrier for flavors, colors, spices, low dusting.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Very compressible with excellent friability and moderate hardness. Good flow properties for high speed tableting.</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Porous, spherical particle shape, free flowing, carrier for flavors, colors, spices, low dusting.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -291,14 +291,14 @@
 		<string>Dextrose with Maltodextrin</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.010% - 0.016%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -315,14 +315,14 @@
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.010% - 0.016%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -339,14 +339,14 @@
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free, reduced sugar applications.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Coarser particle size compared to MALTISWEET® CM100. Less expensive than MALTISWEET® CM9820.</string>
 		<key>application</key>
 		<string>Chocolate/ Compound Coating</string>
-		<key>productNotes</key>
-		<string>Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free, reduced sugar applications.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -363,14 +363,14 @@
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Chocolate/ Compound Coating</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -387,14 +387,14 @@
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Chocolate/ Compound Coating</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -411,14 +411,14 @@
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Can be combined with maltitol or sugar for reduced calorie compound chocolate.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Mainly preferred to be used with stevia for naturally sweetened chocolate. Recommended to be used for partial replacement due to considerable cooling effect.</string>
 		<key>application</key>
 		<string>Chocolate/ Compound Coating</string>
-		<key>productNotes</key>
-		<string>Can be combined with maltitol or sugar for reduced calorie compound chocolate.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -426,7 +426,7 @@
 		<key>priority</key>
 		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
-		<string>30% - 55% </string>
+		<string>30% - 55%</string>
 		<key>productName</key>
 		<string>ERYLITE® C40 Crystalline Erythritol</string>
 		<key>productDescription</key>
@@ -435,14 +435,14 @@
 		<string>Erythritol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Exceptional purity, minimizes moisture interference, clean, mild sweetness.</string>
 		<key>recommendedMaxUsage</key>
 		<string>25% - 30% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Cost savings against sucrose</string>
 		<key>application</key>
 		<string>Chocolate/ Compound Coating</string>
-		<key>productNotes</key>
-		<string>Exceptional purity, minimizes moisture interference, clean, mild sweetness.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -459,14 +459,14 @@
 		<string>Dextrose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Exceptional purity, minimizes moisture interference, clean, mild sweetness.</string>
 		<key>recommendedMaxUsage</key>
 		<string>25% - 30% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>TrueTrace™ certified non-GM</string>
 		<key>application</key>
 		<string>Chocolate/ Compound Coating</string>
-		<key>productNotes</key>
-		<string>Exceptional purity, minimizes moisture interference, clean, mild sweetness.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -483,18 +483,14 @@
 		<string>Dextrose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Crystal. control, sweetness, texture, stability. Non-reactive, Functional alternative to corn syrup and/or isomalt, Excellent stabilizing agent, Viscosity aid, Binder, Carrier for flavors and actives.  Need to add HPS for sweetness compensation</string>
 		<key>recommendedMaxUsage</key>
-		<string>Up to 100% replacement of sucrose and corn syrup
-
-(for even better stability can be used in combination with isomalt in hard candy) </string>
+		<string>Up to 100% replacement of sucrose and corn syrup  (for even better stability can be used in combination with isomalt in hard candy)</string>
 		<key>selectionCriteria</key>
 		<string>Can replace isomalt in sugar-free candies. Cost advantage over MALTISWEET® B and HYSTAR® 5875 Maltitol Syrups. Provides hard candy stability due to high polymer length.</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Crystal. control, sweetness, texture, stability. Non-reactive, Functional alternative to corn syrup and/or isomalt, Excellent stabilizing agent, Viscosity aid, Binder, Carrier for flavors and actives.
-
-Need to add HPS for sweetness compensation</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -511,18 +507,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Polyglycitol Syrup or Hydrogenated Starch Hydrolysate</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
-		<string>Up to 100% replacement of sucrose and corn syrup
-
-(for even better stability can be used in combination with isomalt in hard candy) </string>
+		<string>Up to 100% replacement of sucrose and corn syrup  (for even better stability can be used in combination with isomalt in hard candy)</string>
 		<key>selectionCriteria</key>
 		<string>Higher maltitol content compared to HYSTAR® 3375, so less temperature/relative humidity stability during shelf-life. Higher in sweetness and lower in viscosity compared to HYSTAR® 3375.</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -539,18 +531,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
-		<string>Up to 100% replacement of sucrose and corn syrup
-
-(for even better stability can be used in combination with isomalt in hard candy) </string>
+		<string>Up to 100% replacement of sucrose and corn syrup  (for even better stability can be used in combination with isomalt in hard candy)</string>
 		<key>selectionCriteria</key>
 		<string>Slightly higher maltitol content compared to MALTISWEET® B, so slightly less stable, but more sweet.</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -567,14 +555,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Very water soluble, Low sweetness, No cooling effect, Non-reactive, Carrier for sensitive flavors and colors, Binder, Stabilizing aid, Viscosity agent, Dispersability aid, Bulking agent.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose and corn syrup when combined with isomalt</string>
 		<key>selectionCriteria</key>
 		<string>Increases viscosity for better processing; provides crystallization control similar to polyglycitol syrups. Increases digestive tolerance. Increases residence time in mouth for lozenges.</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Very water soluble, Low sweetness, No cooling effect, Non-reactive, Carrier for sensitive flavors and colors, Binder, Stabilizing aid, Viscosity agent, Dispersability aid, Bulking agent.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -591,14 +579,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Polyglycitol or Hydrogenated Starch Hydrolysate</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -615,14 +603,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -639,16 +627,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Crystal. control, sweetness, texture, stability. Non-reactive, Functional alternative to corn syrup and/or isomalt, Excellent stabilizing agent, Viscosity aid, Binder, Carrier for flavors and actives.  Need to add HPS for sweetness compensation</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Used in making sugar-free soft candy. Cost advantage over MALTISWEET® B and HYSTAR® 5875 Maltitol Syrups.</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Crystal. control, sweetness, texture, stability. Non-reactive, Functional alternative to corn syrup and/or isomalt, Excellent stabilizing agent, Viscosity aid, Binder, Carrier for flavors and actives.
-
-Need to add HPS for sweetness compensation</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -665,16 +651,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Polyglycitol Syrup or Hydrogenated Starch Hydrolysate</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Higher maltitol content compared to HYSTAR® 3375, so less temperature/relative humidity stability during shelf-life. Higher in sweetness and lower in viscosity compared to HYSTAR® 3375.</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -691,16 +675,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Slightly higher maltitol content compared to MALTISWEET® B, so slightly less stable, but more sweet.</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -717,14 +699,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -741,14 +723,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -765,16 +747,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Slightly firmer caramel compared to MALTISWEET® 3145.</string>
 		<key>application</key>
 		<string>Caramel</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -791,16 +771,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Slightly softer caramel compared to MALTISWEET® B. More sweetness compared to MALTISWEET® B.</string>
 		<key>application</key>
 		<string>Caramel</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -817,14 +795,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Caramel</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -841,14 +819,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Caramel</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -865,16 +843,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Slightly lower maltitol content compared to MALTISWEET® 3145, so slightly more stable, but less sweet.</string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -891,16 +867,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Slightly higher maltitol content compared to HYSTAR® 5875, slightly more sweet.</string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -917,14 +891,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Coarser particle size compared to MALTISWEET® CM100. Less expensive than MALTISWEET® CM9820.</string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -941,14 +915,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -965,14 +939,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -989,14 +963,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Coarser particle size compared to MALTISWEET® CM100. Less expensive than MALTISWEET® CM9820.</string>
 		<key>application</key>
 		<string>Panning</string>
-		<key>productNotes</key>
-		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1013,14 +987,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Dry crystalline powder, free flowing, flavor enhancement; non-masking, highly fermentable, high osmolarity, high reducing capacity</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Provides harder texture, simpler processing, reduced production time than sucrose in panning application.</string>
 		<key>application</key>
 		<string>Panning</string>
-		<key>productNotes</key>
-		<string>Dry crystalline powder, free flowing, flavor enhancement; non-masking, highly fermentable, high osmolarity, high reducing capacity</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1037,14 +1011,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Dextrose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Dry crystalline powder, free flowing, flavor enhancement; non-masking, highly fermentable, high osmolarity, high reducing capacity</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>TrueTrace™ certified non-GM dextrose monohydrate</string>
 		<key>application</key>
 		<string>Panning</string>
-		<key>productNotes</key>
-		<string>Dry crystalline powder, free flowing, flavor enhancement; non-masking, highly fermentable, high osmolarity, high reducing capacity</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1061,14 +1035,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Dextrose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Coarser particle size compared to MALTISWEET® CM100. Less expensive than MALTISWEET® CM9820.</string>
 		<key>application</key>
 		<string>Fondant/ Cremes/ Marzipan</string>
-		<key>productNotes</key>
-		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1085,14 +1059,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Finer particle size compared to MALTISWEET® CM40. Because of smaller particle size, provides a smooth, less gritty mouthfeel.</string>
 		<key>application</key>
 		<string>Fondant/ Cremes/ Marzipan</string>
-		<key>productNotes</key>
-		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1109,14 +1083,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Crystalline sorbitol with very fine particle size distribution. 60% sweetness vs. sucrose. 2.6kcal/gr (d.b.).</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Small particle size for a smooth, less gritty mouthfeel.</string>
 		<key>application</key>
 		<string>Fondant/ Cremes/ Marzipan</string>
-		<key>productNotes</key>
-		<string>Crystalline sorbitol with very fine particle size distribution. 60% sweetness vs. sucrose. 2.6kcal/gr (d.b.).</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1133,14 +1107,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sorbitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Fondant/ Cremes/ Marzipan</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1157,14 +1131,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Fondant/ Cremes/ Marzipan</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1181,14 +1155,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string><![CDATA[Mild taste & mouthfeel improvement. Low hygroscopicity. Process stability. Oligosaccharide labeling.]]></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup or high maltose corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Specific IMO product for hard candy application.</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string><![CDATA[Mild taste & mouthfeel improvement. Low hygroscopicity. Process stability. Oligosaccharide labeling.]]></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1205,14 +1179,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Isomalto-oligosaccharide</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Very water soluble, Low sweetness, No cooling effect, Non-reactive, Carrier for sensitive flavors and colors, Binder, Stabilizing aid, Viscosity agent, Dispersability aid, Bulking agent.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose and corn syrup when combined with isomalt</string>
 		<key>selectionCriteria</key>
 		<string>Increases viscosity for better processing; provides crystallization control similar to polyglycitol syrups. Increases digestive tolerance. Increases residence time in mouth for lozenges.</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Very water soluble, Low sweetness, No cooling effect, Non-reactive, Carrier for sensitive flavors and colors, Binder, Stabilizing aid, Viscosity agent, Dispersability aid, Bulking agent.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1226,22 +1200,17 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<key>productDescription</key>
 		<string>STABILITE® SD30 is a polyglycitol in spray-dried form. It is a low sweetness powder that is higher in molecular weight and lower in hygroscopicity than typical polyglycitol products.E21 It can be dissolved in water to produce clear, non-crystallizing syrups at concentrations up to 75%.</string>
 		<key>labelDeclaration</key>
-		<string>Polyglycitol or Hydrogenated
-Starch Hydrolysate</string>
+		<string>Polyglycitol or Hydrogenated Starch Hydrolysate</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Crystal. control, sweetness, texture, stability. Non-reactive, Functional alternative to corn syrup and/or isomalt, Excellent stabilizing agent, Viscosity aid, Binder, Carrier for flavors and actives.  Need to add HPS for sweetness compensation</string>
 		<key>recommendedMaxUsage</key>
-		<string>Up to 100% replacement of sucrose and corn syrup
-
-(for even better stability can be used in combination with isomalt in hard candy) </string>
+		<string>Up to 100% replacement of sucrose and corn syrup  (for even better stability can be used in combination with isomalt in hard candy)</string>
 		<key>selectionCriteria</key>
 		<string>Can replace isomalt in sugar-free candies. Cost advantage over MALTISWEET® B and HYSTAR® 5875 Maltitol Syrups. Provides hard candy stability due to high polymer length.</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Crystal. control, sweetness, texture, stability. Non-reactive, Functional alternative to corn syrup and/or isomalt, Excellent stabilizing agent, Viscosity aid, Binder, Carrier for flavors and actives.
-
-Need to add HPS for sweetness compensation</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1258,14 +1227,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Polyglycitol or Hydrogenated Starch Hydrolysate</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string><![CDATA[Mild taste & mouthfeel improvement. Low hygroscopicity. Process stability. Oligosaccharide labeling.]]></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup or high maltose corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Specific IMO product for soft candy application.</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string><![CDATA[Mild taste & mouthfeel improvement. Low hygroscopicity. Process stability. Oligosaccharide labeling.]]></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1282,14 +1251,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Isomalto-oligosaccharide</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Used for rheology and texture improvement. Provides extra chewiness and firmer texture.</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1306,16 +1275,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Corn Syrup, Dextrose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Crystal. control, sweetness, texture, stability. Non-reactive, Functional alternative to corn syrup and/or isomalt, Excellent stabilizing agent, Viscosity aid, Binder, Carrier for flavors and actives.  Need to add HPS for sweetness compensation</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Used in making sugar-free hard candy. Can replace isomalt in sugar-free candies. Provides hard candy stability due to high polymer length.</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Crystal. control, sweetness, texture, stability. Non-reactive, Functional alternative to corn syrup and/or isomalt, Excellent stabilizing agent, Viscosity aid, Binder, Carrier for flavors and actives.
-
-Need to add HPS for sweetness compensation</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1332,16 +1299,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Polyglycitol or Hydrogenated Starch Hydrolysate</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Crystal. control, sweetness, texture, stability. Non-reactive, Functional alternative to corn syrup and/or isomalt, Excellent stabilizing agent, Viscosity aid, Binder, Carrier for flavors and actives.  Need to add HPS for sweetness compensation</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Can be used to replace corn syrup if maltitol syrups are not available. May need to consider higher molecular weight.</string>
 		<key>application</key>
 		<string>Caramel</string>
-		<key>productNotes</key>
-		<string>Crystal. control, sweetness, texture, stability. Non-reactive, Functional alternative to corn syrup and/or isomalt, Excellent stabilizing agent, Viscosity aid, Binder, Carrier for flavors and actives.
-
-Need to add HPS for sweetness compensation</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1358,16 +1323,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Polyglycitol or Hydrogenated Starch Hydrolysate</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Crystal. control, sweetness, texture, stability. Non-reactive, Functional alternative to corn syrup and/or isomalt, Excellent stabilizing agent, Viscosity aid, Binder, Carrier for flavors and actives.  Need to add HPS for sweetness compensation</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Can be used to replace corn syrup if maltitol syrups are not available. May need to consider higher molecular weight.</string>
 		<key>application</key>
 		<string>Fondant/ Cremes/ Marzipan</string>
-		<key>productNotes</key>
-		<string>Crystal. control, sweetness, texture, stability. Non-reactive, Functional alternative to corn syrup and/or isomalt, Excellent stabilizing agent, Viscosity aid, Binder, Carrier for flavors and actives.
-
-Need to add HPS for sweetness compensation</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1384,14 +1347,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Polyglycitol or Hydrogenated Starch Hydrolysate</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Coarser particle size compared to MALTISWEET® CM100. Less expensive than MALTISWEET® CM9820.</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1408,14 +1371,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Finer particle size compared to MALTISWEET® CM40. Because of smaller particle size, provides a smooth, less gritty mouthfeel.</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1432,14 +1395,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Exceptional purity, minimizes moisture interference, clean, mild sweetness.</string>
 		<key>recommendedMaxUsage</key>
 		<string>As needed for topical/dusting application</string>
 		<key>selectionCriteria</key>
 		<string>Cost savings against sucrose</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Exceptional purity, minimizes moisture interference, clean, mild sweetness.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1456,14 +1419,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Dextrose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-hygroscopic nature, Low solubility, Non- reactive, Non- cariogenic, Pleasant cooling effect.</string>
 		<key>recommendedMaxUsage</key>
 		<string>As needed for topical/dusting application</string>
 		<key>selectionCriteria</key>
 		<string>Low hygroscopicitiy.</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Non-hygroscopic nature, Low solubility, Non- reactive, Non- cariogenic, Pleasant cooling effect.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1480,14 +1443,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Mannitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Fine granular crystalline sorbitol designed for chewing gum. It has 2.6 cal/g and is 60% as sweet as sucrose.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Best combination of cost, functionality and stability.</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Fine granular crystalline sorbitol designed for chewing gum. It has 2.6 cal/g and is 60% as sweet as sucrose.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1504,14 +1467,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sorbitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Liquid solution that contains 70% sorbitol providing bulking and humectancy. 60% sweetness vs. sucrose (d.b.). 2.6kcal/gr (d.b.).</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Cost effective, provides desired texture in gum.</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Liquid solution that contains 70% sorbitol providing bulking and humectancy. 60% sweetness vs. sucrose (d.b.). 2.6kcal/gr (d.b.).</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1528,14 +1491,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sorbitol solution</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1552,14 +1515,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1576,14 +1539,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Well suited for tableting. 2.6 cal/g. 60% as sweet as sucrose.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Excellent flow properties and compressibility</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Well suited for tableting. 2.6 cal/g. 60% as sweet as sucrose.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1600,14 +1563,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sorbitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Coarse granular crystalline sorbitol. Well-suited for tabletting.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Excellent flow properties and compressibility</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Coarse granular crystalline sorbitol. Well-suited for tabletting.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1624,14 +1587,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Sorbitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Exceptional purity, minimizes moisture interference, clean, mild sweetness.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Cost savings against sucrose</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Exceptional purity, minimizes moisture interference, clean, mild sweetness.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1648,14 +1611,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Dextrose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.010% - 0.016%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1672,14 +1635,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.010% - 0.016%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1696,14 +1659,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 30% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Alternative bulking agent for sugar replacement.</string>
 		<key>application</key>
 		<string>Chocolate/ Compound Coating</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1720,14 +1683,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Polydextrose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Coarser particle size compared to MALTISWEET® CM100. Less expensive than MALTISWEET® CM9820.</string>
 		<key>application</key>
 		<string>Chocolate/ Compound Coating</string>
-		<key>productNotes</key>
-		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1744,14 +1707,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Finer particle size compared to MALTISWEET® CM40. Because of smaller particle size, provides a smooth, less gritty mouthfeel.</string>
 		<key>application</key>
 		<string>Chocolate/ Compound Coating</string>
-		<key>productNotes</key>
-		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1768,14 +1731,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Exceptional purity, minimizes moisture interference, clean, mild sweetness. Used more for baking chocolate chips</string>
 		<key>recommendedMaxUsage</key>
 		<string>25% - 30% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Cost savings against sucrose</string>
 		<key>application</key>
 		<string>Chocolate/ Compound Coating</string>
-		<key>productNotes</key>
-		<string>Exceptional purity, minimizes moisture interference, clean, mild sweetness. Used more for baking chocolate chips</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1792,14 +1755,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Dextrose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Chocolate/ Compound Coating</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1816,14 +1779,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Chocolate/ Compound Coating</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1840,18 +1803,14 @@ Need to add HPS for sweetness compensation</string>
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
-		<string>Up to 100% replacement of sucrose and corn syrup
-
-(for even better stability can be used in combination with isomalt in hard candy) </string>
+		<string>Up to 100% replacement of sucrose and corn syrup  (for even better stability can be used in combination with isomalt in hard candy)</string>
 		<key>selectionCriteria</key>
 		<string>Slightly higher maltitol content compared to MALTISWEET® B, so slightly less stable, but more sweet.</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1868,14 +1827,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose and corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Made specifically for confectionery industry</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1892,14 +1851,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Glucose, Corn Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1916,14 +1875,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1940,14 +1899,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 30% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Alternative bulking agent for sugar replacement.</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1964,16 +1923,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Polydextrose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Slightly higher maltitol content compared to MALTISWEET® B, so slightly less stable, but more sweet.</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -1990,14 +1947,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Liquid solution that contains 70% sorbitol providing bulking and humectancy. 60% sweetness vs. sucrose (d.b.). 2.6kcal/gr (d.b.).</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Cost effective, provides desired humectancy in jellies and liquorice</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Liquid solution that contains 70% sorbitol providing bulking and humectancy. 60% sweetness vs. sucrose (d.b.). 2.6kcal/gr (d.b.).</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2014,14 +1971,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sorbitol Solution</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose and corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Made specifically for confectionery industry</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2038,14 +1995,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Glucose, Corn Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2062,14 +2019,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2086,16 +2043,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Slightly higher maltitol content compared to MALTISWEET® B, so slightly less stable, but more sweet.</string>
 		<key>application</key>
 		<string>Caramel</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2112,14 +2067,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Caramel</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2136,14 +2091,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Caramel</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2160,14 +2115,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose and corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Made specifically for confectionery industry</string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2184,14 +2139,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Glucose, Fructose, Corn Syrup</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2208,14 +2163,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2232,14 +2187,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Coarser particle size compared to MALTISWEET® CM100. Less expensive than MALTISWEET® CM9820.</string>
 		<key>application</key>
 		<string>Fondant/ Cremes/ Marzipan</string>
-		<key>productNotes</key>
-		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2256,14 +2211,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Finer particle size compared to MALTISWEET® CM40. Because of smaller particle size, provides a smooth, less gritty mouthfeel.</string>
 		<key>application</key>
 		<string>Fondant/ Cremes/ Marzipan</string>
-		<key>productNotes</key>
-		<string><![CDATA[Non-browning, Non-cariogenic, Tablet and/or capsule diluent, Primary bulking agent in sugar free & reduced sugar applications.]]></string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2280,14 +2235,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2304,14 +2259,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2328,14 +2283,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.05% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>Powder</string>
 		<key>application</key>
 		<string>Chewing Gum</string>
-		<key>productNotes</key>
-		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2352,14 +2307,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sucralose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Crystalline sorbitol with uniform particle size distribution</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Directly compressible sorbitol; cryoprotectant, crystallization inhibitor, freeze point depressant, plasticizer, humectant and excipient.</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Crystalline sorbitol with uniform particle size distribution</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2376,14 +2331,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sorbitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.010% - 0.016%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2400,14 +2355,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.010% - 0.016%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2424,14 +2379,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.08% - 0.40%</string>
 		<key>selectionCriteria</key>
 		<string>Powder</string>
 		<key>application</key>
 		<string>Tableted/ Pressed Mints</string>
-		<key>productNotes</key>
-		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2448,18 +2403,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sucralose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
-		<string>Up to 100% replacement of sucrose and corn syrup
-
-(for even better stability can be used in combination with isomalt in hard candy) </string>
+		<string>Up to 100% replacement of sucrose and corn syrup  (for even better stability can be used in combination with isomalt in hard candy)</string>
 		<key>selectionCriteria</key>
 		<string>Crystallization control, sweetness, texture, stability</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2476,14 +2427,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2500,14 +2451,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2524,14 +2475,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.03% - 0.09%</string>
 		<key>selectionCriteria</key>
 		<string>Powder</string>
 		<key>application</key>
 		<string>Hard Candy/ Lozenges</string>
-		<key>productNotes</key>
-		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2548,16 +2499,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sucralose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Crystallization control, sweetness, texture, stability</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2574,14 +2523,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2598,14 +2547,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2622,14 +2571,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.03% - 0.09%</string>
 		<key>selectionCriteria</key>
 		<string>Powder</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2646,16 +2595,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sucralose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.  Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of corn syrup</string>
 		<key>selectionCriteria</key>
 		<string>Crystallization control, sweetness, texture, stability</string>
 		<key>application</key>
 		<string>Caramel</string>
-		<key>productNotes</key>
-		<string>Non-crystallizing, Humectant, Texturizing agent, Stabilizing aid, Non-reactive, Non-cariogenic, Sweetness and taste similar to sugar, Replacement for sugar and corn syrup.
-
-Maltitol syrups typically replace medium and high DE corn syrups in sugar free and reduced sugar confections due to the balance of small and large molecular weight material.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2672,14 +2619,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Maltitol</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Caramel</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2696,14 +2643,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Caramel</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2720,14 +2667,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.03% - 0.09%</string>
 		<key>selectionCriteria</key>
 		<string>Powder</string>
 		<key>application</key>
 		<string>Caramel</string>
-		<key>productNotes</key>
-		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2744,14 +2691,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sucralose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2768,14 +2715,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2792,14 +2739,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.03% - 0.09%</string>
 		<key>selectionCriteria</key>
 		<string>Powder</string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2816,14 +2763,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sucralose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Dry crystalline powder, free flowing, flavor enhancement; non-masking, highly fermentable, high osmolarity, high reducing capacity</string>
 		<key>recommendedMaxUsage</key>
 		<string>Up to 100% replacement of sucrose</string>
 		<key>selectionCriteria</key>
 		<string>Provides harder texture, simpler processing, reduced production time than sucrose in panning application.</string>
 		<key>application</key>
 		<string>Panning</string>
-		<key>productNotes</key>
-		<string>Dry crystalline powder, free flowing, flavor enhancement; non-masking, highly fermentable, high osmolarity, high reducing capacity</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2840,14 +2787,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Dextrose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>95% Reb A</string>
 		<key>application</key>
 		<string>Fondant/ Cremes/ Marzipan</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2864,14 +2811,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.01% - 0.06%</string>
 		<key>selectionCriteria</key>
 		<string>97% Reb A</string>
 		<key>application</key>
 		<string>Fondant/ Cremes/ Marzipan</string>
-		<key>productNotes</key>
-		<string>Natural, non caloric HPS for sugar free/reduced sugar applications; clean, sweet taste at low conc., bitter/licorice flavor at higher conc., some sweetness lingering</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2888,14 +2835,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Stevia Leaf Extract</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>recommendedMaxUsage</key>
 		<string>0.03% - 0.09%</string>
 		<key>selectionCriteria</key>
 		<string>Powder</string>
 		<key>application</key>
 		<string>Fondant/ Cremes/ Marzipan</string>
-		<key>productNotes</key>
-		<string>A white to off-white crystalline powder. It is freely soluble in water, methanol, and alcohol. It is slightly soluble in ethyl acetate. It functions as a nonnutritive sweetener/flavor enhancer.</string>
 		<key>valueProposition</key>
 		<string>Sugar replacement/reduction</string>
 		<key>region</key>
@@ -2912,14 +2859,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Sucralose</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Penford equivalent for PERFECTAGEL™ AV-13. Enhancing chew/texture, alternative to higher cost gelatin ingredient.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Penford equivalent for PERFECTAGEL™ AV-13. Enhancing chew/texture, alternative to higher cost gelatin ingredient.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -2936,14 +2883,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Penford closest match for PERFECTAGEL™ MPT, but not equal. Enhancing chew/texture, shape retention, prevention of sugar recrystallization.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Penford closest match for PERFECTAGEL™ MPT, but not equal. Enhancing chew/texture, shape retention, prevention of sugar recrystallization.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -2960,14 +2907,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Oxidized component of PENBIND® 1225.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Oxidized component of PENBIND® 1225.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -2975,8 +2922,7 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<key>priority</key>
 		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
-		<string>5% - 8%
-</string>
+		<string>5% - 8%</string>
 		<key>productName</key>
 		<string>PENCLING® 220</string>
 		<key>productDescription</key>
@@ -2985,14 +2931,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3009,14 +2955,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3033,14 +2979,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Tapioca Maltodextrin</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
-		<string>Tapioca dextrin with excellent film-forming properties, coupled with low viscosity. Ideal for applications where good surface wetability is important. </string>
+		<string>Tapioca dextrin with excellent film-forming properties, coupled with low viscosity. Ideal for applications where good surface wetability is important.</string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3057,14 +3003,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Tapioca Dextrin</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Develops gels upon cooling which are shear thinning and have thermo-reversible properties. Enhancing chew/texture, shape retention, prevention of sugar recrystallization.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
-		<string><![CDATA[Hydrates easily when heated to > 75°C; very low hot viscosity; easy to process at high concentrations and/or in high solids systems. ]]></string>
+		<string><![CDATA[Hydrates easily when heated to > 75°C; very low hot viscosity; easy to process at high concentrations and/or in high solids systems.]]></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Develops gels upon cooling which are shear thinning and have thermo-reversible properties. Enhancing chew/texture, shape retention, prevention of sugar recrystallization.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3081,14 +3027,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Tapioca Dextrin</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization, Fast gelling, For heat stability improvement, a vegetarian claim, excellent sheet, short, firm, and elastic texture.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization, Fast gelling, For heat stability improvement, a vegetarian claim, excellent sheet, short, firm, and elastic texture.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3105,14 +3051,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3129,14 +3075,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Gellan gum</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3153,14 +3099,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Carrageenan gum</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3177,14 +3123,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization, Fast gelling, For heat stability improvement, a vegetarian claim, excellent sheet, short, firm, and elastic texture.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization, Fast gelling, For heat stability improvement, a vegetarian claim, excellent sheet, short, firm, and elastic texture.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3201,14 +3147,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3225,14 +3171,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3249,14 +3195,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Penford equivalent for PERFECTAGEL™ AV-13. Enhancing chew/texture, alternative to higher cost gelatin ingredient.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Penford equivalent for PERFECTAGEL™ AV-13. Enhancing chew/texture, alternative to higher cost gelatin ingredient.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3273,14 +3219,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Penford closest match for PERFECTAGEL™ MPT, but not equal. Enhancing chew/texture, shape retention, prevention of sugar recrystallization.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Penford closest match for PERFECTAGEL™ MPT, but not equal. Enhancing chew/texture, shape retention, prevention of sugar recrystallization.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3297,14 +3243,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Oxidized component of PENBIND® 1225.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Oxidized component of PENBIND® 1225.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3312,8 +3258,7 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<key>priority</key>
 		<string></string>
 		<key>suggestedUsageLevelInFormulations</key>
-		<string>5% - 8%
-</string>
+		<string>5% - 8%</string>
 		<key>productName</key>
 		<string>PENCLING® 220</string>
 		<key>productDescription</key>
@@ -3322,14 +3267,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization, Fast gelling, For heat stability improvement, a vegetarian claim, excellent sheet, short, firm, and elastic texture.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization, Fast gelling, For heat stability improvement, a vegetarian claim, excellent sheet, short, firm, and elastic texture.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3346,14 +3291,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Used in Jelly Bean Candy</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Used in Jelly Bean Candy</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3370,14 +3315,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization, Fast gelling, For heat stability improvement, a vegetarian claim, excellent sheet, short, firm, and elastic texture.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Enhancing chew/texture, shape retention, prevention of sugar recrystallization, Fast gelling, For heat stability improvement, a vegetarian claim, excellent sheet, short, firm, and elastic texture.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3394,14 +3339,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Usage level cannot be too high as TEXTRA® will impart cohesiveness to the sugar mass.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Usage level cannot be too high as TEXTRA® will impart cohesiveness to the sugar mass.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3418,14 +3363,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Usage level tends to be higher than ELASTIGEL® 1000J or TEXTRA® in order to obtain the required firmness and structure.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Usage level tends to be higher than ELASTIGEL® 1000J or TEXTRA® in order to obtain the required firmness and structure.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3442,14 +3387,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Suitable for extruded candy (fruit leather or licorice candy that is manufactured using extruder).</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Suitable for extruded candy (fruit leather or licorice candy that is manufactured using extruder).</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3466,14 +3411,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Tapioca Starch</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Suitable for extruded candy (fruit leather or licorice candy that is manufactured using extruder).</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Soft/ Chewy/ Gummy/ Jelly candy</string>
-		<key>productNotes</key>
-		<string>Suitable for extruded candy (fruit leather or licorice candy that is manufactured using extruder).</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3490,14 +3435,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3514,14 +3459,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Recommended to use in combination with ULTRA-SET LT. This product provides exceptional forming, texture, and structure at more efficient usage levels and in less time than comparable products.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string>Recommended to use in combination with ULTRA-SET LT. This product provides exceptional forming, texture, and structure at more efficient usage levels and in less time than comparable products.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3538,14 +3483,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Recommended to use in combination with ADVANTA-GEL® S.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Marshmallow</string>
-		<key>productNotes</key>
-		<string>Recommended to use in combination with ADVANTA-GEL® S.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3562,14 +3507,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Food Starch-Modified</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Pulp Fruit Candy</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3586,14 +3531,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Xanthan gum</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string></string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Liquid Candy</string>
-		<key>productNotes</key>
-		<string></string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3610,14 +3555,14 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<string>Xanthan gum</string>
 	</dict>
 	<dict>
+		<key>features</key>
+		<string>Exhibits excellent dispersibility and imparts superior sheen, clarity, and smoothness when compared to traditional pregelatinized starches.</string>
 		<key>recommendedMaxUsage</key>
 		<string></string>
 		<key>selectionCriteria</key>
 		<string></string>
 		<key>application</key>
 		<string>Liquid Candy</string>
-		<key>productNotes</key>
-		<string>Exhibits excellent dispersibility and imparts superior sheen, clarity, and smoothness when compared to traditional pregelatinized starches.</string>
 		<key>valueProposition</key>
 		<string>Gelatin replacement</string>
 		<key>region</key>
@@ -3629,7 +3574,7 @@ Maltitol syrups typically replace medium and high DE corn syrups in sugar free a
 		<key>productName</key>
 		<string>ULTRA-SPERSE® M</string>
 		<key>productDescription</key>
-		<string>High performance, agglomerated, cold water swelling (CWS) modified food starch derived from waxy maize. Thickener agent with extremely resistant to harsh processing conditions including intense heating (microwaving), high shear (milling), or low pH. </string>
+		<string>High performance, agglomerated, cold water swelling (CWS) modified food starch derived from waxy maize. Thickener agent with extremely resistant to harsh processing conditions including intense heating (microwaving), high shear (milling), or low pH.</string>
 		<key>labelDeclaration</key>
 		<string>Food Starch-Modified</string>
 	</dict>
