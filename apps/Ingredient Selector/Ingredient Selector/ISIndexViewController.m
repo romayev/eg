@@ -18,7 +18,7 @@
 
 
 @implementation ISIndexViewController {
-    NSInteger _selected;
+    ISProductType _productType;
 }
 
 - (void) viewDidLoad {
@@ -40,7 +40,7 @@
     [super prepareForSegue: segue sender: sender];
 
     NSString *identifier = [segue identifier];
-    if ([identifier isEqualToString: @"confectionery"]) {
+    if ([identifier isEqualToString: @"search"]) {
         ISSearchViewController *c = [segue destinationViewController];
         [c setDelegate: self];
     }
@@ -71,16 +71,15 @@
 }
 
 - (void) showToolViewController: (NSInteger) tag animated: (BOOL) animated {
-    NSString *segue = nil;
-    segue = @"confectionery";
-    if (segue) {
-        _selected = tag;
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow: _selected inSection: 0];
-        if (![indexPath isEqual: [_tableView indexPathForSelectedRow]]) {
-            [_tableView selectRowAtIndexPath: indexPath animated: NO scrollPosition: UITableViewScrollPositionNone];
-        }
-        [self performSegueWithIdentifier: segue sender: nil];
+    _productType = (ISProductType) tag;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow: tag inSection: 0];
+    if (![indexPath isEqual: [_tableView indexPathForSelectedRow]]) {
+        [_tableView selectRowAtIndexPath: indexPath animated: NO scrollPosition: UITableViewScrollPositionNone];
     }
+    if (_productType != ISBeverages && _productType != ISConfectionery) {
+        _productType = ISConfectionery;
+    }
+    [self performSegueWithIdentifier: @"search" sender: nil];
 }
 
 
@@ -88,7 +87,7 @@
 #pragma mark ISSearchViewControllerDelegate
 
 - (ISProductType) productType {
-    return (ISProductType) [[_tableView indexPathForSelectedRow] row];
+    return _productType;
 }
 
 @end

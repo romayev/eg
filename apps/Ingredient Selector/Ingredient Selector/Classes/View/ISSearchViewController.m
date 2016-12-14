@@ -39,7 +39,8 @@
 
     _productType = [_delegate productType];
     [self load];
-    self.navigationItem.title = NSLocalizedString(@"index.title.8", nil);
+    NSString *key = [NSString stringWithFormat: @"index.title.%zi", _productType];
+    self.navigationItem.title = NSLocalizedString(key, nil);
     _headerLabel.text = NSLocalizedString(@"product-count", nil);
     _productCountLabel.text = [NSString stringWithFormat: @"%zi", [_products count]];
     [_viewButton setTitle: NSLocalizedString(@"view",  nil) forState: UIControlStateNormal];
@@ -51,7 +52,7 @@
 }
 
 - (void) decodeRestorableStateWithCoder: (NSCoder *) coder {
-    _productType = [[coder decodeObjectForKey: @"idx"] integerValue];
+    _productType = (ISProductType) [[coder decodeObjectForKey: @"idx"] integerValue];
     [self load];
     [super decodeRestorableStateWithCoder: coder];
 }
