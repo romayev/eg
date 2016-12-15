@@ -110,6 +110,7 @@
 
 - (IBAction) reset: (id) sender {
     [self initializeSearch];
+    _editorPath = nil;
     [_tableView reloadData];
 }
 
