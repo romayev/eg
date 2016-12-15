@@ -14,9 +14,11 @@
 
 
 @interface ISSearchViewController () <ISSearchTableViewCellDataSource, ISSearchTableViewCellDelegate, ISProductsViewControllerDelegate>
+@property (strong, nonatomic) IBOutlet UIImageView *productImageView;
 @property (strong, nonatomic) IBOutlet UILabel *headerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *productCountLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIButton *resetButton;
 @property (strong, nonatomic) IBOutlet UIButton *viewButton;
 @property (strong, nonatomic) NSArray *criteria;
 @property (strong, nonatomic) NSMutableArray *availableValues;
@@ -37,32 +39,42 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
+    [_resetButton setTitle: NSLocalizedString(@"reset", nil) forState: UIControlStateNormal];
+    [_viewButton setTitle: NSLocalizedString(@"view",  nil) forState: UIControlStateNormal];
+
     _productType = [_delegate productType];
-    [self load];
+    [self initializeSearch];
+    [self update];
+}
+
+//- (void) encodeRestorableStateWithCoder: (NSCoder *) coder {
+//    [coder encodeObject: @(_productType) forKey: @"idx"];
+//    [super encodeRestorableStateWithCoder: coder];
+//}
+//
+//- (void) decodeRestorableStateWithCoder: (NSCoder *) coder {
+//    _productType = (ISProductType) [[coder decodeObjectForKey: @"idx"] integerValue];
+//    [self initializeSearch];
+//    [self update];
+//    [super decodeRestorableStateWithCoder: coder];
+//}
+
+- (void) update {
     NSString *key = [NSString stringWithFormat: @"index.title.%zi", _productType];
     self.navigationItem.title = NSLocalizedString(key, nil);
+
+    [_productImageView setImage: [UIImage imageNamed: [NSString stringWithFormat: @"search-%zi", _productType]]];
     _headerLabel.text = NSLocalizedString(@"product-count", nil);
-    _productCountLabel.text = [NSString stringWithFormat: @"%zi", [_products count]];
-    [_viewButton setTitle: NSLocalizedString(@"view",  nil) forState: UIControlStateNormal];
 }
 
-- (void) encodeRestorableStateWithCoder: (NSCoder *) coder {
-    [coder encodeObject: @(_productType) forKey: @"idx"];
-    [super encodeRestorableStateWithCoder: coder];
-}
-
-- (void) decodeRestorableStateWithCoder: (NSCoder *) coder {
-    _productType = (ISProductType) [[coder decodeObjectForKey: @"idx"] integerValue];
-    [self load];
-    [super decodeRestorableStateWithCoder: coder];
-}
-
-- (void) load {
+- (void) initializeSearch {
     Class product = [self product];
-    _products = [product productsWithSearchCriteria: nil];
     _usePriority = [product usesPriority];
+    _products = [product productsWithSearchCriteria: nil];
     _criteria = [product searchCriteria];
     _count = [_criteria count];
+    _productCountLabel.text = [NSString stringWithFormat: @"%zi", [_products count]];
+
     _availableValues = [[NSMutableArray alloc] initWithCapacity: _count];
     for (NSInteger i = 0; i < _count; i++) {
         NSMutableArray *a = [NSMutableArray array];
@@ -96,7 +108,9 @@
 #pragma mark -
 #pragma mark UI Actions
 
-- (IBAction) done: (id) sender {
+- (IBAction) reset: (id) sender {
+    [self initializeSearch];
+    [_tableView reloadData];
 }
 
 
@@ -150,7 +164,7 @@
     cell.textLabel.text = title;
     cell.detailTextLabel.text = detail;
 
-    BOOL enabled = [self isCellEnabledAtIndexPath: [NSIndexPath indexPathForRow: row inSection: section]];
+    BOOL enabled = [self isCellEnabledAtIndexPath: [NSIndexPath indexPathForRow: indexPath.row inSection: section]];
     [cell setUserInteractionEnabled: enabled];
     cell.textLabel.alpha = cell.detailTextLabel.alpha = enabled ? 1 : 0.5;
 
@@ -260,10 +274,12 @@
         if (i == editorParentRow) continue;
         [self updateAvailableValuesAtIndex: i];
     }
+
     if (reloadAll) {
         [_tableView reloadData];
     } else {
-        [_tableView reloadRowsAtIndexPaths: @[[self editorParentPath], _editorPath] withRowAnimation: UITableViewRowAnimationAutomatic];
+        //[_tableView reloadRowsAtIndexPaths: @[[self editorParentPath], _editorPath] withRowAnimation: UITableViewRowAnimationAutomatic];
+        [_tableView reloadRowsAtIndexPaths: [_tableView indexPathsForVisibleRows] withRowAnimation: UITableViewRowAnimationAutomatic];
     }
     [self updateProdutcs];
 }

@@ -16,12 +16,10 @@
 		FA6FAA041DE0E8EB00CEF665 /* ISSearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAA031DE0E8EB00CEF665 /* ISSearchItem.m */; };
 		FA6FAA131DE3BD3700CEF665 /* ISProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAA121DE3BD3700CEF665 /* ISProduct.m */; };
 		FA6FAA161DE3BE2200CEF665 /* ISConfectionery.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAA151DE3BE2200CEF665 /* ISConfectionery.m */; };
-		FAA03CFA1DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAA03CF91DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf */; };
 		FAA03CFD1DEBE352001EA461 /* ISMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA03CFC1DEBE352001EA461 /* ISMoreViewController.m */; };
 		FAAEA7181DDA4E24008EA91E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAEA7171DDA4E24008EA91E /* main.m */; };
 		FAAEA71B1DDA4E24008EA91E /* ISAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAEA71A1DDA4E24008EA91E /* ISAppDelegate.m */; };
 		FAAEA7211DDA4E24008EA91E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA71F1DDA4E24008EA91E /* Main.storyboard */; };
-		FAAEA7241DDA4E24008EA91E /* Ingredient_Selector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAAEA7221DDA4E24008EA91E /* Ingredient_Selector.xcdatamodeld */; };
 		FAAEA7261DDA4E24008EA91E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA7251DDA4E24008EA91E /* Assets.xcassets */; };
 		FAAEA7291DDA4E24008EA91E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA7271DDA4E24008EA91E /* LaunchScreen.storyboard */; };
 		FAAEA7471DDB8388008EA91E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA7451DDB8388008EA91E /* Localizable.strings */; };
@@ -51,7 +49,6 @@
 		FA6FAA121DE3BD3700CEF665 /* ISProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISProduct.m; path = Classes/Model/ISProduct.m; sourceTree = "<group>"; };
 		FA6FAA141DE3BE2200CEF665 /* ISConfectionery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISConfectionery.h; path = Classes/Model/ISConfectionery.h; sourceTree = "<group>"; };
 		FA6FAA151DE3BE2200CEF665 /* ISConfectionery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISConfectionery.m; path = Classes/Model/ISConfectionery.m; sourceTree = "<group>"; };
-		FAA03CF91DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ufonts.com_miloot-black-opentype.otf"; path = "Resources/Fonts/ufonts.com_miloot-black-opentype.otf"; sourceTree = "<group>"; };
 		FAA03CFB1DEBE352001EA461 /* ISMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISMoreViewController.h; path = Classes/View/ISMoreViewController.h; sourceTree = "<group>"; };
 		FAA03CFC1DEBE352001EA461 /* ISMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISMoreViewController.m; path = Classes/View/ISMoreViewController.m; sourceTree = "<group>"; };
 		FAAEA7131DDA4E23008EA91E /* Ingredient Selector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ingredient Selector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,7 +56,6 @@
 		FAAEA7191DDA4E24008EA91E /* ISAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISAppDelegate.h; sourceTree = "<group>"; };
 		FAAEA71A1DDA4E24008EA91E /* ISAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISAppDelegate.m; sourceTree = "<group>"; };
 		FAAEA7201DDA4E24008EA91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FAAEA7231DDA4E24008EA91E /* Ingredient_Selector.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ingredient_Selector.xcdatamodel; sourceTree = "<group>"; };
 		FAAEA7251DDA4E24008EA91E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAAEA7281DDA4E24008EA91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAAEA72A1DDA4E24008EA91E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,14 +96,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		FAA03CF61DEBC00E001EA461 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				FAA03CF91DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf */,
-			);
-			name = Fonts;
-			sourceTree = "<group>";
-		};
 		FAAEA70A1DDA4E23008EA91E = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +124,6 @@
 				FAAEA7251DDA4E24008EA91E /* Assets.xcassets */,
 				FAAEA7271DDA4E24008EA91E /* LaunchScreen.storyboard */,
 				FAAEA72A1DDA4E24008EA91E /* Info.plist */,
-				FAAEA7221DDA4E24008EA91E /* Ingredient_Selector.xcdatamodeld */,
 				FAAEA7161DDA4E24008EA91E /* Supporting Files */,
 			);
 			path = "Ingredient Selector";
@@ -179,7 +166,6 @@
 		FAAEA7401DDB82D8008EA91E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FAA03CF61DEBC00E001EA461 /* Fonts */,
 				FAAEA7411DDB8303008EA91E /* Content */,
 			);
 			name = Resources;
@@ -250,6 +236,7 @@
 				TargetAttributes = {
 					FAAEA7121DDA4E23008EA91E = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = MZT79G64Z7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -278,7 +265,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF2D4231DF651CA0095434B /* beverages.plist in Resources */,
-				FAA03CFA1DEBC06F001EA461 /* ufonts.com_miloot-black-opentype.otf in Resources */,
 				FAAEA7471DDB8388008EA91E /* Localizable.strings in Resources */,
 				FAAEA7291DDA4E24008EA91E /* LaunchScreen.storyboard in Resources */,
 				FAAEA7261DDA4E24008EA91E /* Assets.xcassets in Resources */,
@@ -307,7 +293,6 @@
 				FAF8264F1DE8B025002589D9 /* ISProductsViewController.m in Sources */,
 				FAF826551DE8F51D002589D9 /* ISProductViewController.m in Sources */,
 				FA6F37FA1DDB8D2A00E2D43F /* ISIndexViewController.m in Sources */,
-				FAAEA7241DDA4E24008EA91E /* Ingredient_Selector.xcdatamodeld in Sources */,
 				FAAEA7181DDA4E24008EA91E /* main.m in Sources */,
 				FA6FA9FA1DDF9BAA00CEF665 /* ISSearchTableViewCell.m in Sources */,
 			);
@@ -381,9 +366,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MZT79G64Z7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -430,9 +416,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = MZT79G64Z7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -455,10 +442,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Ingredient Selector/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.executivegraphics.Ingredient-Selector";
+				PRODUCT_BUNDLE_IDENTIFIER = com.executivegraphics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -466,10 +456,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Ingredient Selector/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.executivegraphics.Ingredient-Selector";
+				PRODUCT_BUNDLE_IDENTIFIER = com.executivegraphics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -495,19 +488,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		FAAEA7221DDA4E24008EA91E /* Ingredient_Selector.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				FAAEA7231DDA4E24008EA91E /* Ingredient_Selector.xcdatamodel */,
-			);
-			currentVersion = FAAEA7231DDA4E24008EA91E /* Ingredient_Selector.xcdatamodel */;
-			path = Ingredient_Selector.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = FAAEA70B1DDA4E23008EA91E /* Project object */;
 }

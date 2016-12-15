@@ -53,6 +53,16 @@
     [_tableView reloadData];
 }
 
+//- (void) encodeRestorableStateWithCoder: (NSCoder *) coder {
+//    [coder encodeObject: _product forKey: @"product"];
+//    [super encodeRestorableStateWithCoder: coder];
+//}
+//
+//- (void) decodeRestorableStateWithCoder: (NSCoder *) coder {
+//    _product = [coder decodeObjectForKey: @"product"];
+//    [super decodeRestorableStateWithCoder: coder];
+//}
+
 
 #pragma mark -
 #pragma mark UITableViewDelegate and DataSource

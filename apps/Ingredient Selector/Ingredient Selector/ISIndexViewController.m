@@ -59,6 +59,11 @@
     UILabel *label = (UILabel *) [cell viewWithTag: 100];
     NSString *key = [NSString stringWithFormat: @"%@%zi", @"index.title.", indexPath.row];
     label.text = NSLocalizedString(key, nil);
+
+    if (indexPath.row != ISBeverages && indexPath.row != ISConfectionery) {
+        [cell setUserInteractionEnabled: NO];
+        [label setAlpha: 0.5];
+    }
     return cell;
 }
 

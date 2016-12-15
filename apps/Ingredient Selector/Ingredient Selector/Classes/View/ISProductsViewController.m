@@ -58,7 +58,17 @@
         [c setProduct: product];
     }
 }
-
+//
+//- (void) encodeRestorableStateWithCoder: (NSCoder *) coder {
+//    [coder encodeObject: _products forKey: @"products"];
+//    [super encodeRestorableStateWithCoder: coder];
+//}
+//
+//- (void) decodeRestorableStateWithCoder: (NSCoder *) coder {
+//    _products = [coder decodeObjectForKey: @"products"];
+//    [super decodeRestorableStateWithCoder: coder];
+//}
+//
 
 #pragma mark -
 #pragma mark UITableViewDataSource & Delegate

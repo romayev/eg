@@ -8,11 +8,13 @@
 
 
 "ingredion" = "Ingredion";
-"search" = "Search";
+
 "all" = "All";
-"view" = "View";
-"products" = "Products";
 "product-count" = "Products: ";
+"products" = "Products";
+"reset" = "Reset";
+"search" = "Search";
+"view" = "View";
 
 // More
 "more.title-about" = "About";
