@@ -53,7 +53,7 @@ public class Product {
 
     String get(CSVRecord record, String column) {
         try {
-            String text = record.get(column);
+            String text = record.get(column).trim();
             text = text.replace("\n", " ").replace("\r", " ");
             return text;
         } catch (Exception ignored) {
