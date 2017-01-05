@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dc39f3b-810c-4d48-b772-73a38a7eb2dc" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-4.imageset/Contents.json" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-1.imageset/Contents.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-4.imageset/beverages.png" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-1.imageset/beverages.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-8.imageset/Contents.json" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-3.imageset/Contents.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-8.imageset/adaptiveimagehero.img.1200.png" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-3.imageset/adaptiveimagehero.img.1200.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector.xcodeproj/project.xcworkspace/xcuserdata/alex.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector.xcodeproj/project.xcworkspace/xcuserdata/alex.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Base.lproj/Localizable.strings" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Base.lproj/Localizable.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Base.lproj/Main.storyboard" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Classes/View/ISSearchViewController.h" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Classes/View/ISSearchViewController.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/ISIndexViewController.m" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/ISIndexViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Info.plist" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Info.plist" />
     </list>
     <ignored path="parser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,7 +38,7 @@
       <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/eg/parser/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
+            <state relative-caret-position="255">
               <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -207,6 +198,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -308,7 +300,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -574,7 +565,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="31" y="35" width="1826" height="1100" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -590,7 +581,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26569507" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26849777" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -936,7 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3840">
           <caret line="299" column="6" lean-forward="false" selection-start-line="299" selection-start-column="6" selection-end-line="299" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,7 +1005,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/eg/parser/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
+        <state relative-caret-position="255">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
