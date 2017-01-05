@@ -17,7 +17,7 @@
         _notes = plist[@"productNotes"];
         _region = plist[@"region"];
         _valueProposition = plist[@"valueProposition"];
-        _priority = plist[@"priority"];
+        _priority = [plist[@"priority"] integerValue];
         _labelDeclaration = plist[@"labelDeclaration"];
     }
     return self;
@@ -110,6 +110,23 @@
     NSSortDescriptor *prioritySort = [NSSortDescriptor sortDescriptorWithKey: @"priority" ascending: YES];
     NSSortDescriptor *nameSort = [NSSortDescriptor sortDescriptorWithKey: @"name" ascending: YES];
     return [[unique allObjects] sortedArrayUsingDescriptors: @[prioritySort, nameSort]];
+}
+
++ (NSArray *) productsWithHighPriority: (NSArray *) products {
+    NSMutableArray *highPriorityProducts = [NSMutableArray arrayWithCapacity: [products count]];
+    NSInteger count = 0;
+    ISProduct *first = [products firstObject];
+    NSInteger highestPriority = [first priority];
+    for (ISProduct *product in products) {
+        BOOL isHighPriority = [product priority] == highestPriority;
+        if (isHighPriority || (!isHighPriority && count < 5)) {
+            [highPriorityProducts addObject: product];
+        } else {
+            break;
+        }
+        count++;
+    }
+    return [highPriorityProducts copy];
 }
 
 + (BOOL) isAll: (NSArray *) criteria {

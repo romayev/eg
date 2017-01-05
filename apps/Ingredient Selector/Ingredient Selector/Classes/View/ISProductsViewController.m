@@ -26,20 +26,23 @@
 @end
 
 
-@implementation ISProductsViewController
+@implementation ISProductsViewController {
+    BOOL    _usePriority;
+}
 
 - (void) viewDidLoad {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"products", nil);
     [_segmentedControl setTitle: NSLocalizedString(@"top", nil) forSegmentAtIndex: 0];
     [_segmentedControl setTitle: NSLocalizedString(@"All", nil) forSegmentAtIndex: 1];
-    _products = [_delegate products];
 
-    if (![_delegate usePriority]) {
+    _usePriority = [_delegate usePriority];
+    if (!_usePriority) {
         NSMutableArray *items = [NSMutableArray arrayWithArray: _toolbar.items];
         [items removeObject: _segmentedControlItem];
         [_toolbar setItems: items];
     }
+    [self loadProducts];
 }
 
 - (void) viewDidAppear: (BOOL) animated {
@@ -70,6 +73,25 @@
 //}
 //
 
+
+#pragma mark -
+#pragma mark Actions
+
+- (IBAction) toggleProducts: (id) sender {
+    [self loadProducts];
+    [_tableView reloadData];
+    [_tableView scrollToRowAtIndexPath: [NSIndexPath indexPathForRow: 0 inSection: 0] atScrollPosition: UITableViewScrollPositionTop animated: NO];
+}
+
+- (void) loadProducts {
+    if (_usePriority && _segmentedControl.selectedSegmentIndex == 0) {
+        _products = [ISProduct productsWithHighPriority: [_delegate products]];
+    } else {
+        _products = [_delegate products];
+    }
+}
+
+
 #pragma mark -
 #pragma mark UITableViewDataSource & Delegate
 
@@ -84,7 +106,11 @@
 - (UITableViewCell *) tableView: (UITableView *) tableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {
     ISProductsCell *cell = [tableView dequeueReusableCellWithIdentifier: @"Cell" forIndexPath: indexPath];
     ISProduct *product = _products[indexPath.row];
-    cell.nameLabel.text = product.name;
+    if (_usePriority) {
+        cell.nameLabel.text = [NSString stringWithFormat: @"%zi - %@", product.priority, product.name];
+    } else {
+        cell.nameLabel.text = product.name;
+    }
     cell.detailLabel.text = product.detail;
     return cell;
 }

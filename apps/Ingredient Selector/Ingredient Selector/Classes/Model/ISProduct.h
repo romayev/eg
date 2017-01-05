@@ -21,7 +21,7 @@
 @property (readonly, nonatomic) NSString *notes;
 @property (readonly, nonatomic) NSString *region;
 @property (readonly, nonatomic) NSString *valueProposition;
-@property (readonly, nonatomic) NSNumber *priority;
+@property (readonly, nonatomic) NSInteger priority;
 @property (readonly, nonatomic) NSString *regions;
 @property (readonly, nonatomic) NSString *valuePropositions;
 @property (readonly, nonatomic) NSString *labelDeclaration;
@@ -35,6 +35,7 @@
 + (BOOL) usesPriority;
 
 + (NSArray *) productsWithSearchCriteria: (NSDictionary *) searchCriteria;
++ (NSArray *) productsWithHighPriority: (NSArray *) products;
 + (NSArray *) uniquePropertyValuesForProperty: (NSString *) property withSearchCriteria: (NSDictionary *) searchCriteria;
 
 + (BOOL) isAll: (NSArray *) criteria;
