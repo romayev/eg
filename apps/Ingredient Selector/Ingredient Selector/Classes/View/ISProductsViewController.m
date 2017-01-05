@@ -37,6 +37,8 @@
     [_segmentedControl setTitle: NSLocalizedString(@"All", nil) forSegmentAtIndex: 1];
 
     _usePriority = [_delegate usePriority];
+    _tableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
+
     if (!_usePriority) {
         NSMutableArray *items = [NSMutableArray arrayWithArray: _toolbar.items];
         [items removeObject: _segmentedControlItem];

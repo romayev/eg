@@ -39,6 +39,8 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
+    _tableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
+    
     [_resetButton setTitle: NSLocalizedString(@"reset", nil) forState: UIControlStateNormal];
     [_viewButton setTitle: NSLocalizedString(@"view",  nil) forState: UIControlStateNormal];
 
