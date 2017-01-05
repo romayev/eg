@@ -392,8 +392,43 @@
                                             <outlet property="titleLabel" destination="dJ0-07-C20" id="rdV-FU-XZW"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductAttributeCell" rowHeight="80" id="Oay-9Z-10w" customClass="ISProductAttributeCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductNameNoDetailCell" rowHeight="80" id="Bvh-bO-e07" customClass="ISProductAttributeCell">
                                         <rect key="frame" x="0.0" y="108" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bvh-bO-e07" id="OLx-La-i7R">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfn-Xm-b3t" userLabel="Title Label">
+                                                    <rect key="frame" x="16" y="32" width="343" height="35"/>
+                                                    <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="20"/>
+                                                    <color key="textColor" red="0.42352941179999998" green="0.70196078429999997" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gf8-9s-TSQ" userLabel="Rule View">
+                                                    <rect key="frame" x="16" y="72" width="343" height="1"/>
+                                                    <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="Gce-wH-yw3"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Wfn-Xm-b3t" firstAttribute="leading" secondItem="OLx-La-i7R" secondAttribute="leading" constant="16" id="39Q-vY-39I"/>
+                                                <constraint firstAttribute="bottom" secondItem="gf8-9s-TSQ" secondAttribute="bottom" constant="7" id="4AP-GK-UOv"/>
+                                                <constraint firstAttribute="trailing" secondItem="gf8-9s-TSQ" secondAttribute="trailing" constant="16" id="8Oj-nC-CVG"/>
+                                                <constraint firstItem="gf8-9s-TSQ" firstAttribute="leading" secondItem="OLx-La-i7R" secondAttribute="leading" constant="16" id="9Cz-7S-4OY"/>
+                                                <constraint firstItem="gf8-9s-TSQ" firstAttribute="top" secondItem="Wfn-Xm-b3t" secondAttribute="bottom" constant="5" id="dpD-qd-tcw"/>
+                                                <constraint firstItem="Wfn-Xm-b3t" firstAttribute="top" secondItem="OLx-La-i7R" secondAttribute="topMargin" constant="24" id="jun-E2-DCe"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wfn-Xm-b3t" secondAttribute="trailing" constant="16" id="slV-Nd-oYa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="Wfn-Xm-b3t" id="gsN-Y8-cym"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductAttributeCell" rowHeight="80" id="Oay-9Z-10w" customClass="ISProductAttributeCell">
+                                        <rect key="frame" x="0.0" y="188" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oay-9Z-10w" id="vUi-LX-kVb">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>

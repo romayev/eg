@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dc39f3b-810c-4d48-b772-73a38a7eb2dc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector.xcodeproj/project.xcworkspace/xcuserdata/alex.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector.xcodeproj/project.xcworkspace/xcuserdata/alex.xcuserdatad/UserInterfaceState.xcuserstate" />
-    </list>
+    <list default="true" id="5dc39f3b-810c-4d48-b772-73a38a7eb2dc" name="Default" comment="" />
     <ignored path="parser.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -59,8 +57,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Confectionery.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/csv/Confectionery.csv">
+      <file leaf-file-name="confectionery.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/csv/confectionery.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -930,7 +928,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csv/Confectionery.csv">
+    <entry file="file://$PROJECT_DIR$/csv/confectionery.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />

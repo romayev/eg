@@ -73,9 +73,17 @@
 
 - (UITableViewCell *) tableView: (UITableView *) tableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {
     static NSString *__nameCell = @"ProductNameCell";
+    static NSString *__nameNoDetailCell = @"ProductNameNoDetailCell";
     static NSString *__attributeCell = @"ProductAttributeCell";
     NSInteger row = [indexPath row];
-    ISProductAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier: row == 0 ? __nameCell : __attributeCell forIndexPath: indexPath];
+
+    NSString *identifier;
+    if (row == 0) {
+        identifier = _product.detail.length > 0 ? __nameCell : __nameNoDetailCell;
+    } else {
+        identifier = __attributeCell;
+    }
+    ISProductAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier: identifier forIndexPath: indexPath];
 
     if (row == 0) {
         cell.titleLabel.text = _product.name;
