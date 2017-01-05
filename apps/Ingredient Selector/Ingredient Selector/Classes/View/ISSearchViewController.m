@@ -229,10 +229,12 @@
 }
 
 - (BOOL) isCellEnabledAtIndexPath: (NSIndexPath *) indexPath {
+    NSInteger segmentRowIdx = _editorPath == nil ? 2 : 3;
     if (_productType == ISBeverages) {
+        NSInteger row = [indexPath row];
         NSArray *selectedSegments = _selectedValues[1];
         if ([selectedSegments count] == 1 && [[selectedSegments firstObject] isEqualToString: kAll]) {
-            return indexPath.row < 2;
+            return row < segmentRowIdx;
         }
     }
     return YES;

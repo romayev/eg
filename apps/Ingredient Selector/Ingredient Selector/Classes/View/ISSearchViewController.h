@@ -9,17 +9,17 @@
 #import "ISViewController.h"
 
 typedef enum {
-    ISYogurt,
-    ISProcessedCheese,
-    ISCreamySalad,
-    ISCarrageenan,
-    ISBeverages,
-    ISMeat,
     ISBattersAndBreadings,
-    ISHydrocolloids,
+    ISBeverages,
+    ISCarrageenan,
     ISConfectionery,
+    ISCreamySalad,
+    ISHydrocolloids,
+    ISMeat,
+    ISProcessedCheese,
+    ISYogurt,
     ISTomatoBasedSauses,
-    ISThickener
+    ISProductTypeCount
 } ISProductType;
 
 

@@ -25,17 +25,16 @@
 "more.contact.email-phone" = "erhan.yildiz@ingredion.com\n+1 908-685-5271";
 
 // Index
-"index.title.0" = "Yogurt";
-"index.title.1" = "Processed Cheese";
-"index.title.2" = "Creamy Salad Dressing";
-"index.title.3" = "Carrageenan";
-"index.title.4" = "Beverages";
-"index.title.5" = "Meat";
-"index.title.6" = "Batters & Breadings";
-"index.title.7" = "Hydrocolloids";
-"index.title.8" = "Confectionery";
+"index.title.0" = "Batters & Breadings";
+"index.title.1" = "Beverages";
+"index.title.2" = "Carrageenan";
+"index.title.3" = "Confectionery";
+"index.title.4" = "Creamy Salad Dressing";
+"index.title.5" = "Hydrocolloids";
+"index.title.6" = "Meat";
+"index.title.7" = "Processed Cheese";
+"index.title.8" = "Yogurt";
 "index.title.9" = "Tomato-Based Sauces";
-"index.title.10" = "Thickener Module";
 
 // Search
 "top" = "Top";

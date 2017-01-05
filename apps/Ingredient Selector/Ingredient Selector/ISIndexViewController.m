@@ -10,8 +10,6 @@
 #import "ISSearchViewController.h"
 
 
-#define kNumberOfTools  11
-
 @interface ISIndexViewController () <UITableViewDelegate, UITableViewDataSource, ISSearchViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end
@@ -51,7 +49,7 @@
 #pragma mark UITableViewDelegate and DataSource
 
 - (NSInteger) tableView: (UITableView *) tableView numberOfRowsInSection: (NSInteger) section {
-    return kNumberOfTools;
+    return ISProductTypeCount;
 }
 
 - (UITableViewCell *) tableView: (UITableView *) tableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {

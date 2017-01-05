@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dc39f3b-810c-4d48-b772-73a38a7eb2dc" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-4.imageset/Contents.json" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-1.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-4.imageset/beverages.png" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-1.imageset/beverages.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-8.imageset/Contents.json" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-3.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-8.imageset/adaptiveimagehero.img.1200.png" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Assets.xcassets/search-3.imageset/adaptiveimagehero.img.1200.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector.xcodeproj/project.xcworkspace/xcuserdata/alex.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector.xcodeproj/project.xcworkspace/xcuserdata/alex.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/eg/model/Product.java" afterPath="$PROJECT_DIR$/src/com/eg/model/Product.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Base.lproj/Localizable.strings" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Base.lproj/Localizable.strings" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Base.lproj/Main.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Classes/View/ISSearchViewController.h" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Classes/View/ISSearchViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/ISIndexViewController.m" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/ISIndexViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Info.plist" afterPath="$PROJECT_DIR$/../Ingredient Selector/Ingredient Selector/Info.plist" />
     </list>
     <ignored path="parser.iws" />
     <ignored path=".idea/workspace.xml" />
