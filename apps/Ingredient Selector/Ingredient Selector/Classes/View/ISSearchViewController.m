@@ -7,13 +7,14 @@
 //
 
 #import "ISSearchViewController.h"
-#import "ISSearchTableViewCell.h"
+#import "ISExpertsViewController.h"
 #import "ISProductsViewController.h"
 #import "ISSearchItem.h"
+#import "ISSearchTableViewCell.h"
 #import "ISProduct.h"
 
 
-@interface ISSearchViewController () <ISSearchTableViewCellDataSource, ISSearchTableViewCellDelegate, ISProductsViewControllerDelegate>
+@interface ISSearchViewController () <ISSearchTableViewCellDataSource, ISSearchTableViewCellDelegate, ISProductsViewControllerDelegate, ISExpertsViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *productImageView;
 @property (strong, nonatomic) IBOutlet UILabel *headerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *productCountLabel;
@@ -23,6 +24,7 @@
 @property (strong, nonatomic) NSArray *criteria;
 @property (strong, nonatomic) NSMutableArray *availableValues;
 @property (strong, nonatomic) NSMutableArray *selectedValues;
+@property (assign, nonatomic) ISProductType productType;
 
 // ISProductsViewControllerDelegate
 @property (strong, readonly, nonatomic) NSArray *products;
@@ -31,7 +33,6 @@
 
 
 @implementation ISSearchViewController {
-    ISProductType   _productType;
     NSInteger       _count;
     NSIndexPath     *_editorPath;
 }
@@ -40,7 +41,7 @@
     [super viewDidLoad];
 
     _tableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
-    
+
     [_resetButton setTitle: NSLocalizedString(@"reset", nil) forState: UIControlStateNormal];
     [_viewButton setTitle: NSLocalizedString(@"view",  nil) forState: UIControlStateNormal];
 
@@ -102,6 +103,10 @@
     NSString *identifier = [segue identifier];
     if ([identifier isEqualToString: @"products"]) {
         ISProductsViewController *c = [segue destinationViewController];
+        [c setDelegate: self];
+    } else if ([identifier isEqualToString: @"experts"]) {
+        UINavigationController *n = [segue destinationViewController];
+        ISExpertsViewController *c = (ISExpertsViewController *) [n topViewController];
         [c setDelegate: self];
     }
 }

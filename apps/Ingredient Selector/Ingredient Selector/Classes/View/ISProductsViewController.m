@@ -9,6 +9,7 @@
 #import "ISProductsViewController.h"
 #import "ISProductViewController.h"
 #import "ISProduct.h"
+#import "ISExpertsViewController.h"
 
 
 @interface ISProductsCell : UITableViewCell
@@ -17,7 +18,7 @@
 @end
 
 
-@interface ISProductsViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ISProductsViewController () <UITableViewDelegate, UITableViewDataSource, ISExpertsViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *segmentedControlItem;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -61,8 +62,13 @@
         NSIndexPath *indexPath = [_tableView indexPathForSelectedRow];
         ISProduct *product = _products[indexPath.row];
         [c setProduct: product];
+    } else if ([identifier isEqualToString: @"experts"]) {
+        UINavigationController *n = [segue destinationViewController];
+        ISExpertsViewController *c = (ISExpertsViewController *) [n topViewController];
+        [c setDelegate: self];
     }
 }
+
 //
 //- (void) encodeRestorableStateWithCoder: (NSCoder *) coder {
 //    [coder encodeObject: _products forKey: @"products"];
@@ -108,7 +114,7 @@
 - (UITableViewCell *) tableView: (UITableView *) tableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {
     ISProductsCell *cell = [tableView dequeueReusableCellWithIdentifier: @"Cell" forIndexPath: indexPath];
     ISProduct *product = _products[indexPath.row];
-    if (_usePriority) {
+    if (false && _usePriority) {
         cell.nameLabel.text = [NSString stringWithFormat: @"%zi - %@", product.priority, product.name];
     } else {
         cell.nameLabel.text = product.name;
@@ -119,6 +125,13 @@
 
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
     [self performSegueWithIdentifier: @"product" sender: [tableView cellForRowAtIndexPath: indexPath]];
+}
+
+#pragma mark -
+#pragma mark ISExpertsViewControllerDelegate
+
+- (ISProductType) productType {
+    return [_delegate productType];
 }
 
 @end

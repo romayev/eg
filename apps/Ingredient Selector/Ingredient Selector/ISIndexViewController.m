@@ -21,7 +21,7 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = NSLocalizedString(@"search", nil);
+    self.navigationItem.title = NSLocalizedString(@"index.title", nil);
     _tableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
 }
 

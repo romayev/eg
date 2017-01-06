@@ -32,7 +32,7 @@
 }
 
 - (NSArray *) displayAttributes {
-    return @[@"base", @"labelDeclaration", @"regions", @"starchUseLabel", @"valuePropositions", @"fatContent", @"proteinContent", @"features", @"productDescription"];
+    return @[@"base", @"labelDeclaration", @"regions", @"starchUseLabel", @"valuePropositions", @"fatContent", @"proteinContent", @"features"];
 }
 
 + (NSString *) moduleName {

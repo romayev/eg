@@ -8,10 +8,10 @@
 
 
 "ingredion" = "Ingredion";
-
 "all" = "All";
 "product-count" = "Products: ";
 "products" = "Products";
+"experts" = "Experts";
 "reset" = "Reset";
 "search" = "Search";
 "view" = "View";
@@ -25,6 +25,7 @@
 "more.contact.email-phone" = "erhan.yildiz@ingredion.com\n+1 908-685-5271";
 
 // Index
+"index.title" = "Home";
 "index.title.0" = "Batters & Breadings";
 "index.title.1" = "Beverages";
 "index.title.2" = "Carrageenan";

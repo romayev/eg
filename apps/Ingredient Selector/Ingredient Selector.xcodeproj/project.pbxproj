@@ -17,6 +17,7 @@
 		FA6FAA131DE3BD3700CEF665 /* ISProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAA121DE3BD3700CEF665 /* ISProduct.m */; };
 		FA6FAA161DE3BE2200CEF665 /* ISConfectionery.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FAA151DE3BE2200CEF665 /* ISConfectionery.m */; };
 		FAA03CFD1DEBE352001EA461 /* ISMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA03CFC1DEBE352001EA461 /* ISMoreViewController.m */; };
+		FAAB0B241E1FFA8300731791 /* ISExpertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB0B231E1FFA8300731791 /* ISExpertsViewController.m */; };
 		FAAEA7181DDA4E24008EA91E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAEA7171DDA4E24008EA91E /* main.m */; };
 		FAAEA71B1DDA4E24008EA91E /* ISAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAEA71A1DDA4E24008EA91E /* ISAppDelegate.m */; };
 		FAAEA7211DDA4E24008EA91E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAEA71F1DDA4E24008EA91E /* Main.storyboard */; };
@@ -51,6 +52,8 @@
 		FA6FAA151DE3BE2200CEF665 /* ISConfectionery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISConfectionery.m; path = Classes/Model/ISConfectionery.m; sourceTree = "<group>"; };
 		FAA03CFB1DEBE352001EA461 /* ISMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISMoreViewController.h; path = Classes/View/ISMoreViewController.h; sourceTree = "<group>"; };
 		FAA03CFC1DEBE352001EA461 /* ISMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISMoreViewController.m; path = Classes/View/ISMoreViewController.m; sourceTree = "<group>"; };
+		FAAB0B221E1FFA8300731791 /* ISExpertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISExpertsViewController.h; path = Classes/View/ISExpertsViewController.h; sourceTree = "<group>"; };
+		FAAB0B231E1FFA8300731791 /* ISExpertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISExpertsViewController.m; path = Classes/View/ISExpertsViewController.m; sourceTree = "<group>"; };
 		FAAEA7131DDA4E23008EA91E /* Ingredient Selector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ingredient Selector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAEA7171DDA4E24008EA91E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FAAEA7191DDA4E24008EA91E /* ISAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISAppDelegate.h; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 				FA6FA9F91DDF9BAA00CEF665 /* ISSearchTableViewCell.m */,
 				FA6FA9FB1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.h */,
 				FA6FA9FC1DDFA3ED00CEF665 /* ISSearchDropDownTableViewCell.m */,
+				FAAB0B221E1FFA8300731791 /* ISExpertsViewController.h */,
+				FAAB0B231E1FFA8300731791 /* ISExpertsViewController.m */,
 				FAA03CFB1DEBE352001EA461 /* ISMoreViewController.h */,
 				FAA03CFC1DEBE352001EA461 /* ISMoreViewController.m */,
 			);
@@ -290,6 +295,7 @@
 				FAA03CFD1DEBE352001EA461 /* ISMoreViewController.m in Sources */,
 				FA6F37F71DDB8D0D00E2D43F /* ISViewController.m in Sources */,
 				FA6F37EE1DDB89EE00E2D43F /* ISHomeSplitViewController.m in Sources */,
+				FAAB0B241E1FFA8300731791 /* ISExpertsViewController.m in Sources */,
 				FAF8264F1DE8B025002589D9 /* ISProductsViewController.m in Sources */,
 				FAF826551DE8F51D002589D9 /* ISProductViewController.m in Sources */,
 				FA6F37FA1DDB8D2A00E2D43F /* ISIndexViewController.m in Sources */,

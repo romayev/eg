@@ -7,10 +7,12 @@
 //
 
 #import "ISViewController.h"
+#import "ISSearchViewController.h"
 
 @protocol ISProductsViewControllerDelegate <NSObject>
 - (NSArray *) products;
 - (BOOL) usePriority;
+- (ISProductType) productType;
 @end
 
 @interface ISProductsViewController : ISViewController
