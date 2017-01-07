@@ -21,8 +21,11 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+    _productType = ISBeverages;
     self.navigationItem.title = NSLocalizedString(@"index.title", nil);
     _tableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
+
+    [self showToolViewController: ISBeverages animated: YES];
 }
 
 - (void) viewDidAppear: (BOOL) animated {
@@ -41,7 +44,8 @@
 
     NSString *identifier = [segue identifier];
     if ([identifier isEqualToString: @"search"]) {
-        ISSearchViewController *c = [segue destinationViewController];
+        UINavigationController *n = [segue destinationViewController];
+        ISSearchViewController *c = (ISSearchViewController *) [n topViewController];
         [c setDelegate: self];
     }
 }
