@@ -21,8 +21,9 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-
+    if (![self isPhone]) {
+        [self setPreferredDisplayMode: UISplitViewControllerDisplayModeAllVisible];
+    }
 }
 
 
@@ -30,7 +31,7 @@
 #pragma mark UISplitViewControllerDelegate
 
 - (BOOL) splitViewController: (UISplitViewController *) splitViewController collapseSecondaryViewController: (UIViewController *) secondaryViewController ontoPrimaryViewController: (UIViewController *) primaryViewController {
-    // Show tools table on the iPhone
+    // Show index table on the iPhone
     if ([self isPhone]) {
         return YES;
     }
@@ -39,8 +40,7 @@
 }
 
 - (BOOL) isPhone {
-    const UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
-    return idiom == UIUserInterfaceIdiomPhone;
+    return self.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiomPhone;
 }
 
 @end

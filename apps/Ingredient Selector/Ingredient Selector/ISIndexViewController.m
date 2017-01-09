@@ -25,7 +25,9 @@
     self.navigationItem.title = NSLocalizedString(@"index.title", nil);
     _tableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
 
-    [self showToolViewController: ISBeverages animated: YES];
+    if (![self isPhone]) {
+        [self showToolViewController: ISBeverages animated: YES];
+    }
 }
 
 - (void) viewDidAppear: (BOOL) animated {

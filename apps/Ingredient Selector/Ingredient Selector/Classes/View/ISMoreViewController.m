@@ -38,4 +38,12 @@
     _contactTextViewHeightConstraint.constant = size.height;
 }
 
+- (void) willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    if (newCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact && newCollection.verticalSizeClass == UIUserInterfaceSizeClassCompact) {
+        [_backgroundImageView setAlpha: 0.0];
+    } else {
+        [_backgroundImageView setAlpha: 1.0];
+    }
+}
+
 @end
