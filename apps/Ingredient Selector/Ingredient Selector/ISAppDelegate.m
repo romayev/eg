@@ -9,11 +9,13 @@
 #import "ISAppDelegate.h"
 
 
-@interface ISAppDelegate ()
-
+@interface ISAppDelegate () <UITabBarControllerDelegate>
 @end
 
-@implementation ISAppDelegate
+
+@implementation ISAppDelegate  {
+    NSUInteger      _selectedTabIdx;
+}
 
 
 - (BOOL) application: (UIApplication *) application didFinishLaunchingWithOptions: (NSDictionary *) launchOptions {
@@ -39,6 +41,9 @@
                                              NSForegroundColorAttributeName: [UIColor whiteColor],
                                              NSFontAttributeName:            [UIFont fontWithName: @"GillSans" size: 22.0]
                                              }];
+
+    UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;
+    [tabBarController setDelegate: self];
 
     return YES;
 }
@@ -71,6 +76,28 @@
 
 - (BOOL) application: (UIApplication *) application shouldRestoreApplicationState: (NSCoder *) coder {
     return YES;
+}
+
+
+#pragma mark -
+#pragma mark UITabBarControllerDelegate
+
+- (BOOL) tabBarController: (UITabBarController *) tabBarController shouldSelectViewController: (UIViewController *) viewController {
+    _selectedTabIdx = tabBarController.selectedIndex;
+    return YES;
+}
+
+- (void) tabBarController: (UITabBarController *) tabBarController didSelectViewController: (UIViewController *) viewController {
+    if (tabBarController.selectedIndex != _selectedTabIdx) return;
+
+    if ([tabBarController.selectedViewController isKindOfClass: [UISplitViewController class]]) {
+        UISplitViewController *splitView = (UISplitViewController *) viewController;
+        for (UIViewController *navControllerInSplit in splitView.viewControllers) {
+            if ([navControllerInSplit isKindOfClass: [UINavigationController class]]) {
+                [(UINavigationController*) navControllerInSplit popToRootViewControllerAnimated: YES];
+            }
+        }
+    }
 }
 
 @end
