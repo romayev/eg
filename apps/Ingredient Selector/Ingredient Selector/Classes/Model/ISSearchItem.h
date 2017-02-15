@@ -13,8 +13,4 @@
 @property (nonatomic, readonly) NSInteger itemID;
 @property (nonatomic, readonly) NSString *title;
 
-+ (NSArray *) regions;
-+ (NSArray *) valuePropositions;
-+ (NSArray *) applications;
-
 @end
