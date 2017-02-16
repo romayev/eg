@@ -17,6 +17,10 @@ class Beverage : Product {
     let features: String?
     let productDescription: String?
 
+    override var products: [Product] {
+        return DataManager.manager.beverages
+    }
+
     override var displayAttributes: [String] {
         return ["base", "labelDeclaration", "regions", "starchUseLabel", "valuePropositions", "fatContent", "proteinContent", "features"]
     }
@@ -30,9 +34,5 @@ class Beverage : Product {
         features = dictionary["features"] as? String
         productDescription = dictionary["productDescription"] as? String
         super.init(dictionary)
-    }
-
-    override func products() -> [Product] {
-        return DataManager.manager.beverages
     }
 }

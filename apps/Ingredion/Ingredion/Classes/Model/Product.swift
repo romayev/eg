@@ -39,6 +39,7 @@ class Product : NSObject, Comparable {
         }()
     }
 
+    // MARK: Attributes
     var name: String = "ERROR"
     let detail: String?
     let notes: String?
@@ -46,16 +47,6 @@ class Product : NSObject, Comparable {
     let valueProposition: String?
     let priority: Int?
     let labelDeclaration: String?
-
-    var displayAttributes: [String] { return Array() }
-
-    override var description: String {
-        return name
-    }
-
-    func products() -> [Product] {
-        return []
-    }
 
     init(_ dictionary: Dictionary<String, Any>) {
         if let name: String = dictionary["productName"] as? String {
@@ -69,32 +60,33 @@ class Product : NSObject, Comparable {
         labelDeclaration = dictionary["labelDeclaration"] as? String
     }
 
-    func regions() -> String {
-        let filtered = products().filter { $0.name == self.name }
-        let values: [String] = filtered.map { $0.region! }
+    override var description: String {
+        return name
+    }
+
+    var products: [Product] {
+        return []
+    }
+
+    var displayAttributes: [String] { return Array() }
+
+    func regions() -> String { return uniquePropertyValues("region") }
+    func valuePropositions() -> String { return uniquePropertyValues("valueProposition") }
+
+    func uniquePropertyValues(_ property: String) -> String {
+        let filtered = products.filter { $0.name == self.name }
+        let values: [String] = filtered.flatMap { $0.value(forKey: property) as? String }
         return Array(Set(values)).sorted().joined(separator: ", ")
     }
 
-    func valuePropositions() -> String {
-        let filtered = products().filter { $0.name == self.name }
-        let values: [String] = filtered.map { $0.region! }
-        return Array(Set(values)).sorted().joined(separator: ", ")
+    func usersPriority() -> Bool {
+        return products.filter({ $0.priority != nil }).count > 0
     }
 
-    func valuesForProperty(property: String) -> String {
-        let filtered = products().filter { $0.name == self.name }
-        let values: [String] = filtered.map { $0.region! }
-        return Array(Set(values)).sorted().joined(separator: ", ")
+    func uniqueValuesWithProperty(property: String, products: Array<Product>.Element) -> Array<String> {
+        let array: Array<String> = Array<String>()
+        return array 
     }
-
-//    func valuesForProperty(property: String, products: Array<Product>) -> String {
-//        // Find products matching the name property
-//        let filtered = products.filter { $0.name == self.name }
-//        // Extract an array that contains the passed in property
-//        let values: Array<String> = Array() // In Objective-C this would be filtered.valueForKey(property)
-//        // Get unique values, sort return String (I suppose I could use reduce() instead of joined()
-//        return Array(Set(values)).sorted().joined(separator: ", ")
-//    }
 
     // MARK: Comparable
     static func <(lhs: Product, rhs: Product) -> Bool {
