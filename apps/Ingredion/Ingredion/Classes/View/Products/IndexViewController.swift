@@ -13,7 +13,7 @@ class IndexViewController: ViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet var tableView: UITableView!
 
     // MARK: SearchViewControllerDelegate
-    var productType: Product.ProductType = .beverages
+    var productType: ProductType = .beverages
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,25 +44,26 @@ class IndexViewController: ViewController, UITableViewDelegate, UITableViewDataS
 
     // MARK: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Product.ProductType.count
+        return ProductType.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         if let label = cell.viewWithTag(100) as? UILabel {
-            let key = "index.title \(indexPath.row)"
-            label.text = NSLocalizedString(key, comment: key)
+            if let productType: ProductType = ProductType(rawValue: indexPath.row) {
+                label.text = productType.localizedName
+            }
         }
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let productType = Product.ProductType(rawValue: indexPath.row) {
+        if let productType = ProductType(rawValue: indexPath.row) {
             showProductController(productType)
         }
     }
 
-    func showProductController(_ type: Product.ProductType, animated: Bool = true) {
+    func showProductController(_ type: ProductType, animated: Bool = true) {
         productType = type
         let indexPath = IndexPath(row: type.rawValue, section: 0)
         if let selectedPath = tableView.indexPathForSelectedRow {
@@ -70,7 +71,7 @@ class IndexViewController: ViewController, UITableViewDelegate, UITableViewDataS
                 tableView.selectRow(at: indexPath, animated: animated, scrollPosition: .none)
             }
         }
-        if (!productType.isImplemented()) {
+        if (!productType.implemented) {
             productType = .confectionery
         }
         self.performSegue(withIdentifier: "search", sender: nil)

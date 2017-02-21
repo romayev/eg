@@ -8,21 +8,12 @@
 
 import Foundation
 
-class SearchItem {
+struct SearchItem {
     let itemID: Int?
     let title: String?
-
-    static var __regions: [String] = []
 
     init(dictionary: Dictionary<String, Any>) {
         itemID = dictionary["id"] as? Int
         title = dictionary["title"] as? String
-    }
-
-    static func regions() -> [String] {
-        if (__regions.isEmpty) {
-            return __regions;
-        }
-        return __regions;
     }
 }

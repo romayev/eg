@@ -8,38 +8,9 @@
 
 import Foundation
 
-extension Array where Element : Product {
-    var uniqueSorted: [Element] {
-        return Array(Set(self)).sorted()
-    }
-}
-
-class Product : NSObject, Comparable {
-    enum ProductType: Int {
-        case battersAndBreadings
-        case beverages
-        case carrageenan
-        case confectionery
-        case creamySalad
-        case hydrocolloids
-        case meat
-        case processedCheese
-        case yogurt
-        case tomatoBasedSauses
-        case productTypeCount
-
-        func isImplemented() -> Bool {
-            return self == .confectionery || self == .beverages
-        }
-
-        static let count: Int = {
-            var max: Int = 0
-            while let _ = ProductType(rawValue: max) { max += 1 }
-            return max
-        }()
-    }
-
+class Product : NSObject {
     // MARK: Attributes
+    var productType: ProductType
     var name: String = "ERROR"
     let detail: String?
     let notes: String?
@@ -48,7 +19,12 @@ class Product : NSObject, Comparable {
     let priority: Int?
     let labelDeclaration: String?
 
+    subscript(key: String) -> String? {
+        return value(forKey: key) as? String
+    }
+
     init(_ dictionary: Dictionary<String, Any>) {
+        productType = .beverages
         if let name: String = dictionary["productName"] as? String {
             self.name = name
         }
@@ -64,31 +40,16 @@ class Product : NSObject, Comparable {
         return name
     }
 
-    var products: [Product] {
-        return []
-    }
-
-    var displayAttributes: [String] { return Array() }
-
-    func regions() -> String { return uniquePropertyValues("region") }
-    func valuePropositions() -> String { return uniquePropertyValues("valueProposition") }
-
-    func uniquePropertyValues(_ property: String) -> String {
-        let filtered = products.filter { $0.name == self.name }
-        let values: [String] = filtered.flatMap { $0.value(forKey: property) as? String }
-        return Array(Set(values)).sorted().joined(separator: ", ")
-    }
+    // MARK: Queries
+    func regions() -> String { return productType.propertyValues("region", in: self) }
+    func valuePropositions() -> String { return productType.propertyValues("valueProposition", in: self) }
 
     func usersPriority() -> Bool {
-        return products.filter({ $0.priority != nil }).count > 0
+        return productType.products.filter({ $0.priority != nil }).count > 0
     }
+}
 
-    func uniqueValuesWithProperty(property: String, products: Array<Product>.Element) -> Array<String> {
-        let array: Array<String> = Array<String>()
-        return array 
-    }
-
-    // MARK: Comparable
+extension Product: Comparable {
     static func <(lhs: Product, rhs: Product) -> Bool {
         return lhs.name < rhs.name
     }

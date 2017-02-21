@@ -38,11 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         let tabBarController: UITabBarController = window?.rootViewController as! UITabBarController;
         tabBarController.delegate = self
 
-        let beverages = DataManager.manager.beverages
-        print(beverages)
-        //let regions = beverages.map({$0.regions()} )
-        print(beverages[25].regions())
-
         return true
     }
 

@@ -14,19 +14,12 @@ class Confectionery : Product {
     let suggestedUsageLevelInFormulations : String?
     let recommendedMaxUsage : String?
 
-    override var products: [Product] {
-        return DataManager.manager.confectionery
-    }
-
-    override var displayAttributes: [String] {
-        return ["regions", "valuePropositions", "applications", "notes", "labelDeclaration", "selectionCriteria", "recommendedMaxUsage"]
-    }
-
     override init(_ dictionary : Dictionary<String, Any>) {
         application = dictionary["application"] as? String
         selectionCriteria = dictionary["selectionCriteria"] as? String
         suggestedUsageLevelInFormulations = dictionary["suggestedUsageLevelInFormulations"] as? String
         recommendedMaxUsage = dictionary["recommendedMaxUsage"] as? String
         super.init(dictionary)
+        productType = .confectionery
     }
 }
