@@ -12,7 +12,6 @@ import UIKit
 protocol ProductsViewControllerDelegate: class {
     var productType: ProductType { get }
     var products: [Product] { get }
-    var usePriority: Bool { get }
 }
 
 class ProductsCell: UITableViewCell {
@@ -24,11 +23,8 @@ class ProductsViewController: ViewController, ExpertsViewControllerDelegate, UIT
     weak var delegate: ProductsViewControllerDelegate?
 
     // MARK: ExpertsViewControllerDelegate
-    var productType: ProductType? {
-        if let productType = delegate?.productType {
-            return productType
-        }
-        return nil
+    var productType: ProductType {
+        return (delegate?.productType)!
     }
 
     @IBOutlet var segmentedControlItem: UIBarButtonItem?
@@ -41,18 +37,19 @@ class ProductsViewController: ViewController, ExpertsViewControllerDelegate, UIT
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = NSLocalizedString("title", comment: "")
+        title = NSLocalizedString("products", comment: "")
         segmentedControl?.setTitle(NSLocalizedString("top", comment: ""), forSegmentAt: 0)
         segmentedControl?.setTitle(NSLocalizedString("All", comment: ""), forSegmentAt: 1)
 
-        usePriority = (delegate?.usePriority)!
-        if  !usePriority {
-            if var items = toolbar?.items {
-                items.remove(object: segmentedControlItem!)
-                toolbar?.items = items
+        if let productType = delegate?.productType {
+            if !productType.usesPriority {
+                if var items = toolbar?.items {
+                    items.remove(object: segmentedControlItem!)
+                    toolbar?.items = items
+                }
             }
         }
-        tableView?.tableFooterView = nil
+        tableView?.tableFooterView = UIView()
         loadProducts()
     }
 
@@ -78,15 +75,22 @@ class ProductsViewController: ViewController, ExpertsViewControllerDelegate, UIT
     }
 
     // MARK: Actions
-    @IBAction func toggleProducts(sender: UISegmentedControl) {
+    @IBAction func toggleProducts(_ sender: UISegmentedControl) {
         loadProducts()
         tableView?.reloadData()
         tableView?.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
     }
-    
+
     // MARK: Private
     private func loadProducts() {
-
+        if let products = delegate?.products {
+            if usePriority && segmentedControl?.selectedSegmentIndex == 0 {
+                // FIXME: productsWithHighPriority
+                self.products = products
+            } else {
+                self.products = products
+            }
+        }
     }
 
     // MARK: UITableViewDataSource & Delegate

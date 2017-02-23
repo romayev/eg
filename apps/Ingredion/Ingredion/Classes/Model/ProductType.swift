@@ -11,9 +11,32 @@ import Foundation
 enum ProductType: Int {
     case battersAndBreadings, beverages, carrageenan, confectionery, creamySalad, hydrocolloids, meat, processedCheese, tomatoBasedSauses, yogurt
 
+    var module: String {
+        switch self {
+        case .beverages:
+            return "beverages"
+        case .confectionery:
+            return "confectionery"
+        default:
+            return "not implemented"
+        }
+    }
     var localizedName: String {
-        let key = "index.title \(self.rawValue)"
+        let key = "index.title.\(self.rawValue)"
         return NSLocalizedString(key, comment: key)
+    }
+    var imageName: String {
+        return "search-\(self.rawValue)"
+    }
+    var usesPriority: Bool {
+        switch self {
+        case .beverages:
+            return false
+        case .confectionery:
+            return true
+        default:
+            return false
+        }
     }
     var implemented: Bool { return self == .confectionery || self == .beverages }
 
@@ -28,7 +51,7 @@ enum ProductType: Int {
         }
     }
 
-    var searchCriteria: [String] {
+    var searchAttributes: [String] {
         switch self {
         case .beverages:
             return ["region", "segment", "valueProposition", "labelDeclaration", "base"]
@@ -44,7 +67,7 @@ enum ProductType: Int {
         case .beverages:
             return ["base", "labelDeclaration", "regions", "starchUseLabel", "valuePropositions", "fatContent", "proteinContent", "features"]
         case .confectionery:
-            return ["regions", "valuePropositions", "applications", "notes", "labelDeclaration", "selectionCriteria", "recommendedMaxUsage"]
+            return ["regions", "valuePropositions", "application", "notes", "labelDeclaration", "selectionCriteria", "recommendedMaxUsage"]
         default:
             return []
         }
@@ -56,30 +79,27 @@ enum ProductType: Int {
         return max
     }()
 
+    // MARK: Factory
+    func productWith(dictionary: Dictionary<String, Any>) -> Product {
+        switch self {
+        case .beverages:
+            return Beverage(dictionary)
+        case .confectionery:
+            return Confectionery(dictionary)
+        default:
+            return Beverage(dictionary)
+        }
+    }
+    
     // MARK: Search
     func dropDownValues(property: String, in products: [Product]) -> [String] {
         var values = propertyValues(property, in: products)
-        values.insert(NSLocalizedString("all", comment: "all"), at: 0)
+        values.insert(NSLocalizedString("all", comment: ""), at: 0)
         return values
     }
 
-    func productsWithSearchCriteria(_ searchCriteria: [String: [String]]) -> [Product] {
-        let filtered = products.filter {
-            var match = true
-            for (property, criteria) in searchCriteria {
-                if !isAll(criteria) {
-                    if let value: String = $0[property] {
-                        match = match && criteria.contains(value)
-                        if !match {
-                            return false
-                        }
-                    } else {
-                        return false
-                    }
-                }
-            }
-            return match
-        }
+    func productsWithSearchCriteria(_ searchCriteria: SearchCriteria) -> [Product] {
+        let filtered = products.filter { return searchCriteria.matches($0) }
         let unique = Array(Set(filtered))
         // FIXME: Sort
         return unique

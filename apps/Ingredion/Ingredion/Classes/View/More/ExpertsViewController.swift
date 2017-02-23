@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol ExpertsViewControllerDelegate: class {
-    var productType: ProductType? { get }
+    var productType: ProductType { get }
 }
 
 class ExpertsViewController: ViewController {

@@ -52,6 +52,10 @@ class IndexViewController: ViewController, UITableViewDelegate, UITableViewDataS
         if let label = cell.viewWithTag(100) as? UILabel {
             if let productType: ProductType = ProductType(rawValue: indexPath.row) {
                 label.text = productType.localizedName
+                if !productType.implemented {
+                    cell.isUserInteractionEnabled = false
+                    label.alpha = 0.5
+                }
             }
         }
         return cell

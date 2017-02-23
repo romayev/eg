@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+class ProductAttributeCell: UITableViewCell {
+    @IBOutlet var titleLabel: UILabel?
+    @IBOutlet var detailLabel: UILabel?
+}
+
 class ProductViewController: ViewController, UITableViewDataSource {
     @IBOutlet var tableView: UITableView?
     var product: Product?
@@ -62,22 +67,19 @@ class ProductViewController: ViewController, UITableViewDataSource {
             identifier = .productAttribute
         }
 
-        let cell: ProductAttributeCell = tableView.dequeueReusableCell(withIdentifier: identifier.rawValue, for: indexPath) as! ProductViewController.ProductAttributeCell
-        switch row {
-        case 0:
-            cell.titleLabel?.text = product?.name
-            cell.detailLabel?.text = product?.detail
-        default:
-            if let attribute = attributes?[row - 1] {
-                cell.titleLabel?.text = NSLocalizedString("product.attribute." + attribute, comment: "")
-                cell.detailLabel?.text = product?[attribute]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier.rawValue, for: indexPath) as? ProductAttributeCell {
+            switch row {
+            case 0:
+                cell.titleLabel?.text = product?.name
+                cell.detailLabel?.text = product?.detail
+            default:
+                if let attribute = attributes?[row - 1] {
+                    cell.titleLabel?.text = NSLocalizedString("product.attribute." + attribute, comment: "")
+                    cell.detailLabel?.text = product?[attribute]
+                }
             }
+            return cell
         }
-        return cell
-    }
-
-    class ProductAttributeCell: UITableViewCell {
-        @IBOutlet var titleLabel: UILabel?
-        @IBOutlet var detailLabel: UILabel?
+        return UITableViewCell()
     }
 }

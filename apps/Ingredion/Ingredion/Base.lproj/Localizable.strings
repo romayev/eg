@@ -1,0 +1,73 @@
+/* 
+  Localizable.strings
+  Ingredient Selector
+
+  Created by Alex Romayev on 11/15/16.
+  Copyright © 2016 Alex Romayev. All rights reserved.
+*/
+
+
+"ingredion" = "Ingredion";
+"all" = "All";
+"product-count" = "Products: ";
+"products" = "Products";
+"experts" = "Experts";
+"reset" = "Reset";
+"search" = "Search";
+"view" = "View";
+
+// More
+"more.title-about" = "About";
+"more.title-contact" = "& Contact";
+"more.desc" = "This tool will assist you in finding any matching products from the master database. If you need assistance, please contact us.";
+"more.contact.name" = "Erhan Yildiz";
+"more.contact.title" = "Global Applications Director";
+"more.contact.email-phone" = "erhan.yildiz@ingredion.com\n+1 908-685-5271";
+
+// Index
+"index.title" = "Home";
+"index.title.0" = "Batters & Breadings";
+"index.title.1" = "Beverages";
+"index.title.2" = "Carrageenan";
+"index.title.3" = "Confectionery";
+"index.title.4" = "Creamy Salad Dressing";
+"index.title.5" = "Hydrocolloids";
+"index.title.6" = "Meat";
+"index.title.7" = "Processed Cheese";
+"index.title.8" = "Yogurt";
+"index.title.9" = "Tomato-Based Sauces";
+
+// Search
+"top" = "Top";
+"all" = "All";
+
+// Beverages
+"beverages.search.title.0" = "Region";
+"beverages.search.title.1" = "Segment";
+"beverages.search.title.2" = "Value Proposition";
+"beverages.search.title.3" = "Label Declaration";
+"beverages.search.title.4" = "Base";
+
+// Confectionary
+"confectionery.search.title.0" = "Region";
+"confectionery.search.title.1" = "Value Proposition";
+"confectionery.search.title.2" = "Application";
+
+"product.attribute.regions" = "Regions";
+"product.attribute.valuePropositions" = "Value Propositions";
+
+// Product - Beverages
+"product.attribute.base" = "Base";
+"product.attribute.starchUseLabel" = "Starch Use Label";
+"product.attribute.features" = "Features";
+"product.attribute.productDescription" = "Product Description";
+"product.attribute.fatContent" = "Fat Content";
+"product.attribute.proteinContent" = "Protein Content";
+
+// Product - Confectionery
+"product.attribute.applications" = "Applications";
+"product.attribute.notes" = "Additional Features And Benefits";
+"product.attribute.selectionCriteria" = "Selection Criteria";
+"product.attribute.suggestedUsageLevelInFormulations" = "Suggested Usage Level In Formulations";
+"product.attribute.recommendedMaxUsage" = "Recommended Max Usage";
+"product.attribute.labelDeclaration" = "Label Declaration";

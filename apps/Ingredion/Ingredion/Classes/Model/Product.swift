@@ -47,6 +47,18 @@ class Product : NSObject {
     func usersPriority() -> Bool {
         return productType.products.filter({ $0.priority != nil }).count > 0
     }
+
+    // MARK: Hashable, Equitable
+    override var hashValue: Int {
+        return name.hashValue
+    }
+
+    override func isEqual(_ object: Any?) -> Bool {
+        if let other = object as? Product {
+            return name == other.name
+        }
+        return false
+    }
 }
 
 extension Product: Comparable {

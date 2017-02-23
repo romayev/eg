@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 protocol DropDownCellDelegate: class {
-    var editorItems: [String]? { get }
+    var dropDownItems: [String]? { get }
     func cell(_ cell: UITableViewCell, didSelectCellAtRow row: NSInteger)
     func selectedItemsForCell(cell: UITableViewCell) -> [String]?
 }
 
 class DropDownCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate {
     weak var delegate: DropDownCellDelegate?
-    var items: Array<String> = Array()
+    var items: [String] = [String]()
     @IBOutlet var tableView: UITableView!
 
     override func awakeFromNib() {
@@ -26,7 +26,7 @@ class DropDownCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate 
     }
 
     func update() {
-        if let items = delegate?.editorItems {
+        if let items = delegate?.dropDownItems {
             self.items = items
         }
         tableView.reloadData()
