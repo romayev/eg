@@ -92,9 +92,12 @@ enum ProductType: Int {
     }
     
     // MARK: Search
-    func dropDownValues(property: String, in products: [Product]) -> [String] {
-        var values = propertyValues(property, in: products)
-        values.insert(NSLocalizedString("all", comment: ""), at: 0)
+    func dropDownValuesFor(attribute: String, in searchCriteria: SearchCriteria) -> [String] {
+        var criteria = searchCriteria
+        criteria.toggleValueForAttribute(attribute, value: SearchCriteria.ALL())
+        let products = productsWithSearchCriteria(criteria)
+        var values = propertyValues(attribute, in: products)
+        values.insert(NSLocalizedString(SearchCriteria.ALL(), comment: ""), at: 0)
         return values
     }
 
@@ -116,7 +119,7 @@ enum ProductType: Int {
     }
 
     private func isAll (_ criteria: [String]) -> Bool {
-        return criteria.count == 1 && criteria.first == "All"
+        return criteria.count == 1 && criteria.first == SearchCriteria.ALL()
     }
 }
 

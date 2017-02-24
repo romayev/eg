@@ -58,7 +58,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="reset:" destination="ecB-w6-t8h" eventType="touchUpInside" id="yuI-OE-FQY"/>
+                                            <action selector="reset:" destination="ecB-w6-t8h" eventType="touchUpInside" id="0vp-09-TAS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxe-dt-3eR">
@@ -347,7 +347,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductNameCell" rowHeight="80" id="xua-Jr-4Yi" customClass="ProductAttributeCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductNameCell" rowHeight="80" id="xua-Jr-4Yi" customClass="ProductAttributeCell" customModule="Ingredion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xua-Jr-4Yi" id="OMR-zo-RBA">
@@ -438,7 +438,7 @@
                                             <outlet property="titleLabel" destination="Wfn-Xm-b3t" id="gsN-Y8-cym"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductAttributeCell" rowHeight="80" id="Oay-9Z-10w" customClass="ProductAttributeCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductAttributeCell" rowHeight="80" id="Oay-9Z-10w" customClass="ProductAttributeCell" customModule="Ingredion" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="188" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oay-9Z-10w" id="vUi-LX-kVb">
@@ -963,6 +963,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ax8-gY-1Xq"/>
-        <segue reference="edo-qP-J2M"/>
+        <segue reference="d8V-Uy-Sca"/>
     </inferredMetricsTieBreakers>
 </document>

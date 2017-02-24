@@ -22,19 +22,6 @@ protocol SearchViewControllerDelegate: class {
 }
 
 class SearchViewController : ViewController, UITableViewDelegate, UITableViewDataSource, DropDownCellDelegate, ProductsViewControllerDelegate, ExpertsViewControllerDelegate {
-    weak var delegate: SearchViewControllerDelegate?
-
-    // MARK: DropDownCellDelegate
-    var dropDownItems: [String]? {
-        if let activeRow = activeCellPath?.row {
-            if (activeRow >= dropDownOptions.count) {
-                return nil
-            }
-            return dropDownOptions[activeRow]
-        }
-        return nil
-    }
-
     @IBOutlet var productImageView: UIImageView!
     @IBOutlet var headerLabel: UILabel!
     @IBOutlet var productCountLabel: UILabel!
@@ -42,45 +29,57 @@ class SearchViewController : ViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var viewButton: UIButton!
 
-    // MARK: ProductsViewControllerDelegate
-    var productType: ProductType = .beverages
-    var products: [Product] = []
-    
-    var searchAttributes = [String]()
     var searchCriteria: SearchCriteria = SearchCriteria()
-    var dropDownOptions = [[String]]()
-    var count = 0
-    var editorPath: IndexPath? = nil
+    //var dropDownOptions: DropDownValues?
+    var editorPath: IndexPath?
     var activeCellPath: IndexPath? {
         if let editorPath = self.editorPath {
             return IndexPath(item: editorPath.row - 1, section: editorPath.section)
         }
         return nil
     }
-    var selectedValuesForCurrentDropDown: [String]? {
+
+    weak var delegate: SearchViewControllerDelegate?
+
+    // MARK: DropDownCellDelegate - vars
+    var dropDownItems: [String]? {
+        guard let activeRow = activeCellPath?.row else  {
+            print("ERROR: Active cell undefined")
+            return nil
+        }
+        let attribute = searchCriteria.attributes[activeRow]
+        return productType.dropDownValuesFor(attribute: attribute, in: searchCriteria)
+    }
+    var selectedItems: [String]? {
         guard let activeCellPath = self.activeCellPath else {
             return nil
         }
         if let selectedValues = searchCriteria.valuesForAttributeAtIndex(activeCellPath.row) {
             return selectedValues
         } else {
-            return ["All"]
+            return [SearchCriteria.ALL()]
         }
     }
 
+    // MARK: ProductsViewControllerDelegate - vars
+    var productType: ProductType = .beverages
+    var products: [Product] = []
+
+    // MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        resetButton.setTitle(NSLocalizedString("reset", comment: "reset"), for: .normal)
-        viewButton.setTitle(NSLocalizedString("view", comment: "view"), for: .normal)
-        headerLabel.text = NSLocalizedString("product-count", comment: "product-count")
+
+        // Localize
+        navigationItem.title = productType.localizedName
+        productImageView.image = UIImage(named: productType.imageName)
+        resetButton.setTitle(NSLocalizedString("reset", comment: ""), for: .normal)
+        viewButton.setTitle(NSLocalizedString("view", comment: ""), for: .normal)
+        headerLabel.text = NSLocalizedString("product-count", comment: "")
 
         productType = (delegate?.productType)!
-        searchAttributes = productType.searchAttributes
         searchCriteria = SearchCriteria(attributes: productType.searchAttributes)
-        count = productType.searchAttributes.count
-        initializeSearch()
-        update()
+        searchCriteriaDidChange(reset: true)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -97,19 +96,21 @@ class SearchViewController : ViewController, UITableViewDelegate, UITableViewDat
     }
 
     // MARK: UI Actions
-    @IBAction func reset(sender: Any) {
-        initializeSearch()
+    @IBAction func reset(_ sender: Any) {
+        searchCriteria = SearchCriteria(attributes: productType.searchAttributes)
+        searchCriteriaDidChange(reset: true)
         editorPath = nil
         tableView.reloadData()
     }
 
     // MARK: UITableViewDataSource & Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let count = productType.searchAttributes.count
         if let editorSection = editorPath?.section {
             let editor = section == editorSection ? 1 : 0
-            return self.count + editor
+            return count + editor
         }
-        return self.count
+        return count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -139,10 +140,8 @@ class SearchViewController : ViewController, UITableViewDelegate, UITableViewDat
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
-        cell.textLabel?.text = self.titleForRow(row)
+        cell.textLabel?.text = NSLocalizedString(productType.module + ".search.title.\(row)", comment: "")
         cell.detailTextLabel?.text = self.descriptionForRow(row)
-
         if (isCellEnabledAt(indexPath: indexPath)) {
             cell.textLabel?.alpha = 1.0
             cell.detailTextLabel?.alpha = 1.0
@@ -190,23 +189,17 @@ class SearchViewController : ViewController, UITableViewDelegate, UITableViewDat
         }
     }
 
-    // MARK: DropDownCellDelegate
-    func selectedItemsForCell(cell: UITableViewCell) -> [String]? {
-        return selectedValuesForCurrentDropDown
-    }
-
-    func cell(_ cell: UITableViewCell, didSelectCellAtRow row: NSInteger) {
+    // MARK: DropDownCellDelegate - funcs
+    func cell(_ cell: UITableViewCell, didSelectValue value: String, atIndex index: Int) {
         if let activeCellPath = self.activeCellPath {
-            let attributeIndex = activeCellPath.row
-            let attribute = searchAttributes[attributeIndex]
-            searchCriteria.toggleValueForAttribute(attribute, value: dropDownOptions[attributeIndex][row])
-            updateProducts()
-
-            for i in 0..<count where i != activeCellPath.row {
-                updateAvailableValuesAt(index: i)
+            let attribute = productType.searchAttributes[activeCellPath.row]
+            searchCriteria.toggleValueForAttribute(attribute, value: value)
+            if (productType == .beverages && activeCellPath.row == 1 && value == SearchCriteria.ALL()) {
+                searchCriteria.resetValuesAfter(attributeIndex: 1)
             }
+            searchCriteriaDidChange()
 
-            let reloadAll = processSelected(row: row, at: activeCellPath.row)
+            let reloadAll = reloadAllRows(row: index)
             if (reloadAll) {
                 tableView.reloadData()
             } else {
@@ -218,70 +211,41 @@ class SearchViewController : ViewController, UITableViewDelegate, UITableViewDat
     }
 
     // MARK: Private
-    private func processSelected(row: Int, at index: Int) -> Bool {
+    private func reloadAllRows(row: Int) -> Bool {
         var reloadAll = false
-        if (productType == .beverages && index == 1) { // Segment
-            if searchCriteria.valuesForAttributeAtIndex(index) == nil {
-                reloadAll = true
+        if let activeCellRow = activeCellPath?.row {
+            if (productType == .beverages && activeCellRow == 1) { // Segment
+                if searchCriteria.valuesForAttributeAtIndex(activeCellRow) == nil { // Segment not selected
+                    reloadAll = true
+                }
             }
         }
         return reloadAll
     }
 
-    private func initializeSearch() {
-        updateProducts()
-        dropDownOptions = createAvailableValues()
-        for idx in 0..<count {
-            updateAvailableValuesAt(index: idx)
-        }
-    }
-
-    private func update() {
-        navigationItem.title = productType.localizedName
-        productImageView.image = UIImage(named: productType.imageName)
-    }
-
-    private func updateProducts() {
-        products = productType.productsWithSearchCriteria(searchCriteria)
+    private func searchCriteriaDidChange(reset: Bool = false) {
+        let filterCriteria = searchCriteria
+        products = productType.productsWithSearchCriteria(filterCriteria)
         productCountLabel.text = "\(products.count)"
-        viewButton.setTitle(NSLocalizedString("view", comment: "view"), for: .normal)
     }
 
     // MARK: Helpers
-    private func createAvailableValues() -> [[String]] {
-        var array = [[String]]()
-        for _ in 0..<count {
-            array.append(["All"])
-        }
-        return array
-    }
-
-    private func titleForRow(_ row: Int) -> String {
-        let key = productType.module + ".search.title.\(row)"
-        return NSLocalizedString(key, comment: "")
-    }
-
     private func descriptionForRow(_ row: Int) -> String {
         if let selectedValues = searchCriteria.valuesForAttributeAtIndex(row) {
             return selectedValues.joined(separator: ", ")
         } else {
-            return "All"
+            return SearchCriteria.ALL()
         }
     }
 
     private func isCellEnabledAt(indexPath: IndexPath) -> Bool {
         if (productType == .beverages) {
             let segmentRowIdx = (editorPath == nil) ? 2 : 3
-            if let activeCellPath = self.activeCellPath {
-                if (searchCriteria.valuesForAttributeAtIndex(activeCellPath.row)) == nil {
-                    return indexPath.row < segmentRowIdx
-                }
+            let segmentCriteria = searchCriteria.valuesForAttributeAtIndex(1)
+            if segmentCriteria == nil {
+                return indexPath.row < segmentRowIdx
             }
         }
         return true
-    }
-
-    private func updateAvailableValuesAt(index: Int) {
-        dropDownOptions[index] = productType.dropDownValues(property: searchAttributes[index], in: products)
     }
 }

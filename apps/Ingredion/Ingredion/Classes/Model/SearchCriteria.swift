@@ -9,8 +9,10 @@
 import Foundation
 
 struct SearchCriteria {
-    let attributes: [String]
-    private var criteria: [String: [String]]
+    static let ALL = { return NSLocalizedString("all", comment: "") }
+    
+    let attributes: [String] // region, valueProposition, application, etc
+    private var criteria: [String: [String]] // region: [APAC, MEX, SA, US & Canada]
 
     init() {
         self.attributes = []
@@ -20,6 +22,12 @@ struct SearchCriteria {
     init(attributes: [String]) {
         self.attributes = attributes
         criteria = Dictionary()
+    }
+
+    private func copyWithCriteria(_ criteria: [String], forAttribute attribute: String) -> SearchCriteria {
+        var copy = SearchCriteria(attributes: attributes)
+        copy.criteria[attribute] = criteria
+        return copy
     }
 
     func matches(_ item: Product) -> Bool {
@@ -50,7 +58,7 @@ struct SearchCriteria {
             print("Illegal attribute: " + attribute)
             return
         }
-        if value == "All" {
+        if value == SearchCriteria.ALL() {
             criteria[attribute] = nil
         } else {
             if var values = criteria[attribute] {
@@ -65,6 +73,12 @@ struct SearchCriteria {
             } else {
                 criteria[attribute] = [value]
             }
+        }
+    }
+
+    mutating func resetValuesAfter(attributeIndex: Int) {
+        for (index, attribute) in attributes.enumerated() where index > attributeIndex {
+            criteria[attribute] = nil
         }
     }
 }

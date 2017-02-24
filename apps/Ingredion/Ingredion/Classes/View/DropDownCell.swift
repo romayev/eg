@@ -11,8 +11,8 @@ import UIKit
 
 protocol DropDownCellDelegate: class {
     var dropDownItems: [String]? { get }
-    func cell(_ cell: UITableViewCell, didSelectCellAtRow row: NSInteger)
-    func selectedItemsForCell(cell: UITableViewCell) -> [String]?
+    var selectedItems: [String]? { get }
+    func cell(_ cell: UITableViewCell, didSelectValue value: String, atIndex index: Int)
 }
 
 class DropDownCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate {
@@ -39,7 +39,7 @@ class DropDownCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        if let selected = delegate?.selectedItemsForCell(cell:  self) {
+        if let selected = delegate?.selectedItems {
             let title = items[indexPath.row]
             let checked = selected.contains(title)
             cell.textLabel?.text = title
@@ -59,7 +59,7 @@ class DropDownCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate 
                 cell.accessoryType = checked ? .checkmark : .none
             }
         }
-        delegate?.cell(self, didSelectCellAtRow: row)
+        delegate?.cell(self, didSelectValue: items[row], atIndex: row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -80,6 +80,6 @@ class ProductViewController: ViewController, UITableViewDataSource {
             }
             return cell
         }
-        return UITableViewCell()
+        return ProductAttributeCell()
     }
 }

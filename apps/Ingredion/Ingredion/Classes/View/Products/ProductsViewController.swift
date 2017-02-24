@@ -39,7 +39,7 @@ class ProductsViewController: ViewController, ExpertsViewControllerDelegate, UIT
         super.viewDidLoad()
         title = NSLocalizedString("products", comment: "")
         segmentedControl?.setTitle(NSLocalizedString("top", comment: ""), forSegmentAt: 0)
-        segmentedControl?.setTitle(NSLocalizedString("All", comment: ""), forSegmentAt: 1)
+        segmentedControl?.setTitle(NSLocalizedString("all", comment: ""), forSegmentAt: 1)
 
         if let productType = delegate?.productType {
             if !productType.usesPriority {
