@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="1.01">
+    <entity name="Booking" representedClassName="Booking" parentEntity="Record" syncable="YES" codeGenerationType="class">
+        <attribute name="accepted" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="completed" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="due" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="preferred" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="received" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="submitted" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="acceptedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Party" inverseName="bookings" inverseEntity="Party" syncable="YES"/>
+        <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="bookings" inverseEntity="Project" syncable="YES"/>
+        <relationship name="requestedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="bookings" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Party" representedClassName="Party" parentEntity="Record" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="acceptedBy" inverseEntity="Booking" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" parentEntity="Record" syncable="YES" codeGenerationType="class">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="requestedBy" inverseEntity="Booking" syncable="YES"/>
+    </entity>
+    <entity name="Project" representedClassName="Project" parentEntity="Record" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="project" inverseEntity="Booking" syncable="YES"/>
+    </entity>
+    <entity name="Record" representedClassName="Record" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Task" representedClassName="Task" parentEntity="Record" syncable="YES" codeGenerationType="class">
+        <attribute name="aspectRatio" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="confidentiality" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="layout" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="slideCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Booking" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="Party" positionX="0" positionY="99" width="128" height="75"/>
+        <element name="Person" positionX="-36" positionY="45" width="128" height="90"/>
+        <element name="Project" positionX="-54" positionY="18" width="128" height="90"/>
+        <element name="Record" positionX="-27" positionY="54" width="128" height="75"/>
+        <element name="Task" positionX="18" positionY="144" width="128" height="135"/>
+    </elements>
+</model>
