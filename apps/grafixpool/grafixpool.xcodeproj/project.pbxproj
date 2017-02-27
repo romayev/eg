@@ -10,6 +10,8 @@
 		FA72E74F1E64742200B14F4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA72E74E1E64742200B14F4A /* Assets.xcassets */; };
 		FA72E7521E647EC400B14F4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA72E7501E647EC400B14F4A /* Localizable.strings */; };
 		FA72E7541E6487F100B14F4A /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E7531E6487F100B14F4A /* Booking.swift */; };
+		FA72E75B1E64A60D00B14F4A /* EGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72E75A1E64A60D00B14F4A /* EGKit.framework */; };
+		FA72E75D1E64A6D800B14F4A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E75C1E64A6D800B14F4A /* Image.swift */; };
 		FA737C8D1E633155003AA912 /* BookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA737C8B1E633155003AA912 /* BookingsViewController.swift */; };
 		FA737C8E1E633155003AA912 /* EditBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA737C8C1E633155003AA912 /* EditBookingViewController.swift */; };
 		FA737C931E6331E3003AA912 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA737C921E6331E3003AA912 /* RecordsViewController.swift */; };
@@ -26,6 +28,8 @@
 		FA72E74E1E64742200B14F4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA72E7511E647EC400B14F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA72E7531E6487F100B14F4A /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
+		FA72E75A1E64A60D00B14F4A /* EGKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EGKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ExecutiveGraphics-fixomzzdwbovqudtwltjuvgeixqy/Build/Products/Debug-iphonesimulator/EGKit.framework"; sourceTree = "<group>"; };
+		FA72E75C1E64A6D800B14F4A /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		FA737C8B1E633155003AA912 /* BookingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingsViewController.swift; sourceTree = "<group>"; };
 		FA737C8C1E633155003AA912 /* EditBookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBookingViewController.swift; sourceTree = "<group>"; };
 		FA737C921E6331E3003AA912 /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA72E75B1E64A60D00B14F4A /* EGKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				FA737C921E6331E3003AA912 /* RecordsViewController.swift */,
+				FA72E75C1E64A6D800B14F4A /* Image.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -135,6 +141,7 @@
 		FA9743371E61F6340075FF0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA72E75A1E64A60D00B14F4A /* EGKit.framework */,
 				FA9743381E61F6340075FF0A /* CoreData.framework */,
 			);
 			name = Frameworks;
@@ -223,6 +230,7 @@
 				FA8916021E62264C00F7FC88 /* grafixpool.xcdatamodeld in Sources */,
 				FA737C8E1E633155003AA912 /* EditBookingViewController.swift in Sources */,
 				FA737C931E6331E3003AA912 /* RecordsViewController.swift in Sources */,
+				FA72E75D1E64A6D800B14F4A /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,8 +8,15 @@
 
 import UIKit
 import CoreData
+import EGKit
 
-class BookingsViewController: RecordsViewController, UITableViewDataSource, UITableViewDelegate {
+class BookingsViewController: RecordsViewController, SegueHandlerType, UITableViewDataSource, UITableViewDelegate {
+
+    enum SegueIdentifier: String {
+        case add = "add"
+        case edit = "edit"
+    }
+
     var fetchedResultsController: NSFetchedResultsController<Booking>!
     var booking: Booking? {
         if let indexPath = tableView.indexPathForSelectedRow {
@@ -39,8 +46,15 @@ class BookingsViewController: RecordsViewController, UITableViewDataSource, UITa
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let identifier = segue.identifier
-        if identifier == "edit" {
+        guard let identifier = segue.identifier else {
+            fatalError("Invalid segue identifier \(segue.identifier)")
+        }
+        guard let segueIdentifier = SegueIdentifier(rawValue: identifier) else {
+            fatalError("Invalid segue identifier \(identifier)")
+        }
+        switch segueIdentifier {
+        case .add: break
+        case .edit:
             if let indexPath = tableView?.indexPathForSelectedRow {
                 let c: EditBookingViewController = segue.destination as! EditBookingViewController
                 c.booking = fetchedResultsController.object(at: indexPath)
@@ -71,7 +85,7 @@ class BookingsViewController: RecordsViewController, UITableViewDataSource, UITa
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: .edit, sender: tableView.cellForRow(at: indexPath))
     }
 
     // MARK: UITableViewDataSource & Delegate
