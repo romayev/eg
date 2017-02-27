@@ -22,28 +22,21 @@ protocol SearchViewControllerDelegate: class {
     var productType: ProductType { get }
 }
 
-class SearchViewController : ViewController, UITableViewDelegate, UITableViewDataSource, DropDownCellDelegate, ProductsViewControllerDelegate, ExpertsViewControllerDelegate {
+class SearchViewController : EditTableViewController, ProductsViewControllerDelegate, ExpertsViewControllerDelegate {
     @IBOutlet var productImageView: UIImageView!
     @IBOutlet var headerLabel: UILabel!
     @IBOutlet var productCountLabel: UILabel!
-    @IBOutlet var tableView: UITableView!
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var viewButton: UIButton!
 
     var searchCriteria: SearchCriteria = SearchCriteria()
-    //var dropDownOptions: DropDownValues?
-    var editorPath: IndexPath?
-    var activeCellPath: IndexPath? {
-        if let editorPath = self.editorPath {
-            return IndexPath(item: editorPath.row - 1, section: editorPath.section)
-        }
-        return nil
-    }
 
     weak var delegate: SearchViewControllerDelegate?
 
+    override var count: Int { return productType.searchAttributes.count }
+
     // MARK: DropDownCellDelegate - vars
-    var dropDownItems: [String]? {
+    override var dropDownItems: [String]? {
         guard let activeRow = activeCellPath?.row else  {
             print("ERROR: Active cell undefined")
             return nil
@@ -51,7 +44,7 @@ class SearchViewController : ViewController, UITableViewDelegate, UITableViewDat
         let attribute = searchCriteria.attributes[activeRow]
         return productType.dropDownValuesFor(attribute: attribute, in: searchCriteria)
     }
-    var selectedItems: [String]? {
+    override var selectedItems: [String]? {
         guard let activeCellPath = self.activeCellPath else {
             return nil
         }
@@ -104,42 +97,7 @@ class SearchViewController : ViewController, UITableViewDelegate, UITableViewDat
         tableView.reloadData()
     }
 
-    // MARK: UITableViewDataSource & Delegate
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = productType.searchAttributes.count
-        if let editorSection = editorPath?.section {
-            let editor = section == editorSection ? 1 : 0
-            return count + editor
-        }
-        return count
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath == editorPath {
-            if let count = dropDownItems?.count {
-                return 44.0 * CGFloat(count)
-            }
-
-        }
-        return 44.0
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var row = indexPath.row
-        if (indexPath == editorPath) {
-            let cellIdentifier = "DropDown"
-            if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DropDownCell {
-                cell.delegate = self
-                cell.update()
-                return cell
-            }
-        }
-        if let editorPath = self.editorPath {
-            if indexPath.section == editorPath.section && row > editorPath.row {
-                row -= 1
-            }
-        }
-        
+    override func cellFor(_ row: Int, at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = NSLocalizedString(productType.module + ".search.title.\(row)", comment: "")
         cell.detailTextLabel?.text = self.descriptionForRow(row)
@@ -155,43 +113,8 @@ class SearchViewController : ViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
 
-    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        if (editorPath != nil) {
-            return indexPath.section != editorPath?.section || indexPath.row != editorPath?.row
-        }
-        return true
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let section = indexPath.section
-        var row = indexPath.row
-        tableView.deselectRow(at: indexPath, animated: true)
-
-        var edit = false
-        if let editorPath = self.editorPath {
-            self.editorPath = nil
-            tableView.deleteRows(at: [editorPath], with: .fade)
-            if section == editorPath.section && indexPath.row > editorPath.row {
-                row -= 1
-            }
-            edit = (section != editorPath.section) || (row + 1) != editorPath.row
-        } else {
-            edit = true
-        }
-
-        if edit {
-            self.editorPath = IndexPath(item: row + 1, section: section)
-            if let editorPath = self.editorPath {
-                tableView.insertRows(at: [editorPath], with: .fade)
-            }
-            if let activeCellPath = self.activeCellPath {
-                tableView.scrollToRow(at: activeCellPath, at: .none, animated: true)
-            }
-        }
-    }
-
     // MARK: DropDownCellDelegate - funcs
-    func cell(_ cell: UITableViewCell, didSelectValue value: String, atIndex index: Int) {
+    override func cell(_ cell: UITableViewCell, didSelectValue value: String, atIndex index: Int) {
         if let activeCellPath = self.activeCellPath {
             let attribute = productType.searchAttributes[activeCellPath.row]
             searchCriteria.toggleValueForAttribute(attribute, value: value)

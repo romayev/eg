@@ -17,9 +17,13 @@ class RecordsViewController: ViewController, NSFetchedResultsControllerDelegate 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeFetchedResultsController()
         tableView.tableFooterView = UIView()
     }
-    
+
+    func initializeFetchedResultsController() {
+    }
+
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }

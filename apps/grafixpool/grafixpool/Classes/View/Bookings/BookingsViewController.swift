@@ -25,12 +25,13 @@ class BookingsViewController: RecordsViewController, SegueHandlerType, UITableVi
         return nil
     }
     
-    func initializeFetchedResultsController() {
+    override func initializeFetchedResultsController() {
         let request = NSFetchRequest<Booking>(entityName: "Booking")
         let sort = NSSortDescriptor(key: "created", ascending: false)
         request.sortDescriptors = [sort]
         let frc = NSFetchedResultsController<Booking>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         frc.delegate = self
+        fetchedResultsController = frc
 
         do {
             try frc.performFetch()
@@ -42,7 +43,6 @@ class BookingsViewController: RecordsViewController, SegueHandlerType, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = NSLocalizedString("bookings", comment: "")
-        initializeFetchedResultsController()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -72,7 +72,8 @@ class BookingsViewController: RecordsViewController, SegueHandlerType, UITableVi
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = fetchedResultsController.sections else {
-            fatalError("No sections in fetchedResultsController")
+            print("No sections in fetchedResultsController")
+            return 0
         }
         let currentSection = sections[section]
         return currentSection.numberOfObjects

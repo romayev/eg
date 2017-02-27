@@ -27,7 +27,6 @@
 		FAC253741E520CC700E96896 /* HomeSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC253731E520CC700E96896 /* HomeSplitViewController.swift */; };
 		FAC253871E565FC000E96896 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC253861E565FC000E96896 /* MoreViewController.swift */; };
 		FAC253891E587B1E00E96896 /* ExpertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC253881E587B1E00E96896 /* ExpertsViewController.swift */; };
-		FAC2538B1E58816A00E96896 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2538A1E58816A00E96896 /* DropDownCell.swift */; };
 		FAC2538D1E5B420900E96896 /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2538C1E5B420900E96896 /* ProductType.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +53,6 @@
 		FAC253731E520CC700E96896 /* HomeSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSplitViewController.swift; sourceTree = "<group>"; };
 		FAC253861E565FC000E96896 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreViewController.swift; path = More/MoreViewController.swift; sourceTree = "<group>"; };
 		FAC253881E587B1E00E96896 /* ExpertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpertsViewController.swift; path = More/ExpertsViewController.swift; sourceTree = "<group>"; };
-		FAC2538A1E58816A00E96896 /* DropDownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
 		FAC2538C1E5B420900E96896 /* ProductType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,7 +147,6 @@
 				FA6AEC0A1E5BECDF00222F9E /* Products */,
 				FAC253851E565FA900E96896 /* More */,
 				FAC253731E520CC700E96896 /* HomeSplitViewController.swift */,
-				FAC2538A1E58816A00E96896 /* DropDownCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,7 +255,6 @@
 				FA29EB941E5E4232001DFE8C /* SearchCriteria.swift in Sources */,
 				FAC253611E4E62FE00E96896 /* DataManager.swift in Sources */,
 				FAC2536D1E51324B00E96896 /* Confectionery.swift in Sources */,
-				FAC2538B1E58816A00E96896 /* DropDownCell.swift in Sources */,
 				FAC253481E4D364F00E96896 /* AppDelegate.swift in Sources */,
 				FAC253891E587B1E00E96896 /* ExpertsViewController.swift in Sources */,
 				FAC2538D1E5B420900E96896 /* ProductType.swift in Sources */,

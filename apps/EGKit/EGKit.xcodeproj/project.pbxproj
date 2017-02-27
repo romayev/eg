@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		FA72E7591E64A45F00B14F4A /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E7581E64A45F00B14F4A /* SegueHandler.swift */; };
+		FA72E75F1E64BD7000B14F4A /* KVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E75E1E64BD7000B14F4A /* KVC.swift */; };
+		FA72E7661E64C9F800B14F4A /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E7651E64C9F800B14F4A /* DropDownCell.swift */; };
+		FA72E7681E64CA1100B14F4A /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E7671E64CA1100B14F4A /* EditTableViewController.swift */; };
 		FA8916141E6329B300F7FC88 /* EGKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FA8916121E6329B300F7FC88 /* EGKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA89161D1E632AE400F7FC88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89161C1E632AE400F7FC88 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA72E7581E64A45F00B14F4A /* SegueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
+		FA72E75E1E64BD7000B14F4A /* KVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVC.swift; sourceTree = "<group>"; };
+		FA72E7651E64C9F800B14F4A /* DropDownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
+		FA72E7671E64CA1100B14F4A /* EditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
 		FA89160F1E6329B300F7FC88 /* EGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8916121E6329B300F7FC88 /* EGKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGKit.h; sourceTree = "<group>"; };
 		FA8916131E6329B300F7FC88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +37,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA72E7641E64C9F800B14F4A /* EditTable */ = {
+			isa = PBXGroup;
+			children = (
+				FA72E7651E64C9F800B14F4A /* DropDownCell.swift */,
+				FA72E7671E64CA1100B14F4A /* EditTableViewController.swift */,
+			);
+			path = EditTable;
+			sourceTree = "<group>";
+		};
 		FA8916051E6329B300F7FC88 = {
 			isa = PBXGroup;
 			children = (
@@ -68,8 +83,10 @@
 		FA89161B1E632AE400F7FC88 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA72E7641E64C9F800B14F4A /* EditTable */,
 				FA89161C1E632AE400F7FC88 /* ViewController.swift */,
 				FA72E7581E64A45F00B14F4A /* SegueHandler.swift */,
+				FA72E75E1E64BD7000B14F4A /* KVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,6 +173,9 @@
 			files = (
 				FA72E7591E64A45F00B14F4A /* SegueHandler.swift in Sources */,
 				FA89161D1E632AE400F7FC88 /* ViewController.swift in Sources */,
+				FA72E7661E64C9F800B14F4A /* DropDownCell.swift in Sources */,
+				FA72E7681E64CA1100B14F4A /* EditTableViewController.swift in Sources */,
+				FA72E75F1E64BD7000B14F4A /* KVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
