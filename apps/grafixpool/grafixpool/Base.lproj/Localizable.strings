@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  grafixpool
+
+  Created by Alex Romayev on 2/27/17.
+  Copyright © 2017 Executive Graphics. All rights reserved.
+*/
+
+"bookings" = "Bookings";
+"add-booking" = "Add Booking";
+"edit-booking" = "Edit Booking";

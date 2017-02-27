@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import EGKit
 
 class IndexViewController: ViewController, UITableViewDelegate, UITableViewDataSource, SearchViewControllerDelegate {
     @IBOutlet var tableView: UITableView!

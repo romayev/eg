@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import EGKit
 
 class MoreViewController: ViewController {
     @IBOutlet var backgroundImageView: UIImageView!

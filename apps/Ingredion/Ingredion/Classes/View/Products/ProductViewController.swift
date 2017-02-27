@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import EGKit
 
 class ProductAttributeCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel?

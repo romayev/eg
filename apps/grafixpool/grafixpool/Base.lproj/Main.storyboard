@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--Bookings View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="grafixpool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="9pv-A4-QxB" customClass="BookingsViewController" customModule="grafixpool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -21,6 +21,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QxY-AA-VTW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="93"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ns9-bZ-93w">
+                                        <rect key="frame" x="10" y="15" width="355" height="63"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.87450980392156863" green="0.90196078431372551" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ns9-bZ-93w" firstAttribute="top" secondItem="QxY-AA-VTW" secondAttribute="top" constant="15" id="3Ww-GV-Hfc"/>
+                                    <constraint firstItem="ns9-bZ-93w" firstAttribute="centerX" secondItem="QxY-AA-VTW" secondAttribute="centerX" id="ToH-wa-iAT"/>
+                                    <constraint firstItem="ns9-bZ-93w" firstAttribute="leading" secondItem="QxY-AA-VTW" secondAttribute="leading" constant="10" id="UF1-cW-2Gk"/>
+                                    <constraint firstAttribute="bottom" secondItem="ns9-bZ-93w" secondAttribute="bottom" constant="15" id="jlv-3R-E26"/>
+                                    <constraint firstAttribute="trailing" secondItem="ns9-bZ-93w" secondAttribute="trailing" constant="10" id="q2r-1A-nR1"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9fd-6U-AhJ">
+                                <rect key="frame" x="0.0" y="157" width="375" height="417"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wej-2q-30V">
                                 <rect key="frame" x="0.0" y="574" width="375" height="44"/>
                                 <items>
@@ -28,40 +48,41 @@
                                     <barButtonItem title="History" id="Cek-p7-Oa5"/>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9fd-6U-AhJ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="510"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wej-2q-30V" firstAttribute="top" secondItem="9fd-6U-AhJ" secondAttribute="bottom" id="0RW-WL-p0R"/>
-                            <constraint firstItem="wej-2q-30V" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="1FV-rf-epF"/>
-                            <constraint firstItem="9fd-6U-AhJ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="3hj-rp-pDM"/>
-                            <constraint firstAttribute="trailing" secondItem="9fd-6U-AhJ" secondAttribute="trailing" id="44f-Mc-czJ"/>
-                            <constraint firstItem="9fd-6U-AhJ" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="DR1-an-jWM"/>
-                            <constraint firstAttribute="trailing" secondItem="wej-2q-30V" secondAttribute="trailing" id="Iep-oy-WjF"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="wej-2q-30V" secondAttribute="bottom" id="PZz-pz-TgJ"/>
+                            <constraint firstItem="9fd-6U-AhJ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Bqn-O5-0tt"/>
+                            <constraint firstItem="wej-2q-30V" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="GeU-o6-n0j"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="wej-2q-30V" secondAttribute="bottom" id="P9K-x3-Z2P"/>
+                            <constraint firstItem="QxY-AA-VTW" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="PXF-o6-i9F"/>
+                            <constraint firstAttribute="trailing" secondItem="wej-2q-30V" secondAttribute="trailing" id="Qph-7t-Mey"/>
+                            <constraint firstAttribute="trailing" secondItem="QxY-AA-VTW" secondAttribute="trailing" id="R8q-Hz-kEk"/>
+                            <constraint firstAttribute="trailing" secondItem="9fd-6U-AhJ" secondAttribute="trailing" id="ZIE-Bk-9Lr"/>
+                            <constraint firstItem="QxY-AA-VTW" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="oF9-DE-V6g"/>
+                            <constraint firstItem="wej-2q-30V" firstAttribute="top" secondItem="9fd-6U-AhJ" secondAttribute="bottom" id="qGi-xP-TAV"/>
+                            <constraint firstItem="9fd-6U-AhJ" firstAttribute="top" secondItem="QxY-AA-VTW" secondAttribute="bottom" id="utU-cd-0eE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2N0-Yl-Nw4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qoZ-FD-TOL">
                             <connections>
-                                <segue destination="ae6-k8-eUX" kind="popoverPresentation" popoverAnchorBarButtonItem="qoZ-FD-TOL" id="sz9-0C-kvL">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="ae6-k8-eUX" kind="presentation" identifier="add" modalPresentationStyle="formSheet" id="sz9-0C-kvL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="9fd-6U-AhJ" id="7sD-ex-m7L"/>
+                        <segue destination="ae6-k8-eUX" kind="presentation" identifier="edit" modalPresentationStyle="formSheet" id="7he-SI-pSx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688.8" y="-320.68965517241384"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Booking View Controller-->
         <scene sceneID="y1s-J3-D9o">
             <objects>
-                <viewController id="Dnj-dT-QB2" sceneMemberID="viewController">
+                <viewController id="Dnj-dT-QB2" customClass="EditBookingViewController" customModule="grafixpool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5X2-1o-5Nc"/>
                         <viewControllerLayoutGuide type="bottom" id="Eqp-Xi-7r1"/>
@@ -69,16 +90,33 @@
                     <view key="view" contentMode="scaleToFill" id="V9E-Ml-KT8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fRD-Ok-hes">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fRD-Ok-hes" firstAttribute="leading" secondItem="V9E-Ml-KT8" secondAttribute="leading" id="1ma-a8-eOT"/>
+                            <constraint firstItem="fRD-Ok-hes" firstAttribute="top" secondItem="5X2-1o-5Nc" secondAttribute="bottom" id="JUt-Wm-Ped"/>
+                            <constraint firstItem="Eqp-Xi-7r1" firstAttribute="top" secondItem="fRD-Ok-hes" secondAttribute="bottom" id="R3U-fz-lk0"/>
+                            <constraint firstAttribute="trailing" secondItem="fRD-Ok-hes" secondAttribute="trailing" id="tHl-HA-kDZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gJJ-dR-hMe">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="x3B-Xd-5hA"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="x3B-Xd-5hA">
+                            <connections>
+                                <segue destination="mBJ-aC-Lvl" kind="unwind" unwindAction="dismissWithSegue:" id="pBu-fQ-IWN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="bym-fP-60E"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUN-SF-NCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mBJ-aC-Lvl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3396" y="-318.89055472263868"/>
+            <point key="canvasLocation" x="3391" y="-321"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -139,11 +177,11 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--First-->
+        <!--Navigation Controller-->
         <scene sceneID="0xf-UG-AUK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TFT-It-EtG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cqE-ld-KVm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -158,11 +196,11 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--Second-->
+        <!--Navigation Controller-->
         <scene sceneID="X9V-6R-tFy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gyA-fN-wIp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aAL-ww-Ol6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -177,10 +215,10 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Edit Booking Nav-->
         <scene sceneID="DPA-eT-w7x">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ae6-k8-eUX" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ae6-k8-eUX" userLabel="Edit Booking Nav" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0eT-3N-ogT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -193,11 +231,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDc-nE-2mG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2456.8000000000002" y="-318.89055472263868"/>
+            <point key="canvasLocation" x="2529" y="-321"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="Logo" width="367" height="63"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sz9-0C-kvL"/>
+    </inferredMetricsTieBreakers>
 </document>

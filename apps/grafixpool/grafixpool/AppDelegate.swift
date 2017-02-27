@@ -9,13 +9,34 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
     var window: UIWindow?
+    var selectedTabIdx = 0
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        DataStore.store
+        let navbarTintColor = UIColor(red:0.33, green:0.66, blue:0.73, alpha:1.0)
+        let toolbarTintColor = UIColor(red:0.92, green:0.47, blue:0.04, alpha:1.0)
+        let whiteColor = UIColor.white
+
+        window?.tintColor = navbarTintColor
+        let tabBar = UITabBar.appearance()
+        tabBar.tintColor = whiteColor
+        tabBar.barTintColor = UIColor.black
+
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.tintColor = whiteColor
+        navigationBar.barTintColor = navbarTintColor
+
+        UIToolbar.appearance().tintColor = toolbarTintColor
+        UIToolbar.appearance().tintColor = whiteColor
+
+        let font = UIFont(name: "Arial", size: 18.0) ?? UIFont.systemFont(ofSize: 18.0)
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: whiteColor, NSFontAttributeName: font]
+
+        let tabBarController: UITabBarController = window?.rootViewController as! UITabBarController;
+        tabBarController.delegate = self
+
         return true
     }
 
@@ -41,6 +62,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // MARK: UITabBarControllerDelegate
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        selectedTabIdx = tabBarController.selectedIndex;
+        return true
+    }
 
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if (tabBarController.selectedIndex != selectedTabIdx) {
+            return;
+        }
+
+        if (tabBarController.selectedViewController?.isKind(of: UISplitViewController.self))! {
+            let splitView = viewController as! UISplitViewController
+            let viewControllers = splitView.viewControllers
+            for navControllerInSplit in viewControllers {
+                if let n: UINavigationController = navControllerInSplit as? UINavigationController {
+                    n.popToRootViewController(animated: true)
+                }
+            }
+        }
+    }
 }
 

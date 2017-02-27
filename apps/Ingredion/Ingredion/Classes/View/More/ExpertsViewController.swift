@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import EGKit
 
 protocol ExpertsViewControllerDelegate: class {
     var productType: ProductType { get }

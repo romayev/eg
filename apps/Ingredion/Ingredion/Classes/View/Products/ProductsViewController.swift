@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import EGKit
 
 protocol ProductsViewControllerDelegate: class {
     var productType: ProductType { get }
