@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   grafixpool
 
@@ -9,3 +9,28 @@
 "bookings" = "Bookings";
 "add-booking" = "Add Booking";
 "edit-booking" = "Edit Booking";
+
+"booking.edit.type" = "Job Type";
+"booking.edit.due" = "Due Date";
+"booking.edit.preferred" = "Preferred Date";
+"booking.edit.layout" = "Layout";
+"booking.edit.slides" = "Number of Slides";
+"booking.edit.aspect-ratio" = "Aspect Ratio";
+"booking.edit.confidentiality" = "Confidentiality";
+
+"job-type.adjust-to-smc" = "Adjust to SMC standard";
+"job-type.improve" = "Improve layout / visualization";
+"job-type.create-version" = "Create additional version";
+"job-type.final-check" = " Quick final check for SC meeting";
+"job-type.translation" = "Translation";
+
+"layout.one" = "Layout 1";
+"layout.two" = "Layout 2";
+"layout.three" = "Layout 3";
+
+"aspect-ratio.standard" = "Standard (4:3)";
+"aspect-ratio.widescreen" = "Widescreen (16:9)";
+
+"confidentiality.level1" = "Level 1";
+"confidentiality.level2" = "Level 2";
+"confidentiality.level3" = "Level 3";

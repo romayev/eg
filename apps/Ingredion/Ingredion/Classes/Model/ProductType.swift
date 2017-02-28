@@ -23,7 +23,7 @@ enum ProductType: Int {
     }
     var localizedName: String {
         let key = "index.title.\(self.rawValue)"
-        return NSLocalizedString(key, comment: key)
+        return NSLocalizedString(key, comment: "")
     }
     var imageName: String {
         return "search-\(self.rawValue)"

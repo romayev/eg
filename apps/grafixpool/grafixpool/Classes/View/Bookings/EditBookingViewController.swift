@@ -16,21 +16,32 @@ class EditBookingViewController: EditTableViewController {
     let editingContext = DataStore.store.editingOjbectContext
     var booking: Booking?
 
-    override var count: Int { return 5 }
+    override var count: Int { return BookingTableCellType.count }
 
     // MARK: DropDownCellDelegate - vars
     override var dropDownItems: [String]? {
-//        guard let activeRow = activeCellPath?.row else  {
-//            print("ERROR: Active cell undefined")
-//            return nil
-//        }
-        return [ "One", "Two", "Three" ]
+        guard let activeRow = activeCellPath?.row else  {
+            print("ERROR: Active cell undefined")
+            return nil
+        }
+        switch activeRow {
+        case 0:
+            return JobType.localizedValues
+        case 3:
+            return Layout.localizedValues
+        case 5:
+            return AspectRatio.localizedValues
+        case 6:
+            return Confidentiality.localizedValues
+        default:
+            return nil
+        }
     }
     override var selectedItems: [String]? {
 //        guard let activeCellPath = self.activeCellPath else {
 //            return nil
 //        }
-        return [ "Two" ]
+        return nil
     }
 
     // MARK: UIViewController
@@ -49,7 +60,10 @@ class EditBookingViewController: EditTableViewController {
 
     override func cellFor(_ row: Int, at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "Test"
+        guard let type = BookingTableCellType(rawValue: indexPath.row) else {
+            fatalError("Unable to get BookingTableCellType for index \(indexPath.row)")
+        }
+        cell.textLabel?.text = type.localizedName
         cell.detailTextLabel?.text = self.descriptionForRow(row)
         return cell
     }

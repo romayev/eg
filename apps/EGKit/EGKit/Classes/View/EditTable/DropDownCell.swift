@@ -41,10 +41,10 @@ open class DropDownCell: UITableViewCell, UITableViewDataSource, UITableViewDele
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let title = items[indexPath.row]
+        cell.textLabel?.text = title
         if let selected = delegate?.selectedItems {
-            let title = items[indexPath.row]
             let checked = selected.contains(title)
-            cell.textLabel?.text = title
             cell.accessoryType = checked ? .checkmark : .none
         }
 
