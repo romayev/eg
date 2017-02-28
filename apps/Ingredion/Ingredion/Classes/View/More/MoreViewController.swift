@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import EGKit
 
-class MoreViewController: ViewController {
+class MoreViewController: EGViewController {
     @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var titleAboutLabel: UILabel!
     @IBOutlet var titleContactLabel: UILabel!

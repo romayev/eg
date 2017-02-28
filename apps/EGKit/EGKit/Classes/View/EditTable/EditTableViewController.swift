@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class EditTableViewController: ViewController, UITableViewDataSource, UITableViewDelegate {
+open class EditTableViewController: EGViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet public var tableView: UITableView!
 
     // MARK: public vars

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import EGKit
 
-class IndexViewController: ViewController, UITableViewDelegate, UITableViewDataSource, SearchViewControllerDelegate {
+class IndexViewController: EGViewController, UITableViewDelegate, UITableViewDataSource, SearchViewControllerDelegate {
     @IBOutlet var tableView: UITableView!
 
     // MARK: SearchViewControllerDelegate

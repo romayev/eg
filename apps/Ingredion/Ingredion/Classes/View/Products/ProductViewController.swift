@@ -15,7 +15,7 @@ class ProductAttributeCell: UITableViewCell {
     @IBOutlet var detailLabel: UILabel?
 }
 
-class ProductViewController: ViewController, UITableViewDataSource {
+class ProductViewController: EGViewController, UITableViewDataSource {
     @IBOutlet var tableView: UITableView?
     var product: Product?
     var attributes: [String]?

@@ -11,10 +11,10 @@ import UIKit
 import EGKit
 
 protocol ExpertsViewControllerDelegate: class {
-    var productType: ProductType { get }
+    var productType: ProductType! { get }
 }
 
-class ExpertsViewController: ViewController {
+class ExpertsViewController: EGViewController {
     @IBOutlet var noInfoLabel: UILabel!
     @IBOutlet var containerView: UIView!
     weak var delegate: ExpertsViewControllerDelegate?

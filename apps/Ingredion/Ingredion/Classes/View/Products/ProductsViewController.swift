@@ -11,8 +11,8 @@ import UIKit
 import EGKit
 
 protocol ProductsViewControllerDelegate: class {
-    var productType: ProductType { get }
-    var products: [Product] { get }
+    var productType: ProductType! { get }
+    var products: [Product]! { get }
 }
 
 class ProductsCell: UITableViewCell {
@@ -20,11 +20,11 @@ class ProductsCell: UITableViewCell {
     @IBOutlet var detailLabel: UILabel?
 }
 
-class ProductsViewController: ViewController, ExpertsViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ProductsViewController: EGViewController, ExpertsViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     weak var delegate: ProductsViewControllerDelegate?
 
     // MARK: ExpertsViewControllerDelegate
-    var productType: ProductType {
+    var productType: ProductType! {
         return (delegate?.productType)!
     }
 

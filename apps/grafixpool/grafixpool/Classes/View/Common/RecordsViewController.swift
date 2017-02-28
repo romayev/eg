@@ -11,7 +11,7 @@ import UIKit
 import EGKit
 import CoreData
 
-class RecordsViewController: ViewController, NSFetchedResultsControllerDelegate {
+class RecordsViewController: EGViewController, NSFetchedResultsControllerDelegate {
     @IBOutlet var tableView: UITableView!
     let context = DataStore.store.managedObjectContext
 

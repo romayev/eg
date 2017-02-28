@@ -29,7 +29,7 @@ class SearchViewController : EditTableViewController, ProductsViewControllerDele
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var viewButton: UIButton!
 
-    var searchCriteria: SearchCriteria = SearchCriteria()
+    var searchCriteria: SearchCriteria!
 
     weak var delegate: SearchViewControllerDelegate?
 
@@ -56,8 +56,8 @@ class SearchViewController : EditTableViewController, ProductsViewControllerDele
     }
 
     // MARK: ProductsViewControllerDelegate - vars
-    var productType: ProductType = .beverages
-    var products: [Product] = []
+    var productType: ProductType!
+    var products: [Product]!
 
     // MARK: UIViewController
     override func viewDidLoad() {
@@ -148,8 +148,7 @@ class SearchViewController : EditTableViewController, ProductsViewControllerDele
     }
 
     private func searchCriteriaDidChange(reset: Bool = false) {
-        let filterCriteria = searchCriteria
-        products = productType.productsWithSearchCriteria(filterCriteria)
+        products = productType.productsWithSearchCriteria(searchCriteria)
         productCountLabel.text = "\(products.count)"
     }
 

@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  Ingredion
+//  EGViewController.swift
+//  EGKit
 //
 //  Created by Alex Romayev on 2/13/17.
 //  Copyright © 2017 Executive Graphics. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class ViewController : UIViewController {
+open class EGViewController : UIViewController {
     
     @IBAction public func dismiss(segue: UIStoryboardSegue) {
         if (self.traitCollection.userInterfaceIdiom == .pad) {
