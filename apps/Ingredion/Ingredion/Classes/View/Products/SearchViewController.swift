@@ -22,7 +22,7 @@ protocol SearchViewControllerDelegate: class {
     var productType: ProductType { get }
 }
 
-class SearchViewController : EditTableViewController, ProductsViewControllerDelegate, ExpertsViewControllerDelegate {
+class SearchViewController : EGEditTableViewController, ProductsViewControllerDelegate, ExpertsViewControllerDelegate {
     @IBOutlet var productImageView: UIImageView!
     @IBOutlet var headerLabel: UILabel!
     @IBOutlet var productCountLabel: UILabel!
@@ -35,7 +35,7 @@ class SearchViewController : EditTableViewController, ProductsViewControllerDele
 
     override var count: Int { return productType.searchAttributes.count }
 
-    // MARK: DropDownCellDelegate - vars
+    // MARK: EGEditDropDownCellDelegate - vars
     override var dropDownItems: [String]? {
         guard let activeRow = activeCellPath?.row else  {
             print("ERROR: Active cell undefined")
@@ -62,7 +62,7 @@ class SearchViewController : EditTableViewController, ProductsViewControllerDele
     // MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView = UIView()
+        productType = (delegate?.productType)!
 
         // Localize
         navigationItem.title = productType.localizedName
@@ -71,9 +71,10 @@ class SearchViewController : EditTableViewController, ProductsViewControllerDele
         viewButton.setTitle(NSLocalizedString("view", comment: ""), for: .normal)
         headerLabel.text = NSLocalizedString("product-count", comment: "")
 
-        productType = (delegate?.productType)!
         searchCriteria = SearchCriteria(attributes: productType.searchAttributes)
         searchCriteriaDidChange(reset: true)
+
+        tableView.tableFooterView = UIView()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -113,7 +114,7 @@ class SearchViewController : EditTableViewController, ProductsViewControllerDele
         return cell
     }
 
-    // MARK: DropDownCellDelegate - funcs
+    // MARK: EGEditDropDownCellDelegate - funcs
     override func cell(_ cell: UITableViewCell, didSelectValue value: String, atIndex index: Int) {
         if let activeCellPath = self.activeCellPath {
             let attribute = productType.searchAttributes[activeCellPath.row]

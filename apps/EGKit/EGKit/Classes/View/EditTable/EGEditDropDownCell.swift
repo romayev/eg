@@ -1,5 +1,5 @@
 //
-//  DropDownCell.swift
+//  EGEditDropDownCell.swift
 //  Ingredion
 //
 //  Created by Alex Romayev on 2/18/17.
@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-public protocol DropDownCellDelegate: class {
+public protocol EGEditDropDownCellDelegate: class {
     var dropDownItems: [String]? { get }
     var selectedItems: [String]? { get }
     func cell(_ cell: UITableViewCell, didSelectValue value: String, atIndex index: Int)
 }
 
-open class DropDownCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate {
-    public weak var delegate: DropDownCellDelegate?
+open class EGEditDropDownCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate {
+    public weak var delegate: EGEditDropDownCellDelegate?
     var items: [String] = [String]()
     @IBOutlet var tableView: UITableView!
 

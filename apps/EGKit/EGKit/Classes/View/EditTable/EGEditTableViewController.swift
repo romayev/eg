@@ -1,5 +1,5 @@
 //
-//  EditTableViewController.swift
+//  EGEditTableViewController.swift
 //  EGKit
 //
 //  Created by Alex Romayev on 2/27/17.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class EditTableViewController: EGViewController, UITableViewDataSource, UITableViewDelegate {
+open class EGEditTableViewController: EGViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet public var tableView: UITableView!
 
     // MARK: public vars
@@ -40,8 +40,8 @@ open class EditTableViewController: EGViewController, UITableViewDataSource, UIT
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var row = indexPath.row
         if (indexPath == editorPath) {
-            let cellIdentifier = "DropDown"
-            if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DropDownCell {
+            let cellIdentifier = "EGDropDown"
+            if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? EGEditDropDownCell {
                 cell.delegate = self
                 cell.update()
                 return cell
@@ -95,7 +95,7 @@ open class EditTableViewController: EGViewController, UITableViewDataSource, UIT
     }
 }
 
-extension EditTableViewController: DropDownCellDelegate {
+extension EGEditTableViewController: EGEditDropDownCellDelegate {
     open var dropDownItems: [String]? { return [String]() }
     open var selectedItems: [String]? { return [String]() }
 

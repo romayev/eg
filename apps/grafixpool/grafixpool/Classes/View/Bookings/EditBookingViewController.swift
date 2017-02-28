@@ -11,14 +11,14 @@ import UIKit
 import EGKit
 import CoreData
 
-class EditBookingViewController: EditTableViewController {
+class EditBookingViewController: EGEditTableViewController {
 
     let editingContext = DataStore.store.editingOjbectContext
     var booking: Booking?
 
     override var count: Int { return BookingTableCellType.count }
 
-    // MARK: DropDownCellDelegate - vars
+    // MARK: EGEditDropDownCellDelegate - vars
     override var dropDownItems: [String]? {
         guard let activeRow = activeCellPath?.row else  {
             print("ERROR: Active cell undefined")
@@ -68,7 +68,7 @@ class EditBookingViewController: EditTableViewController {
         return cell
     }
 
-    // MARK: DropDownCellDelegate - funcs
+    // MARK: EGEditDropDownCellDelegate - funcs
     override func cell(_ cell: UITableViewCell, didSelectValue value: String, atIndex index: Int) {
     }
 
