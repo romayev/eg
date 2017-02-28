@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA72E7591E64A45F00B14F4A /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E7581E64A45F00B14F4A /* SegueHandler.swift */; };
+		FA72E7591E64A45F00B14F4A /* EGSegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E7581E64A45F00B14F4A /* EGSegueHandler.swift */; };
 		FA72E75F1E64BD7000B14F4A /* KVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E75E1E64BD7000B14F4A /* KVC.swift */; };
 		FA72E7661E64C9F800B14F4A /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E7651E64C9F800B14F4A /* DropDownCell.swift */; };
 		FA72E7681E64CA1100B14F4A /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E7671E64CA1100B14F4A /* EditTableViewController.swift */; };
@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA72E7581E64A45F00B14F4A /* SegueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
+		FA72E7581E64A45F00B14F4A /* EGSegueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EGSegueHandler.swift; sourceTree = "<group>"; };
 		FA72E75E1E64BD7000B14F4A /* KVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVC.swift; sourceTree = "<group>"; };
 		FA72E7651E64C9F800B14F4A /* DropDownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
 		FA72E7671E64CA1100B14F4A /* EditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 			children = (
 				FA72E7641E64C9F800B14F4A /* EditTable */,
 				FA89161C1E632AE400F7FC88 /* EGViewController.swift */,
-				FA72E7581E64A45F00B14F4A /* SegueHandler.swift */,
+				FA72E7581E64A45F00B14F4A /* EGSegueHandler.swift */,
 				FA72E75E1E64BD7000B14F4A /* KVC.swift */,
 			);
 			path = View;
@@ -171,7 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA72E7591E64A45F00B14F4A /* SegueHandler.swift in Sources */,
+				FA72E7591E64A45F00B14F4A /* EGSegueHandler.swift in Sources */,
 				FA89161D1E632AE400F7FC88 /* EGViewController.swift in Sources */,
 				FA72E7661E64C9F800B14F4A /* DropDownCell.swift in Sources */,
 				FA72E7681E64CA1100B14F4A /* EditTableViewController.swift in Sources */,

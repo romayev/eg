@@ -10,9 +10,9 @@ import UIKit
 import CoreData
 import EGKit
 
-class BookingsViewController: RecordsViewController, SegueHandlerType, UITableViewDataSource, UITableViewDelegate {
+class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITableViewDataSource, UITableViewDelegate {
 
-    enum SegueIdentifier: String {
+    enum EGSegueIdentifier: String {
         case add = "add"
         case edit = "edit"
     }
@@ -49,10 +49,10 @@ class BookingsViewController: RecordsViewController, SegueHandlerType, UITableVi
         guard let identifier = segue.identifier else {
             fatalError("Invalid segue identifier \(segue.identifier)")
         }
-        guard let segueIdentifier = SegueIdentifier(rawValue: identifier) else {
+        guard let EGSegueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
             fatalError("Invalid segue identifier \(identifier)")
         }
-        switch segueIdentifier {
+        switch EGSegueIdentifier {
         case .add: break
         case .edit:
             if let indexPath = tableView?.indexPathForSelectedRow {
