@@ -56,7 +56,8 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         case .add: break
         case .edit:
             if let indexPath = tableView?.indexPathForSelectedRow {
-                let c: EditBookingViewController = segue.destination as! EditBookingViewController
+                let n: UINavigationController = segue.destination as! UINavigationController
+                let c: EditBookingViewController = n.topViewController as! EditBookingViewController
                 c.booking = fetchedResultsController.object(at: indexPath)
             }
         }
@@ -87,6 +88,7 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: .edit, sender: tableView.cellForRow(at: indexPath))
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     // MARK: UITableViewDataSource & Delegate
@@ -94,7 +96,13 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     // MARK: Private
     private func configure(cell: UITableViewCell, indexPath: IndexPath) {
         let record = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = record.guid
+        guard let task = record.task else {
+            preconditionFailure("Record must have a task")
+        }
+        if let type = JobType(rawValue: Int(task.type)) {
+            cell.textLabel?.text = type.localizedName
+        }
+        cell.detailTextLabel?.text = record.guid
     }
 }
 

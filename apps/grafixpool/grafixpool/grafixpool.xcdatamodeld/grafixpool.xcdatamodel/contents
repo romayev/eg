@@ -11,6 +11,7 @@
         <relationship name="acceptedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Party" inverseName="bookings" inverseEntity="Party" syncable="YES"/>
         <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="bookings" inverseEntity="Project" syncable="YES"/>
         <relationship name="requestedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="bookings" inverseEntity="Person" syncable="YES"/>
+        <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="booking" inverseEntity="Task" syncable="YES"/>
     </entity>
     <entity name="Party" representedClassName="Party" parentEntity="Record" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -31,19 +32,20 @@
         <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Task" representedClassName="Task" parentEntity="Record" syncable="YES" codeGenerationType="class">
-        <attribute name="aspectRatio" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="confidentiality" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="layout" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="aspectRatio" optional="YES" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="confidentiality" optional="YES" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="layout" optional="YES" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="slideCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="slideCount" optional="YES" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="booking" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Booking" inverseName="task" inverseEntity="Booking" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Booking" positionX="-63" positionY="-18" width="128" height="195"/>
-        <element name="Party" positionX="0" positionY="99" width="128" height="75"/>
-        <element name="Person" positionX="-36" positionY="45" width="128" height="90"/>
-        <element name="Project" positionX="-54" positionY="18" width="128" height="90"/>
-        <element name="Record" positionX="-27" positionY="54" width="128" height="75"/>
-        <element name="Task" positionX="18" positionY="144" width="128" height="135"/>
+        <element name="Booking" positionX="-297" positionY="66" width="128" height="208"/>
+        <element name="Party" positionX="-99" positionY="-48" width="128" height="75"/>
+        <element name="Person" positionX="-18" positionY="171" width="128" height="90"/>
+        <element name="Project" positionX="-45" positionY="54" width="128" height="90"/>
+        <element name="Record" positionX="-297" positionY="-198" width="128" height="75"/>
+        <element name="Task" positionX="-479" positionY="200" width="128" height="148"/>
     </elements>
 </model>

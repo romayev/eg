@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,7 +46,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sba-lI-eDd" id="kPx-sy-8ZZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -109,35 +110,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="E01-BU-ijh" detailTextLabel="Iqw-62-4zM" style="IBUITableViewCellStyleValue1" id="joc-q6-Sp3">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="joc-q6-Sp3" id="Jvn-gF-bkU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E01-BU-ijh">
-                                                    <rect key="frame" x="15" y="13" width="30" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                                                    <color key="textColor" red="0.30196078430000001" green="0.30980392159999998" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iqw-62-4zM">
-                                                    <rect key="frame" x="319" y="13" width="41" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                                                    <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EGDropDown" rowHeight="88" id="45m-EY-ZkC" customClass="EGEditDropDownCell" customModule="EGKit">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="88"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="45m-EY-ZkC" id="CDd-h2-eg1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sQK-Pv-8RF">
@@ -148,14 +125,14 @@
                                                             <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Yj-h0-vap" id="cS8-nQ-Hil">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Yes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fS1-66-rFP">
-                                                                        <rect key="frame" x="30" y="0.0" width="330" height="43"/>
+                                                                        <rect key="frame" x="30" y="0.0" width="330" height="43.5"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                                                                        <color key="textColor" red="0.42352941179999998" green="0.70196078429999997" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <color key="textColor" red="0.12941176470588234" green="0.25882352941176467" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -180,6 +157,101 @@
                                             <outlet property="tableView" destination="sQK-Pv-8RF" id="bB0-kV-Xew"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="E01-BU-ijh" detailTextLabel="Iqw-62-4zM" style="IBUITableViewCellStyleValue1" id="joc-q6-Sp3">
+                                        <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="joc-q6-Sp3" id="Jvn-gF-bkU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E01-BU-ijh">
+                                                    <rect key="frame" x="15" y="13" width="30" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                                    <color key="textColor" red="0.30196078430000001" green="0.30980392159999998" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iqw-62-4zM">
+                                                    <rect key="frame" x="319" y="13" width="41" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                                    <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EGDate" rowHeight="246" id="TXM-wH-DXg" customClass="EGEditDatePickerCell" customModule="EGKit">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="246"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TXM-wH-DXg" id="XI9-xn-ySG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="245.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eao-WE-xnC">
+                                                    <rect key="frame" x="28" y="0.0" width="320" height="216"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="510071359.49931997">
+                                                        <!--2017-03-01 14:29:19 +0000-->
+                                                    </date>
+                                                    <connections>
+                                                        <action selector="valueDidChange:" destination="TXM-wH-DXg" eventType="valueChanged" id="kQe-9c-cdP"/>
+                                                    </connections>
+                                                </datePicker>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FST-jh-29g">
+                                                    <rect key="frame" x="15" y="216" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="toggleUnknown:" destination="TXM-wH-DXg" eventType="touchUpInside" id="TVJ-GX-wPQ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eao-WE-xnC" firstAttribute="top" secondItem="XI9-xn-ySG" secondAttribute="top" id="8Hw-cu-Rlp"/>
+                                                <constraint firstItem="eao-WE-xnC" firstAttribute="centerX" secondItem="XI9-xn-ySG" secondAttribute="centerX" id="ZES-lu-n6Z"/>
+                                                <constraint firstAttribute="bottom" secondItem="FST-jh-29g" secondAttribute="bottom" id="eX0-fY-A5x"/>
+                                                <constraint firstItem="FST-jh-29g" firstAttribute="top" secondItem="eao-WE-xnC" secondAttribute="bottom" id="hDF-Zq-aW2"/>
+                                                <constraint firstItem="FST-jh-29g" firstAttribute="leading" secondItem="XI9-xn-ySG" secondAttribute="leadingMargin" constant="7" id="oXc-27-tm1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="datePicker" destination="eao-WE-xnC" id="AXc-34-yG1"/>
+                                            <outlet property="unknownButton" destination="FST-jh-29g" id="2Bj-X3-scY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EGPicker" rowHeight="246" id="P5L-gC-TXd" customClass="EGEditPickerCell" customModule="EGKit">
+                                        <rect key="frame" x="0.0" y="406" width="375" height="246"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P5L-gC-TXd" id="kpN-Dg-1Mc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="245.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="roB-1r-vKl">
+                                                    <rect key="frame" x="28" y="0.0" width="320" height="216"/>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="P5L-gC-TXd" id="i4F-TQ-PFE"/>
+                                                        <outlet property="delegate" destination="P5L-gC-TXd" id="fPU-hd-FVg"/>
+                                                    </connections>
+                                                </pickerView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEp-gS-IRL">
+                                                    <rect key="frame" x="15" y="186" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="toggleUnknown:" destination="P5L-gC-TXd" eventType="touchUpInside" id="2j1-0b-IV1"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gEp-gS-IRL" firstAttribute="leading" secondItem="kpN-Dg-1Mc" secondAttribute="leadingMargin" constant="7" id="CEg-ud-pvP"/>
+                                                <constraint firstItem="roB-1r-vKl" firstAttribute="bottom" secondItem="gEp-gS-IRL" secondAttribute="bottom" id="IcR-JY-sLc"/>
+                                                <constraint firstItem="roB-1r-vKl" firstAttribute="centerX" secondItem="kpN-Dg-1Mc" secondAttribute="centerX" id="Vzl-de-naS"/>
+                                                <constraint firstItem="roB-1r-vKl" firstAttribute="top" secondItem="kpN-Dg-1Mc" secondAttribute="top" id="tbO-8Y-VJJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="picker" destination="roB-1r-vKl" id="jJc-BY-kl6"/>
+                                            <outlet property="unknownButton" destination="gEp-gS-IRL" id="hOx-UO-38q"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Dnj-dT-QB2" id="ODc-8f-cQV"/>
@@ -201,7 +273,11 @@
                                 <segue destination="mBJ-aC-Lvl" kind="unwind" unwindAction="dismissWithSegue:" id="pBu-fQ-IWN"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bym-fP-60E"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bym-fP-60E">
+                            <connections>
+                                <action selector="save:" destination="Dnj-dT-QB2" id="w18-YQ-RAo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="fRD-Ok-hes" id="OCU-4h-55n"/>

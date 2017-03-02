@@ -14,3 +14,9 @@ extension Booking {
         return NSEntityDescription.insertNewObject(forEntityName: "Booking", into: context) as! Booking
     }
 }
+
+extension Task {
+    static func create(context: NSManagedObjectContext) -> Task {
+        return NSEntityDescription.insertNewObject(forEntityName: "Task", into: context) as! Task
+    }
+}

@@ -36,7 +36,7 @@ class SearchViewController : EGEditTableViewController, ProductsViewControllerDe
     override var count: Int { return productType.searchAttributes.count }
 
     // MARK: EGEditDropDownCellDelegate - vars
-    override var dropDownItems: [String]? {
+    override var itemsForEditCell: [String]? {
         guard let activeRow = activeCellPath?.row else  {
             print("ERROR: Active cell undefined")
             return nil
@@ -44,7 +44,7 @@ class SearchViewController : EGEditTableViewController, ProductsViewControllerDe
         let attribute = searchCriteria.attributes[activeRow]
         return productType.dropDownValuesFor(attribute: attribute, in: searchCriteria)
     }
-    override var selectedItems: [String]? {
+    override var selectedItemsForEditCell: [String]? {
         guard let activeCellPath = self.activeCellPath else {
             return nil
         }
@@ -115,7 +115,7 @@ class SearchViewController : EGEditTableViewController, ProductsViewControllerDe
     }
 
     // MARK: EGEditDropDownCellDelegate - funcs
-    override func cell(_ cell: UITableViewCell, didSelectValue value: String, atIndex index: Int) {
+    override func editCellDidSelectValue(_ value: String, at index: Int) {
         if let activeCellPath = self.activeCellPath {
             let attribute = productType.searchAttributes[activeCellPath.row]
             searchCriteria.toggleValueForAttribute(attribute, value: value)

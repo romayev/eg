@@ -52,14 +52,9 @@ final class DataStore: NSObject {
     }
 
     func saveContext(_ context: NSManagedObjectContext) {
-        guard context != managedObjectContext else {
-            assertionFailure("Illigal parameter: main context is read-only")
-            return
-        }
-        guard Thread.isMainThread else {
-            assertionFailure("Illegal state: can only save context on the main thread")
-            return
-        }
+        precondition(context != managedObjectContext, "Illigal parameter: main context is read-only")
+        assert(Thread.isMainThread, "Illegal state: can only save context on the main thread")
+        
         if context.hasChanges {
             do {
                 try context.save()

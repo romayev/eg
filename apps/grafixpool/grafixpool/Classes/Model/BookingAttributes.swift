@@ -9,7 +9,7 @@
 import Foundation
 
 enum JobType: Int {
-    case adjustToSMC, improve, createVersion, finalCheck, translation
+    case adjustToSMC = 1, improve, createVersion, finalCheck, translation
     var localizedName: String {
         switch self {
         case .adjustToSMC:
@@ -36,7 +36,7 @@ enum JobType: Int {
 }
 
 enum Layout: Int {
-    case one, two, three
+    case one = 1, two, three
     var localizedName: String {
         switch self {
         case .one:
@@ -59,7 +59,7 @@ enum Layout: Int {
 }
 
 enum AspectRatio: Int {
-    case standard, widescreen
+    case standard = 1, widescreen
     var localizedName: String {
         switch self {
         case .standard:
@@ -80,7 +80,7 @@ enum AspectRatio: Int {
 }
 
 enum Confidentiality: Int {
-    case level1, level2, level3
+    case level1 = 1, level2, level3
     var localizedName: String {
         switch self {
         case .level1:

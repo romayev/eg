@@ -10,4 +10,7 @@
    <FileRef
       location = "group:Ingredion/Ingredion.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:DefaultPlayground.playground">
+   </FileRef>
 </Workspace>
