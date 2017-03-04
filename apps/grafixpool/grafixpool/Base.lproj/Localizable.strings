@@ -12,13 +12,13 @@
 "add-booking" = "Add Booking";
 "edit-booking" = "Edit Booking";
 
-"booking.edit.type" = "Job Type";
-"booking.edit.due" = "Due Date";
-"booking.edit.preferred" = "Preferred Date";
-"booking.edit.layout" = "Layout";
 "booking.edit.slides" = "Number of Slides";
-"booking.edit.aspect-ratio" = "Aspect Ratio";
+"booking.edit.project" = "Project";
+"booking.edit.in" = "IN";
+"booking.edit.out" = "OUT";
 "booking.edit.confidentiality" = "Confidentiality";
+"booking.edit.job-type" = "Job Type";
+"booking.edit.notes" = "Notes";
 
 "job-type.adjust-to-smc" = "Adjust to SMC standard";
 "job-type.improve" = "Improve layout / visualization";
@@ -33,6 +33,6 @@
 "aspect-ratio.standard" = "Standard (4:3)";
 "aspect-ratio.widescreen" = "Widescreen (16:9)";
 
-"confidentiality.level1" = "Level 1";
-"confidentiality.level2" = "Level 2";
-"confidentiality.level3" = "Level 3";
+"confidentiality.level1" = "Restricted";
+"confidentiality.level2" = "Confidential";
+"confidentiality.level3" = "Strictly Confidential";

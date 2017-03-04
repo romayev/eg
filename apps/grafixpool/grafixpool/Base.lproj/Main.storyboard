@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -181,11 +180,11 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EGDate" rowHeight="246" id="TXM-wH-DXg" customClass="EGEditDatePickerCell" customModule="EGKit">
-                                        <rect key="frame" x="0.0" y="160" width="375" height="246"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EGDate" rowHeight="216" id="TXM-wH-DXg" customClass="EGEditDatePickerCell" customModule="EGKit">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TXM-wH-DXg" id="XI9-xn-ySG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="245.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eao-WE-xnC">
@@ -197,32 +196,21 @@
                                                         <action selector="valueDidChange:" destination="TXM-wH-DXg" eventType="valueChanged" id="kQe-9c-cdP"/>
                                                     </connections>
                                                 </datePicker>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FST-jh-29g">
-                                                    <rect key="frame" x="15" y="216" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="toggleUnknown:" destination="TXM-wH-DXg" eventType="touchUpInside" id="TVJ-GX-wPQ"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="eao-WE-xnC" firstAttribute="top" secondItem="XI9-xn-ySG" secondAttribute="top" id="8Hw-cu-Rlp"/>
                                                 <constraint firstItem="eao-WE-xnC" firstAttribute="centerX" secondItem="XI9-xn-ySG" secondAttribute="centerX" id="ZES-lu-n6Z"/>
-                                                <constraint firstAttribute="bottom" secondItem="FST-jh-29g" secondAttribute="bottom" id="eX0-fY-A5x"/>
-                                                <constraint firstItem="FST-jh-29g" firstAttribute="top" secondItem="eao-WE-xnC" secondAttribute="bottom" id="hDF-Zq-aW2"/>
-                                                <constraint firstItem="FST-jh-29g" firstAttribute="leading" secondItem="XI9-xn-ySG" secondAttribute="leadingMargin" constant="7" id="oXc-27-tm1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="datePicker" destination="eao-WE-xnC" id="AXc-34-yG1"/>
-                                            <outlet property="unknownButton" destination="FST-jh-29g" id="2Bj-X3-scY"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EGPicker" rowHeight="246" id="P5L-gC-TXd" customClass="EGEditPickerCell" customModule="EGKit">
-                                        <rect key="frame" x="0.0" y="406" width="375" height="246"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EGPicker" rowHeight="216" id="P5L-gC-TXd" customClass="EGEditPickerCell" customModule="EGKit">
+                                        <rect key="frame" x="0.0" y="376" width="375" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P5L-gC-TXd" id="kpN-Dg-1Mc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="245.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="roB-1r-vKl">
@@ -232,24 +220,14 @@
                                                         <outlet property="delegate" destination="P5L-gC-TXd" id="fPU-hd-FVg"/>
                                                     </connections>
                                                 </pickerView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEp-gS-IRL">
-                                                    <rect key="frame" x="15" y="186" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="toggleUnknown:" destination="P5L-gC-TXd" eventType="touchUpInside" id="2j1-0b-IV1"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="gEp-gS-IRL" firstAttribute="leading" secondItem="kpN-Dg-1Mc" secondAttribute="leadingMargin" constant="7" id="CEg-ud-pvP"/>
-                                                <constraint firstItem="roB-1r-vKl" firstAttribute="bottom" secondItem="gEp-gS-IRL" secondAttribute="bottom" id="IcR-JY-sLc"/>
                                                 <constraint firstItem="roB-1r-vKl" firstAttribute="centerX" secondItem="kpN-Dg-1Mc" secondAttribute="centerX" id="Vzl-de-naS"/>
                                                 <constraint firstItem="roB-1r-vKl" firstAttribute="top" secondItem="kpN-Dg-1Mc" secondAttribute="top" id="tbO-8Y-VJJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="picker" destination="roB-1r-vKl" id="jJc-BY-kl6"/>
-                                            <outlet property="unknownButton" destination="gEp-gS-IRL" id="hOx-UO-38q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

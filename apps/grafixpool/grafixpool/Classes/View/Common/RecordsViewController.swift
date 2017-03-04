@@ -13,7 +13,7 @@ import CoreData
 
 class RecordsViewController: EGViewController, NSFetchedResultsControllerDelegate {
     @IBOutlet var tableView: UITableView!
-    let context = DataStore.store.managedObjectContext
+    let context = DataStore.store.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()

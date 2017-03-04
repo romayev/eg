@@ -13,12 +13,14 @@ public enum EGEditCellType: String {
     case dropDown = "EGDropDown"
     case date = "EGDate"
     case picker = "EGPicker"
+    case notes = "EGNotes"
 
     var height: Double {
         switch self {
         case .dropDown: return 44.0
-        case .date: return 246.0
-        case .picker: return 246.0
+        case .date: return 216.0
+        case .picker: return 216.0
+        case .notes: return 216.0
         }
     }
 }
@@ -93,6 +95,11 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
             cell.delegate = self
             cell.update()
             return cell
+        case .notes:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellType.rawValue, for: editorPath) as? EGEditNotesCell else {
+                fatalError("Unable to deque a cell for cell type \(cellType)")
+            }
+            return cell
         }
     }
 
@@ -145,14 +152,12 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath == editorPath {
             switch cellType {
-            case .date:
-                return CGFloat(cellType.height)
-            case .picker:
-                return CGFloat(cellType.height)
             case .dropDown:
                 if let count = itemsForEditCell?.count {
                     return CGFloat(cellType.height) * CGFloat(count)
                 }
+            default:
+                return CGFloat(cellType.height)
             }
 
         }

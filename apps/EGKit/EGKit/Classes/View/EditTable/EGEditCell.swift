@@ -37,7 +37,6 @@ public class EGEditDropDownCell: UITableViewCell, EGEditCell, UITableViewDataSou
     public func update() {
         guard let items = delegate.itemsForEditCell else {
             preconditionFailure("Failed to get items for drop down")
-            return
         }
         self.items = items
         tableView.reloadData()
@@ -94,7 +93,6 @@ public class EGEditDatePickerCell: EGEditOptionalCell {
 
     public override func update() {
         datePicker.date = delegate.dateForEditCell
-        print("update \(datePicker.date)")
     }
 
     @IBAction func valueDidChange(_ sender: UIDatePicker) {
@@ -143,5 +141,14 @@ public class EGEditPickerCell: EGEditOptionalCell, UIPickerViewDataSource, UIPic
 
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         delegate.editCellDidSelectValue(items[row], at: row)
+    }
+}
+
+// MARK: EGEditNotesCell
+public class EGEditNotesCell: UITableViewCell, EGEditCell {
+    @IBOutlet var textView: UITextView!
+    
+    public func update() {
+
     }
 }

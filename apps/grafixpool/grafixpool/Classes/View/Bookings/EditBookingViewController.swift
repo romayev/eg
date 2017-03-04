@@ -11,6 +11,48 @@ import UIKit
 import EGKit
 import CoreData
 
+enum CellMapping: Int {
+    case slides, project, inDate, outDate, confidentiality, jobType, comments
+    var editCellType: EGEditCellType {
+        switch self {
+        case .slides:
+            return .picker
+        case .inDate, .outDate:
+            return .date
+        case .project, .confidentiality, .jobType:
+            return .dropDown
+        case .comments:
+            return .notes
+        }
+    }
+    func value(withBooking booking: Booking) -> String? {
+        switch self {
+        case .slides:
+            if booking.slideCount == 0 {
+                return nil
+            } else {
+                return String(booking.slideCount)
+            }
+        case .project:
+            return "123"
+        case .inDate:
+            return (booking.inDate?.format)!
+        case .outDate:
+            return (booking.outDate?.format)!
+        case .confidentiality:
+            if let confidentiality = Confidentiality(coreDataValue: booking.confidentiality) {
+                return confidentiality.localizedName
+            } else {
+                return nil
+            }
+        case .jobType:
+            return booking.jobTypeValues.joined(separator: ", ")
+        case .comments:
+            return booking.notes
+        }
+    }
+}
+
 extension NSDate {
     var date: Date {
         return Date(timeIntervalSinceReferenceDate: self.timeIntervalSinceReferenceDate)
@@ -25,7 +67,7 @@ extension NSDate {
 }
 
 class EditBookingViewController: EGEditTableViewController {
-    let editingContext = DataStore.store.editingOjbectContext
+    let editingContext = DataStore.store.backgroundContext
     var booking: Booking!
 
     // MARK: UIViewController
@@ -38,9 +80,7 @@ class EditBookingViewController: EGEditTableViewController {
         super.viewWillAppear(animated)
         if (booking == nil) {
             booking = Booking.create(context: editingContext)
-            booking.task = Task.create(context: editingContext)
         }
-        precondition(booking != nil, "Booking must exist at this point")
 
         if booking.isInserted {
             navigationItem.title = NSLocalizedString("add-booking", comment: "")
@@ -50,7 +90,7 @@ class EditBookingViewController: EGEditTableViewController {
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        DataStore.store.saveContext(editingContext)
+        DataStore.store.save(background: editingContext)
         dismiss(animated: true, completion: nil)
     }
 
@@ -61,7 +101,10 @@ class EditBookingViewController: EGEditTableViewController {
         guard let activeRow = activeCellPath?.row else  {
             fatalError("ERROR: Active cell undefined")
         }
-        return editCellType(forRow: activeRow)
+        guard let mapping = CellMapping(rawValue: activeRow) else {
+            fatalError("ERROR: Unable to find mapping for row \(activeRow)")
+        }
+        return mapping.editCellType
     }
 
     override func cellFor(_ row: Int, at indexPath: IndexPath) -> UITableViewCell {
@@ -78,16 +121,10 @@ class EditBookingViewController: EGEditTableViewController {
             preconditionFailure("ERROR: Active cell undefined")
         }
         switch activeRow {
-        case 0:
-            return JobType.localizedValues
-        case 3:
-            return Layout.localizedValues
-        case 4:
-            return (0...100).map { String($0) }
-        case 5:
-            return AspectRatio.localizedValues
-        case 6:
-            return Confidentiality.localizedValues
+        case 0: return (0...100).map { String($0) }
+        case 1: return ["N/A"]
+        case 4: return Confidentiality.localizedValues
+        case 5: return JobType.Category.localizedValues
         default:
             return nil
         }
@@ -97,27 +134,39 @@ class EditBookingViewController: EGEditTableViewController {
         guard let activeRow = activeCellPath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        if let value = value(forRow: activeRow) {
-            return [value]
-        } else {
-            return nil
+        if (activeRow == 5) {
+            if booking.jobTypeValues.count > 0 {
+                return booking.jobTypeValues
+            } else {
+                return nil
+            }
         }
+        if let mapping = CellMapping(rawValue: activeRow) {
+            if let value = mapping.value(withBooking: booking) {
+                return [value]
+            }
+        }
+        return nil
     }
 
     override func editCellDidSelectValue(_ value: String, at index: Int) {
         guard let activeRow = activeCellPath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        guard let task = booking.task else {
-            preconditionFailure("No task found for booking")
-        }
         let idx = Int16(index) + 1
         switch activeRow {
-        case 0: task.type = idx
-        case 3: task.layout = idx
-        case 4: task.slideCount = idx - 1
-        case 5: task.aspectRatio = idx
-        case 6: task.confidentiality = idx
+            // FIXME: Case 0: project & case 5: job types
+        case 4: booking.confidentiality = idx
+        case 5:
+            let jobType = JobType.jobType(forIndex: index + 1, context: editingContext)
+            guard let jobTypes = booking.jobTypes else {
+                fatalError("Booking doesn't have job types")
+            }
+            if (jobTypes.contains(jobType)) {
+                booking.removeFromJobTypes(jobType)
+            } else {
+                booking.addToJobTypes(jobType)
+            }
         default: break
         }
         tableView.reloadRows(at: [activeCellPath!], with: .automatic)
@@ -130,16 +179,16 @@ class EditBookingViewController: EGEditTableViewController {
                 preconditionFailure("ERROR: Active cell undefined")
             }
             let type = bookingTableCellType(forRow: activeRow)
-            assert(type == .due || type == .preferred, "Unexpected cell typefor row: \(activeCellPath?.row)")
+            assert(type == .inDate || type == .outDate, "Unexpected cell typefor row: \(activeCellPath?.row)")
 
             var result = Date().addingTimeInterval(3600 * 8)
             switch type {
-            case .due:
-                if let date = booking.due {
+            case .inDate:
+                if let date = booking.inDate {
                     return date.date
                 }
-            case .preferred:
-                if let date = booking.preferred {
+            case .outDate:
+                if let date = booking.outDate {
                     result = date.date
                 }
             default: break
@@ -152,12 +201,12 @@ class EditBookingViewController: EGEditTableViewController {
                 preconditionFailure("ERROR: Active cell undefined")
             }
             let type = bookingTableCellType(forRow: activeRow)
-            assert(type == .due || type == .preferred, "Unexpected cell typefor row: \(activeCellPath?.row)")
+            assert(type == .inDate || type == .outDate, "Unexpected cell typefor row: \(activeCellPath?.row)")
             switch type {
-            case .due:
-                booking.due = NSDate(timeIntervalSinceReferenceDate: newValue.timeIntervalSinceReferenceDate)
-            case .preferred:
-                booking.preferred = NSDate(timeIntervalSinceReferenceDate: newValue.timeIntervalSinceReferenceDate)
+            case .inDate:
+                booking.inDate = NSDate(timeIntervalSinceReferenceDate: newValue.timeIntervalSinceReferenceDate)
+            case .outDate:
+                booking.outDate = NSDate(timeIntervalSinceReferenceDate: newValue.timeIntervalSinceReferenceDate)
             default: break
             }
             tableView.reloadRows(at: [activeCellPath!], with: .automatic)
@@ -166,55 +215,12 @@ class EditBookingViewController: EGEditTableViewController {
 
     // MARK: Helpers
     private func description(forRow row: Int) -> String {
-        if let value = value(forRow: row) {
-            return value
-        } else {
-            return "--"
+        if let mapping = CellMapping(rawValue: row) {
+            if let value = mapping.value(withBooking: booking) {
+                return value
+            }
         }
-    }
-
-    private func value(forRow row: Int) -> String? {
-        guard let task = booking.task else {
-            preconditionFailure("No task found for booking")
-        }
-        switch row {
-        case 0:
-            if let type = JobType(rawValue: Int(task.type)) {
-                return type.localizedName
-            } else {
-                return nil
-            }
-        case 1:
-            return booking.due != nil ? (booking.due?.format)! : nil
-        case 2:
-            return booking.preferred != nil ? (booking.preferred?.format)! : nil
-        case 3:
-            if let layout = Layout(rawValue: Int(task.layout)) {
-                return layout.localizedName
-            } else {
-                return nil
-            }
-        case 4:
-            if task.slideCount == 0 {
-                return nil
-            } else {
-                return String(task.slideCount)
-            }
-        case 5:
-            if let aspectRatio = AspectRatio(rawValue: Int(task.aspectRatio)) {
-                return aspectRatio.localizedName
-            } else {
-                return nil
-            }
-        case 6:
-            if let confidentiality = Confidentiality(rawValue: Int(task.confidentiality)) {
-                return confidentiality.localizedName
-            } else {
-                return nil
-            }
-        default:
-            return nil
-        }
+    return "--"
     }
 
     private func bookingTableCellType(forRow row: Int) -> BookingTableCellType {
@@ -230,14 +236,4 @@ class EditBookingViewController: EGEditTableViewController {
         return type
     }
 
-    private func editCellType(forRow row: Int) -> EGEditCellType {
-        switch row {
-        case 1, 2:
-            return .date
-        case 4:
-            return .picker
-        default:
-            return .dropDown
-        }
-    }
 }

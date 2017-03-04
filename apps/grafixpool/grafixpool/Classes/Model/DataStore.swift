@@ -13,35 +13,34 @@ final class DataStore: NSObject {
     static let store = DataStore()
     static let storeName = "grafixpool"
 
-    var managedObjectContext: NSManagedObjectContext
-    var editingOjbectContext: NSManagedObjectContext {
-        let editingContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        editingContext.userInfo["EDIT"] = true
-        editingContext.parent = managedObjectContext
-        return editingContext
+    var viewContext: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
+    var backgroundContext: NSManagedObjectContext {
+        return persistentContainer.newBackgroundContext()
+//        let editingContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+//        editingContext.userInfo["EDIT"] = true
+//        editingContext.parent = viewContext
+//        editingContext.automaticallyMergesChangesFromParent = true
+//        return editingContext
     }
 
-    override init() {
-        guard let modelURL = Bundle.main.url(forResource: DataStore.storeName, withExtension: "momd") else {
-            fatalError("Error loading model from bundle")
-        }
-        guard let mom = NSManagedObjectModel(contentsOf: modelURL) else {
-            fatalError("Error initializing mom from: \(modelURL)")
-        }
-        let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
-        managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = psc
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "grafixpool")
+        let desc = NSPersistentStoreDescription()
+        desc.shouldAddStoreAsynchronously = true
 
-        DispatchQueue.global(qos: .background).async {
-            let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            let docURL = urls[urls.endIndex - 1]
-            let storeURL = docURL.appendingPathComponent(DataStore.storeName + ".sqlite")
-            do {
-                try psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: nil)
-            } catch {
-                fatalError("Error migrating store: \(error)")
+        container.loadPersistentStores(completionHandler: { (desc, error) in
+            if let error = error {
+                fatalError("Unresolved error \(error)")
             }
-        }
+        })
+        return container
+    }()
+
+    override init() {
+        super.init()
+        self.preloadData()
     }
 
     private func isEditing(context: NSManagedObjectContext) -> Bool {
@@ -51,8 +50,15 @@ final class DataStore: NSObject {
         return false
     }
 
-    func saveContext(_ context: NSManagedObjectContext) {
-        precondition(context != managedObjectContext, "Illigal parameter: main context is read-only")
+    func save(background: NSManagedObjectContext) {
+        save(context: background);
+//        if let parentContext = editing.parent {
+//            save(context: parentContext);
+//        }
+    }
+
+    func save(context: NSManagedObjectContext) {
+        //precondition(context != managedObjectContext, "Illigal parameter: main context is read-only")
         assert(Thread.isMainThread, "Illegal state: can only save context on the main thread")
         
         if context.hasChanges {
@@ -63,5 +69,17 @@ final class DataStore: NSObject {
                 print("Failure to save context: \(error)")
             }
         }
+    }
+
+    private func preloadData() {
+        if (JobType.isLoaded(context: viewContext)) {
+            return
+        }
+        let editing = backgroundContext
+        for (index, _) in JobType.Category.all.enumerated() {
+            let record = JobType.create(context: editing)
+            record.id = index + 1
+        }
+        save(background: editing)
     }
 }

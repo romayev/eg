@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         let tabBarController: UITabBarController = window?.rootViewController as! UITabBarController;
         tabBarController.delegate = self
 
+        print(JobType.all(context: DataStore.store.viewContext))
         return true
     }
 

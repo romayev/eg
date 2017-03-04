@@ -95,14 +95,11 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
 
     // MARK: Private
     private func configure(cell: UITableViewCell, indexPath: IndexPath) {
-        let record = fetchedResultsController.object(at: indexPath)
-        guard let task = record.task else {
-            preconditionFailure("Record must have a task")
-        }
-        if let type = JobType(rawValue: Int(task.type)) {
-            cell.textLabel?.text = type.localizedName
-        }
-        cell.detailTextLabel?.text = record.guid
+//        let record = fetchedResultsController.object(at: indexPath)
+//        if let type = JobType(rawValue: Int(booking.jobType)) {
+//            cell.textLabel?.text = type.localizedName
+//        }
+//        cell.textLabel?.text = record.guid
     }
 }
 
