@@ -169,7 +169,8 @@ class EditBookingViewController: EGEditTableViewController {
             }
         default: break
         }
-        tableView.reloadRows(at: [activeCellPath!], with: .automatic)
+        
+        tableView.reloadRows(at: [activeCellPath!, editorPath!], with: .automatic)
     }
 
     // MARK: EGDatePickerEditCellDelegate - vars
