@@ -25,6 +25,15 @@ enum CellMapping: Int {
             return .notes
         }
     }
+    func values(context: NSManagedObjectContext) -> [String] {
+        switch self {
+        case .slides: return (0...100).map { String($0) }
+        case .project: return Project.recentProjectNames(context)
+        case .confidentiality: return Confidentiality.localizedValues
+        case .jobType: return JobType.Category.localizedValues
+        default: fatalError("\(self) type does not support multiple values")
+        }
+    }
     func value(withBooking booking: Booking) -> String? {
         switch self {
         case .slides:
@@ -34,7 +43,11 @@ enum CellMapping: Int {
                 return String(booking.slideCount)
             }
         case .project:
-            return "123"
+            if let code = booking.project?.code {
+                return code == "default" ? NSLocalizedString("default-project", comment: "") : code
+            } else {
+                fatalError("Booking does not have a project")
+            }
         case .inDate:
             return (booking.inDate?.format)!
         case .outDate:
@@ -46,7 +59,8 @@ enum CellMapping: Int {
                 return nil
             }
         case .jobType:
-            return booking.jobTypeValues.joined(separator: ", ")
+            let values = booking.jobTypeValues
+            return values.count > 0 ? booking.jobTypeValues.joined(separator: ", ") : nil
         case .comments:
             return booking.notes
         }
@@ -67,7 +81,7 @@ extension NSDate {
 }
 
 class EditBookingViewController: EGEditTableViewController {
-    let editingContext = DataStore.store.backgroundContext
+    let editingContext = DataStore.store.editingContext
     var booking: Booking!
 
     // MARK: UIViewController
@@ -79,7 +93,7 @@ class EditBookingViewController: EGEditTableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if (booking == nil) {
-            booking = Booking.create(context: editingContext)
+            booking = Booking(context: editingContext)
         }
 
         if booking.isInserted {
@@ -90,7 +104,7 @@ class EditBookingViewController: EGEditTableViewController {
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        DataStore.store.save(background: editingContext)
+        DataStore.store.save(editing: editingContext)
         dismiss(animated: true, completion: nil)
     }
 
@@ -120,14 +134,10 @@ class EditBookingViewController: EGEditTableViewController {
         guard let activeRow = activeCellPath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        switch activeRow {
-        case 0: return (0...100).map { String($0) }
-        case 1: return ["N/A"]
-        case 4: return Confidentiality.localizedValues
-        case 5: return JobType.Category.localizedValues
-        default:
-            return nil
+        if let mapping = CellMapping(rawValue: activeRow) {
+            return mapping.values(context: editingContext)
         }
+        return nil
     }
 
     override var selectedItemsForEditCell: [String]? {

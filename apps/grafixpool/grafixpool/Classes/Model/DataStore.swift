@@ -16,13 +16,13 @@ final class DataStore: NSObject {
     var viewContext: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
-    var backgroundContext: NSManagedObjectContext {
-        return persistentContainer.newBackgroundContext()
-//        let editingContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-//        editingContext.userInfo["EDIT"] = true
-//        editingContext.parent = viewContext
-//        editingContext.automaticallyMergesChangesFromParent = true
-//        return editingContext
+    var editingContext: NSManagedObjectContext {
+//        let editing = persistentContainer.newBackgroundContext()
+        let editing = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        editing.userInfo["EDIT"] = true
+        editing.parent = viewContext
+        editing.automaticallyMergesChangesFromParent = true
+        return editing
     }
 
     lazy var persistentContainer: NSPersistentContainer = {
@@ -50,11 +50,11 @@ final class DataStore: NSObject {
         return false
     }
 
-    func save(background: NSManagedObjectContext) {
-        save(context: background);
-//        if let parentContext = editing.parent {
-//            save(context: parentContext);
-//        }
+    func save(editing: NSManagedObjectContext) {
+        save(context: editing);
+        if let parentContext = editing.parent {
+            save(context: parentContext);
+        }
     }
 
     func save(context: NSManagedObjectContext) {
@@ -72,14 +72,27 @@ final class DataStore: NSObject {
     }
 
     private func preloadData() {
-        if (JobType.isLoaded(context: viewContext)) {
+        preloadJobTypes()
+        preloadDefaultProject()
+    }
+
+    private func preloadJobTypes() {
+        if (JobType.isLoaded(viewContext)) {
             return
         }
-        let editing = backgroundContext
-        for (index, _) in JobType.Category.all.enumerated() {
-            let record = JobType.create(context: editing)
-            record.id = index + 1
+        let editing = editingContext
+        JobType.createJobTypes(editing)
+        save(editing: editing)
+        print("preloaded job types")
+    }
+
+    private func preloadDefaultProject() {
+        if (Project.isLoaded(viewContext)) {
+            return
         }
-        save(background: editing)
+        let editing = editingContext
+        Project.createDefault(editing)
+        save(editing: editing)
+        print("preloaded default project")
     }
 }

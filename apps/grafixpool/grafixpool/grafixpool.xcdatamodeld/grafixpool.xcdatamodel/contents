@@ -21,7 +21,7 @@
         <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="requestedBy" inverseEntity="Booking" syncable="YES"/>
     </entity>
     <entity name="Project" representedClassName="Project" parentEntity="Record" syncable="YES" codeGenerationType="class">
-        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="code" attributeType="String" syncable="YES"/>
         <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="project" inverseEntity="Booking" syncable="YES"/>
     </entity>
     <entity name="Record" representedClassName="Record" isAbstract="YES" syncable="YES" codeGenerationType="class">
@@ -30,9 +30,9 @@
     </entity>
     <elements>
         <element name="Booking" positionX="-297" positionY="66" width="128" height="178"/>
-        <element name="Person" positionX="-18" positionY="171" width="128" height="90"/>
-        <element name="Project" positionX="-45" positionY="54" width="128" height="73"/>
-        <element name="Record" positionX="-297" positionY="-198" width="128" height="75"/>
         <element name="JobType" positionX="-153" positionY="-45" width="128" height="75"/>
+        <element name="Person" positionX="-18" positionY="171" width="128" height="90"/>
+        <element name="Project" positionX="-45" positionY="54" width="128" height="75"/>
+        <element name="Record" positionX="-297" positionY="-198" width="128" height="75"/>
     </elements>
 </model>

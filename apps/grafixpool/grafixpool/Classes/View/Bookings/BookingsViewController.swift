@@ -26,7 +26,7 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     }
     
     override func initializeFetchedResultsController() {
-        let request = NSFetchRequest<Booking>(entityName: "Booking")
+        let request: NSFetchRequest<Booking> = Booking.fetchRequest()
         let sort = NSSortDescriptor(key: "created", ascending: false)
         request.sortDescriptors = [sort]
         let frc = NSFetchedResultsController<Booking>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -95,11 +95,11 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
 
     // MARK: Private
     private func configure(cell: UITableViewCell, indexPath: IndexPath) {
-//        let record = fetchedResultsController.object(at: indexPath)
+        let record = fetchedResultsController.object(at: indexPath)
 //        if let type = JobType(rawValue: Int(booking.jobType)) {
 //            cell.textLabel?.text = type.localizedName
 //        }
-//        cell.textLabel?.text = record.guid
+        cell.textLabel?.text = record.guid
     }
 }
 
