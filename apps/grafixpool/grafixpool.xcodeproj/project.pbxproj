@@ -17,6 +17,8 @@
 		FA737C8D1E633155003AA912 /* BookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA737C8B1E633155003AA912 /* BookingsViewController.swift */; };
 		FA737C8E1E633155003AA912 /* EditBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA737C8C1E633155003AA912 /* EditBookingViewController.swift */; };
 		FA737C931E6331E3003AA912 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA737C921E6331E3003AA912 /* RecordsViewController.swift */; };
+		FA7E3F591E6C544A001122C5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E3F581E6C544A001122C5 /* Color.swift */; };
+		FA7E3F5B1E6C5AFE001122C5 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FA7E3F5A1E6C5AFE001122C5 /* Localizable.stringsdict */; };
 		FA8916021E62264C00F7FC88 /* grafixpool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA8916001E62264C00F7FC88 /* grafixpool.xcdatamodeld */; };
 		FA9743111E6136960075FF0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9743101E6136960075FF0A /* AppDelegate.swift */; };
 		FA9743151E6136960075FF0A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9743141E6136960075FF0A /* SecondViewController.swift */; };
@@ -44,8 +46,8 @@
 
 /* Begin PBXFileReference section */
 		FA72E74E1E64742200B14F4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FA72E7511E647EC400B14F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FA72E7531E6487F100B14F4A /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
+		FA72E7511E647EC400B14F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
+		FA72E7531E6487F100B14F4A /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Booking.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FA72E75A1E64A60D00B14F4A /* EGKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EGKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ExecutiveGraphics-fixomzzdwbovqudtwltjuvgeixqy/Build/Products/Debug-iphonesimulator/EGKit.framework"; sourceTree = "<group>"; };
 		FA72E75C1E64A6D800B14F4A /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		FA72E7691E64E72A00B14F4A /* BookingTableCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingTableCellType.swift; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		FA737C8B1E633155003AA912 /* BookingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingsViewController.swift; sourceTree = "<group>"; };
 		FA737C8C1E633155003AA912 /* EditBookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBookingViewController.swift; sourceTree = "<group>"; };
 		FA737C921E6331E3003AA912 /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		FA7E3F581E6C544A001122C5 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		FA7E3F5A1E6C5AFE001122C5 /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		FA8916011E62264C00F7FC88 /* grafixpool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = grafixpool.xcdatamodel; sourceTree = "<group>"; };
 		FA97430D1E6136960075FF0A /* grafixpool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grafixpool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9743101E6136960075FF0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 			children = (
 				FA737C921E6331E3003AA912 /* RecordsViewController.swift */,
 				FA72E75C1E64A6D800B14F4A /* Image.swift */,
+				FA7E3F581E6C544A001122C5 /* Color.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 				FA9743141E6136960075FF0A /* SecondViewController.swift */,
 				FA9743161E6136960075FF0A /* Main.storyboard */,
 				FA72E7501E647EC400B14F4A /* Localizable.strings */,
+				FA7E3F5A1E6C5AFE001122C5 /* Localizable.stringsdict */,
 				FA8916001E62264C00F7FC88 /* grafixpool.xcdatamodeld */,
 				FA97431B1E6136970075FF0A /* LaunchScreen.storyboard */,
 				FA72E74E1E64742200B14F4A /* Assets.xcassets */,
@@ -237,6 +243,7 @@
 				FA97431D1E6136970075FF0A /* LaunchScreen.storyboard in Resources */,
 				FA72E7521E647EC400B14F4A /* Localizable.strings in Resources */,
 				FA72E74F1E64742200B14F4A /* Assets.xcassets in Resources */,
+				FA7E3F5B1E6C5AFE001122C5 /* Localizable.stringsdict in Resources */,
 				FA9743181E6136960075FF0A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +264,7 @@
 				FA9743111E6136960075FF0A /* AppDelegate.swift in Sources */,
 				FA8916021E62264C00F7FC88 /* grafixpool.xcdatamodeld in Sources */,
 				FA737C8E1E633155003AA912 /* EditBookingViewController.swift in Sources */,
+				FA7E3F591E6C544A001122C5 /* Color.swift in Sources */,
 				FA737C931E6331E3003AA912 /* RecordsViewController.swift in Sources */,
 				FAE7384A1E6B2D4D00166E38 /* JobType.swift in Sources */,
 				FA72E75D1E64A6D800B14F4A /* Image.swift in Sources */,

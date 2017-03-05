@@ -9,6 +9,9 @@
 "none" = "None";
 "default-project" = "N/A";
 
+"booking.in" = "IN";
+"booking.out" = "OUT";
+
 "bookings" = "Bookings";
 "add-booking" = "Add Booking";
 "edit-booking" = "Edit Booking";
@@ -21,19 +24,18 @@
 "booking.edit.job-type" = "Job Type";
 "booking.edit.notes" = "Notes";
 
+"slides.one" = "%d slide";
+"slides.other" = "%d slides";
+
 "job-type.adjust-to-smc" = "Adjust to SMC standard";
 "job-type.improve" = "Improve layout / visualization";
 "job-type.create-version" = "Create additional version";
 "job-type.final-check" = " Quick final check for SC meeting";
 "job-type.translation" = "Translation";
 
-"layout.one" = "Layout 1";
-"layout.two" = "Layout 2";
-"layout.three" = "Layout 3";
-
 "aspect-ratio.standard" = "Standard (4:3)";
 "aspect-ratio.widescreen" = "Widescreen (16:9)";
 
-"confidentiality.level1" = "Restricted";
-"confidentiality.level2" = "Confidential";
-"confidentiality.level3" = "Strictly Confidential";
+"confidentiality.restricted" = "Restricted";
+"confidentiality.confidential" = "Confidential";
+"confidentiality.strictly-confidential" = "Strictly Confidential";

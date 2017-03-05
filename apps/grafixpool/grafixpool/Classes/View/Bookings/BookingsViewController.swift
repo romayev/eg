@@ -81,7 +81,7 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BookingCell
         configure(cell: cell, indexPath: indexPath);
         return cell
     }
@@ -94,12 +94,16 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     // MARK: UITableViewDataSource & Delegate
 
     // MARK: Private
-    private func configure(cell: UITableViewCell, indexPath: IndexPath) {
-        let record = fetchedResultsController.object(at: indexPath)
-//        if let type = JobType(rawValue: Int(booking.jobType)) {
-//            cell.textLabel?.text = type.localizedName
-//        }
-        cell.textLabel?.text = record.guid
+    private func configure(cell: BookingCell, indexPath: IndexPath) {
+        let booking = fetchedResultsController.object(at: indexPath)
+        let format = NSLocalizedString("slides", comment: "")
+        cell.slidesLabel.text = String.localizedStringWithFormat(format, booking.slideCount)
+        cell.confidentialityView.backgroundColor = booking.confidentialityType.color
     }
 }
 
+class BookingCell: UITableViewCell {
+
+    @IBOutlet var confidentialityView: UIView!
+    @IBOutlet var slidesLabel: UILabel!
+}

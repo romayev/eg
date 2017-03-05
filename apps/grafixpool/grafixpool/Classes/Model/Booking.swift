@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 extension Booking {
     override public func awakeFromInsert() {
@@ -19,6 +20,12 @@ extension Booking {
         project = Project.last(context: managedObjectContext!)
     }
 
+    var confidentialityType: Confidentiality {
+        guard let type = Confidentiality(coreDataValue: confidentiality) else {
+            fatalError("Unable to create Confidentiality enum with \(confidentiality)")
+        }
+        return type
+    }
     var jobTypeCategories: [JobType.Category] {
         guard let jobTypes = jobTypes else {
             preconditionFailure("No job types in Booking")
@@ -58,23 +65,30 @@ extension Booking {
 }
 
 enum Confidentiality: Int {
-    case level1 = 1, level2, level3
+    case restricted = 1, confidential, strictlyConfidential
     var localizedName: String {
         switch self {
-        case .level1:
-            return NSLocalizedString("confidentiality.level1", comment: "")
-        case .level2:
-            return NSLocalizedString("confidentiality.level2", comment: "")
-        case .level3:
-            return NSLocalizedString("confidentiality.level3", comment: "")
+        case .restricted:
+            return NSLocalizedString("confidentiality.restricted", comment: "")
+        case .confidential:
+            return NSLocalizedString("confidentiality.confidential", comment: "")
+        case .strictlyConfidential:
+            return NSLocalizedString("confidentiality.strictly-confidential", comment: "")
         }
     }
     var coreDataValue: Int16 {
         return Int16(rawValue)
     }
+    var color: UIColor {
+        switch self {
+        case .restricted: return UIColor.Traffic.green
+        case .confidential: return UIColor.Traffic.yellow
+        case .strictlyConfidential: return UIColor.Traffic.red
+        }
+    }
 
-    static let defaultValue = Confidentiality.level2
-    static let all = [Confidentiality.level1, Confidentiality.level2, Confidentiality.level3]
+    static let defaultValue = Confidentiality.confidential
+    static let all = [Confidentiality.restricted, Confidentiality.confidential, Confidentiality.strictlyConfidential]
     static let localizedValues: [String] = {
         var values = [String]()
         for type in Confidentiality.all {

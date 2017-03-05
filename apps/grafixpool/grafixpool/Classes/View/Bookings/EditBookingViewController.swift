@@ -65,6 +65,25 @@ enum CellMapping: Int {
             return booking.notes
         }
     }
+    func processDidSelectValue(_ value: String, at index: Int, booking: Booking) {
+        let idx = Int16(index) + 1
+        switch self {
+        case .slides: booking.slideCount = Int16(index)
+        case .confidentiality: booking.confidentiality = idx
+        case .jobType:
+            let jobType = JobType.jobType(forIndex: index + 1, context: booking.managedObjectContext!)
+            guard let jobTypes = booking.jobTypes else {
+                fatalError("Booking doesn't have job types")
+            }
+            if (jobTypes.contains(jobType)) {
+                booking.removeFromJobTypes(jobType)
+            } else {
+                booking.addToJobTypes(jobType)
+            }
+        case .project: break
+        default: fatalError("Not a selectable cell type")
+        }
+    }
 }
 
 extension NSDate {
@@ -163,23 +182,10 @@ class EditBookingViewController: EGEditTableViewController {
         guard let activeRow = activeCellPath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        let idx = Int16(index) + 1
-        switch activeRow {
-            // FIXME: Case 0: project & case 5: job types
-        case 4: booking.confidentiality = idx
-        case 5:
-            let jobType = JobType.jobType(forIndex: index + 1, context: editingContext)
-            guard let jobTypes = booking.jobTypes else {
-                fatalError("Booking doesn't have job types")
-            }
-            if (jobTypes.contains(jobType)) {
-                booking.removeFromJobTypes(jobType)
-            } else {
-                booking.addToJobTypes(jobType)
-            }
-        default: break
+        if let mapping = CellMapping(rawValue: activeRow) {
+            mapping.processDidSelectValue(value, at: index, booking: booking)
         }
-        
+
         tableView.reloadRows(at: [activeCellPath!, editorPath!], with: .automatic)
     }
 
