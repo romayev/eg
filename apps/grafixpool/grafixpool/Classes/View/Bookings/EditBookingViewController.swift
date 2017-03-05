@@ -189,7 +189,7 @@ class EditBookingViewController: EGEditTableViewController {
         tableView.reloadRows(at: [activeCellPath!, editorPath!], with: .automatic)
     }
 
-    // MARK: EGDatePickerEditCellDelegate - vars
+    // MARK: EGDatePickerEditCellDelegate
     override var dateForEditCell: Date {
         get {
             guard let activeRow = activeCellPath?.row else  {
@@ -230,6 +230,17 @@ class EditBookingViewController: EGEditTableViewController {
         }
     }
 
+    // MARK: EGNotesEditCellDelegate
+    override var notesForEditCell: String? {
+        get {
+            return booking.notes
+        }
+        set {
+            booking.notes = newValue
+            tableView.reloadRows(at: [activeCellPath!], with: .none)
+        }
+    }
+    
     // MARK: Helpers
     private func description(forRow row: Int) -> String {
         if let mapping = CellMapping(rawValue: row) {

@@ -18,14 +18,12 @@ public enum EGEditCellType: String {
     var height: Double {
         switch self {
         case .dropDown: return 44.0
-        case .date: return 216.0
-        case .picker: return 216.0
-        case .notes: return 216.0
+        case .notes, .date, .picker: return 216.0
         }
     }
 }
 
-open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate, EGDatePickerEditCellDelegate, UITableViewDataSource, UITableViewDelegate {
+open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate, EGDatePickerEditCellDelegate, EGNotesEditCellDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet public var tableView: UITableView!
 
     // MARK: public vars
@@ -40,7 +38,6 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
     // MARK: open vars
     open var count: Int { return 0 }
     open var cellType: EGEditCellType { return .dropDown }
-
 
     open func initState() {
     }
@@ -99,6 +96,8 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
             guard let cell = tableView.dequeueReusableCell(withIdentifier: cellType.rawValue, for: editorPath) as? EGEditNotesCell else {
                 fatalError("Unable to deque a cell for cell type \(cellType)")
             }
+            cell.delegate = self
+            cell.update()
             return cell
         }
     }
@@ -126,8 +125,22 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
                 tableView.insertRows(at: [editorPath], with: .fade)
             }
             if let activeCellPath = self.activeCellPath {
+                if (cellType == .notes) {
+                    var inset = tableView.contentInset
+                    let rect = tableView.rectForRow(at: indexPath)
+                    inset.top -= rect.origin.y
+                    UIView.animate(withDuration: 0.25, animations: { 
+                        tableView.contentInset = inset
+                    })
+                }
                 tableView.scrollToRow(at: activeCellPath, at: .none, animated: true)
             }
+        } else {
+            var inset = tableView.contentInset
+            inset.top = 0
+            UIView.animate(withDuration: 0.25, animations: {
+                tableView.contentInset = inset
+            })
         }
     }
 
@@ -148,6 +161,8 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
 
     open func editCellDidSelectValue(_ value: String, at index: Int) {
     }
+
+    open var notesForEditCell: String?
 
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath == editorPath {

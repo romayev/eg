@@ -22,6 +22,10 @@ public protocol EGDatePickerEditCellDelegate: class {
     var dateForEditCell: Date { get set }
 }
 
+public protocol EGNotesEditCellDelegate: class {
+    var notesForEditCell: String? { get set }
+}
+
 // MARK: EGEditDropDownCell
 public class EGEditDropDownCell: UITableViewCell, EGEditCell, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var tableView: UITableView!
@@ -145,10 +149,16 @@ public class EGEditPickerCell: EGEditOptionalCell, UIPickerViewDataSource, UIPic
 }
 
 // MARK: EGEditNotesCell
-public class EGEditNotesCell: UITableViewCell, EGEditCell {
+public class EGEditNotesCell: UITableViewCell, EGEditCell, UITextViewDelegate {
     @IBOutlet var textView: UITextView!
-    
-    public func update() {
 
+    public weak var delegate: EGNotesEditCellDelegate!
+
+    public func textViewDidChange(_ textView: UITextView) {
+        delegate.notesForEditCell = textView.text
+    }
+    public func update() {
+        textView.text = delegate.notesForEditCell
+        textView.becomeFirstResponder()
     }
 }
