@@ -96,17 +96,16 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     // MARK: Private
     private func configure(cell: BookingCell, indexPath: IndexPath) {
         let booking = fetchedResultsController.object(at: indexPath)
-        let format = NSLocalizedString("slides", comment: "")
-        let slides = String.localizedStringWithFormat(format, booking.slideCount)
-        let inDate = NSLocalizedString("booking.in", comment: "") + ": " + (booking.inDate?.format)!
-        let outDate = NSLocalizedString("booking.out", comment: "") + ": " + (booking.outDate?.format)!
-        cell.slidesLabel.text = "\(slides) / \(inDate) / \(outDate)"
+        cell.slidesLabel.text = String(booking.slideCount)
+        cell.outLabel.text = booking.outDate?.format
+        cell.inLabel.text = booking.inDate?.format
         cell.confidentialityView.backgroundColor = booking.confidentialityType.color
     }
 }
 
 class BookingCell: UITableViewCell {
-
     @IBOutlet var confidentialityView: UIView!
     @IBOutlet var slidesLabel: UILabel!
+    @IBOutlet var inLabel: UILabel!
+    @IBOutlet var outLabel: UILabel!
 }
