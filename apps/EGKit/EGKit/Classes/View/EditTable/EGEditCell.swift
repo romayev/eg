@@ -188,7 +188,9 @@ public class EGEditAddCell: UITableViewCell, UITextFieldDelegate {
     func willDie() {
         if state == .add {
             if let text = textField.text {
-                delegate.editCellDidAdd(value: text)
+                if (!text.isEmpty) {
+                    delegate.editCellDidAdd(value: text)
+                }
             }
             toggleState()
         }
@@ -197,7 +199,9 @@ public class EGEditAddCell: UITableViewCell, UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         if let text = textField.text {
-            delegate.editCellDidAdd(value: text)
+            if (!text.isEmpty) {
+                delegate.editCellDidAdd(value: text)
+            }
         }
         return false
     }

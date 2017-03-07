@@ -24,8 +24,16 @@ extension NSDate {
         df.dateStyle = .medium
         df.timeStyle = .short
         df.doesRelativeDateFormatting = true
-        let timeZone = TimeZone(abbreviation: "CET")
-        df.timeZone = timeZone
         return "\(df.string(from: self.date)) (CET)"
+    }
+    var inCETTimeZone: NSDate {
+        let current = TimeZone.current
+        guard let cet = TimeZone(abbreviation: "CET") else {
+            fatalError()
+        }
+        let currentOffset = current.secondsFromGMT()
+        let cetOffet = cet.secondsFromGMT()
+        let diff: TimeInterval = TimeInterval(currentOffset - cetOffet)
+        return NSDate(timeIntervalSinceReferenceDate: timeIntervalSinceReferenceDate - diff)
     }
 }

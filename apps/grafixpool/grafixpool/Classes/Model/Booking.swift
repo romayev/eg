@@ -14,10 +14,21 @@ extension Booking {
     override public func awakeFromInsert() {
         super.awakeFromInsert()
         inDate = NSDate()
-        outDate = NSDate()
+        if let nextHour = nextHourDate()?.timeIntervalSinceReferenceDate {
+            outDate = NSDate(timeIntervalSinceReferenceDate: nextHour)
+        }
         confidentiality = Confidentiality.defaultValue.coreDataValue
         slideCount = 10
         project = Project.last(context: managedObjectContext!)
+    }
+
+    private func nextHourDate() -> Date? {
+        let calendar = NSCalendar.current
+        let comps = calendar.dateComponents([.year, .month, .day, .hour], from: Date())
+        let date = calendar.date(from: comps)
+        var components = DateComponents()
+        components.hour = 1
+        return calendar.date(byAdding: components, to: date!)
     }
 
     var confidentialityType: Confidentiality {

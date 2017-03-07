@@ -141,10 +141,10 @@ class EditBookingViewController: EGEditTableViewController {
             switch mapping {
             case .inDate:
                 cell.topDateLabel.text = booking.inDate?.format
-                cell.bottomDateLabel.text = booking.inDate?.formatCET
+                cell.bottomDateLabel.text = booking.inDate?.inCETTimeZone.formatCET
             default:
                 cell.topDateLabel.text = booking.outDate?.format
-                cell.bottomDateLabel.text = booking.outDate?.formatCET
+                cell.bottomDateLabel.text = booking.outDate?.inCETTimeZone.formatCET
             }
             return cell
         default:

@@ -20,7 +20,7 @@
 "booking.edit.slides" = "Number of Slides";
 "booking.edit.project" = "Project";
 "booking.edit.in" = "IN";
-"booking.edit.out" = "OUT";
+"booking.edit.out" = "OUT BY";
 "booking.edit.confidentiality" = "Confidentiality";
 "booking.edit.job-type" = "Job Type";
 "booking.edit.notes" = "Notes";
