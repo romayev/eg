@@ -26,7 +26,7 @@
 		FA97431D1E6136970075FF0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA97431B1E6136970075FF0A /* LaunchScreen.storyboard */; };
 		FA97432B1E61E3900075FF0A /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97432A1E61E3900075FF0A /* DataStore.swift */; };
 		FA97436D1E6225BE0075FF0A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97436C1E6225BE0075FF0A /* Record.swift */; };
-		FA9C61CF1E6DA86D001B3891 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C61CE1E6DA86D001B3891 /* Date.swift */; };
+		FADE1AFC1E6E5B2000F1CABC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE1AFB1E6E5B2000F1CABC /* Date.swift */; };
 		FAE7384A1E6B2D4D00166E38 /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE738491E6B2D4D00166E38 /* JobType.swift */; };
 		FAE7384C1E6B313E00166E38 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7384B1E6B313E00166E38 /* Project.swift */; };
 /* End PBXBuildFile section */
@@ -68,7 +68,7 @@
 		FA97432A1E61E3900075FF0A /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		FA9743381E61F6340075FF0A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FA97436C1E6225BE0075FF0A /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
-		FA9C61CE1E6DA86D001B3891 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		FADE1AFB1E6E5B2000F1CABC /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FAE738491E6B2D4D00166E38 /* JobType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobType.swift; sourceTree = "<group>"; };
 		FAE7384B1E6B313E00166E38 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +101,6 @@
 				FA737C921E6331E3003AA912 /* RecordsViewController.swift */,
 				FA72E75C1E64A6D800B14F4A /* Image.swift */,
 				FA7E3F581E6C544A001122C5 /* Color.swift */,
-				FA9C61CE1E6DA86D001B3891 /* Date.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -152,6 +151,7 @@
 		FA9743281E61E3780075FF0A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FADE1AFB1E6E5B2000F1CABC /* Date.swift */,
 				FA97432A1E61E3900075FF0A /* DataStore.swift */,
 				FA97436C1E6225BE0075FF0A /* Record.swift */,
 				FA72E7531E6487F100B14F4A /* Booking.swift */,
@@ -259,7 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA97436D1E6225BE0075FF0A /* Record.swift in Sources */,
-				FA9C61CF1E6DA86D001B3891 /* Date.swift in Sources */,
+				FADE1AFC1E6E5B2000F1CABC /* Date.swift in Sources */,
 				FA72E7541E6487F100B14F4A /* Booking.swift in Sources */,
 				FA9743151E6136960075FF0A /* SecondViewController.swift in Sources */,
 				FA737C8D1E633155003AA912 /* BookingsViewController.swift in Sources */,

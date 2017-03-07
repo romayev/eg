@@ -96,10 +96,29 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     // MARK: Private
     private func configure(cell: BookingCell, indexPath: IndexPath) {
         let booking = fetchedResultsController.object(at: indexPath)
-        cell.slidesLabel.text = String(booking.slideCount)
-        cell.outLabel.text = booking.outDate?.format
-        cell.inLabel.text = booking.inDate?.format
         cell.confidentialityView.backgroundColor = booking.confidentialityType.color
+        cell.slidesLabel.text = String(booking.slideCount)
+        if (isCurrentTimeZoneCET()) {
+            for label in cell.singleTimeZoneLabels {
+                label.isHidden = false
+            }
+            for label in cell.mutliTimeZoneLabels {
+                label.isHidden = true
+            }
+            cell.outLabel.text = booking.outDate?.format
+            cell.inLabel.text = booking.inDate?.format
+        } else {
+            for label in cell.singleTimeZoneLabels {
+                label.isHidden = true
+            }
+            for label in cell.mutliTimeZoneLabels {
+                label.isHidden = false
+            }
+            cell.inTopLabel.text = booking.inDate?.format
+            cell.inBottomLabel.text = booking.inDate?.inCETTimeZone.formatCET
+            cell.outTopLabel.text = booking.outDate?.format
+            cell.outBottomLabel.text = booking.outDate?.inCETTimeZone.formatCET
+        }
     }
 }
 
@@ -108,4 +127,11 @@ class BookingCell: UITableViewCell {
     @IBOutlet var slidesLabel: UILabel!
     @IBOutlet var inLabel: UILabel!
     @IBOutlet var outLabel: UILabel!
+    @IBOutlet var inTopLabel: UILabel!
+    @IBOutlet var inBottomLabel: UILabel!
+    @IBOutlet var outTopLabel: UILabel!
+    @IBOutlet var outBottomLabel: UILabel!
+
+    @IBOutlet var singleTimeZoneLabels: [UILabel]!
+    @IBOutlet var mutliTimeZoneLabels: [UILabel]!
 }

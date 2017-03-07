@@ -37,3 +37,11 @@ extension NSDate {
         return NSDate(timeIntervalSinceReferenceDate: timeIntervalSinceReferenceDate - diff)
     }
 }
+
+func isCurrentTimeZoneCET() -> Bool {
+    let current = TimeZone.current
+    guard let cet = TimeZone(abbreviation: "CET") else {
+        fatalError()
+    }
+    return current == cet
+}
