@@ -8,9 +8,10 @@
 
 "none" = "None";
 "default-project" = "N/A";
+"enter-new" = "Enter New";
 
 "booking.in" = "IN";
-"booking.out" = "OUT";
+"booking.out" = "OUT BY";
 
 "bookings" = "Bookings";
 "add-booking" = "Add Booking";
@@ -23,6 +24,8 @@
 "booking.edit.confidentiality" = "Confidentiality";
 "booking.edit.job-type" = "Job Type";
 "booking.edit.notes" = "Notes";
+"booking.enter-project-code" = "Enter project code";
+
 
 "slides.one" = "%d slide";
 "slides.other" = "%d slides";

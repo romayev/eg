@@ -11,19 +11,20 @@ import UIKit
 
 public enum EGEditCellType: String {
     case dropDown = "EGDropDown"
+    case dropDownAdd = "EGDropDownAdd"
     case date = "EGDate"
     case picker = "EGPicker"
     case notes = "EGNotes"
 
     var height: Double {
         switch self {
-        case .dropDown: return 44.0
+        case .dropDown, .dropDownAdd: return 44.0
         case .notes, .date, .picker: return 216.0
         }
     }
 }
 
-open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate, EGDatePickerEditCellDelegate, EGNotesEditCellDelegate, UITableViewDataSource, UITableViewDelegate {
+open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate, EGAddPickerEditCellDelegate, EGDatePickerEditCellDelegate, EGNotesEditCellDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet public var tableView: UITableView!
 
     // MARK: public vars
@@ -77,6 +78,14 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
             cell.delegate = self
             cell.update()
             return cell
+        case .dropDownAdd:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellType.rawValue, for: editorPath) as? EGEditDropDownAddCell else {
+                preconditionFailure("Unable to deque a cell for cell type \(cellType)")
+            }
+            cell.delegate = self
+            cell.addDelegate = self
+            cell.update()
+            return cell
         case .date:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: cellType.rawValue, for: editorPath) as? EGEditDatePickerCell else {
                 fatalError("Unable to deque a cell for cell type \(cellType)")
@@ -110,6 +119,8 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
         var edit = false
         if let editorPath = self.editorPath {
             self.editorPath = nil
+            let cell = tableView.cellForRow(at: editorPath) as! EGEditCell
+            cell.cellWillDie()
             tableView.deleteRows(at: [editorPath], with: .fade)
             if section == editorPath.section && indexPath.row > editorPath.row {
                 row -= 1
@@ -140,6 +151,7 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
             inset.top = 0
             UIView.animate(withDuration: 0.25, animations: {
                 tableView.contentInset = inset
+                tableView.reloadRows(at: [indexPath], with: .none)
             })
         }
     }
@@ -159,6 +171,8 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
     open var itemsForEditCell: [String]? { return [String]() }
     open var selectedItemsForEditCell: [String]? { return [String]() }
 
+    open func editCellDidAdd(value: String) {
+    }
     open func editCellDidSelectValue(_ value: String, at index: Int) {
     }
 
@@ -170,6 +184,10 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
             case .dropDown:
                 if let count = itemsForEditCell?.count {
                     return CGFloat(cellType.height) * CGFloat(count)
+                }
+            case .dropDownAdd:
+                if let count = itemsForEditCell?.count {
+                    return CGFloat(cellType.height) * CGFloat(count + 1)
                 }
             default:
                 return CGFloat(cellType.height)

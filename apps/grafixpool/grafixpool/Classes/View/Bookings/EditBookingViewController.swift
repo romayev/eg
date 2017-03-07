@@ -19,7 +19,9 @@ enum CellMapping: Int {
             return .picker
         case .inDate, .outDate:
             return .date
-        case .project, .confidentiality, .jobType:
+        case .project:
+            return .dropDownAdd
+        case .confidentiality, .jobType:
             return .dropDown
         case .comments:
             return .notes
@@ -86,19 +88,6 @@ enum CellMapping: Int {
     }
 }
 
-extension NSDate {
-    var date: Date {
-        return Date(timeIntervalSinceReferenceDate: self.timeIntervalSinceReferenceDate)
-    }
-    var format: String {
-        let df = DateFormatter()
-        df.dateStyle = .medium
-        df.timeStyle = .short
-        df.doesRelativeDateFormatting = true
-        return df.string(from: self.date)
-    }
-}
-
 class EditBookingViewController: EGEditTableViewController {
     let editingContext = DataStore.store.editingContext
     var booking: Booking!
@@ -141,11 +130,30 @@ class EditBookingViewController: EGEditTableViewController {
     }
 
     override func cellFor(_ row: Int, at indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let type = bookingTableCellType(forRow: indexPath.row)
-        cell.textLabel?.text = type.localizedName
-        cell.detailTextLabel?.text = self.description(forRow: row)
-        return cell
+        guard let mapping = CellMapping(rawValue: row) else {
+            fatalError("ERROR: Unable to find mapping for row \(row)")
+        }
+        switch mapping {
+        case .inDate, .outDate:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DateCell", for: indexPath) as! DateCell
+            let type = bookingTableCellType(forRow: indexPath.row)
+            cell.titleLabel?.text = type.localizedName
+            switch mapping {
+            case .inDate:
+                cell.topDateLabel.text = booking.inDate?.format
+                cell.bottomDateLabel.text = booking.inDate?.formatCET
+            default:
+                cell.topDateLabel.text = booking.outDate?.format
+                cell.bottomDateLabel.text = booking.outDate?.formatCET
+            }
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+            let type = bookingTableCellType(forRow: indexPath.row)
+            cell.textLabel?.text = type.localizedName
+            cell.detailTextLabel?.text = self.description(forRow: row)
+            return cell
+        }
     }
 
     // MARK: EGPickerEditCellDelegate
@@ -187,6 +195,14 @@ class EditBookingViewController: EGEditTableViewController {
         }
 
         tableView.reloadRows(at: [activeCellPath!, editorPath!], with: .automatic)
+    }
+
+    // MARK: EGAddPickerEditCellDelegate
+    override func editCellDidAdd(value: String) {
+        let project = Project(context: editingContext)
+        project.code = value
+        booking.project = project
+        project.addToBookings(booking)
     }
 
     // MARK: EGDatePickerEditCellDelegate
@@ -263,5 +279,10 @@ class EditBookingViewController: EGEditTableViewController {
         }
         return type
     }
+}
 
+class DateCell: UITableViewCell {
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var topDateLabel: UILabel!
+    @IBOutlet var bottomDateLabel: UILabel!
 }

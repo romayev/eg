@@ -10,12 +10,24 @@ import Foundation
 
 public protocol EGEditCell {
     func update()
+    func cellWillDie()
+}
+
+public class EGEditCellBase: UITableViewCell, EGEditCell {
+    public func update() {
+    }
+    public func cellWillDie() {
+    }
 }
 
 public protocol EGPickerEditCellDelegate: class {
     var itemsForEditCell: [String]? { get }
     var selectedItemsForEditCell: [String]? { get }
     func editCellDidSelectValue(_ value: String, at index: Int)
+}
+
+public protocol EGAddPickerEditCellDelegate: class, EGPickerEditCellDelegate {
+    func editCellDidAdd(value: String)
 }
 
 public protocol EGDatePickerEditCellDelegate: class {
@@ -26,8 +38,30 @@ public protocol EGNotesEditCellDelegate: class {
     var notesForEditCell: String? { get set }
 }
 
+enum EGEditDropDownRow {
+    enum State {
+        case checked, unchecked
+    }
+    case add
+    case normal(State)
+
+    var accessoryType: UITableViewCellAccessoryType {
+        switch self {
+        case .add: return .disclosureIndicator
+        case .normal(.checked): return .checkmark
+        case .normal(.unchecked): return .none
+        }
+    }
+    var reuseIdentifier: String {
+        switch self {
+        case .add: return "AddCell"
+        case .normal: return "Cell"
+        }
+    }
+}
+
 // MARK: EGEditDropDownCell
-public class EGEditDropDownCell: UITableViewCell, EGEditCell, UITableViewDataSource, UITableViewDelegate {
+public class EGEditDropDownCell: EGEditCellBase, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var tableView: UITableView!
 
     public weak var delegate: EGPickerEditCellDelegate!
@@ -38,7 +72,7 @@ public class EGEditDropDownCell: UITableViewCell, EGEditCell, UITableViewDataSou
         tableView.rowHeight = 44.0
     }
 
-    public func update() {
+    public override func update() {
         guard let items = delegate.itemsForEditCell else {
             preconditionFailure("Failed to get items for drop down")
         }
@@ -52,15 +86,16 @@ public class EGEditDropDownCell: UITableViewCell, EGEditCell, UITableViewDataSou
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        var row: EGEditDropDownRow
+        var checked = false
         let title = items[indexPath.row]
-        cell.textLabel?.text = title
         if let selected = delegate.selectedItemsForEditCell {
-            let checked = selected.contains(title)
-            cell.accessoryType = checked ? .checkmark : .none
-        } else {
-            cell.accessoryType = .none
+            checked = selected.contains(title)
         }
+        row = checked ? .normal(.checked) : .normal(.unchecked)
+        let cell = tableView.dequeueReusableCell(withIdentifier: row.reuseIdentifier, for: indexPath)
+        cell.textLabel?.text = title
+        cell.accessoryType = row.accessoryType
         return cell
     }
 
@@ -79,18 +114,97 @@ public class EGEditDropDownCell: UITableViewCell, EGEditCell, UITableViewDataSou
     }
 }
 
-public class EGEditOptionalCell: UITableViewCell, EGEditCell {
-    @IBOutlet weak var unknownButton: UIButton!
-
-    @IBAction func toggleUnknown(_ sender: UIButton) {
+// MARK: EGEditDropDownAddCell
+public class EGEditDropDownAddCell: EGEditDropDownCell {
+    public weak var addDelegate: EGAddPickerEditCellDelegate!
+    private func parentIndexPath(_ indexPath: IndexPath) -> IndexPath {
+        var parentPath = indexPath
+        parentPath.row = parentPath.row - 1
+        return parentPath
     }
-    public func update() {
-        unknownButton.setTitle(NSLocalizedString("non", comment: ""), for: .normal)
+    private var addCell: EGEditAddCell!
+
+    public override func cellWillDie() {
+        addCell.willDie()
+    }
+
+    // MARK: UITableViewDelegate, UITableViewDataSource
+    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return super.tableView(tableView, numberOfRowsInSection: section) + 1
+    }
+
+    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var row: EGEditDropDownRow
+        if (indexPath.row == 0) {
+            row = .add
+            let cell = tableView.dequeueReusableCell(withIdentifier: row.reuseIdentifier, for: indexPath) as! EGEditAddCell
+            addCell = cell
+            cell.titleLabel.text = NSLocalizedString("enter-new", comment: "")
+            cell.textField.placeholder = NSLocalizedString("booking.enter-project-code", comment: "")
+            cell.delegate = addDelegate
+            cell.accessoryType = row.accessoryType
+            return cell
+        } else {
+            var newPath = indexPath
+            newPath.row = newPath.row - 1
+            return super.tableView(tableView, cellForRowAt: parentIndexPath(indexPath))
+        }
+    }
+
+    override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 0) {
+            let cell = tableView.cellForRow(at: indexPath) as! EGEditAddCell
+            cell.toggleState()
+            tableView.deselectRow(at: indexPath, animated: false)
+        } else {
+            super.tableView(tableView, didSelectRowAt: parentIndexPath(indexPath))
+        }
+    }
+}
+
+public class EGEditAddCell: UITableViewCell, UITextFieldDelegate {
+    enum State {
+        case view, add
+    }
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var textField: UITextField!
+    public weak var delegate: EGAddPickerEditCellDelegate!
+    var state: State = .view
+
+    func toggleState() {
+        switch state {
+        case .view:
+            state = .add
+            textField.isHidden = false
+            titleLabel.isHidden = true
+            textField.becomeFirstResponder()
+        case .add:
+            state = .view
+            textField.isHidden = true
+            titleLabel.isHidden = false
+        }
+    }
+
+    func willDie() {
+        if state == .add {
+            if let text = textField.text {
+                delegate.editCellDidAdd(value: text)
+            }
+            toggleState()
+        }
+    }
+
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if let text = textField.text {
+            delegate.editCellDidAdd(value: text)
+        }
+        return false
     }
 }
 
 // MARK: EGEditDatePickerCell
-public class EGEditDatePickerCell: EGEditOptionalCell {
+public class EGEditDatePickerCell: EGEditCellBase {
     @IBOutlet weak var datePicker: UIDatePicker!
 
     public weak var delegate: EGDatePickerEditCellDelegate!
@@ -100,13 +214,12 @@ public class EGEditDatePickerCell: EGEditOptionalCell {
     }
 
     @IBAction func valueDidChange(_ sender: UIDatePicker) {
-        print("didChange \(sender.date)")
         delegate.dateForEditCell = sender.date
     }
 }
 
 // MARK: EGEditPickerCell
-public class EGEditPickerCell: EGEditOptionalCell, UIPickerViewDataSource, UIPickerViewDelegate {
+public class EGEditPickerCell: EGEditCellBase, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet var picker: UIPickerView!
 
     public weak var delegate: EGPickerEditCellDelegate!
@@ -149,7 +262,7 @@ public class EGEditPickerCell: EGEditOptionalCell, UIPickerViewDataSource, UIPic
 }
 
 // MARK: EGEditNotesCell
-public class EGEditNotesCell: UITableViewCell, EGEditCell, UITextViewDelegate {
+public class EGEditNotesCell: EGEditCellBase, UITextViewDelegate {
     @IBOutlet var textView: UITextView!
 
     public weak var delegate: EGNotesEditCellDelegate!
@@ -157,7 +270,7 @@ public class EGEditNotesCell: UITableViewCell, EGEditCell, UITextViewDelegate {
     public func textViewDidChange(_ textView: UITextView) {
         delegate.notesForEditCell = textView.text
     }
-    public func update() {
+    public override func update() {
         textView.text = delegate.notesForEditCell
         textView.becomeFirstResponder()
     }
