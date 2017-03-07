@@ -140,11 +140,10 @@ class EditBookingViewController: EGEditTableViewController {
             cell.titleLabel?.text = type.localizedName
             switch mapping {
             case .inDate:
-                cell.topDateLabel.text = booking.inDate?.format
-                cell.bottomDateLabel.text = booking.inDate?.inCETTimeZone.formatCET
-            default:
-                cell.topDateLabel.text = booking.outDate?.format
-                cell.bottomDateLabel.text = booking.outDate?.inCETTimeZone.formatCET
+                cell.display(date: booking.inDate!, singleZone: isCurrentTimeZoneCET())
+            case .outDate:
+                cell.display(date: booking.outDate!, singleZone: isCurrentTimeZoneCET())
+            default: break
             }
             return cell
         default:
@@ -283,6 +282,22 @@ class EditBookingViewController: EGEditTableViewController {
 
 class DateCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
     @IBOutlet var topDateLabel: UILabel!
     @IBOutlet var bottomDateLabel: UILabel!
+
+    func display(date: NSDate, singleZone: Bool) {
+        if singleZone {
+            topDateLabel.isHidden = true
+            bottomDateLabel.isHidden = true
+            dateLabel.isHidden = false
+            dateLabel.text = date.format
+        } else {
+            topDateLabel.isHidden = false
+            bottomDateLabel.isHidden = false
+            dateLabel.isHidden = true
+            topDateLabel.text = date.format
+            bottomDateLabel.text = date.inCETTimeZone.formatCET
+        }
+    }
 }

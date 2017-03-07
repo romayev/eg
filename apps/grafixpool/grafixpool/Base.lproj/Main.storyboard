@@ -378,6 +378,12 @@
                                                     <color key="textColor" red="0.30196078430000001" green="0.30980392159999998" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbI-5f-bz2">
+                                                    <rect key="frame" x="322" y="13" width="37" height="17"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                                    <color key="textColor" red="0.30196078430000001" green="0.30980392159999998" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjq-PP-EYF">
                                                     <rect key="frame" x="334.5" y="25.5" width="24.5" height="11.5"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
@@ -387,7 +393,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Zod-sQ-nKj" firstAttribute="centerY" secondItem="Fpe-ow-UVD" secondAttribute="centerY" multiplier="0.7" id="HCi-jJ-yrR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YbI-5f-bz2" secondAttribute="trailing" constant="8" id="Hkb-6Z-dv0"/>
                                                 <constraint firstItem="hjq-PP-EYF" firstAttribute="top" secondItem="Zod-sQ-nKj" secondAttribute="bottom" constant="2" id="IdN-ry-MSF"/>
+                                                <constraint firstItem="YbI-5f-bz2" firstAttribute="centerY" secondItem="Fpe-ow-UVD" secondAttribute="centerY" id="apk-Be-BkS"/>
                                                 <constraint firstItem="Ddj-N5-130" firstAttribute="leading" secondItem="Fpe-ow-UVD" secondAttribute="leadingMargin" constant="8" id="c5P-ZX-UmU"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="hjq-PP-EYF" secondAttribute="trailing" constant="8" id="lM1-S7-IjE"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Zod-sQ-nKj" secondAttribute="trailing" constant="8" id="rMW-Hz-Gbu"/>
@@ -396,6 +404,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="bottomDateLabel" destination="hjq-PP-EYF" id="W5x-En-6wK"/>
+                                            <outlet property="dateLabel" destination="YbI-5f-bz2" id="pAS-Eu-g8I"/>
                                             <outlet property="titleLabel" destination="Ddj-N5-130" id="dEw-cg-mie"/>
                                             <outlet property="topDateLabel" destination="Zod-sQ-nKj" id="6vm-UR-J5a"/>
                                         </connections>
@@ -575,10 +584,10 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Booking Navigation-->
         <scene sceneID="0xf-UG-AUK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TFT-It-EtG" sceneMemberID="viewController">
+                <navigationController title="Booking Navigation" automaticallyAdjustsScrollViewInsets="NO" id="TFT-It-EtG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="recents" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cqE-ld-KVm">
@@ -594,10 +603,10 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--More Navigation-->
         <scene sceneID="X9V-6R-tFy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gyA-fN-wIp" sceneMemberID="viewController">
+                <navigationController title="More Navigation" automaticallyAdjustsScrollViewInsets="NO" id="gyA-fN-wIp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aAL-ww-Ol6">
@@ -616,7 +625,7 @@
         <!--Edit Booking Nav-->
         <scene sceneID="DPA-eT-w7x">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ae6-k8-eUX" userLabel="Edit Booking Nav" sceneMemberID="viewController">
+                <navigationController title="Edit Booking Navigation" automaticallyAdjustsScrollViewInsets="NO" id="ae6-k8-eUX" userLabel="Edit Booking Nav" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0eT-3N-ogT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
