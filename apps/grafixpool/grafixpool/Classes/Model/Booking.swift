@@ -21,7 +21,11 @@ extension Booking {
         slideCount = 10
         project = Project.last(context: managedObjectContext!)
     }
-
+    var sectionIdentifier: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: outDate as! Date)
+    }
     private func nextHourDate() -> Date? {
         let calendar = NSCalendar.current
         let comps = calendar.dateComponents([.year, .month, .day, .hour], from: Date())
@@ -48,7 +52,6 @@ extension Booking {
         }
         return result
     }
-
     var jobTypeValues: [String] {
         let jobTypes = jobTypeCategories
         return jobTypes.map { $0.localizedName }
@@ -92,9 +95,9 @@ enum Confidentiality: Int {
     }
     var color: UIColor {
         switch self {
-        case .restricted: return UIColor.Traffic.green
-        case .confidential: return UIColor.Traffic.yellow
-        case .strictlyConfidential: return UIColor.Traffic.red
+        case .restricted: return UIColor.Siemens.Traffic.green
+        case .confidential: return UIColor.Siemens.Traffic.yellow
+        case .strictlyConfidential: return UIColor.Siemens.Traffic.red
         }
     }
 

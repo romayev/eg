@@ -6,14 +6,17 @@
   Copyright © 2017 Executive Graphics. All rights reserved.
 */
 
-"none" = "None";
+"ok" = "OK";
+"error" = "Error";
 "default-project" = "N/A";
 "enter-new" = "Enter New";
 
 "booking.in" = "IN";
-"booking.out" = "OUT BY";
+"booking.out" = "OUT";
 
 "bookings" = "Bookings";
+"recent" = "Recent";
+"all" = "All";
 "add-booking" = "Add Booking";
 "edit-booking" = "Edit Booking";
 
@@ -42,3 +45,11 @@
 "confidentiality.restricted" = "Restricted";
 "confidentiality.confidential" = "Confidential";
 "confidentiality.strictly-confidential" = "Strictly Confidential";
+
+
+"email.booking.subject-new" = "New Booking";
+"email.booking.recipient" = "submit@executivegraphics.com";
+"email.alert.title" = "Email";
+"email.alert.message.success" = "Booking was successfully submitted";
+"email.alert.message.error" = "Failed to submit due to error:";
+"email.alert.unable-to-send-mail" = "Your device could not send e-mail. Please check e-mail configuration and try again.";

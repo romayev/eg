@@ -10,85 +10,86 @@ import Foundation
 import UIKit
 import EGKit
 import CoreData
+import MessageUI
 
-enum CellMapping: Int {
-    case slides, project, inDate, outDate, confidentiality, jobType, comments
-    var editCellType: EGEditCellType {
-        switch self {
-        case .slides:
-            return .picker
-        case .inDate, .outDate:
-            return .date
-        case .project:
-            return .dropDownAdd
-        case .confidentiality, .jobType:
-            return .dropDown
-        case .comments:
-            return .notes
+class EditBookingViewController: EGEditTableViewController, MFMailComposeViewControllerDelegate {
+    enum CellMapping: Int {
+        case slides, project, inDate, outDate, confidentiality, jobType, comments
+        var editCellType: EGEditCellType {
+            switch self {
+            case .slides:
+                return .picker
+            case .inDate, .outDate:
+                return .date
+            case .project:
+                return .dropDownAdd
+            case .confidentiality, .jobType:
+                return .dropDown
+            case .comments:
+                return .notes
+            }
+        }
+        func values(context: NSManagedObjectContext) -> [String] {
+            switch self {
+            case .slides: return (0...100).map { String($0) }
+            case .project: return Project.recentProjectNames(context)
+            case .confidentiality: return Confidentiality.localizedValues
+            case .jobType: return JobType.Category.localizedValues
+            default: fatalError("\(self) type does not support multiple values")
+            }
+        }
+        func value(withBooking booking: Booking) -> String? {
+            switch self {
+            case .slides:
+                if booking.slideCount == 0 {
+                    return nil
+                } else {
+                    return String(booking.slideCount)
+                }
+            case .project:
+                if let code = booking.project?.code {
+                    return code == "default" ? NSLocalizedString("default-project", comment: "") : code
+                } else {
+                    fatalError("Booking does not have a project")
+                }
+            case .inDate:
+                return (booking.inDate?.format)!
+            case .outDate:
+                return (booking.outDate?.format)!
+            case .confidentiality:
+                if let confidentiality = Confidentiality(coreDataValue: booking.confidentiality) {
+                    return confidentiality.localizedName
+                } else {
+                    return nil
+                }
+            case .jobType:
+                let values = booking.jobTypeValues
+                return values.count > 0 ? booking.jobTypeValues.joined(separator: ", ") : nil
+            case .comments:
+                return booking.notes
+            }
+        }
+        func processDidSelectValue(_ value: String, at index: Int, booking: Booking) {
+            let idx = Int16(index) + 1
+            switch self {
+            case .slides: booking.slideCount = Int16(index)
+            case .confidentiality: booking.confidentiality = idx
+            case .jobType:
+                let jobType = JobType.jobType(forIndex: index + 1, context: booking.managedObjectContext!)
+                guard let jobTypes = booking.jobTypes else {
+                    fatalError("Booking doesn't have job types")
+                }
+                if (jobTypes.contains(jobType)) {
+                    booking.removeFromJobTypes(jobType)
+                } else {
+                    booking.addToJobTypes(jobType)
+                }
+            case .project: break
+            default: fatalError("Not a selectable cell type")
+            }
         }
     }
-    func values(context: NSManagedObjectContext) -> [String] {
-        switch self {
-        case .slides: return (0...100).map { String($0) }
-        case .project: return Project.recentProjectNames(context)
-        case .confidentiality: return Confidentiality.localizedValues
-        case .jobType: return JobType.Category.localizedValues
-        default: fatalError("\(self) type does not support multiple values")
-        }
-    }
-    func value(withBooking booking: Booking) -> String? {
-        switch self {
-        case .slides:
-            if booking.slideCount == 0 {
-                return nil
-            } else {
-                return String(booking.slideCount)
-            }
-        case .project:
-            if let code = booking.project?.code {
-                return code == "default" ? NSLocalizedString("default-project", comment: "") : code
-            } else {
-                fatalError("Booking does not have a project")
-            }
-        case .inDate:
-            return (booking.inDate?.format)!
-        case .outDate:
-            return (booking.outDate?.format)!
-        case .confidentiality:
-            if let confidentiality = Confidentiality(coreDataValue: booking.confidentiality) {
-                return confidentiality.localizedName
-            } else {
-                return nil
-            }
-        case .jobType:
-            let values = booking.jobTypeValues
-            return values.count > 0 ? booking.jobTypeValues.joined(separator: ", ") : nil
-        case .comments:
-            return booking.notes
-        }
-    }
-    func processDidSelectValue(_ value: String, at index: Int, booking: Booking) {
-        let idx = Int16(index) + 1
-        switch self {
-        case .slides: booking.slideCount = Int16(index)
-        case .confidentiality: booking.confidentiality = idx
-        case .jobType:
-            let jobType = JobType.jobType(forIndex: index + 1, context: booking.managedObjectContext!)
-            guard let jobTypes = booking.jobTypes else {
-                fatalError("Booking doesn't have job types")
-            }
-            if (jobTypes.contains(jobType)) {
-                booking.removeFromJobTypes(jobType)
-            } else {
-                booking.addToJobTypes(jobType)
-            }
-        case .project: break
-        default: fatalError("Not a selectable cell type")
-        }
-    }
-}
-
-class EditBookingViewController: EGEditTableViewController {
+    
     let editingContext = DataStore.store.editingContext
     var booking: Booking!
 
@@ -113,7 +114,11 @@ class EditBookingViewController: EGEditTableViewController {
 
     @IBAction func save(_ sender: UIBarButtonItem) {
         DataStore.store.save(editing: editingContext)
-        dismiss(animated: true, completion: nil)
+        #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
+            self.dismiss(animated: true, completion: nil)
+        #else
+            sendEmail()
+        #endif
     }
 
     // MARK: EGEditTableViewController
@@ -277,6 +282,67 @@ class EditBookingViewController: EGEditTableViewController {
             fatalError("Unable to get BookingTableCellType for rawValue \(rawValue)")
         }
         return type
+    }
+
+    // MARK: MailComposer
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+        let title = NSLocalizedString("email.alert.title", comment: "")
+        var message = NSLocalizedString("email.alert.message.success", comment: "")
+        if error != nil {
+            let m = NSLocalizedString("email.alert.message.error", comment: "")
+            message = "\(m) \(error)"
+        }
+
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: { (action) in
+            self.dismiss(animated: true, completion: nil)
+        })
+        alertController.addAction(ok)
+        present(alertController, animated: true, completion: nil)
+    }
+
+    private func sendEmail() {
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+
+    private func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+
+        mailComposerVC.setToRecipients([NSLocalizedString("email.booking.recipient", comment: "")])
+        mailComposerVC.setSubject(NSLocalizedString("email.booking.subject-new", comment: ""))
+        mailComposerVC.setMessageBody(emailBody(), isHTML: false)
+
+        return mailComposerVC
+    }
+
+    private func emailBody() -> String {
+        guard let project = booking.project?.code else {
+            preconditionFailure()
+        }
+        guard let inDate = booking.inDate else {
+            preconditionFailure()
+        }
+        guard let outDate = booking.outDate else {
+            preconditionFailure()
+        }
+        let body = "\(project)\n\(inDate)\n\(outDate)"
+        return body
+    }
+
+    private func showSendMailErrorAlert() {
+        let title = NSLocalizedString("error", comment: "")
+        let message = NSLocalizedString("email.alert.unable-to-send-mail", comment: "")
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: nil)
+        alertController.addAction(ok)
+        present(alertController, animated: true, completion: nil)
     }
 }
 

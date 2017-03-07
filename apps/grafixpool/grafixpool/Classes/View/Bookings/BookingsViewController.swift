@@ -11,6 +11,7 @@ import CoreData
 import EGKit
 
 class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet var segmentedControl: UISegmentedControl!
 
     enum EGSegueIdentifier: String {
         case add = "add"
@@ -27,9 +28,9 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     
     override func initializeFetchedResultsController() {
         let request: NSFetchRequest<Booking> = Booking.fetchRequest()
-        let sort = NSSortDescriptor(key: "created", ascending: false)
+        let sort = NSSortDescriptor(key: "outDate", ascending: false)
         request.sortDescriptors = [sort]
-        let frc = NSFetchedResultsController<Booking>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        let frc = NSFetchedResultsController<Booking>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "sectionIdentifier", cacheName: nil)
         frc.delegate = self
         fetchedResultsController = frc
 
@@ -42,7 +43,10 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = NSLocalizedString("bookings", comment: "")
         navigationItem.title = NSLocalizedString("bookings", comment: "")
+        segmentedControl.setTitle(NSLocalizedString("recent", comment: ""), forSegmentAt: 0)
+        segmentedControl.setTitle(NSLocalizedString("all", comment: ""), forSegmentAt: 1)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,7 +68,7 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     }
 
     // MARK: UITableViewDataSource & Delegate
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         if let sections = fetchedResultsController.sections {
             return sections.count
         }
@@ -80,6 +84,29 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         return currentSection.numberOfObjects
     }
 
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 22
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableCell(withIdentifier: "Header")
+        let titleLabel = header?.viewWithTag(100) as! UILabel
+        if let sections = fetchedResultsController.sections {
+            let currentSection = sections[section]
+            let df1 = DateFormatter()
+            df1.dateFormat = "yyyy-MM-dd"
+            let df2 = DateFormatter()
+            df2.dateStyle = .medium
+            df2.doesRelativeDateFormatting = true
+
+            //let out = NSLocalizedString("booking.out", comment: "")
+            let date = df2.string(from: df1.date(from: currentSection.name)!)
+            //titleLabel.text = "\(out) \(date)"
+            titleLabel.text = date
+        }
+        return header
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BookingCell
         configure(cell: cell, indexPath: indexPath);
@@ -90,8 +117,6 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         performSegue(withIdentifier: .edit, sender: tableView.cellForRow(at: indexPath))
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
-    // MARK: UITableViewDataSource & Delegate
 
     // MARK: Private
     private func configure(cell: BookingCell, indexPath: IndexPath) {
