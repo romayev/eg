@@ -9,7 +9,7 @@
 import Foundation
 
 enum BookingTableCellType: Int {
-    case slides, project, inDate, outDate, confidentiality, jobType, notes
+    case slides, project, inDate, outDate, notification, confidentiality, jobType, notes
 
     var name: String {
         switch self {
@@ -17,6 +17,7 @@ enum BookingTableCellType: Int {
         case .project: return "project"
         case .inDate: return "in"
         case .outDate: return "out"
+        case .notification: return "notification"
         case .confidentiality: return "confidentiality"
         case .jobType: return "job-type"
         case .notes: return "notes"

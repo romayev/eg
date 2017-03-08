@@ -14,7 +14,7 @@ import MessageUI
 
 class EditBookingViewController: EGEditTableViewController, MFMailComposeViewControllerDelegate {
     enum CellMapping: Int {
-        case slides, project, inDate, outDate, confidentiality, jobType, comments
+        case slides, project, inDate, outDate, reminder, confidentiality, jobType, comments
         var editCellType: EGEditCellType {
             switch self {
             case .slides:
@@ -23,16 +23,17 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
                 return .date
             case .project:
                 return .dropDownAdd
-            case .confidentiality, .jobType:
+            case .reminder, .confidentiality, .jobType:
                 return .dropDown
             case .comments:
                 return .notes
             }
         }
-        func values(context: NSManagedObjectContext) -> [String] {
+        func values(withBooking booking: Booking, in context: NSManagedObjectContext) -> [String] {
             switch self {
             case .slides: return (0...100).map { String($0) }
             case .project: return Project.recentProjectNames(context)
+            case .reminder: return Reminder.localizedValues(forInDate: booking.inDate as! Date, outDate: booking.outDate as! Date)
             case .confidentiality: return Confidentiality.localizedValues
             case .jobType: return JobType.Category.localizedValues
             default: fatalError("\(self) type does not support multiple values")
@@ -56,6 +57,9 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
                 return (booking.inDate?.format)!
             case .outDate:
                 return (booking.outDate?.format)!
+            case .reminder:
+                let reminder = Reminder(difference: booking.reminder, outDate: booking.outDate as! Date)
+                return reminder.localizedName
             case .confidentiality:
                 if let confidentiality = Confidentiality(coreDataValue: booking.confidentiality) {
                     return confidentiality.localizedName
@@ -73,6 +77,7 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
             let idx = Int16(index) + 1
             switch self {
             case .slides: booking.slideCount = Int16(index)
+            case .reminder: booking.reminder = Double(index * 3600)
             case .confidentiality: booking.confidentiality = idx
             case .jobType:
                 let jobType = JobType.jobType(forIndex: index + 1, context: booking.managedObjectContext!)
@@ -90,6 +95,10 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
         }
     }
     
+    @IBOutlet var toolbar: UIToolbar!
+    @IBOutlet var nextBarButtonItem: UIBarButtonItem!
+    @IBOutlet var deleteBarButtonItem: UIBarButtonItem!
+
     let editingContext = DataStore.store.editingContext
     var booking: Booking!
 
@@ -97,6 +106,8 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        nextBarButtonItem.title = NSLocalizedString("next", comment: "")
+        deleteBarButtonItem.title = NSLocalizedString("delete-booking", comment: "")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,6 +117,7 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
         }
 
         if booking.isInserted {
+            toolbar.isHidden = true
             navigationItem.title = NSLocalizedString("add-booking", comment: "")
         } else {
             navigationItem.title = NSLocalizedString("edit-booking", comment: "")
@@ -119,6 +131,9 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
         #else
             sendEmail()
         #endif
+    }
+
+    @IBAction func deleteBooking(_ sender: UIBarButtonItem) {
     }
 
     // MARK: EGEditTableViewController
@@ -166,7 +181,7 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
             preconditionFailure("ERROR: Active cell undefined")
         }
         if let mapping = CellMapping(rawValue: activeRow) {
-            return mapping.values(context: editingContext)
+            return mapping.values(withBooking: booking, in: editingContext)
         }
         return nil
     }

@@ -6,10 +6,12 @@
   Copyright © 2017 Executive Graphics. All rights reserved.
 */
 
-"ok" = "OK";
-"error" = "Error";
 "default-project" = "N/A";
 "enter-new" = "Enter New";
+"error" = "Error";
+"next" = "Next";
+"none" = "None";
+"ok" = "OK";
 
 "booking.in" = "IN";
 "booking.out" = "OUT";
@@ -19,19 +21,17 @@
 "all" = "All";
 "add-booking" = "Add Booking";
 "edit-booking" = "Edit Booking";
+"delete-booking" = "Delete Booking";
 
 "booking.edit.slides" = "Number of Slides";
 "booking.edit.project" = "Project";
 "booking.edit.in" = "IN";
 "booking.edit.out" = "OUT BY";
+"booking.edit.notification" = "Reminder";
 "booking.edit.confidentiality" = "Confidentiality";
 "booking.edit.job-type" = "Job Type";
 "booking.edit.notes" = "Notes";
 "booking.enter-project-code" = "Enter project code";
-
-
-"slides.one" = "%d slide";
-"slides.other" = "%d slides";
 
 "job-type.adjust-to-smc" = "Adjust to SMC standard";
 "job-type.improve" = "Improve layout / visualization";

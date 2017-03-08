@@ -11,12 +11,25 @@ import CoreData
 import EGKit
 
 class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet var segmentedControl: UISegmentedControl!
-
     enum EGSegueIdentifier: String {
         case add = "add"
         case edit = "edit"
     }
+
+    private enum ViewState {
+        case recent, all
+        var fromDate: NSDate? {
+            switch self {
+            case .recent:
+                return NSDate().addingTimeInterval(-3600*24*2)
+            default:
+                return nil
+            }
+        }
+    }
+
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    private var state: ViewState = .recent
 
     var fetchedResultsController: NSFetchedResultsController<Booking>!
     var booking: Booking? {
@@ -28,6 +41,9 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     
     override func initializeFetchedResultsController() {
         let request: NSFetchRequest<Booking> = Booking.fetchRequest()
+        if let fromDate = state.fromDate {
+            request.predicate = NSPredicate.init(format: "outDate >= %@", fromDate)
+        }
         let sort = NSSortDescriptor(key: "outDate", ascending: false)
         request.sortDescriptors = [sort]
         let frc = NSFetchedResultsController<Booking>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "sectionIdentifier", cacheName: nil)
@@ -65,6 +81,18 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
                 c.booking = fetchedResultsController.object(at: indexPath)
             }
         }
+    }
+
+    // MARK: Actions
+    @IBAction func toggleViewState(_ sender: UISegmentedControl) {
+        if (sender.selectedSegmentIndex == 0) {
+            state = .recent
+        } else {
+            state = .all
+        }
+        fetchedResultsController = nil;
+        initializeFetchedResultsController()
+        tableView.reloadData()
     }
 
     // MARK: UITableViewDataSource & Delegate

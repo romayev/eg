@@ -115,3 +115,45 @@ enum Confidentiality: Int {
         self.init(rawValue: Int(coreDataValue))
     }
 }
+
+struct Reminder {
+    var outDate: Date
+    var difference: Double
+    var date: Date {
+        return outDate.addingTimeInterval(Double(-difference))
+    }
+
+    init(difference: Double, outDate: Date) {
+        self.difference = difference
+        self.outDate = outDate
+    }
+    
+    var localizedName: String {
+        if difference == 0 {
+            return NSLocalizedString("none", comment: "")
+        } else {
+            let df = DateFormatter()
+            df.timeStyle = .short
+            let fireDate = df.string(from: date)
+            let format = NSLocalizedString("hours-before", comment: "")
+            let hoursBefore = String.localizedStringWithFormat(format, Int(difference / 3600))
+            return "\(hoursBefore) \(fireDate)"
+        }
+    }
+    static func localizedValues(forInDate inDate: Date, outDate: Date) -> [String] {
+        var all: [Reminder] = [Reminder]()
+        var index = 0.0
+        var reminder: Reminder
+        repeat {
+            let difference = index * 3600.0
+            reminder = Reminder(difference: difference, outDate: outDate)
+            all.append(reminder)
+            index += 1
+        } while reminder.date > inDate && index < 5
+        var values = [String]()
+        for type in all {
+            values.append(type.localizedName)
+        }
+        return values
+    }
+}
