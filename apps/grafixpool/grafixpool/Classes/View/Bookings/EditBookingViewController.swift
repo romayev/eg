@@ -222,6 +222,9 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
         project.code = value
         booking.project = project
         project.addToBookings(booking)
+        if let editorPath = editorPath {
+            tableView.reloadRows(at: [activeCellPath!, editorPath], with: .automatic)
+        }
     }
 
     // MARK: EGDatePickerEditCellDelegate
