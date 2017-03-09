@@ -13,7 +13,12 @@ import UIKit
 extension Booking {
     override public func awakeFromInsert() {
         super.awakeFromInsert()
-        inDate = NSDate()
+        inDate = created
+        bookingID = createBookingID() as String
+        if let bookingID = bookingID {
+            print("booking ID: \(bookingID)")
+        }
+
         if let nextHour = nextHourDate()?.timeIntervalSinceReferenceDate {
             outDate = NSDate(timeIntervalSinceReferenceDate: nextHour)
         }
@@ -60,6 +65,14 @@ extension Booking {
     func add(jobType: JobType) {
         addToJobTypes(jobType)
         jobType.addToBookings(self)
+    }
+
+    private func createBookingID() -> String {
+        let df = DateFormatter()
+        df.dateFormat = "YYYYMMddhhmmss"
+        let string = df.string(from: created as! Date)
+        let random = arc4random_uniform(9)
+        return "\(string)\(random)"
     }
 }
 

@@ -29,11 +29,19 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
 
     // MARK: public vars
     public var editorPath: IndexPath?
-    public var activeCellPath: IndexPath? {
+    public var activePath: IndexPath? {
         if let editorPath = self.editorPath {
             return IndexPath(item: editorPath.row - 1, section: editorPath.section)
         }
         return nil
+    }
+    public func adjustedPath(forIndexPath indexPath: IndexPath) -> IndexPath {
+        if let editorPath = editorPath {
+            if indexPath.section == editorPath.section && indexPath.row >= editorPath.row {
+                return IndexPath(item: indexPath.row - 1, section: indexPath.section)
+            }
+        }
+        return indexPath
     }
 
     // MARK: open vars
@@ -53,17 +61,11 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var row = indexPath.row
         if (indexPath == editorPath) {
             let cell = editCellFor(cellType: cellType)
             return cell
         }
-        if let editorPath = self.editorPath {
-            if indexPath.section == editorPath.section && row > editorPath.row {
-                row -= 1
-            }
-        }
-        return cellFor(row, at: indexPath)
+        return cell(atAdjusted: adjustedPath(forIndexPath: indexPath))
     }
 
     func editCellFor(cellType: EGEditCellType) -> UITableViewCell {
@@ -118,6 +120,7 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
 
         var edit = false
         if let editorPath = self.editorPath {
+            let activeCellPath = self.activePath
             self.editorPath = nil
             let cell = tableView.cellForRow(at: editorPath) as! EGEditCell
             cell.cellWillDie()
@@ -126,6 +129,7 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
                 row -= 1
             }
             edit = (section != editorPath.section) || (row + 1) != editorPath.row
+            editCellDidCollapse(at: activeCellPath!)
         } else {
             edit = true
         }
@@ -135,7 +139,7 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
             if let editorPath = self.editorPath {
                 tableView.insertRows(at: [editorPath], with: .fade)
             }
-            if let activeCellPath = self.activeCellPath {
+            if let activeCellPath = self.activePath {
                 if (cellType == .notes) {
                     var inset = tableView.contentInset
                     let rect = tableView.rectForRow(at: indexPath)
@@ -163,7 +167,7 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
         return true
     }
 
-    open func cellFor(_ row: Int, at indexPath: IndexPath) -> UITableViewCell {
+    open func cell(atAdjusted indexPath: IndexPath) -> UITableViewCell {
         preconditionFailure("This method must be overridden")
     }
 
@@ -174,6 +178,8 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
     open func editCellDidAdd(value: String) {
     }
     open func editCellDidSelectValue(_ value: String, at index: Int) {
+    }
+    open func editCellDidCollapse(at indexPath: IndexPath) {
     }
 
     open var notesForEditCell: String?

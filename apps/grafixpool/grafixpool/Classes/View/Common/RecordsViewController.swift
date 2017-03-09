@@ -24,6 +24,9 @@ class RecordsViewController: EGViewController, NSFetchedResultsControllerDelegat
     func initializeFetchedResultsController() {
     }
 
+    func updateFetchState() {        
+    }
+
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
@@ -41,6 +44,11 @@ class RecordsViewController: EGViewController, NSFetchedResultsControllerDelegat
         switch type {
         case .insert:
             tableView.insertRows(at: [newIndexPath!], with: .automatic)
+            if let section = newIndexPath?.section {
+                let header = tableView.headerView(forSection: section)
+                header?.setNeedsDisplay()
+                header?.setNeedsLayout()
+            }
         case .delete:
             tableView.deleteRows(at: [indexPath!], with: .automatic)
         case .update:
@@ -52,5 +60,6 @@ class RecordsViewController: EGViewController, NSFetchedResultsControllerDelegat
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
+        updateFetchState()
     }
 }

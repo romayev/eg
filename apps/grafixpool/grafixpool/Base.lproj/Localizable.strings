@@ -10,9 +10,12 @@
 "enter-new" = "Enter New";
 "error" = "Error";
 "next" = "Next";
+"no-bookings" = "There are no recent bookings";
 "none" = "None";
 "ok" = "OK";
+"status" = "Status";
 
+"booking.slides" = "Slides";
 "booking.in" = "IN";
 "booking.out" = "OUT";
 
@@ -21,8 +24,9 @@
 "all" = "All";
 "add-booking" = "Add Booking";
 "edit-booking" = "Edit Booking";
-"delete-booking" = "Delete Booking";
+"cancel-booking" = "Cancel Booking";
 
+"booking.edit.booking-id" = "Booking ID";
 "booking.edit.slides" = "Number of Slides";
 "booking.edit.project" = "Project";
 "booking.edit.in" = "IN";
@@ -30,7 +34,7 @@
 "booking.edit.notification" = "Reminder";
 "booking.edit.confidentiality" = "Confidentiality";
 "booking.edit.job-type" = "Job Type";
-"booking.edit.notes" = "Notes";
+"booking.edit.notes" = "Comments";
 "booking.enter-project-code" = "Enter project code";
 
 "job-type.adjust-to-smc" = "Adjust to SMC standard";
@@ -46,9 +50,12 @@
 "confidentiality.confidential" = "Confidential";
 "confidentiality.strictly-confidential" = "Strictly Confidential";
 
-
 "email.booking.subject-new" = "New Booking";
-"email.booking.recipient" = "submit@executivegraphics.com";
+"email.booking.subject-cancel" = "Cancel Booking";
+"email.booking.recipient" = "romayev@gmail.com";//"submit@executivegraphics.com";
+"email.booking.status-add" = "Add";
+"email.booking.status-update" = "Update";
+"email.booking.status-cancel" = "Cancel";
 "email.alert.title" = "Email";
 "email.alert.message.success" = "Booking was successfully submitted";
 "email.alert.message.error" = "Failed to submit due to error:";

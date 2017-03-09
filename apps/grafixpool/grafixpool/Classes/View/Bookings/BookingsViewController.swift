@@ -27,9 +27,18 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
             }
         }
     }
+    private enum FetchState {
+        case records, noRecords
+    }
 
+    @IBOutlet var noRecordsView: UIView!
+    @IBOutlet var noRecordsLabel: UILabel!
     @IBOutlet var segmentedControl: UISegmentedControl!
-    private var state: ViewState = .recent
+    @IBOutlet var slidesHeaderLabel: UILabel!
+    @IBOutlet var inHeaderLabel: UILabel!
+    @IBOutlet var outHeaderLabel: UILabel!
+    private var viewState: ViewState = .recent
+    private var fetchState: FetchState = .noRecords
 
     var fetchedResultsController: NSFetchedResultsController<Booking>!
     var booking: Booking? {
@@ -41,7 +50,7 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     
     override func initializeFetchedResultsController() {
         let request: NSFetchRequest<Booking> = Booking.fetchRequest()
-        if let fromDate = state.fromDate {
+        if let fromDate = viewState.fromDate {
             request.predicate = NSPredicate.init(format: "outDate >= %@", fromDate)
         }
         let sort = NSSortDescriptor(key: "outDate", ascending: false)
@@ -55,6 +64,7 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         } catch {
             fatalError("Failed to initialize FetchedResultsController: \(error)")
         }
+        updateFetchState()
     }
 
     override func viewDidLoad() {
@@ -63,6 +73,10 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         navigationItem.title = NSLocalizedString("bookings", comment: "")
         segmentedControl.setTitle(NSLocalizedString("recent", comment: ""), forSegmentAt: 0)
         segmentedControl.setTitle(NSLocalizedString("all", comment: ""), forSegmentAt: 1)
+        noRecordsLabel.text = NSLocalizedString("no-bookings", comment: "")
+        slidesHeaderLabel.text = NSLocalizedString("booking.slides", comment: "")
+        inHeaderLabel.text = NSLocalizedString("booking.in", comment: "")
+        outHeaderLabel.text = NSLocalizedString("booking.out", comment: "")
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,9 +100,9 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     // MARK: Actions
     @IBAction func toggleViewState(_ sender: UISegmentedControl) {
         if (sender.selectedSegmentIndex == 0) {
-            state = .recent
+            viewState = .recent
         } else {
-            state = .all
+            viewState = .all
         }
         fetchedResultsController = nil;
         initializeFetchedResultsController()
@@ -147,6 +161,22 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     }
 
     // MARK: Private
+    override func updateFetchState() {
+        if let count = fetchedResultsController.fetchedObjects?.count {
+            fetchState = count > 0 ? .records : .noRecords
+        } else {
+            fetchState = .noRecords
+        }
+        switch fetchState {
+        case .records:
+            tableView.isHidden = false
+            noRecordsView.isHidden = true
+        case .noRecords:
+            tableView.isHidden = true
+            noRecordsView.isHidden = false
+        }
+    }
+    
     private func configure(cell: BookingCell, indexPath: IndexPath) {
         let booking = fetchedResultsController.object(at: indexPath)
         cell.confidentialityView.backgroundColor = booking.confidentialityType.color

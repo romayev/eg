@@ -278,4 +278,7 @@ public class EGEditNotesCell: EGEditCellBase, UITextViewDelegate {
         textView.text = delegate.notesForEditCell
         textView.becomeFirstResponder()
     }
+    public override func cellWillDie() {
+        textView.resignFirstResponder()
+    }
 }

@@ -29,6 +29,14 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
                 return .notes
             }
         }
+        var indexPathsForDependentMappings: [IndexPath]? {
+            switch self {
+            case .outDate:
+                return [IndexPath(item: CellMapping.reminder.rawValue, section: 0)]
+            default:
+                return nil
+            }
+        }
         func values(withBooking booking: Booking, in context: NSManagedObjectContext) -> [String] {
             switch self {
             case .slides: return (0...100).map { String($0) }
@@ -125,22 +133,33 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        DataStore.store.save(editing: editingContext)
         #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
+            DataStore.store.save(editing: editingContext)
             self.dismiss(animated: true, completion: nil)
         #else
-            sendEmail()
+            if booking.isInserted {
+                send(email: .add)
+            } else if (editingContext.hasChanges) {
+                send(email: .update)
+            }
         #endif
     }
 
     @IBAction func deleteBooking(_ sender: UIBarButtonItem) {
+        editingContext.delete(booking)
+        DataStore.store.save(editing: editingContext)
+        #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
+            self.dismiss(animated: true, completion: nil)
+        #else
+            send(email: .cancel)
+        #endif
     }
 
     // MARK: EGEditTableViewController
     override var count: Int { return BookingTableCellType.count }
 
     override var cellType: EGEditCellType {
-        guard let activeRow = activeCellPath?.row else  {
+        guard let activeRow = activePath?.row else  {
             fatalError("ERROR: Active cell undefined")
         }
         guard let mapping = CellMapping(rawValue: activeRow) else {
@@ -149,14 +168,14 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
         return mapping.editCellType
     }
 
-    override func cellFor(_ row: Int, at indexPath: IndexPath) -> UITableViewCell {
-        guard let mapping = CellMapping(rawValue: row) else {
-            fatalError("ERROR: Unable to find mapping for row \(row)")
+    override func cell(atAdjusted indexPath: IndexPath) -> UITableViewCell {
+        guard let mapping = CellMapping(rawValue: indexPath.row) else {
+            fatalError("ERROR: Unable to find mapping for row \(indexPath.row)")
         }
         switch mapping {
         case .inDate, .outDate:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DateCell", for: indexPath) as! DateCell
-            let type = bookingTableCellType(forRow: indexPath.row)
+            let type = bookingTableCellType(forAdjusted: indexPath)
             cell.titleLabel?.text = type.localizedName
             switch mapping {
             case .inDate:
@@ -168,16 +187,16 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-            let type = bookingTableCellType(forRow: indexPath.row)
+            let type = bookingTableCellType(forAdjusted: indexPath)
             cell.textLabel?.text = type.localizedName
-            cell.detailTextLabel?.text = self.description(forRow: row)
+            cell.detailTextLabel?.text = self.description(forRow: indexPath.row)
             return cell
         }
     }
 
     // MARK: EGPickerEditCellDelegate
     override var itemsForEditCell: [String]? {
-        guard let activeRow = activeCellPath?.row else  {
+        guard let activeRow = activePath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
         if let mapping = CellMapping(rawValue: activeRow) {
@@ -187,33 +206,42 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
     }
 
     override var selectedItemsForEditCell: [String]? {
-        guard let activeRow = activeCellPath?.row else  {
+        guard let activeRow = activePath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        if (activeRow == 5) {
-            if booking.jobTypeValues.count > 0 {
-                return booking.jobTypeValues
-            } else {
-                return nil
-            }
-        }
         if let mapping = CellMapping(rawValue: activeRow) {
-            if let value = mapping.value(withBooking: booking) {
-                return [value]
+            switch mapping {
+            case .jobType:
+                if booking.jobTypeValues.count > 0 {
+                    return booking.jobTypeValues
+                }
+            default:
+                if let value = mapping.value(withBooking: booking) {
+                    return [value]
+                }
             }
         }
         return nil
     }
 
     override func editCellDidSelectValue(_ value: String, at index: Int) {
-        guard let activeRow = activeCellPath?.row else  {
+        guard let activeRow = activePath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
         if let mapping = CellMapping(rawValue: activeRow) {
             mapping.processDidSelectValue(value, at: index, booking: booking)
         }
 
-        tableView.reloadRows(at: [activeCellPath!, editorPath!], with: .automatic)
+        tableView.reloadRows(at: [activePath!, editorPath!], with: .automatic)
+    }
+
+    override func editCellDidCollapse(at indexPath: IndexPath) {
+        if let mapping = CellMapping(rawValue: indexPath.row) {
+            if let indexPaths = mapping.indexPathsForDependentMappings {
+                let adjusted = indexPaths.map { adjustedPath(forIndexPath: $0) }
+                tableView.reloadRows(at: adjusted, with: .automatic)
+            }
+        }
     }
 
     // MARK: EGAddPickerEditCellDelegate
@@ -223,18 +251,18 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
         booking.project = project
         project.addToBookings(booking)
         if let editorPath = editorPath {
-            tableView.reloadRows(at: [activeCellPath!, editorPath], with: .automatic)
+            tableView.reloadRows(at: [activePath!, editorPath], with: .automatic)
         }
     }
 
     // MARK: EGDatePickerEditCellDelegate
     override var dateForEditCell: Date {
         get {
-            guard let activeRow = activeCellPath?.row else  {
+            guard let activePath = activePath else  {
                 preconditionFailure("ERROR: Active cell undefined")
             }
-            let type = bookingTableCellType(forRow: activeRow)
-            assert(type == .inDate || type == .outDate, "Unexpected cell typefor row: \(activeCellPath?.row)")
+            let type = bookingTableCellType(forAdjusted: activePath)
+            assert(type == .inDate || type == .outDate, "Unexpected cell typefor row: \(activePath.row)")
 
             var result = Date().addingTimeInterval(3600 * 8)
             switch type {
@@ -252,11 +280,11 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
             return result
         }
         set {
-            guard let activeRow = activeCellPath?.row else  {
+            guard let activePath = activePath else  {
                 preconditionFailure("ERROR: Active cell undefined")
             }
-            let type = bookingTableCellType(forRow: activeRow)
-            assert(type == .inDate || type == .outDate, "Unexpected cell typefor row: \(activeCellPath?.row)")
+            let type = bookingTableCellType(forAdjusted: activePath)
+            assert(type == .inDate || type == .outDate, "Unexpected cell typefor row: \(activePath.row)")
             switch type {
             case .inDate:
                 booking.inDate = NSDate(timeIntervalSinceReferenceDate: newValue.timeIntervalSinceReferenceDate)
@@ -264,7 +292,7 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
                 booking.outDate = NSDate(timeIntervalSinceReferenceDate: newValue.timeIntervalSinceReferenceDate)
             default: break
             }
-            tableView.reloadRows(at: [activeCellPath!], with: .automatic)
+            tableView.reloadRows(at: [activePath], with: .automatic)
         }
     }
 
@@ -275,7 +303,7 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
         }
         set {
             booking.notes = newValue
-            tableView.reloadRows(at: [activeCellPath!], with: .none)
+            tableView.reloadRows(at: [activePath!], with: .none)
         }
     }
     
@@ -289,15 +317,9 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
     return "--"
     }
 
-    private func bookingTableCellType(forRow row: Int) -> BookingTableCellType {
-        var rawValue = row
-        if let activeRow = activeCellPath?.row {
-            if activeRow > row {
-                rawValue += 1
-            }
-        }
-        guard let type = BookingTableCellType(rawValue: rawValue) else {
-            fatalError("Unable to get BookingTableCellType for rawValue \(rawValue)")
+    private func bookingTableCellType(forAdjusted indexPath: IndexPath) -> BookingTableCellType {
+        guard let type = BookingTableCellType(rawValue: indexPath.row) else {
+            fatalError("Unable to get BookingTableCellType for row \(indexPath.row)")
         }
         return type
     }
@@ -312,16 +334,21 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
             message = "\(m) \(error)"
         }
 
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: { (action) in
-            self.dismiss(animated: true, completion: nil)
-        })
-        alertController.addAction(ok)
-        present(alertController, animated: true, completion: nil)
+        switch result {
+        case .sent:
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: { (action) in
+                DataStore.store.save(editing: self.editingContext)
+                self.dismiss(animated: true, completion: nil)
+            })
+            alertController.addAction(ok)
+            present(alertController, animated: true, completion: nil)
+        default: break
+        }
     }
 
-    private func sendEmail() {
-        let mailComposeViewController = configuredMailComposeViewController()
+    private func send(email: BookingEmail) {
+        let mailComposeViewController = configuredMailComposeViewController(email: email)
         if MFMailComposeViewController.canSendMail() {
             self.present(mailComposeViewController, animated: true, completion: nil)
         } else {
@@ -329,29 +356,16 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
         }
     }
 
-    private func configuredMailComposeViewController() -> MFMailComposeViewController {
+    private func configuredMailComposeViewController(email: BookingEmail) -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
 
-        mailComposerVC.setToRecipients([NSLocalizedString("email.booking.recipient", comment: "")])
-        mailComposerVC.setSubject(NSLocalizedString("email.booking.subject-new", comment: ""))
-        mailComposerVC.setMessageBody(emailBody(), isHTML: false)
+        let message = email.bookingMessage(with: booking)
+        mailComposerVC.setToRecipients(message.recipients)
+        mailComposerVC.setSubject(message.subject)
+        mailComposerVC.setMessageBody(message.body, isHTML: false)
 
         return mailComposerVC
-    }
-
-    private func emailBody() -> String {
-        guard let project = booking.project?.code else {
-            preconditionFailure()
-        }
-        guard let inDate = booking.inDate else {
-            preconditionFailure()
-        }
-        guard let outDate = booking.outDate else {
-            preconditionFailure()
-        }
-        let body = "\(project)\n\(inDate)\n\(outDate)"
-        return body
     }
 
     private func showSendMailErrorAlert() {
@@ -383,5 +397,79 @@ class DateCell: UITableViewCell {
             topDateLabel.text = date.format
             bottomDateLabel.text = date.inCETTimeZone.formatCET
         }
+    }
+}
+
+struct BookingMessage {
+    let recipients = [NSLocalizedString("email.booking.recipient", comment: "")]
+    var subject: String
+    var body: String
+
+    init(subject: String, body: String) {
+        self.subject = subject
+        self.body = body
+    }
+}
+
+enum BookingEmail {
+    case add, update, cancel
+
+    func bookingMessage(with booking: Booking) -> BookingMessage {
+        guard let bookingID = booking.bookingID else {
+            preconditionFailure("No booking ID")
+        }
+        var prefix: String
+        switch self {
+        case .add:
+            prefix = NSLocalizedString("email.booking.subject-new", comment: "")
+        case .update:
+            prefix = NSLocalizedString("email.booking.subject-update", comment: "")
+        case .cancel:
+            prefix = NSLocalizedString("email.booking.subject-cancel", comment: "")
+        }
+        let title = "\(prefix): \(bookingID)"
+        return BookingMessage(subject: title, body: emailBody(with: booking))
+    }
+
+    func emailBody(with booking: Booking) -> String {
+        let statusTitle = NSLocalizedString("status", comment: "")
+
+        let values = booking.jobTypeValues
+        let jobTypeValues = values.count > 0 ? booking.jobTypeValues.joined(separator: ", ") : nil
+
+        let body = formatBody(values: [
+            NSLocalizedString("booking.edit.booking-id", comment: ""): booking.bookingID,
+            NSLocalizedString("booking.edit.project", comment: ""): booking.project?.code,
+            NSLocalizedString("booking.edit.in", comment: ""): booking.inDate?.inCETTimeZone.format,
+            NSLocalizedString("booking.edit.out", comment: ""): booking.outDate?.inCETTimeZone.format,
+            NSLocalizedString("booking.edit.confidentiality", comment: ""): Confidentiality(rawValue: Int(booking.confidentiality))?.localizedName,
+            NSLocalizedString("booking.edit.job-type", comment: ""): jobTypeValues,
+            NSLocalizedString("booking.edit.notes", comment: ""): booking.notes
+            ]
+        )
+        switch self {
+        case .add:
+            let status = format(title: statusTitle, value: NSLocalizedString("email.booking.status-add", comment: ""))
+            return "\(status)\(body)"
+        case .update:
+            let status = format(title: statusTitle, value: NSLocalizedString("email.booking.status-update", comment: ""))
+            return "\(status)\(body)"
+        case .cancel:
+            let status = format(title: statusTitle, value: NSLocalizedString("email.booking.status-cancel", comment: ""))
+            return "\(status)\(body)"
+        }
+    }
+    private func format(title: String , value: String) -> String {
+        return "\(title): \(value)\n"
+    }
+    private func formatBody(values: [String: String?]) -> String {
+        var body = ""
+        let keys = values.keys.sorted()
+        for key in keys {
+            if let value = values[key] ?? nil {
+                body = "\(body)\(format(title: key, value: value))"
+            }
+        }
+        return body
     }
 }
