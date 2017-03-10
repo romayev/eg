@@ -11,9 +11,6 @@ enum BookingEmail {
     case add, update, cancel
 
     func bookingMessage(with booking: Booking) -> BookingMessage {
-        guard let bookingID = booking.bookingID else {
-            preconditionFailure("No booking ID")
-        }
         var prefix: String
         switch self {
         case .add:
@@ -23,8 +20,29 @@ enum BookingEmail {
         case .cancel:
             prefix = NSLocalizedString("booking.email.subject-cancel", comment: "")
         }
-        let title = "\(prefix): \(bookingID)"
+        let title = "\(prefix): \(emailSubject(with: booking))"
         return BookingMessage(subject: title, body: emailBody(with: booking))
+    }
+
+    func emailSubject(with booking: Booking) -> String {
+        let slides = String(booking.slideCount)
+        guard let project = booking.project?.code else {
+            preconditionFailure()
+        }
+        let name = "John Smith"
+        guard let inDate = booking.inDate?.inCETTimeZone.formatCET else {
+            preconditionFailure()
+        }
+        guard let outDate = booking.outDate?.inCETTimeZone.formatCET else {
+            preconditionFailure()
+        }
+        guard let confidentiality = Confidentiality(rawValue: Int(booking.confidentiality))?.localizedName else {
+            preconditionFailure()
+        }
+        let inTitle = NSLocalizedString("booking.in", comment: "")
+        let outTitle = NSLocalizedString("booking.out", comment: "")
+
+        return "\(slides) / \(project) / \(name) / \(inTitle): \(inDate) / \(outTitle): \(outDate) / \(confidentiality)"
     }
 
     func emailBody(with booking: Booking) -> String {
@@ -36,8 +54,8 @@ enum BookingEmail {
         let body = formatBody(values: [
             NSLocalizedString("booking.edit.booking-id", comment: ""): booking.bookingID,
             NSLocalizedString("booking.edit.project", comment: ""): booking.project?.code,
-            NSLocalizedString("booking.edit.in", comment: ""): booking.inDate?.inCETTimeZone.format,
-            NSLocalizedString("booking.edit.out", comment: ""): booking.outDate?.inCETTimeZone.format,
+            NSLocalizedString("booking.edit.in", comment: ""): booking.inDate?.inCETTimeZone.formatCET,
+            NSLocalizedString("booking.edit.out", comment: ""): booking.outDate?.inCETTimeZone.formatCET,
             NSLocalizedString("booking.edit.confidentiality", comment: ""): Confidentiality(rawValue: Int(booking.confidentiality))?.localizedName,
             NSLocalizedString("booking.edit.job-type", comment: ""): jobTypeValues,
             NSLocalizedString("booking.edit.notes", comment: ""): booking.notes

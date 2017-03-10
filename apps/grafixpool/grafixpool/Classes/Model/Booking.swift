@@ -23,12 +23,12 @@ extension Booking {
             outDate = inDate
         }
         if let last = Booking.last(managedObjectContext!) {
-            //confidentiality = last.confidentiality
-            reminder = last.reminder
+            confidentiality = last.confidentiality
+            //reminder = last.reminder
         } else {
-            //confidentiality = Confidentiality.defaultValue.coreDataValue
+            confidentiality = Confidentiality.defaultValue.coreDataValue
         }
-        confidentiality = Confidentiality.defaultValue.coreDataValue
+        reminder = 3600
         slideCount = 0
         project = Project.last(context: managedObjectContext!)
     }
