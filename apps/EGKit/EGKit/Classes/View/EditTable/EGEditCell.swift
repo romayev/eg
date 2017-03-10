@@ -32,6 +32,11 @@ public protocol EGAddPickerEditCellDelegate: class, EGPickerEditCellDelegate {
 
 public protocol EGDatePickerEditCellDelegate: class {
     var dateForEditCell: Date { get set }
+    var allowPastDates: Bool { get }
+}
+
+extension EGDatePickerEditCellDelegate {
+    public var allowPastDates: Bool { return false }
 }
 
 public protocol EGNotesEditCellDelegate: class {
@@ -219,6 +224,9 @@ public class EGEditDatePickerCell: EGEditCellBase {
 
     @IBAction func valueDidChange(_ sender: UIDatePicker) {
         delegate.dateForEditCell = sender.date
+        if !delegate.allowPastDates {
+            sender.minimumDate = Date()
+        }
     }
 }
 

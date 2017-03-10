@@ -88,25 +88,6 @@
                                     <constraint firstAttribute="trailing" secondItem="tbx-09-DwC" secondAttribute="trailing" id="t5g-M5-8XV"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S39-ge-iK2" userLabel="No Records View">
-                                <rect key="frame" x="0.0" y="188" width="320" height="292"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No new records today." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ygw-Bn-Xgw" userLabel="No Records Label">
-                                        <rect key="frame" x="90.5" y="138.5" width="139.5" height="17"/>
-                                        <color key="backgroundColor" red="0.86274509799999999" green="0.85490196080000003" blue="0.83529411760000005" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                        <color key="textColor" red="0.49019607840000001" green="0.52941176469999995" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="shadowOffset" width="0.0" height="1"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Ygw-Bn-Xgw" firstAttribute="centerX" secondItem="S39-ge-iK2" secondAttribute="centerX" id="Qk5-ru-mc1"/>
-                                    <constraint firstItem="Ygw-Bn-Xgw" firstAttribute="centerY" secondItem="S39-ge-iK2" secondAttribute="centerY" constant="1" id="qZf-cd-6g1"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9fd-6U-AhJ">
                                 <rect key="frame" x="0.0" y="188" width="320" height="292"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -241,6 +222,25 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="utu-hs-vsq"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S39-ge-iK2" userLabel="No Records View">
+                                <rect key="frame" x="0.0" y="188" width="320" height="292"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No new records today." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ygw-Bn-Xgw" userLabel="No Records Label">
+                                        <rect key="frame" x="90.5" y="138.5" width="139.5" height="17"/>
+                                        <color key="backgroundColor" red="0.86274509799999999" green="0.85490196080000003" blue="0.83529411760000005" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                        <color key="textColor" red="0.49019607840000001" green="0.52941176469999995" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="shadowOffset" width="0.0" height="1"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Ygw-Bn-Xgw" firstAttribute="centerX" secondItem="S39-ge-iK2" secondAttribute="centerX" id="Qk5-ru-mc1"/>
+                                    <constraint firstItem="Ygw-Bn-Xgw" firstAttribute="centerY" secondItem="S39-ge-iK2" secondAttribute="centerY" constant="1" id="qZf-cd-6g1"/>
+                                </constraints>
+                            </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wej-2q-30V">
                                 <rect key="frame" x="0.0" y="480" width="320" height="44"/>
                                 <items>

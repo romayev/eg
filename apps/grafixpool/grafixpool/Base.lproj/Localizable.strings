@@ -14,6 +14,7 @@
 "no-bookings" = "There are no recent bookings";
 "none" = "None";
 "ok" = "OK";
+"reminder" = "Reminder";
 "status" = "Status";
 
 "booking.slides" = "Slides";
@@ -31,7 +32,7 @@
 "booking.edit.slides" = "Number of Slides";
 "booking.edit.project" = "Project";
 "booking.edit.in" = "IN";
-"booking.edit.out" = "OUT BY";
+"booking.edit.out" = "OUT";
 "booking.edit.notification" = "Reminder";
 "booking.edit.confidentiality" = "Confidentiality";
 "booking.edit.job-type" = "Job Type";
@@ -41,7 +42,7 @@
 "job-type.adjust-to-smc" = "Adjust to SMC standard";
 "job-type.improve" = "Improve layout / visualization";
 "job-type.create-version" = "Create additional version";
-"job-type.final-check" = " Quick final check for SC meeting";
+"job-type.final-check" = "Quick final check for SC meeting";
 "job-type.translation" = "Translation";
 
 "aspect-ratio.standard" = "Standard (4:3)";
@@ -51,7 +52,7 @@
 "confidentiality.confidential" = "Confidential";
 "confidentiality.strictly-confidential" = "Strictly Confidential";
 
-"booking.notification.body" = "What would you like to do?";
+"booking.notification.body-prefix" = "Booking IN";
 
 "booking.email.subject-new" = "New Booking";
 "booking.email.subject-update" = "Update Booking";

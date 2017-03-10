@@ -14,7 +14,7 @@ import MessageUI
 
 class EditBookingViewController: EGEditTableViewController, MFMailComposeViewControllerDelegate {
     enum CellMapping: Int {
-        case slides, project, inDate, outDate, reminder, confidentiality, jobType, comments
+        case slides, project, inDate, reminder, outDate, confidentiality, jobType, comments
         var editCellType: EGEditCellType {
             switch self {
             case .slides:
@@ -31,8 +31,8 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
         }
         var indexPathsForDependentMappings: [IndexPath]? {
             switch self {
-            case .outDate:
-                return [IndexPath(item: CellMapping.reminder.rawValue, section: 0)]
+            case .inDate:
+                return [IndexPath(item: CellMapping.reminder.rawValue, section: 0), IndexPath(item: CellMapping.outDate.rawValue, section: 0)]
             default:
                 return nil
             }
@@ -41,7 +41,7 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
             switch self {
             case .slides: return (0...100).map { String($0) }
             case .project: return Project.recentProjectNames(context)
-            case .reminder: return Reminder.localizedValues(forInDate: booking.inDate as! Date, outDate: booking.outDate as! Date)
+            case .reminder: return Reminder.localizedValues(for: booking.inDate as! Date)
             case .confidentiality: return Confidentiality.localizedValues
             case .jobType: return JobType.Category.localizedValues
             default: fatalError("\(self) type does not support multiple values")
@@ -66,7 +66,7 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
             case .outDate:
                 return (booking.outDate?.format)!
             case .reminder:
-                let reminder = Reminder(difference: booking.reminder, outDate: booking.outDate as! Date)
+                let reminder = Reminder(difference: booking.reminder, date: booking.inDate as! Date)
                 return reminder.localizedName
             case .confidentiality:
                 if let confidentiality = Confidentiality(coreDataValue: booking.confidentiality) {
@@ -290,6 +290,9 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
             switch type {
             case .inDate:
                 booking.inDate = NSDate(timeIntervalSinceReferenceDate: newValue.timeIntervalSinceReferenceDate)
+                if (booking.outDate as! Date) < (booking.inDate as! Date) {
+                    booking.outDate = booking.inDate
+                }
             case .outDate:
                 booking.outDate = NSDate(timeIntervalSinceReferenceDate: newValue.timeIntervalSinceReferenceDate)
             default: break

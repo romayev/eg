@@ -9,7 +9,7 @@
         <attribute name="reminder" optional="YES" attributeType="Double" defaultValueString="3600" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="slideCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="jobTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="JobType" inverseName="bookings" inverseEntity="JobType" syncable="YES"/>
-        <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="bookings" inverseEntity="Project" syncable="YES"/>
+        <relationship name="project" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Project" inverseName="bookings" inverseEntity="Project" syncable="YES"/>
         <relationship name="requestedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="bookings" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="JobType" representedClassName="JobType" syncable="YES" codeGenerationType="class">

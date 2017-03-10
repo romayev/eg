@@ -13,17 +13,23 @@ import UIKit
 extension Booking {
     override public func awakeFromInsert() {
         super.awakeFromInsert()
-        inDate = created
         bookingID = createBookingID() as String
         if let bookingID = bookingID {
             print("booking ID: \(bookingID)")
         }
 
         if let nextHour = nextHourDate()?.timeIntervalSinceReferenceDate {
-            outDate = NSDate(timeIntervalSinceReferenceDate: nextHour)
+            inDate = NSDate(timeIntervalSinceReferenceDate: nextHour)
+            outDate = inDate
+        }
+        if let last = Booking.last(managedObjectContext!) {
+            //confidentiality = last.confidentiality
+            reminder = last.reminder
+        } else {
+            //confidentiality = Confidentiality.defaultValue.coreDataValue
         }
         confidentiality = Confidentiality.defaultValue.coreDataValue
-        slideCount = 10
+        slideCount = 0
         project = Project.last(context: managedObjectContext!)
     }
     var sectionIdentifier: String {
@@ -141,15 +147,15 @@ enum Confidentiality: Int {
 }
 
 struct Reminder {
-    var outDate: Date
+    var date: Date
     var difference: Double
-    var date: Date {
-        return outDate.addingTimeInterval(Double(-difference))
+    var fireDate: Date {
+        return date.addingTimeInterval(Double(-difference))
     }
 
-    init(difference: Double, outDate: Date) {
+    init(difference: Double, date: Date) {
         self.difference = difference
-        self.outDate = outDate
+        self.date = date
     }
     
     var localizedName: String {
@@ -158,22 +164,23 @@ struct Reminder {
         } else {
             let df = DateFormatter()
             df.timeStyle = .short
-            let fireDate = df.string(from: date)
+            let fireDate = df.string(from: self.fireDate)
             let format = NSLocalizedString("hours-before", comment: "")
             let hoursBefore = String.localizedStringWithFormat(format, Int(difference / 3600))
             return "\(hoursBefore) \(fireDate)"
         }
     }
-    static func localizedValues(forInDate inDate: Date, outDate: Date) -> [String] {
+    static func localizedValues(for date: Date) -> [String] {
+        let now = Date()
         var all: [Reminder] = [Reminder]()
         var index = 0.0
         var reminder: Reminder
         repeat {
             let difference = index * 3600.0
-            reminder = Reminder(difference: difference, outDate: outDate)
+            reminder = Reminder(difference: difference, date: date)
             all.append(reminder)
             index += 1
-        } while reminder.date > inDate && index < 5
+        } while reminder.fireDate > now && index < 5
         var values = [String]()
         for type in all {
             values.append(type.localizedName)
