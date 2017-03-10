@@ -42,12 +42,15 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
 
     var fetchedResultsController: NSFetchedResultsController<Booking>!
     var booking: Booking? {
-        if let indexPath = tableView.indexPathForSelectedRow {
-            return fetchedResultsController.object(at: indexPath)
+        get {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                return fetchedResultsController.object(at: indexPath)
+            }
+            return nil
         }
-        return nil
     }
-    
+    var alertBooking: Booking?
+
     override func initializeFetchedResultsController() {
         let request: NSFetchRequest<Booking> = Booking.fetchRequest()
         if let fromDate = viewState.fromDate {
@@ -77,6 +80,10 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         slidesHeaderLabel.text = NSLocalizedString("booking.slides", comment: "")
         inHeaderLabel.text = NSLocalizedString("booking.in", comment: "")
         outHeaderLabel.text = NSLocalizedString("booking.out", comment: "")
+
+        if alertBooking != nil {
+            performSegue(withIdentifier: .edit, sender: nil)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -89,7 +96,12 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         switch EGSegueIdentifier {
         case .add: break
         case .edit:
-            if let indexPath = tableView?.indexPathForSelectedRow {
+            if let alertBooking = alertBooking {
+                let n: UINavigationController = segue.destination as! UINavigationController
+                let c: EditBookingViewController = n.topViewController as! EditBookingViewController
+                c.booking = alertBooking
+                self.alertBooking = nil
+            } else if let indexPath = tableView?.indexPathForSelectedRow {
                 let n: UINavigationController = segue.destination as! UINavigationController
                 let c: EditBookingViewController = n.topViewController as! EditBookingViewController
                 c.booking = fetchedResultsController.object(at: indexPath)
@@ -132,7 +144,11 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "Header")
-        let titleLabel = header?.viewWithTag(100) as! UILabel
+        return header
+    }
+
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let titleLabel = view.viewWithTag(100) as! UILabel
         if let sections = fetchedResultsController.sections {
             let currentSection = sections[section]
             let df1 = DateFormatter()
@@ -141,14 +157,11 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
             df2.dateStyle = .medium
             df2.doesRelativeDateFormatting = true
 
-            //let out = NSLocalizedString("booking.out", comment: "")
             let date = df2.string(from: df1.date(from: currentSection.name)!)
-            //titleLabel.text = "\(out) \(date)"
             titleLabel.text = date
         }
-        return header
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BookingCell
         configure(cell: cell, indexPath: indexPath);
@@ -169,10 +182,8 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         }
         switch fetchState {
         case .records:
-            tableView.isHidden = false
             noRecordsView.isHidden = true
         case .noRecords:
-            tableView.isHidden = true
             noRecordsView.isHidden = false
         }
     }

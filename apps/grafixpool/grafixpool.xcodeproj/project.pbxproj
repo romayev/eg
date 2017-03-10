@@ -27,6 +27,8 @@
 		FA97432B1E61E3900075FF0A /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97432A1E61E3900075FF0A /* DataStore.swift */; };
 		FA97436D1E6225BE0075FF0A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97436C1E6225BE0075FF0A /* Record.swift */; };
 		FADE1AFC1E6E5B2000F1CABC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE1AFB1E6E5B2000F1CABC /* Date.swift */; };
+		FADE1AFE1E72195E00F1CABC /* BookingNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE1AFD1E72195D00F1CABC /* BookingNotification.swift */; };
+		FADE1B001E7249D000F1CABC /* BookingEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE1AFF1E7249D000F1CABC /* BookingEmail.swift */; };
 		FAE7384A1E6B2D4D00166E38 /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE738491E6B2D4D00166E38 /* JobType.swift */; };
 		FAE7384C1E6B313E00166E38 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7384B1E6B313E00166E38 /* Project.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +71,8 @@
 		FA9743381E61F6340075FF0A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FA97436C1E6225BE0075FF0A /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		FADE1AFB1E6E5B2000F1CABC /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		FADE1AFD1E72195D00F1CABC /* BookingNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingNotification.swift; sourceTree = "<group>"; };
+		FADE1AFF1E7249D000F1CABC /* BookingEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingEmail.swift; sourceTree = "<group>"; };
 		FAE738491E6B2D4D00166E38 /* JobType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobType.swift; sourceTree = "<group>"; };
 		FAE7384B1E6B313E00166E38 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +95,8 @@
 				FA737C8B1E633155003AA912 /* BookingsViewController.swift */,
 				FA737C8C1E633155003AA912 /* EditBookingViewController.swift */,
 				FA72E7691E64E72A00B14F4A /* BookingTableCellType.swift */,
+				FADE1AFD1E72195D00F1CABC /* BookingNotification.swift */,
+				FADE1AFF1E7249D000F1CABC /* BookingEmail.swift */,
 			);
 			path = Bookings;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 				FADE1AFC1E6E5B2000F1CABC /* Date.swift in Sources */,
 				FA72E7541E6487F100B14F4A /* Booking.swift in Sources */,
 				FA9743151E6136960075FF0A /* SecondViewController.swift in Sources */,
+				FADE1AFE1E72195E00F1CABC /* BookingNotification.swift in Sources */,
 				FA737C8D1E633155003AA912 /* BookingsViewController.swift in Sources */,
 				FA97432B1E61E3900075FF0A /* DataStore.swift in Sources */,
 				FAE7384C1E6B313E00166E38 /* Project.swift in Sources */,
@@ -270,6 +277,7 @@
 				FA737C8E1E633155003AA912 /* EditBookingViewController.swift in Sources */,
 				FA7E3F591E6C544A001122C5 /* Color.swift in Sources */,
 				FA737C931E6331E3003AA912 /* RecordsViewController.swift in Sources */,
+				FADE1B001E7249D000F1CABC /* BookingEmail.swift in Sources */,
 				FAE7384A1E6B2D4D00166E38 /* JobType.swift in Sources */,
 				FA72E75D1E64A6D800B14F4A /* Image.swift in Sources */,
 				FA72E76A1E64E72A00B14F4A /* BookingTableCellType.swift in Sources */,

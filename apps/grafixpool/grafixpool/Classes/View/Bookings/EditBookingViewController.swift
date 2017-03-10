@@ -115,13 +115,15 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         nextBarButtonItem.title = NSLocalizedString("next", comment: "")
-        deleteBarButtonItem.title = NSLocalizedString("delete-booking", comment: "")
+        deleteBarButtonItem.title = NSLocalizedString("cancel-booking", comment: "")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if (booking == nil) {
             booking = Booking(context: editingContext)
+        } else {
+            booking = editingContext.object(with: booking.objectID) as! Booking
         }
 
         if booking.isInserted {
@@ -146,9 +148,9 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
     }
 
     @IBAction func deleteBooking(_ sender: UIBarButtonItem) {
-        editingContext.delete(booking)
-        DataStore.store.save(editing: editingContext)
         #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
+            editingContext.delete(booking)
+            DataStore.store.save(editing: editingContext)
             self.dismiss(animated: true, completion: nil)
         #else
             send(email: .cancel)
@@ -268,11 +270,11 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
             switch type {
             case .inDate:
                 if let date = booking.inDate {
-                    return date.date
+                    return date as Date
                 }
             case .outDate:
                 if let date = booking.outDate {
-                    result = date.date
+                    result = date as Date
                 }
             default: break
             }
@@ -338,7 +340,6 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
         case .sent:
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: { (action) in
-                DataStore.store.save(editing: self.editingContext)
                 self.dismiss(animated: true, completion: nil)
             })
             alertController.addAction(ok)
@@ -350,7 +351,19 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
     private func send(email: BookingEmail) {
         let mailComposeViewController = configuredMailComposeViewController(email: email)
         if MFMailComposeViewController.canSendMail() {
-            self.present(mailComposeViewController, animated: true, completion: nil)
+            self.present(mailComposeViewController, animated: true, completion: {
+                switch email {
+                case .add:
+                    BookingNotification.add.processNotification(for: self.booking)
+                case .update:
+                    BookingNotification.update.processNotification(for: self.booking)
+                case .cancel:
+                    BookingNotification.cancel.processNotification(for: self.booking)
+                    self.editingContext.delete(self.booking)
+                }
+                DataStore.store.save(editing: self.editingContext)
+
+            })
         } else {
             self.showSendMailErrorAlert()
         }
@@ -378,6 +391,17 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
     }
 }
 
+struct BookingMessage {
+    let recipients = [NSLocalizedString("booking.email.recipient", comment: "")]
+    var subject: String
+    var body: String
+
+    init(subject: String, body: String) {
+        self.subject = subject
+        self.body = body
+    }
+}
+
 class DateCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
@@ -397,79 +421,5 @@ class DateCell: UITableViewCell {
             topDateLabel.text = date.format
             bottomDateLabel.text = date.inCETTimeZone.formatCET
         }
-    }
-}
-
-struct BookingMessage {
-    let recipients = [NSLocalizedString("email.booking.recipient", comment: "")]
-    var subject: String
-    var body: String
-
-    init(subject: String, body: String) {
-        self.subject = subject
-        self.body = body
-    }
-}
-
-enum BookingEmail {
-    case add, update, cancel
-
-    func bookingMessage(with booking: Booking) -> BookingMessage {
-        guard let bookingID = booking.bookingID else {
-            preconditionFailure("No booking ID")
-        }
-        var prefix: String
-        switch self {
-        case .add:
-            prefix = NSLocalizedString("email.booking.subject-new", comment: "")
-        case .update:
-            prefix = NSLocalizedString("email.booking.subject-update", comment: "")
-        case .cancel:
-            prefix = NSLocalizedString("email.booking.subject-cancel", comment: "")
-        }
-        let title = "\(prefix): \(bookingID)"
-        return BookingMessage(subject: title, body: emailBody(with: booking))
-    }
-
-    func emailBody(with booking: Booking) -> String {
-        let statusTitle = NSLocalizedString("status", comment: "")
-
-        let values = booking.jobTypeValues
-        let jobTypeValues = values.count > 0 ? booking.jobTypeValues.joined(separator: ", ") : nil
-
-        let body = formatBody(values: [
-            NSLocalizedString("booking.edit.booking-id", comment: ""): booking.bookingID,
-            NSLocalizedString("booking.edit.project", comment: ""): booking.project?.code,
-            NSLocalizedString("booking.edit.in", comment: ""): booking.inDate?.inCETTimeZone.format,
-            NSLocalizedString("booking.edit.out", comment: ""): booking.outDate?.inCETTimeZone.format,
-            NSLocalizedString("booking.edit.confidentiality", comment: ""): Confidentiality(rawValue: Int(booking.confidentiality))?.localizedName,
-            NSLocalizedString("booking.edit.job-type", comment: ""): jobTypeValues,
-            NSLocalizedString("booking.edit.notes", comment: ""): booking.notes
-            ]
-        )
-        switch self {
-        case .add:
-            let status = format(title: statusTitle, value: NSLocalizedString("email.booking.status-add", comment: ""))
-            return "\(status)\(body)"
-        case .update:
-            let status = format(title: statusTitle, value: NSLocalizedString("email.booking.status-update", comment: ""))
-            return "\(status)\(body)"
-        case .cancel:
-            let status = format(title: statusTitle, value: NSLocalizedString("email.booking.status-cancel", comment: ""))
-            return "\(status)\(body)"
-        }
-    }
-    private func format(title: String , value: String) -> String {
-        return "\(title): \(value)\n"
-    }
-    private func formatBody(values: [String: String?]) -> String {
-        var body = ""
-        let keys = values.keys.sorted()
-        for key in keys {
-            if let value = values[key] ?? nil {
-                body = "\(body)\(format(title: key, value: value))"
-            }
-        }
-        return body
     }
 }

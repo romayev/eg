@@ -40,6 +40,7 @@ class RecordsViewController: EGViewController, NSFetchedResultsControllerDelegat
         default: break
         }
     }
+
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
@@ -60,6 +61,8 @@ class RecordsViewController: EGViewController, NSFetchedResultsControllerDelegat
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
+        // FIXME:
+        tableView.reloadData()
         updateFetchState()
     }
 }

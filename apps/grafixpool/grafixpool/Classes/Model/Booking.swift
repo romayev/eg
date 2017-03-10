@@ -86,7 +86,18 @@ extension Booking {
             let records = try context.fetch(fetchRequest)
             return records.first
         } catch {
-            fatalError("Failed to fetch job types: \(error)")
+            fatalError("Failed to last booking: \(error)")
+        }
+    }
+    static func with(_ bookingID: String, context: NSManagedObjectContext) -> Booking? {
+        let fetchRequest: NSFetchRequest<Booking> = Booking.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "bookingID = %@", bookingID)
+        fetchRequest.fetchLimit = 1
+        do {
+            let records = try context.fetch(fetchRequest)
+            return records.first
+        } catch {
+            fatalError("Failed to fetch booking with bookingID: \(error)")
         }
     }
 }

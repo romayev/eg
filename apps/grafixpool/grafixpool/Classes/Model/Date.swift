@@ -9,22 +9,19 @@
 import Foundation
 
 extension NSDate {
-    var date: Date {
-        return Date(timeIntervalSinceReferenceDate: self.timeIntervalSinceReferenceDate)
-    }
     var format: String {
         let df = DateFormatter()
         df.dateStyle = .medium
         df.timeStyle = .short
         df.doesRelativeDateFormatting = true
-        return df.string(from: self.date)
+        return df.string(from: self as Date)
     }
     var formatCET: String {
         let df = DateFormatter()
         df.dateStyle = .medium
         df.timeStyle = .short
         df.doesRelativeDateFormatting = true
-        return "\(df.string(from: self.date)) (CET)"
+        return "\(df.string(from: self as Date)) (CET)"
     }
     var inCETTimeZone: NSDate {
         let current = TimeZone.current

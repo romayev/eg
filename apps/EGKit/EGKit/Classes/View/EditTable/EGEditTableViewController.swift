@@ -24,8 +24,35 @@ public enum EGEditCellType: String {
     }
 }
 
+public struct EGEditTableState {
+    public var activePath: IndexPath
+    public var editorPath: IndexPath { return IndexPath(item: activePath.row + 1, section: activePath.section) }
+    public func adjustedPath(forIndexPath indexPath: IndexPath) -> IndexPath {
+        if indexPath.section == editorPath.section && indexPath.row >= editorPath.row {
+            return IndexPath(item: indexPath.row - 1, section: indexPath.section)
+        }
+        return indexPath
+    }
+}
+
+public enum EGCollapseState {
+    case collapsed, edit(EGEditTableState)
+    func count(_ count: Int) -> Int {
+        switch self {
+        case .collapsed:
+            return count
+        case .edit(let info):
+            return count + 1
+        }
+    }
+}
+
+
 open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate, EGAddPickerEditCellDelegate, EGDatePickerEditCellDelegate, EGNotesEditCellDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet public var tableView: UITableView!
+
+    public var editState: EGEditTableState?
+    public var state: EGCollapseState = .collapsed
 
     // MARK: public vars
     public var editorPath: IndexPath?
@@ -48,16 +75,9 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
     open var count: Int { return 0 }
     open var cellType: EGEditCellType { return .dropDown }
 
-    open func initState() {
-    }
-
     // MARK: UITableViewDataSource & Delegate
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let editorSection = editorPath?.section {
-            let editor = section == editorSection ? 1 : 0
-            return count + editor
-        }
-        return count
+        return state.count(count)
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -121,6 +141,10 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
         var edit = false
         if let editorPath = self.editorPath {
             let activeCellPath = self.activePath
+
+            state = .collapsed
+            editState = nil
+
             self.editorPath = nil
             let cell = tableView.cellForRow(at: editorPath) as! EGEditCell
             cell.cellWillDie()
@@ -136,9 +160,13 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
 
         if edit {
             self.editorPath = IndexPath(item: row + 1, section: section)
-            if let editorPath = self.editorPath {
-                tableView.insertRows(at: [editorPath], with: .fade)
+            editState = EGEditTableState(activePath: self.activePath!)
+            if let editState = editState {
+                state = .edit(editState)
+                editorPath = editState.editorPath
+                tableView.insertRows(at: [editState.editorPath], with: .fade)
             }
+
             if let activeCellPath = self.activePath {
                 if (cellType == .notes) {
                     var inset = tableView.contentInset

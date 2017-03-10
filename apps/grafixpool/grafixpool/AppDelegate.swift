@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate, UNUserNotificationCenterDelegate {
     var window: UIWindow?
     var selectedTabIdx = 0
+    var tabBarController = UITabBarController()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -33,8 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         let font = UIFont(name: "Arial", size: 18.0) ?? UIFont.systemFont(ofSize: 18.0)
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: whiteColor, NSFontAttributeName: font]
 
-        let tabBarController: UITabBarController = window?.rootViewController as! UITabBarController;
+        tabBarController = window?.rootViewController as! UITabBarController;
         tabBarController.delegate = self
+
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+
+        let changeAction = UNNotificationAction(identifier: BookingNotification.update.rawValue, title: NSLocalizedString("edit-booking", comment: ""), options: [])
+        let cancelAction = UNNotificationAction(identifier: BookingNotification.cancel.rawValue, title: NSLocalizedString("cancel-booking", comment: ""), options: .destructive)
+        let category = UNNotificationCategory(identifier: "booking-actions", actions: [changeAction, cancelAction], intentIdentifiers: [], options: [])
+        center.setNotificationCategories([category])
 
         return true
     }
@@ -81,6 +91,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
                 }
             }
         }
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let bookingID = response.notification.request.identifier
+        if let booking = Booking.with(bookingID, context: DataStore.store.viewContext) {
+            switch response.actionIdentifier {
+            case UNNotificationDismissActionIdentifier:
+                break
+            case UNNotificationDefaultActionIdentifier:
+                print("Default")
+            case BookingNotification.update.rawValue:
+                tabBarController.selectedIndex = 0
+                if let navController = tabBarController.viewControllers?.first as? UINavigationController {
+                    navController.popViewController(animated: false)
+                    let bookingsViewController = navController.topViewController as? BookingsViewController
+                    bookingsViewController?.alertBooking = booking
+                }
+            case BookingNotification.cancel.rawValue:
+                print("Delete")
+            default:
+                break
+            }
+        }
+        
+        completionHandler()
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert,.sound])
     }
 }
 
