@@ -45,7 +45,7 @@
                                         <rect key="frame" x="0.0" y="8" width="320" height="15"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Slides" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="6qw-mm-evF" userLabel="Slides Header Label">
-                                                <rect key="frame" x="18" y="0.0" width="39" height="15"/>
+                                                <rect key="frame" x="16" y="0.0" width="39" height="15"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                                                 <color key="textColor" red="0.058823529409999999" green="0.098039215690000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                                             <constraint firstItem="7yP-mn-xpE" firstAttribute="leading" secondItem="tbx-09-DwC" secondAttribute="centerX" multiplier="1.15" id="Tlz-GY-EdV"/>
                                             <constraint firstAttribute="bottom" secondItem="6qw-mm-evF" secondAttribute="bottom" id="eZJ-K6-mSc"/>
                                             <constraint firstItem="BuV-wB-k6v" firstAttribute="top" secondItem="6qw-mm-evF" secondAttribute="top" id="g5R-KG-Kcc"/>
-                                            <constraint firstItem="6qw-mm-evF" firstAttribute="leading" secondItem="tbx-09-DwC" secondAttribute="leading" constant="18" id="yTE-T8-5jC"/>
+                                            <constraint firstItem="6qw-mm-evF" firstAttribute="leading" secondItem="tbx-09-DwC" secondAttribute="leading" constant="16" id="yTE-T8-5jC"/>
                                             <constraint firstItem="BuV-wB-k6v" firstAttribute="leading" secondItem="tbx-09-DwC" secondAttribute="centerX" multiplier="0.4" id="zsV-6f-9iP"/>
                                         </constraints>
                                     </view>
@@ -100,7 +100,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z19-PQ-7Bd">
-                                                    <rect key="frame" x="18" y="15" width="34" height="15"/>
+                                                    <rect key="frame" x="16" y="15" width="34" height="15"/>
                                                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                                                     <color key="textColor" red="0.31372549020000001" green="0.35294117650000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -108,7 +108,7 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.87450980392156863" green="0.90196078431372551" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="z19-PQ-7Bd" firstAttribute="leading" secondItem="rhj-CG-1IT" secondAttribute="leadingMargin" constant="10" id="Gez-Jy-BTy"/>
+                                                <constraint firstItem="z19-PQ-7Bd" firstAttribute="leading" secondItem="rhj-CG-1IT" secondAttribute="leadingMargin" constant="8" id="Gez-Jy-BTy"/>
                                                 <constraint firstItem="z19-PQ-7Bd" firstAttribute="centerY" secondItem="rhj-CG-1IT" secondAttribute="centerY" id="y28-1Y-dbb"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -120,15 +120,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDB-Tj-eSW" userLabel="Confidentiality View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="8" height="43"/>
-                                                    <color key="backgroundColor" red="0.39215686274509803" green="0.49019607843137253" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="8" id="XXi-1b-3DL"/>
-                                                    </constraints>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="rP5-X2-sIy">
-                                                    <rect key="frame" x="18" y="13" width="17" height="17"/>
+                                                    <rect key="frame" x="16" y="13" width="17" height="17"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                                     <color key="textColor" red="0.058823529409999999" green="0.098039215690000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -171,18 +164,15 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="QDB-Tj-eSW" firstAttribute="top" secondItem="kPx-sy-8ZZ" secondAttribute="top" id="21N-NB-jQr"/>
                                                 <constraint firstItem="qqs-7j-OEa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kCC-6b-hhJ" secondAttribute="trailing" constant="8" id="3jJ-Gw-9ii"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="I6z-ra-Ub6" secondAttribute="trailing" id="5IX-u0-kkU"/>
-                                                <constraint firstItem="rP5-X2-sIy" firstAttribute="leading" secondItem="kPx-sy-8ZZ" secondAttribute="leadingMargin" constant="10" id="5wa-r4-fz7"/>
-                                                <constraint firstAttribute="bottom" secondItem="QDB-Tj-eSW" secondAttribute="bottom" id="BFQ-pV-bmT"/>
+                                                <constraint firstItem="rP5-X2-sIy" firstAttribute="leading" secondItem="kPx-sy-8ZZ" secondAttribute="leadingMargin" constant="8" id="5wa-r4-fz7"/>
                                                 <constraint firstItem="nwR-Fi-fFs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fCM-WT-G5Z" secondAttribute="trailing" constant="8" id="DRY-sx-yfD"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="nwR-Fi-fFs" secondAttribute="trailing" id="DeA-md-J1e"/>
                                                 <constraint firstItem="fCM-WT-G5Z" firstAttribute="leading" secondItem="kCC-6b-hhJ" secondAttribute="leading" id="EF5-bF-dFN"/>
                                                 <constraint firstItem="I6z-ra-Ub6" firstAttribute="centerY" secondItem="YN8-yH-D9p" secondAttribute="centerY" id="IWf-fp-0l8"/>
                                                 <constraint firstItem="I6z-ra-Ub6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YN8-yH-D9p" secondAttribute="trailing" constant="8" id="Jcf-WN-d7X"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="qqs-7j-OEa" secondAttribute="trailing" id="OTG-y4-fpr"/>
-                                                <constraint firstItem="QDB-Tj-eSW" firstAttribute="leading" secondItem="kPx-sy-8ZZ" secondAttribute="leading" id="Pfq-k4-bAe"/>
                                                 <constraint firstItem="kCC-6b-hhJ" firstAttribute="centerY" secondItem="kPx-sy-8ZZ" secondAttribute="centerY" id="REb-gL-MLn"/>
                                                 <constraint firstItem="YN8-yH-D9p" firstAttribute="top" secondItem="fCM-WT-G5Z" secondAttribute="bottom" constant="2" id="aTr-5y-D88"/>
                                                 <constraint firstItem="YN8-yH-D9p" firstAttribute="leading" secondItem="kCC-6b-hhJ" secondAttribute="leading" id="du3-N2-Liq"/>
@@ -200,7 +190,6 @@
                                             <constraint firstItem="qqs-7j-OEa" firstAttribute="leading" secondItem="Sba-lI-eDd" secondAttribute="centerX" multiplier="1.15" id="KF5-i5-tI5"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="confidentialityView" destination="QDB-Tj-eSW" id="FZE-8U-LVg"/>
                                             <outlet property="inBottomLabel" destination="YN8-yH-D9p" id="hqX-3k-R0R"/>
                                             <outlet property="inLabel" destination="kCC-6b-hhJ" id="FBY-sI-Pst"/>
                                             <outlet property="inTopLabel" destination="fCM-WT-G5Z" id="feJ-ms-5H1"/>
@@ -419,7 +408,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter project code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OCv-tV-bSK">
-                                                                        <rect key="frame" x="30" y="6" width="315" height="30"/>
+                                                                        <rect key="frame" x="30" y="6" width="260" height="30"/>
                                                                         <color key="textColor" red="0.31372549020000001" green="0.35294117650000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -587,7 +576,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="muY-mL-zeE">
-                                                    <rect key="frame" x="8" y="8" width="359" height="199"/>
+                                                    <rect key="frame" x="8" y="8" width="304" height="199"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" red="0.31372549020000001" green="0.35294117650000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>

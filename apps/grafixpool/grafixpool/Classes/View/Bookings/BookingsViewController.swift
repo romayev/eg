@@ -191,7 +191,6 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     
     private func configure(cell: BookingCell, indexPath: IndexPath) {
         let booking = fetchedResultsController.object(at: indexPath)
-        cell.confidentialityView.backgroundColor = booking.confidentialityType.color
         cell.slidesLabel.text = String(booking.slideCount)
         if (isCurrentTimeZoneCET()) {
             for label in cell.singleTimeZoneLabels {
@@ -245,7 +244,6 @@ extension BookingsViewController: UNUserNotificationCenterDelegate {
 
 }
 class BookingCell: UITableViewCell {
-    @IBOutlet var confidentialityView: UIView!
     @IBOutlet var slidesLabel: UILabel!
     @IBOutlet var inLabel: UILabel!
     @IBOutlet var outLabel: UILabel!

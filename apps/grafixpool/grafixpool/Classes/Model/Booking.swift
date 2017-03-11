@@ -123,13 +123,6 @@ enum Confidentiality: Int {
     var coreDataValue: Int16 {
         return Int16(rawValue)
     }
-    var color: UIColor {
-        switch self {
-        case .restricted: return UIColor.Siemens.Traffic.green
-        case .confidential: return UIColor.Siemens.Traffic.yellow
-        case .strictlyConfidential: return UIColor.Siemens.Traffic.red
-        }
-    }
 
     static let defaultValue = Confidentiality.confidential
     static let all = [Confidentiality.restricted, Confidentiality.confidential, Confidentiality.strictlyConfidential]
