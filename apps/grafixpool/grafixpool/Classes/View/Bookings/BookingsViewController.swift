@@ -22,7 +22,7 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         var fromDate: NSDate? {
             switch self {
             case .recent:
-                return NSDate().byRemovingTime
+                return NSDate().removingTime
             default:
                 return nil
             }

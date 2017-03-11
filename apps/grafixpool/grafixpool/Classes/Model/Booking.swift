@@ -19,17 +19,17 @@ extension Booking {
         }
 
         if let nextHour = nextHourDate()?.timeIntervalSinceReferenceDate {
-            inDate = NSDate(timeIntervalSinceReferenceDate: nextHour)
+            if let last = Booking.last(managedObjectContext!) {
+                confidentiality = last.confidentiality
+                reminder = last.reminder
+                inDate = NSDate(timeIntervalSinceReferenceDate: nextHour).addingTimeInterval(reminder)
+            } else {
+                confidentiality = Confidentiality.defaultValue.coreDataValue
+                reminder = 3600
+                inDate = NSDate(timeIntervalSinceReferenceDate: nextHour)
+            }
             outDate = inDate
         }
-        if let last = Booking.last(managedObjectContext!) {
-            confidentiality = last.confidentiality
-            //reminder = last.reminder
-        } else {
-            confidentiality = Confidentiality.defaultValue.coreDataValue
-        }
-        reminder = 3600
-        slideCount = 0
         project = Project.last(context: managedObjectContext!)
     }
     var sectionIdentifier: String {

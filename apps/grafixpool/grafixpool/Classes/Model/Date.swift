@@ -16,7 +16,7 @@ extension NSDate {
         df.doesRelativeDateFormatting = true
         return df.string(from: self as Date)
     }
-    var byRemovingTime: NSDate {
+    var removingTime: NSDate {
         let calendar = NSCalendar.current
         let comps = calendar.dateComponents([.year, .month, .day], from: (self as Date))
         let date = calendar.date(from: comps)
