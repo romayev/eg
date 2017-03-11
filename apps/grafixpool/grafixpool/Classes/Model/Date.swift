@@ -16,6 +16,12 @@ extension NSDate {
         df.doesRelativeDateFormatting = true
         return df.string(from: self as Date)
     }
+    var byRemovingTime: NSDate {
+        let calendar = NSCalendar.current
+        let comps = calendar.dateComponents([.year, .month, .day], from: (self as Date))
+        let date = calendar.date(from: comps)
+        return date! as NSDate;
+    }
     var formatCET: String {
         let df = DateFormatter()
         df.dateStyle = .medium

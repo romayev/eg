@@ -22,7 +22,7 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         var fromDate: NSDate? {
             switch self {
             case .recent:
-                return NSDate().addingTimeInterval(-3600*24*2)
+                return NSDate().byRemovingTime
             default:
                 return nil
             }
@@ -55,9 +55,9 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     override func initializeFetchedResultsController() {
         let request: NSFetchRequest<Booking> = Booking.fetchRequest()
         if let fromDate = viewState.fromDate {
-            request.predicate = NSPredicate.init(format: "outDate >= %@", fromDate)
+            request.predicate = NSPredicate.init(format: "inDate >= %@", fromDate)
         }
-        let sort = NSSortDescriptor(key: "outDate", ascending: false)
+        let sort = NSSortDescriptor(key: "inDate", ascending: false)
         request.sortDescriptors = [sort]
         let frc = NSFetchedResultsController<Booking>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "sectionIdentifier", cacheName: nil)
         frc.delegate = self

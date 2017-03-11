@@ -35,7 +35,7 @@ extension Booking {
     var sectionIdentifier: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        return dateFormatter.string(from: outDate as! Date)
+        return dateFormatter.string(from: inDate as! Date)
     }
     private func nextHourDate() -> Date? {
         let calendar = NSCalendar.current
