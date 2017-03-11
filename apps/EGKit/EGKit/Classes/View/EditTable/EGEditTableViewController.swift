@@ -175,12 +175,14 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
                     UIView.animate(withDuration: 0.25, animations: { 
                         tableView.contentInset = inset
                     })
+                    self.navigationItem.leftBarButtonItem?.isEnabled = false
                 }
                 tableView.scrollToRow(at: activeCellPath, at: .none, animated: true)
             }
         } else {
             var inset = tableView.contentInset
             inset.top = 0
+            self.navigationItem.leftBarButtonItem?.isEnabled = true
             UIView.animate(withDuration: 0.25, animations: {
                 tableView.contentInset = inset
                 tableView.reloadRows(at: [indexPath], with: .none)
