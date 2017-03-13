@@ -41,6 +41,25 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
                 }
             }
         }
+        func save(_ c: BookingEditViewController) {
+            switch self {
+            case .add:
+                c.send(email: .add)
+            case .edit:
+                let alertController = UIAlertController(title: nil, message: NSLocalizedString("booking.email-update-message", comment: ""), preferredStyle: .alert)
+                let yes = UIAlertAction(title: NSLocalizedString(NSLocalizedString("yes", comment: ""), comment: ""), style: .default, handler: { (action) in
+                    c.send(email: .update)
+                })
+                let no = UIAlertAction(title: NSLocalizedString(NSLocalizedString("no", comment: ""), comment: ""), style: .default, handler: { (action) in
+                    self.dismiss(c)
+                })
+                alertController.addAction(yes)
+                alertController.addAction(no)
+                c.present(alertController, animated: true, completion: nil)
+            case .none:
+                fatalError("Invalid state")
+            }
+        }
     }
 
     // MARK: Outlets
@@ -100,11 +119,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             DataStore.store.save(editing: editingContext)
             viewState.dismiss(self)
         #else
-            if booking.isInserted {
-                send(email: .add)
-            } else if (editingContext.hasChanges) {
-                send(email: .update)
-            }
+            viewState.save(self)
         #endif
     }
 
@@ -336,7 +351,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         }
     }
 
-    private func send(email: BookingEmail) {
+    fileprivate func send(email: BookingEmail) {
         let mailComposeViewController = configuredMailComposeViewController(email: email)
         if MFMailComposeViewController.canSendMail() {
             self.present(mailComposeViewController, animated: true, completion: {

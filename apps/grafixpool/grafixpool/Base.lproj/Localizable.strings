@@ -12,11 +12,13 @@
 "enter-new" = "Enter New";
 "error" = "Error";
 "next" = "Next";
+"no" = "No";
 "no-bookings" = "There are no recent bookings";
 "none" = "None";
 "ok" = "OK";
 "reminder" = "Reminder";
 "status" = "Status";
+"yes" = "Yes";
 
 "booking.slides" = "Slides";
 "booking.in" = "IN";
@@ -55,6 +57,8 @@
 "confidentiality.strictly-confidential" = "Strictly Confidential";
 
 "booking.notification.body-prefix" = "Booking IN";
+
+"booking.email-update-message" = "Do you want to email these changes?";
 
 "booking.email.subject-new" = "New Booking";
 "booking.email.subject-update" = "Update Booking";
