@@ -13,7 +13,8 @@
 		FA6AEC101E5BED2B00222F9E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6AEC0D1E5BED2B00222F9E /* SearchViewController.swift */; };
 		FA6AEC121E5BED5B00222F9E /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6AEC111E5BED5B00222F9E /* ProductsViewController.swift */; };
 		FA6AEC151E5C8CE800222F9E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA6AEC131E5C8CE800222F9E /* Localizable.strings */; };
-		FA8916201E632B5A00F7FC88 /* EGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA89161F1E632B5A00F7FC88 /* EGKit.framework */; };
+		FA6B7BD01E772740005DAE67 /* EGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCF1E772740005DAE67 /* EGKit.framework */; };
+		FA6B7BD11E772740005DAE67 /* EGKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCF1E772740005DAE67 /* EGKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FAC253481E4D364F00E96896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC253471E4D364F00E96896 /* AppDelegate.swift */; };
 		FAC2534F1E4D364F00E96896 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC2534D1E4D364F00E96896 /* Main.storyboard */; };
 		FAC253511E4D365000E96896 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC253501E4D365000E96896 /* Assets.xcassets */; };
@@ -30,6 +31,20 @@
 		FAC2538D1E5B420900E96896 /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2538C1E5B420900E96896 /* ProductType.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FA6B7BD21E772740005DAE67 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA6B7BD11E772740005DAE67 /* EGKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FA29EB931E5E4232001DFE8C /* SearchCriteria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCriteria.swift; sourceTree = "<group>"; };
 		FA6AEC0B1E5BED2B00222F9E /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IndexViewController.swift; path = Products/IndexViewController.swift; sourceTree = "<group>"; };
@@ -37,7 +52,7 @@
 		FA6AEC0D1E5BED2B00222F9E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Products/SearchViewController.swift; sourceTree = "<group>"; };
 		FA6AEC111E5BED5B00222F9E /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsViewController.swift; path = Products/ProductsViewController.swift; sourceTree = "<group>"; };
 		FA6AEC141E5C8CE800222F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FA89161F1E632B5A00F7FC88 /* EGKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EGKit.framework; path = "../EGKit/build/Debug-iphoneos/EGKit.framework"; sourceTree = "<group>"; };
+		FA6B7BCF1E772740005DAE67 /* EGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC253441E4D364F00E96896 /* Ingredion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ingredion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC253471E4D364F00E96896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC2534E1E4D364F00E96896 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA8916201E632B5A00F7FC88 /* EGKit.framework in Frameworks */,
+				FA6B7BD01E772740005DAE67 /* EGKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +97,7 @@
 		FA89161E1E632B5A00F7FC88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FA89161F1E632B5A00F7FC88 /* EGKit.framework */,
+				FA6B7BCF1E772740005DAE67 /* EGKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -179,6 +194,7 @@
 				FAC253401E4D364F00E96896 /* Sources */,
 				FAC253411E4D364F00E96896 /* Frameworks */,
 				FAC253421E4D364F00E96896 /* Resources */,
+				FA6B7BD21E772740005DAE67 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

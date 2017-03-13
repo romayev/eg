@@ -7,42 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA5ACD621E75CBD300BDA5CA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5ACD611E75CBD300BDA5CA /* Person.swift */; };
-		FA72E74F1E64742200B14F4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA72E74E1E64742200B14F4A /* Assets.xcassets */; };
-		FA72E7521E647EC400B14F4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA72E7501E647EC400B14F4A /* Localizable.strings */; };
-		FA72E7541E6487F100B14F4A /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E7531E6487F100B14F4A /* Booking.swift */; };
-		FA72E75D1E64A6D800B14F4A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E75C1E64A6D800B14F4A /* Image.swift */; };
-		FA72E76A1E64E72A00B14F4A /* BookingTableCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E7691E64E72A00B14F4A /* BookingTableCellType.swift */; };
-		FA72E7791E67169200B14F4A /* EGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72E7781E67169200B14F4A /* EGKit.framework */; };
-		FA72E77A1E67169200B14F4A /* EGKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA72E7781E67169200B14F4A /* EGKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA737C8D1E633155003AA912 /* BookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA737C8B1E633155003AA912 /* BookingsViewController.swift */; };
-		FA737C8E1E633155003AA912 /* BookingEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA737C8C1E633155003AA912 /* BookingEditViewController.swift */; };
-		FA737C931E6331E3003AA912 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA737C921E6331E3003AA912 /* RecordsViewController.swift */; };
-		FA7E3F591E6C544A001122C5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E3F581E6C544A001122C5 /* Color.swift */; };
-		FA7E3F5B1E6C5AFE001122C5 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FA7E3F5A1E6C5AFE001122C5 /* Localizable.stringsdict */; };
-		FA8916021E62264C00F7FC88 /* grafixpool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA8916001E62264C00F7FC88 /* grafixpool.xcdatamodeld */; };
-		FA9743111E6136960075FF0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9743101E6136960075FF0A /* AppDelegate.swift */; };
-		FA9743151E6136960075FF0A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9743141E6136960075FF0A /* SecondViewController.swift */; };
-		FA9743181E6136960075FF0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9743161E6136960075FF0A /* Main.storyboard */; };
-		FA97431D1E6136970075FF0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA97431B1E6136970075FF0A /* LaunchScreen.storyboard */; };
-		FA97432B1E61E3900075FF0A /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97432A1E61E3900075FF0A /* DataStore.swift */; };
-		FA97436D1E6225BE0075FF0A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97436C1E6225BE0075FF0A /* Record.swift */; };
-		FADE1AFC1E6E5B2000F1CABC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE1AFB1E6E5B2000F1CABC /* Date.swift */; };
-		FADE1AFE1E72195E00F1CABC /* BookingNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE1AFD1E72195D00F1CABC /* BookingNotification.swift */; };
-		FADE1B001E7249D000F1CABC /* BookingEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE1AFF1E7249D000F1CABC /* BookingEmail.swift */; };
-		FADE1B021E744E7400F1CABC /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE1B011E744E7400F1CABC /* PersonViewController.swift */; };
-		FAE7384A1E6B2D4D00166E38 /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE738491E6B2D4D00166E38 /* JobType.swift */; };
-		FAE7384C1E6B313E00166E38 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7384B1E6B313E00166E38 /* Project.swift */; };
+		FA6B7B8B1E7723E4005DAE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7B8A1E7723E4005DAE67 /* AppDelegate.swift */; };
+		FA6B7B901E7723E4005DAE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7B8E1E7723E4005DAE67 /* Main.storyboard */; };
+		FA6B7B921E7723E4005DAE67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7B911E7723E4005DAE67 /* Assets.xcassets */; };
+		FA6B7B951E7723E4005DAE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7B931E7723E4005DAE67 /* LaunchScreen.storyboard */; };
+		FA6B7BB11E7724D0005DAE67 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7B9E1E7724D0005DAE67 /* Booking.swift */; };
+		FA6B7BB21E7724D0005DAE67 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7B9F1E7724D0005DAE67 /* DataStore.swift */; };
+		FA6B7BB31E7724D0005DAE67 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BA01E7724D0005DAE67 /* Date.swift */; };
+		FA6B7BB41E7724D0005DAE67 /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BA11E7724D0005DAE67 /* JobType.swift */; };
+		FA6B7BB51E7724D0005DAE67 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BA21E7724D0005DAE67 /* Person.swift */; };
+		FA6B7BB61E7724D0005DAE67 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BA31E7724D0005DAE67 /* Project.swift */; };
+		FA6B7BB71E7724D0005DAE67 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BA41E7724D0005DAE67 /* Record.swift */; };
+		FA6B7BB81E7724D0005DAE67 /* BookingEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BA71E7724D0005DAE67 /* BookingEditViewController.swift */; };
+		FA6B7BB91E7724D0005DAE67 /* BookingEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BA81E7724D0005DAE67 /* BookingEmail.swift */; };
+		FA6B7BBA1E7724D0005DAE67 /* BookingNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BA91E7724D0005DAE67 /* BookingNotification.swift */; };
+		FA6B7BBB1E7724D0005DAE67 /* BookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAA1E7724D0005DAE67 /* BookingsViewController.swift */; };
+		FA6B7BBC1E7724D0005DAE67 /* BookingTableCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAB1E7724D0005DAE67 /* BookingTableCellType.swift */; };
+		FA6B7BBD1E7724D0005DAE67 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAC1E7724D0005DAE67 /* PersonViewController.swift */; };
+		FA6B7BBE1E7724D0005DAE67 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAE1E7724D0005DAE67 /* Color.swift */; };
+		FA6B7BBF1E7724D0005DAE67 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAF1E7724D0005DAE67 /* Image.swift */; };
+		FA6B7BC01E7724D0005DAE67 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BB01E7724D0005DAE67 /* RecordsViewController.swift */; };
+		FA6B7BC31E7724DC005DAE67 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7BC11E7724DC005DAE67 /* Localizable.stringsdict */; };
+		FA6B7BC41E7724DC005DAE67 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BC21E7724DC005DAE67 /* SecondViewController.swift */; };
+		FA6B7BC71E7724F2005DAE67 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7BC51E7724F2005DAE67 /* Localizable.strings */; };
+		FA6B7BCA1E7726B3005DAE67 /* grafixpool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BC81E7726B3005DAE67 /* grafixpool.xcdatamodeld */; };
+		FA6B7BCC1E7726E8005DAE67 /* EGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */; };
+		FA6B7BCD1E7726E8005DAE67 /* EGKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FA72E77B1E67169200B14F4A /* Embed Frameworks */ = {
+		FA6B7BCE1E7726E8005DAE67 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FA72E77A1E67169200B14F4A /* EGKit.framework in Embed Frameworks */,
+				FA6B7BCD1E7726E8005DAE67 /* EGKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,161 +50,147 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FA5ACD611E75CBD300BDA5CA /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		FA72E74E1E64742200B14F4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FA72E7511E647EC400B14F4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
-		FA72E7531E6487F100B14F4A /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Booking.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		FA72E75A1E64A60D00B14F4A /* EGKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EGKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ExecutiveGraphics-fixomzzdwbovqudtwltjuvgeixqy/Build/Products/Debug-iphonesimulator/EGKit.framework"; sourceTree = "<group>"; };
-		FA72E75C1E64A6D800B14F4A /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		FA72E7691E64E72A00B14F4A /* BookingTableCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingTableCellType.swift; sourceTree = "<group>"; };
-		FA72E7781E67169200B14F4A /* EGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA737C8B1E633155003AA912 /* BookingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BookingsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		FA737C8C1E633155003AA912 /* BookingEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BookingEditViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		FA737C921E6331E3003AA912 /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
-		FA7E3F581E6C544A001122C5 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		FA7E3F5A1E6C5AFE001122C5 /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
-		FA8916011E62264C00F7FC88 /* grafixpool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = grafixpool.xcdatamodel; sourceTree = "<group>"; };
-		FA97430D1E6136960075FF0A /* grafixpool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grafixpool.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA9743101E6136960075FF0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FA9743141E6136960075FF0A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		FA9743171E6136960075FF0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FA97431C1E6136970075FF0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FA97431E1E6136970075FF0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA97432A1E61E3900075FF0A /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		FA9743381E61F6340075FF0A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		FA97436C1E6225BE0075FF0A /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
-		FADE1AFB1E6E5B2000F1CABC /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		FADE1AFD1E72195D00F1CABC /* BookingNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingNotification.swift; sourceTree = "<group>"; };
-		FADE1AFF1E7249D000F1CABC /* BookingEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingEmail.swift; sourceTree = "<group>"; };
-		FADE1B011E744E7400F1CABC /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
-		FAE738491E6B2D4D00166E38 /* JobType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobType.swift; sourceTree = "<group>"; };
-		FAE7384B1E6B313E00166E38 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		FA6B7B871E7723E4005DAE67 /* grafixpool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grafixpool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA6B7B8A1E7723E4005DAE67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA6B7B8F1E7723E4005DAE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA6B7B911E7723E4005DAE67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA6B7B941E7723E4005DAE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA6B7B961E7723E4005DAE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA6B7B9E1E7724D0005DAE67 /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
+		FA6B7B9F1E7724D0005DAE67 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		FA6B7BA01E7724D0005DAE67 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		FA6B7BA11E7724D0005DAE67 /* JobType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobType.swift; sourceTree = "<group>"; };
+		FA6B7BA21E7724D0005DAE67 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		FA6B7BA31E7724D0005DAE67 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		FA6B7BA41E7724D0005DAE67 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		FA6B7BA71E7724D0005DAE67 /* BookingEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingEditViewController.swift; sourceTree = "<group>"; };
+		FA6B7BA81E7724D0005DAE67 /* BookingEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingEmail.swift; sourceTree = "<group>"; };
+		FA6B7BA91E7724D0005DAE67 /* BookingNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingNotification.swift; sourceTree = "<group>"; };
+		FA6B7BAA1E7724D0005DAE67 /* BookingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingsViewController.swift; sourceTree = "<group>"; };
+		FA6B7BAB1E7724D0005DAE67 /* BookingTableCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingTableCellType.swift; sourceTree = "<group>"; };
+		FA6B7BAC1E7724D0005DAE67 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		FA6B7BAE1E7724D0005DAE67 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		FA6B7BAF1E7724D0005DAE67 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		FA6B7BB01E7724D0005DAE67 /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		FA6B7BC11E7724DC005DAE67 /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; name = Localizable.stringsdict; path = grafixpool/Localizable.stringsdict; sourceTree = SOURCE_ROOT; };
+		FA6B7BC21E7724DC005DAE67 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = grafixpool/SecondViewController.swift; sourceTree = SOURCE_ROOT; };
+		FA6B7BC61E7724F2005DAE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA6B7BC91E7726B3005DAE67 /* grafixpool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = grafixpool.xcdatamodel; sourceTree = "<group>"; };
+		FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FA97430A1E6136960075FF0A /* Frameworks */ = {
+		FA6B7B841E7723E4005DAE67 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA72E7791E67169200B14F4A /* EGKit.framework in Frameworks */,
+				FA6B7BCC1E7726E8005DAE67 /* EGKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FA737C8A1E633155003AA912 /* Bookings */ = {
+		FA6B7B7E1E7723E4005DAE67 = {
 			isa = PBXGroup;
 			children = (
-				FA737C8B1E633155003AA912 /* BookingsViewController.swift */,
-				FA737C8C1E633155003AA912 /* BookingEditViewController.swift */,
-				FA72E7691E64E72A00B14F4A /* BookingTableCellType.swift */,
-				FADE1AFD1E72195D00F1CABC /* BookingNotification.swift */,
-				FADE1AFF1E7249D000F1CABC /* BookingEmail.swift */,
-				FADE1B011E744E7400F1CABC /* PersonViewController.swift */,
-			);
-			path = Bookings;
-			sourceTree = "<group>";
-		};
-		FA737C911E6331E3003AA912 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				FA737C921E6331E3003AA912 /* RecordsViewController.swift */,
-				FA72E75C1E64A6D800B14F4A /* Image.swift */,
-				FA7E3F581E6C544A001122C5 /* Color.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		FA9743041E6136960075FF0A = {
-			isa = PBXGroup;
-			children = (
-				FA97430F1E6136960075FF0A /* grafixpool */,
-				FA97430E1E6136960075FF0A /* Products */,
-				FA9743371E61F6340075FF0A /* Frameworks */,
+				FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */,
+				FA6B7B891E7723E4005DAE67 /* grafixpool */,
+				FA6B7B881E7723E4005DAE67 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		FA97430E1E6136960075FF0A /* Products */ = {
+		FA6B7B881E7723E4005DAE67 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA97430D1E6136960075FF0A /* grafixpool.app */,
+				FA6B7B871E7723E4005DAE67 /* grafixpool.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FA97430F1E6136960075FF0A /* grafixpool */ = {
+		FA6B7B891E7723E4005DAE67 /* grafixpool */ = {
 			isa = PBXGroup;
 			children = (
-				FA9743271E61E33A0075FF0A /* Classes */,
-				FA9743101E6136960075FF0A /* AppDelegate.swift */,
-				FA9743141E6136960075FF0A /* SecondViewController.swift */,
-				FA9743161E6136960075FF0A /* Main.storyboard */,
-				FA72E7501E647EC400B14F4A /* Localizable.strings */,
-				FA7E3F5A1E6C5AFE001122C5 /* Localizable.stringsdict */,
-				FA8916001E62264C00F7FC88 /* grafixpool.xcdatamodeld */,
-				FA97431B1E6136970075FF0A /* LaunchScreen.storyboard */,
-				FA72E74E1E64742200B14F4A /* Assets.xcassets */,
-				FA97431E1E6136970075FF0A /* Info.plist */,
+				FA6B7B9C1E7724D0005DAE67 /* Classes */,
+				FA6B7B8A1E7723E4005DAE67 /* AppDelegate.swift */,
+				FA6B7B8E1E7723E4005DAE67 /* Main.storyboard */,
+				FA6B7B931E7723E4005DAE67 /* LaunchScreen.storyboard */,
+				FA6B7B911E7723E4005DAE67 /* Assets.xcassets */,
+				FA6B7BC81E7726B3005DAE67 /* grafixpool.xcdatamodeld */,
+				FA6B7BC51E7724F2005DAE67 /* Localizable.strings */,
+				FA6B7BC11E7724DC005DAE67 /* Localizable.stringsdict */,
+				FA6B7B961E7723E4005DAE67 /* Info.plist */,
 			);
 			path = grafixpool;
 			sourceTree = "<group>";
 		};
-		FA9743271E61E33A0075FF0A /* Classes */ = {
+		FA6B7B9C1E7724D0005DAE67 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FA9743281E61E3780075FF0A /* Model */,
-				FA9743291E61E3780075FF0A /* View */,
+				FA6B7BC21E7724DC005DAE67 /* SecondViewController.swift */,
+				FA6B7B9D1E7724D0005DAE67 /* Model */,
+				FA6B7BA51E7724D0005DAE67 /* View */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		FA9743281E61E3780075FF0A /* Model */ = {
+		FA6B7B9D1E7724D0005DAE67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FADE1AFB1E6E5B2000F1CABC /* Date.swift */,
-				FA97432A1E61E3900075FF0A /* DataStore.swift */,
-				FA97436C1E6225BE0075FF0A /* Record.swift */,
-				FA72E7531E6487F100B14F4A /* Booking.swift */,
-				FAE738491E6B2D4D00166E38 /* JobType.swift */,
-				FAE7384B1E6B313E00166E38 /* Project.swift */,
-				FA5ACD611E75CBD300BDA5CA /* Person.swift */,
+				FA6B7B9E1E7724D0005DAE67 /* Booking.swift */,
+				FA6B7B9F1E7724D0005DAE67 /* DataStore.swift */,
+				FA6B7BA01E7724D0005DAE67 /* Date.swift */,
+				FA6B7BA11E7724D0005DAE67 /* JobType.swift */,
+				FA6B7BA21E7724D0005DAE67 /* Person.swift */,
+				FA6B7BA31E7724D0005DAE67 /* Project.swift */,
+				FA6B7BA41E7724D0005DAE67 /* Record.swift */,
 			);
-			name = Model;
-			path = Classes/Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		FA9743291E61E3780075FF0A /* View */ = {
+		FA6B7BA51E7724D0005DAE67 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FA737C911E6331E3003AA912 /* Common */,
-				FA737C8A1E633155003AA912 /* Bookings */,
+				FA6B7BA61E7724D0005DAE67 /* Bookings */,
+				FA6B7BAD1E7724D0005DAE67 /* Common */,
 			);
-			name = View;
-			path = Classes/View;
+			path = View;
 			sourceTree = "<group>";
 		};
-		FA9743371E61F6340075FF0A /* Frameworks */ = {
+		FA6B7BA61E7724D0005DAE67 /* Bookings */ = {
 			isa = PBXGroup;
 			children = (
-				FA72E7781E67169200B14F4A /* EGKit.framework */,
-				FA72E75A1E64A60D00B14F4A /* EGKit.framework */,
-				FA9743381E61F6340075FF0A /* CoreData.framework */,
+				FA6B7BA71E7724D0005DAE67 /* BookingEditViewController.swift */,
+				FA6B7BA81E7724D0005DAE67 /* BookingEmail.swift */,
+				FA6B7BA91E7724D0005DAE67 /* BookingNotification.swift */,
+				FA6B7BAA1E7724D0005DAE67 /* BookingsViewController.swift */,
+				FA6B7BAB1E7724D0005DAE67 /* BookingTableCellType.swift */,
+				FA6B7BAC1E7724D0005DAE67 /* PersonViewController.swift */,
 			);
-			name = Frameworks;
+			path = Bookings;
+			sourceTree = "<group>";
+		};
+		FA6B7BAD1E7724D0005DAE67 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FA6B7BAE1E7724D0005DAE67 /* Color.swift */,
+				FA6B7BAF1E7724D0005DAE67 /* Image.swift */,
+				FA6B7BB01E7724D0005DAE67 /* RecordsViewController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FA97430C1E6136960075FF0A /* grafixpool */ = {
+		FA6B7B861E7723E4005DAE67 /* grafixpool */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA9743211E6136970075FF0A /* Build configuration list for PBXNativeTarget "grafixpool" */;
+			buildConfigurationList = FA6B7B991E7723E4005DAE67 /* Build configuration list for PBXNativeTarget "grafixpool" */;
 			buildPhases = (
-				FA9743091E6136960075FF0A /* Sources */,
-				FA97430A1E6136960075FF0A /* Frameworks */,
-				FA97430B1E6136960075FF0A /* Resources */,
-				FA72E77B1E67169200B14F4A /* Embed Frameworks */,
+				FA6B7B831E7723E4005DAE67 /* Sources */,
+				FA6B7B841E7723E4005DAE67 /* Frameworks */,
+				FA6B7B851E7723E4005DAE67 /* Resources */,
+				FA6B7BCE1E7726E8005DAE67 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,27 +198,27 @@
 			);
 			name = grafixpool;
 			productName = grafixpool;
-			productReference = FA97430D1E6136960075FF0A /* grafixpool.app */;
+			productReference = FA6B7B871E7723E4005DAE67 /* grafixpool.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FA9743051E6136960075FF0A /* Project object */ = {
+		FA6B7B7F1E7723E4005DAE67 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Executive Graphics";
 				TargetAttributes = {
-					FA97430C1E6136960075FF0A = {
+					FA6B7B861E7723E4005DAE67 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = MZT79G64Z7;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = FA9743081E6136960075FF0A /* Build configuration list for PBXProject "grafixpool" */;
+			buildConfigurationList = FA6B7B821E7723E4005DAE67 /* Build configuration list for PBXProject "grafixpool" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -240,89 +226,89 @@
 				en,
 				Base,
 			);
-			mainGroup = FA9743041E6136960075FF0A;
-			productRefGroup = FA97430E1E6136960075FF0A /* Products */;
+			mainGroup = FA6B7B7E1E7723E4005DAE67;
+			productRefGroup = FA6B7B881E7723E4005DAE67 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FA97430C1E6136960075FF0A /* grafixpool */,
+				FA6B7B861E7723E4005DAE67 /* grafixpool */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FA97430B1E6136960075FF0A /* Resources */ = {
+		FA6B7B851E7723E4005DAE67 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA97431D1E6136970075FF0A /* LaunchScreen.storyboard in Resources */,
-				FA72E7521E647EC400B14F4A /* Localizable.strings in Resources */,
-				FA72E74F1E64742200B14F4A /* Assets.xcassets in Resources */,
-				FA7E3F5B1E6C5AFE001122C5 /* Localizable.stringsdict in Resources */,
-				FA9743181E6136960075FF0A /* Main.storyboard in Resources */,
+				FA6B7BC71E7724F2005DAE67 /* Localizable.strings in Resources */,
+				FA6B7B951E7723E4005DAE67 /* LaunchScreen.storyboard in Resources */,
+				FA6B7BC31E7724DC005DAE67 /* Localizable.stringsdict in Resources */,
+				FA6B7B921E7723E4005DAE67 /* Assets.xcassets in Resources */,
+				FA6B7B901E7723E4005DAE67 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FA9743091E6136960075FF0A /* Sources */ = {
+		FA6B7B831E7723E4005DAE67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA97436D1E6225BE0075FF0A /* Record.swift in Sources */,
-				FADE1AFC1E6E5B2000F1CABC /* Date.swift in Sources */,
-				FA72E7541E6487F100B14F4A /* Booking.swift in Sources */,
-				FA9743151E6136960075FF0A /* SecondViewController.swift in Sources */,
-				FADE1AFE1E72195E00F1CABC /* BookingNotification.swift in Sources */,
-				FA737C8D1E633155003AA912 /* BookingsViewController.swift in Sources */,
-				FA97432B1E61E3900075FF0A /* DataStore.swift in Sources */,
-				FAE7384C1E6B313E00166E38 /* Project.swift in Sources */,
-				FA9743111E6136960075FF0A /* AppDelegate.swift in Sources */,
-				FA8916021E62264C00F7FC88 /* grafixpool.xcdatamodeld in Sources */,
-				FA737C8E1E633155003AA912 /* BookingEditViewController.swift in Sources */,
-				FA7E3F591E6C544A001122C5 /* Color.swift in Sources */,
-				FA737C931E6331E3003AA912 /* RecordsViewController.swift in Sources */,
-				FADE1B001E7249D000F1CABC /* BookingEmail.swift in Sources */,
-				FA5ACD621E75CBD300BDA5CA /* Person.swift in Sources */,
-				FAE7384A1E6B2D4D00166E38 /* JobType.swift in Sources */,
-				FA72E75D1E64A6D800B14F4A /* Image.swift in Sources */,
-				FA72E76A1E64E72A00B14F4A /* BookingTableCellType.swift in Sources */,
-				FADE1B021E744E7400F1CABC /* PersonViewController.swift in Sources */,
+				FA6B7BBA1E7724D0005DAE67 /* BookingNotification.swift in Sources */,
+				FA6B7BB91E7724D0005DAE67 /* BookingEmail.swift in Sources */,
+				FA6B7BBB1E7724D0005DAE67 /* BookingsViewController.swift in Sources */,
+				FA6B7BB51E7724D0005DAE67 /* Person.swift in Sources */,
+				FA6B7B8B1E7723E4005DAE67 /* AppDelegate.swift in Sources */,
+				FA6B7BB41E7724D0005DAE67 /* JobType.swift in Sources */,
+				FA6B7BB81E7724D0005DAE67 /* BookingEditViewController.swift in Sources */,
+				FA6B7BCA1E7726B3005DAE67 /* grafixpool.xcdatamodeld in Sources */,
+				FA6B7BB21E7724D0005DAE67 /* DataStore.swift in Sources */,
+				FA6B7BBE1E7724D0005DAE67 /* Color.swift in Sources */,
+				FA6B7BBF1E7724D0005DAE67 /* Image.swift in Sources */,
+				FA6B7BB11E7724D0005DAE67 /* Booking.swift in Sources */,
+				FA6B7BB61E7724D0005DAE67 /* Project.swift in Sources */,
+				FA6B7BC41E7724DC005DAE67 /* SecondViewController.swift in Sources */,
+				FA6B7BC01E7724D0005DAE67 /* RecordsViewController.swift in Sources */,
+				FA6B7BB71E7724D0005DAE67 /* Record.swift in Sources */,
+				FA6B7BB31E7724D0005DAE67 /* Date.swift in Sources */,
+				FA6B7BBC1E7724D0005DAE67 /* BookingTableCellType.swift in Sources */,
+				FA6B7BBD1E7724D0005DAE67 /* PersonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FA72E7501E647EC400B14F4A /* Localizable.strings */ = {
+		FA6B7B8E1E7723E4005DAE67 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FA72E7511E647EC400B14F4A /* Base */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		FA9743161E6136960075FF0A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA9743171E6136960075FF0A /* Base */,
+				FA6B7B8F1E7723E4005DAE67 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		FA97431B1E6136970075FF0A /* LaunchScreen.storyboard */ = {
+		FA6B7B931E7723E4005DAE67 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FA97431C1E6136970075FF0A /* Base */,
+				FA6B7B941E7723E4005DAE67 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FA6B7BC51E7724F2005DAE67 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA6B7BC61E7724F2005DAE67 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FA97431F1E6136970075FF0A /* Debug */ = {
+		FA6B7B971E7723E4005DAE67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -368,11 +354,10 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		FA9743201E6136970075FF0A /* Release */ = {
+		FA6B7B981E7723E4005DAE67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -410,12 +395,11 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		FA9743221E6136970075FF0A /* Debug */ = {
+		FA6B7B9A1E7723E4005DAE67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -425,11 +409,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.executivegraphics.grafixpool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		FA9743231E6136970075FF0A /* Release */ = {
+		FA6B7B9B1E7723E4005DAE67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -439,27 +422,26 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.executivegraphics.grafixpool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA9743081E6136960075FF0A /* Build configuration list for PBXProject "grafixpool" */ = {
+		FA6B7B821E7723E4005DAE67 /* Build configuration list for PBXProject "grafixpool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA97431F1E6136970075FF0A /* Debug */,
-				FA9743201E6136970075FF0A /* Release */,
+				FA6B7B971E7723E4005DAE67 /* Debug */,
+				FA6B7B981E7723E4005DAE67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA9743211E6136970075FF0A /* Build configuration list for PBXNativeTarget "grafixpool" */ = {
+		FA6B7B991E7723E4005DAE67 /* Build configuration list for PBXNativeTarget "grafixpool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA9743221E6136970075FF0A /* Debug */,
-				FA9743231E6136970075FF0A /* Release */,
+				FA6B7B9A1E7723E4005DAE67 /* Debug */,
+				FA6B7B9B1E7723E4005DAE67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -467,17 +449,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FA8916001E62264C00F7FC88 /* grafixpool.xcdatamodeld */ = {
+		FA6B7BC81E7726B3005DAE67 /* grafixpool.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FA8916011E62264C00F7FC88 /* grafixpool.xcdatamodel */,
+				FA6B7BC91E7726B3005DAE67 /* grafixpool.xcdatamodel */,
 			);
-			currentVersion = FA8916011E62264C00F7FC88 /* grafixpool.xcdatamodel */;
+			currentVersion = FA6B7BC91E7726B3005DAE67 /* grafixpool.xcdatamodel */;
 			path = grafixpool.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = FA9743051E6136960075FF0A /* Project object */;
+	rootObject = FA6B7B7F1E7723E4005DAE67 /* Project object */;
 }

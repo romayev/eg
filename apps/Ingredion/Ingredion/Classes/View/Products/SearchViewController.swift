@@ -37,7 +37,7 @@ class SearchViewController : EGEditTableViewController, ProductsViewControllerDe
 
     // MARK: EGEditDropDownCellDelegate - vars
     override var itemsForEditCell: [String]? {
-        guard let activeRow = activeCellPath?.row else  {
+        guard let activeRow = activePath?.row else  {
             print("ERROR: Active cell undefined")
             return nil
         }
@@ -45,7 +45,7 @@ class SearchViewController : EGEditTableViewController, ProductsViewControllerDe
         return productType.dropDownValuesFor(attribute: attribute, in: searchCriteria)
     }
     override var selectedItemsForEditCell: [String]? {
-        guard let activeCellPath = self.activeCellPath else {
+        guard let activeCellPath = self.activePath else {
             return nil
         }
         if let selectedValues = searchCriteria.valuesForAttributeAtIndex(activeCellPath.row) {
@@ -98,10 +98,10 @@ class SearchViewController : EGEditTableViewController, ProductsViewControllerDe
         tableView.reloadData()
     }
 
-    override func cellFor(_ row: Int, at indexPath: IndexPath) -> UITableViewCell {
+    override func cell(atAdjusted indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = NSLocalizedString(productType.module + ".search.title.\(row)", comment: "")
-        cell.detailTextLabel?.text = self.descriptionForRow(row)
+        cell.textLabel?.text = NSLocalizedString(productType.module + ".search.title.\(indexPath.row)", comment: "")
+        cell.detailTextLabel?.text = self.descriptionForRow(indexPath.row)
         if (isCellEnabledAt(indexPath: indexPath)) {
             cell.textLabel?.alpha = 1.0
             cell.detailTextLabel?.alpha = 1.0
@@ -116,7 +116,7 @@ class SearchViewController : EGEditTableViewController, ProductsViewControllerDe
 
     // MARK: EGEditDropDownCellDelegate - funcs
     override func editCellDidSelectValue(_ value: String, at index: Int) {
-        if let activeCellPath = self.activeCellPath {
+        if let activeCellPath = self.activePath {
             let attribute = productType.searchAttributes[activeCellPath.row]
             searchCriteria.toggleValueForAttribute(attribute, value: value)
             if (productType == .beverages && activeCellPath.row == 1 && value == SearchCriteria.ALL()) {
@@ -138,7 +138,7 @@ class SearchViewController : EGEditTableViewController, ProductsViewControllerDe
     // MARK: Private
     private func reloadAllRows(row: Int) -> Bool {
         var reloadAll = false
-        if let activeCellRow = activeCellPath?.row {
+        if let activeCellRow = activePath?.row {
             if (productType == .beverages && activeCellRow == 1) { // Segment
                 if searchCriteria.valuesForAttributeAtIndex(activeCellRow) == nil { // Segment not selected
                     reloadAll = true

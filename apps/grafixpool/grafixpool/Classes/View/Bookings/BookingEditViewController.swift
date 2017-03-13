@@ -24,7 +24,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             case .add:
                 c.toolbar.isHidden = true
                 c.navigationItem.title = NSLocalizedString("add-booking", comment: "")
-                c.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+                c.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .cancel, target: c, action: #selector(cancel))
             case .edit:
                 c.navigationItem.title = NSLocalizedString("edit-booking", comment: "")
             case .none:
@@ -35,10 +35,12 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             switch self {
             case .add:
                 c.dismiss(animated: true, completion: nil)
-            default:
+            case .edit:
                 if let navigationController = c.navigationController {
                     navigationController.popViewController(animated: true)
                 }
+            case .none:
+                fatalError("Invalid state")
             }
         }
         func save(_ c: BookingEditViewController) {
