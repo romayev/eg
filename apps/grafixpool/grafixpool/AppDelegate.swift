@@ -13,7 +13,7 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
     var window: UIWindow?
     var selectedTabIdx = 0
-    var tabBarController = UITabBarController()
+    var tabBarController = TabBarController()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -32,15 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         let font = UIFont(name: "Arial", size: 18.0) ?? UIFont.systemFont(ofSize: 18.0)
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: whiteColor, NSFontAttributeName: font]
 
-        tabBarController = window?.rootViewController as! UITabBarController;
+        tabBarController = window?.rootViewController as! TabBarController;
         tabBarController.delegate = self
 
         let center = UNUserNotificationCenter.current()
-        if let navController = tabBarController.viewControllers?.first as? UINavigationController {
-            if let bookingsViewController = navController.topViewController as? BookingsViewController {
-                center.delegate = bookingsViewController
-            }
-        }
+        center.delegate = tabBarController
 
         let changeAction = UNNotificationAction(identifier: BookingNotification.update.rawValue, title: NSLocalizedString("edit-booking", comment: ""), options: [.foreground])
         let cancelAction = UNNotificationAction(identifier: BookingNotification.cancel.rawValue, title: NSLocalizedString("cancel-booking", comment: ""), options: .foreground)
@@ -94,4 +90,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         }
     }
 }
+
+
 

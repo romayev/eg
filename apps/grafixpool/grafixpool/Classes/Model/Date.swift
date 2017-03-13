@@ -11,7 +11,7 @@ import Foundation
 extension NSDate {
     var format: String {
         let df = DateFormatter()
-        df.dateStyle = .medium
+        df.dateStyle = .short
         df.timeStyle = .short
         df.doesRelativeDateFormatting = true
         return df.string(from: self as Date)
@@ -24,7 +24,7 @@ extension NSDate {
     }
     var formatCET: String {
         let df = DateFormatter()
-        df.dateStyle = .medium
+        df.dateStyle = .short
         df.timeStyle = .short
         df.doesRelativeDateFormatting = true
         return "\(df.string(from: self as Date)) (CET)"

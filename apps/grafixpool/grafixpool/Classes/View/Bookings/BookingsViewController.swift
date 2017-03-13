@@ -212,33 +212,6 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     }
 }
 
-extension BookingsViewController: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let bookingID = response.notification.request.identifier
-        if let booking = Booking.with(bookingID, context: DataStore.store.viewContext) {
-            switch response.actionIdentifier {
-            case UNNotificationDismissActionIdentifier:
-                break
-            case UNNotificationDefaultActionIdentifier:
-                print("Default")
-            case BookingNotification.update.rawValue:
-                self.alertBooking = booking
-                performSegue(withIdentifier: .edit, sender: nil)
-            case BookingNotification.cancel.rawValue:
-                print("Delete")
-            default:
-                break
-            }
-        }
-
-        completionHandler()
-    }
-
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert,.sound])
-    }
-
-}
 class BookingCell: UITableViewCell {
     @IBOutlet var slidesLabel: UILabel!
     @IBOutlet var inLabel: UILabel!

@@ -41,7 +41,7 @@ public enum EGCollapseState {
         switch self {
         case .collapsed:
             return count
-        case .edit(let info):
+        case .edit(_):
             return count + 1
         }
     }

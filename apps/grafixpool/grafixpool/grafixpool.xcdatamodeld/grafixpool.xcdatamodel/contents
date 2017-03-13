@@ -9,8 +9,8 @@
         <attribute name="reminder" optional="YES" attributeType="Double" defaultValueString="3600" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="slideCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="jobTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="JobType" inverseName="bookings" inverseEntity="JobType" syncable="YES"/>
-        <relationship name="project" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Project" inverseName="bookings" inverseEntity="Project" syncable="YES"/>
-        <relationship name="requestedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="bookings" inverseEntity="Person" syncable="YES"/>
+        <relationship name="person" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="bookings" inverseEntity="Person" syncable="YES"/>
+        <relationship name="project" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="bookings" inverseEntity="Project" syncable="YES"/>
     </entity>
     <entity name="JobType" representedClassName="JobType" syncable="YES" codeGenerationType="class">
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -19,11 +19,11 @@
     <entity name="Person" representedClassName="Person" parentEntity="Record" syncable="YES" codeGenerationType="class">
         <attribute name="firstName" attributeType="String" syncable="YES"/>
         <attribute name="lastName" attributeType="String" syncable="YES"/>
-        <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="requestedBy" inverseEntity="Booking" syncable="YES"/>
+        <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="person" inverseEntity="Booking" syncable="YES"/>
     </entity>
     <entity name="Project" representedClassName="Project" parentEntity="Record" syncable="YES" codeGenerationType="class">
         <attribute name="code" attributeType="String" syncable="YES"/>
-        <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="project" inverseEntity="Booking" syncable="YES"/>
+        <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Booking" inverseName="project" inverseEntity="Booking" syncable="YES"/>
     </entity>
     <entity name="Record" representedClassName="Record" isAbstract="YES" syncable="YES" codeGenerationType="class">
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>

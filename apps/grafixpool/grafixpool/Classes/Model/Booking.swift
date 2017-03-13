@@ -11,6 +11,10 @@ import CoreData
 import UIKit
 
 extension Booking {
+    var isValid: Bool {
+        return person != nil
+    }
+
     override public func awakeFromInsert() {
         super.awakeFromInsert()
         bookingID = createBookingID() as String
@@ -20,6 +24,7 @@ extension Booking {
                 confidentiality = last.confidentiality
                 reminder = last.reminder
                 inDate = NSDate(timeIntervalSinceReferenceDate: nextHour).addingTimeInterval(reminder)
+                person = last.person
             } else {
                 confidentiality = Confidentiality.defaultValue.coreDataValue
                 reminder = 3600
@@ -28,6 +33,10 @@ extension Booking {
             outDate = inDate
         }
         project = Project.last(context: managedObjectContext!)
+    }
+    func setPerson(person: Person) {
+        self.person = person
+        person.addToBookings(self)
     }
     private func nextHourDate() -> Date? {
         let calendar = NSCalendar.current

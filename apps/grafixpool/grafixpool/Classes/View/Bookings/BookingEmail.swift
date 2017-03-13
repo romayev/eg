@@ -42,7 +42,9 @@ enum BookingEmail {
         guard let project = booking.project?.code else {
             preconditionFailure()
         }
-        let name = Person.defaultPerson(DataStore.store.viewContext)?.formatted
+        guard let person = booking.person?.formatted else {
+            preconditionFailure()
+        }
         guard let inDate = booking.inDate?.inCETTimeZone.formatCET else {
             preconditionFailure()
         }
@@ -55,7 +57,7 @@ enum BookingEmail {
         let inTitle = NSLocalizedString("booking.in", comment: "")
         let outTitle = NSLocalizedString("booking.out", comment: "")
 
-        return "\(slides) / \(project) / \(name) / \(inTitle): \(inDate) / \(outTitle): \(outDate) / \(confidentiality)"
+        return "\(slides) / \(project) / \(person) / \(inTitle): \(inDate) / \(outTitle): \(outDate) / \(confidentiality)"
     }
 
     func emailBody(with booking: Booking) -> String {
@@ -66,6 +68,7 @@ enum BookingEmail {
 
         let body = formatBody(values: [
             NSLocalizedString("booking.edit.booking-id", comment: ""): booking.bookingID,
+            NSLocalizedString("booking.edit.person", comment: ""): booking.person?.formatted,
             NSLocalizedString("booking.edit.project", comment: ""): booking.project?.code,
             NSLocalizedString("booking.edit.in", comment: ""): booking.inDate?.inCETTimeZone.formatCET,
             NSLocalizedString("booking.edit.out", comment: ""): booking.outDate?.inCETTimeZone.formatCET,

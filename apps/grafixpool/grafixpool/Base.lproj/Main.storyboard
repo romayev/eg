@@ -613,7 +613,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="gJJ-dR-hMe">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="bym-fP-60E">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="bym-fP-60E">
                             <connections>
                                 <action selector="save:" destination="Dnj-dT-QB2" id="w18-YQ-RAo"/>
                             </connections>
@@ -727,7 +727,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabBarController" customModule="grafixpool" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -737,6 +737,7 @@
                     <connections>
                         <segue destination="TFT-It-EtG" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="gyA-fN-wIp" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="ae6-k8-eUX" kind="presentation" identifier="notificationBookingEdit" id="2cN-kF-MMl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -805,5 +806,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Yzr-Na-Vjt"/>
+        <segue reference="2cN-kF-MMl"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -92,7 +92,7 @@ enum BookingTableCellType: Int {
     func value(withBooking booking: Booking) -> String? {
         switch self {
         case .person:
-            return Person.defaultPerson(DataStore.store.viewContext)?.formatted
+            return booking.person?.formatted
         case .slides:
             if booking.slideCount == 0 {
                 return nil

@@ -126,9 +126,9 @@
 				FAC253651E4E6EA400E96896 /* Data */,
 				FAC253471E4D364F00E96896 /* AppDelegate.swift */,
 				FAC2534D1E4D364F00E96896 /* Main.storyboard */,
+				FAC253521E4D365000E96896 /* LaunchScreen.storyboard */,
 				FA6AEC131E5C8CE800222F9E /* Localizable.strings */,
 				FAC253501E4D365000E96896 /* Assets.xcassets */,
-				FAC253521E4D365000E96896 /* LaunchScreen.storyboard */,
 				FAC253551E4D365000E96896 /* Info.plist */,
 			);
 			path = Ingredion;
