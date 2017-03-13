@@ -10,100 +10,50 @@ import Foundation
 import EGKit
 import CoreData
 
-protocol PersonViewControllerDelegate: class {
-    func personControllerDidChangeState(_ state: PersonViewController.State)
-}
-
 class PersonViewController: EGViewController {
-    enum State {
-        case add, edit, view
-
+    enum ViewState {
+        case add, edit
         func update(_ c: PersonViewController) {
             switch self {
             case .add:
-                c.readView.isHidden = true
-                c.editView.isHidden = false
-                c.firstNameTextField.becomeFirstResponder()
-                c.saveButton.isEnabled = c.isSaveEnabled
+                c.navigationItem.title = NSLocalizedString("add-person", comment: "")
             case .edit:
-                guard let person = c.person else {
-                    preconditionFailure("No person")
-                }
-                c.readView.isHidden = true
-                c.editView.isHidden = false
-                c.firstNameTextField.text = person.firstName
-                c.lastNameTextField.text = person.lastName
-                c.firstNameTextField.becomeFirstResponder()
-                c.saveButton.isEnabled = c.isSaveEnabled
-            case .view:
-                c.readView.isHidden = false
-                c.editView.isHidden = true
-                c.firstNameTextField.resignFirstResponder()
-                c.lastNameTextField.resignFirstResponder()
-
-                guard let person = c.person else {
-                    preconditionFailure("No person")
-                }
-                c.personNameLabel.text = "\(person.lastName!), \(person.firstName!)"
+                c.navigationItem.title = NSLocalizedString("edit-person", comment: "")
+                c.firstNameTextField.text = c.person?.firstName
+                c.lastNameTextField.text = c.person?.lastName
             }
         }
     }
-
-    @IBOutlet var readView: UIView!
-    @IBOutlet var editView: UIStackView!
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
-    @IBOutlet var saveButton: UIButton!
-    @IBOutlet var personNameLabel: UILabel!
-    @IBOutlet var editButton: UIButton!
 
     let editingContext = DataStore.store.editingContext
     var person: Person?
-    var state: State = .view {
-        didSet {
-            delegate.personControllerDidChangeState(state)
-        }
-    }
-    public weak var delegate: PersonViewControllerDelegate!
-
-    private var isSaveEnabled: Bool {
-        guard let firstText = firstNameTextField.text else {
-            preconditionFailure("firstNameTextField is not connected")
-        }
-        guard let lastText = lastNameTextField.text else {
-            preconditionFailure("lastNameTextField is not connected")
-        }
-        return !firstText.isEmpty && !lastText.isEmpty
-    }
+    private var viewState: ViewState = .edit
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         firstNameTextField.placeholder = NSLocalizedString("person.edit.first-name-placeholder", comment: "")
         lastNameTextField.placeholder = NSLocalizedString("person.edit.first-name-placeholder", comment: "")
-        saveButton.setTitle(NSLocalizedString("ok", comment: ""), for: .normal)
-        editButton.setTitle(NSLocalizedString("edit", comment: ""), for: .normal)
 
         if let person = Person.defaultPerson(editingContext) {
             self.person = person
-            state = .view
+            viewState = .edit
         } else {
             self.person = Person(context: editingContext)
-            state = .add
+            viewState = .add
         }
-        state.update(self)
+        viewState.update(self)
     }
 
-    @IBAction func textFieldTextDidChange() {
-        saveButton.isEnabled = isSaveEnabled
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        firstNameTextField.becomeFirstResponder()
     }
 
-    @IBAction func edit(_ sender: UIButton) {
-        state = .edit
-        state.update(self)
-    }
-
-    @IBAction func save(_ sender: UIButton) {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         guard let person = self.person else {
             preconditionFailure("No person")
         }
@@ -111,7 +61,5 @@ class PersonViewController: EGViewController {
         person.firstName = firstNameTextField.text
         person.lastName = lastNameTextField.text
         DataStore.store.save(editing: editingContext)
-        state = .view
-        state.update(self)
     }
 }

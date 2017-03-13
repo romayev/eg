@@ -58,9 +58,9 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         if let fromDate = viewState.fromDate {
             request.predicate = NSPredicate.init(format: "inDate >= %@", fromDate)
         }
-        let sort = NSSortDescriptor(key: "inDate", ascending: false)
+        let sort = NSSortDescriptor(key: "inDate", ascending: true)
         request.sortDescriptors = [sort]
-        let frc = NSFetchedResultsController<Booking>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: "sectionIdentifier", cacheName: nil)
+        let frc = NSFetchedResultsController<Booking>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         frc.delegate = self
         fetchedResultsController = frc
 
@@ -140,15 +140,6 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         }
         let currentSection = sections[section]
         return currentSection.numberOfObjects
-    }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 22
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableCell(withIdentifier: "Header")
-        return header
     }
 
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

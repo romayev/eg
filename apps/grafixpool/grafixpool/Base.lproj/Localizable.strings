@@ -30,6 +30,7 @@
 "cancel-booking" = "Cancel Booking";
 
 "booking.edit.booking-id" = "Booking ID";
+"booking.edit.person" = "Name";
 "booking.edit.slides" = "Number of Slides";
 "booking.edit.project" = "Project";
 "booking.edit.in" = "IN";
@@ -68,5 +69,7 @@
 "email.alert.message.error" = "Failed to submit due to error:";
 "email.alert.unable-to-send-mail" = "Your device could not send e-mail. Please check e-mail configuration and try again.";
 
+"add-person" = "Add Person";
+"edit-person" = "Edit Person";
 "person.edit.first-name-placeholder" = "Enter first name";
 "person.edit.last-name-placeholder" = "Enter last name";

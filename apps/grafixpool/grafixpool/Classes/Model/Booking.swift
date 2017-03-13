@@ -14,9 +14,6 @@ extension Booking {
     override public func awakeFromInsert() {
         super.awakeFromInsert()
         bookingID = createBookingID() as String
-        if let bookingID = bookingID {
-            print("booking ID: \(bookingID)")
-        }
 
         if let nextHour = nextHourDate()?.timeIntervalSinceReferenceDate {
             if let last = Booking.last(managedObjectContext!) {
@@ -31,11 +28,6 @@ extension Booking {
             outDate = inDate
         }
         project = Project.last(context: managedObjectContext!)
-    }
-    var sectionIdentifier: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        return dateFormatter.string(from: inDate as! Date)
     }
     private func nextHourDate() -> Date? {
         let calendar = NSCalendar.current

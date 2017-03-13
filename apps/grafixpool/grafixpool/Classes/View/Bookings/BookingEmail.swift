@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct BookingMessage {
     let recipients = [NSLocalizedString("booking.email.recipient", comment: "")]
@@ -41,7 +42,7 @@ enum BookingEmail {
         guard let project = booking.project?.code else {
             preconditionFailure()
         }
-        let name = "John Smith"
+        let name = Person.defaultPerson(DataStore.store.viewContext)?.formatted
         guard let inDate = booking.inDate?.inCETTimeZone.formatCET else {
             preconditionFailure()
         }
@@ -100,3 +101,11 @@ enum BookingEmail {
     }
 }
 
+func unableToSendMailErrorAlert() -> UIAlertController {
+    let title = NSLocalizedString("error", comment: "")
+    let message = NSLocalizedString("email.alert.unable-to-send-mail", comment: "")
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: nil)
+    alertController.addAction(ok)
+    return alertController
+}

@@ -10,6 +10,17 @@ import Foundation
 import CoreData
 
 extension Person {
+    var formatted: String? {
+        if let lastName = lastName {
+            if let firstName = firstName {
+                return "\(lastName), \(firstName)"
+            }
+        }
+        return nil
+    }
+}
+
+extension Person {
     static func defaultPerson(_ context: NSManagedObjectContext) -> Person? {
         let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
         fetchRequest.fetchLimit = 1

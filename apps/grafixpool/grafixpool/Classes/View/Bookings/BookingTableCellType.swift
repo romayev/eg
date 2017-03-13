@@ -11,10 +11,11 @@ import CoreData
 import EGKit
 
 enum BookingTableCellType: Int {
-    case slides, project, inDate, reminder, outDate, confidentiality, jobType, comments
+    case person, slides, project, inDate, reminder, outDate, confidentiality, jobType, comments
     
     var name: String {
         switch self {
+        case .person: return "person"
         case .slides: return "slides"
         case .project: return "project"
         case .inDate: return "in"
@@ -56,6 +57,8 @@ enum BookingTableCellType: Int {
 
     var editCellType: EGEditCellType {
         switch self {
+        case .person:            
+            fatalError("Person cell is not editable")
         case .slides:
             return .picker
         case .inDate, .outDate:
@@ -88,6 +91,8 @@ enum BookingTableCellType: Int {
     }
     func value(withBooking booking: Booking) -> String? {
         switch self {
+        case .person:
+            return Person.defaultPerson(DataStore.store.viewContext)?.formatted
         case .slides:
             if booking.slideCount == 0 {
                 return nil

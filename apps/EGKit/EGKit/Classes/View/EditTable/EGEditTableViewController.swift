@@ -138,6 +138,11 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
         var row = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
 
+        if !isCellEditable(at: indexPath) {
+            processCustomSelect(at: indexPath)
+            return
+        }
+
         var edit = false
         if let editorPath = self.editorPath {
             let activeCellPath = self.activePath
@@ -197,23 +202,6 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
         return true
     }
 
-    open func cell(atAdjusted indexPath: IndexPath) -> UITableViewCell {
-        preconditionFailure("This method must be overridden")
-    }
-
-
-    open var itemsForEditCell: [String]? { return [String]() }
-    open var selectedItemsForEditCell: [String]? { return [String]() }
-
-    open func editCellDidAdd(value: String) {
-    }
-    open func editCellDidSelectValue(_ value: String, at index: Int) {
-    }
-    open func editCellDidCollapse(at indexPath: IndexPath) {
-    }
-
-    open var notesForEditCell: String?
-
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath == editorPath {
             switch cellType {
@@ -233,6 +221,25 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
         return 44.0
     }
 
+    // MARK: open
+    open func isCellEditable(at indexPath: IndexPath) -> Bool {
+        return true
+    }
+    open func processCustomSelect(at indexPath: IndexPath) {
+        preconditionFailure("This method must be overridden")
+    }
+    open func cell(atAdjusted indexPath: IndexPath) -> UITableViewCell {
+        preconditionFailure("This method must be overridden")
+    }
+    open var itemsForEditCell: [String]? { return [String]() }
+    open var selectedItemsForEditCell: [String]? { return [String]() }
+    open func editCellDidAdd(value: String) {
+    }
+    open func editCellDidSelectValue(_ value: String, at index: Int) {
+    }
+    open func editCellDidCollapse(at indexPath: IndexPath) {
+    }
+    open var notesForEditCell: String?
     open var dateForEditCell: Date {
         get {
             return Date()

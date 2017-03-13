@@ -12,17 +12,47 @@ import EGKit
 import CoreData
 import MessageUI
 
-class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, PersonViewControllerDelegate, MFMailComposeViewControllerDelegate {
+class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, NSFetchedResultsControllerDelegate, MFMailComposeViewControllerDelegate {
     enum EGSegueIdentifier: String {
         case person, dismiss
     }
+    enum ViewState {
+        case none, add, edit
 
+        func update(_ c: BookingEditViewController) {
+            switch self {
+            case .add:
+                c.toolbar.isHidden = true
+                c.navigationItem.title = NSLocalizedString("add-booking", comment: "")
+                c.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+            case .edit:
+                c.navigationItem.title = NSLocalizedString("edit-booking", comment: "")
+            case .none:
+                fatalError("Invalid state")
+            }
+        }
+        func dismiss(_ c: BookingEditViewController) {
+            switch self {
+            case .add:
+                c.dismiss(animated: true, completion: nil)
+            default:
+                if let navigationController = c.navigationController {
+                    navigationController.popViewController(animated: true)
+                }
+            }
+        }
+    }
+
+    // MARK: Outlets
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet var nextBarButtonItem: UIBarButtonItem!
     @IBOutlet var deleteBarButtonItem: UIBarButtonItem!
 
-    let editingContext = DataStore.store.editingContext
+    // MARK: vars
     var booking: Booking!
+    private let editingContext = DataStore.store.editingContext
+    private var viewState: ViewState = .none
+    private var personResultsController: NSFetchedResultsController<Person>!
 
     // MARK: UIViewController
     override func viewDidLoad() {
@@ -30,22 +60,21 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         tableView.tableFooterView = UIView()
         nextBarButtonItem.title = NSLocalizedString("next", comment: "")
         deleteBarButtonItem.title = NSLocalizedString("cancel-booking", comment: "")
+        initializePersonResultsController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if (booking == nil) {
-            booking = Booking(context: editingContext)
-        } else {
-            booking = editingContext.object(with: booking.objectID) as! Booking
-        }
+        if (viewState == .none) {
+            if (booking == nil) {
+                booking = Booking(context: editingContext)
+                viewState = .add
+            } else {
+                booking = editingContext.object(with: booking.objectID) as! Booking
+                viewState = .edit
+            }
 
-        if booking.isInserted {
-            toolbar.isHidden = true
-            navigationItem.title = NSLocalizedString("add-booking", comment: "")
-            navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
-        } else {
-            navigationItem.title = NSLocalizedString("edit-booking", comment: "")
+            viewState.update(self)
         }
     }
 
@@ -61,10 +90,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             fatalError("Invalid segue identifier \(identifier)")
         }
         switch EGSegueIdentifier {
-        case .person:
-            if let c = segue.destination as? PersonViewController {
-                c.delegate = self
-            }
+        case .person: break
         case .dismiss: break
         }
     }
@@ -72,7 +98,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
     @IBAction func save(_ sender: UIBarButtonItem) {
         #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
             DataStore.store.save(editing: editingContext)
-            self.dismiss(animated: true, completion: nil)
+            viewState.dismiss(self)
         #else
             if booking.isInserted {
                 send(email: .add)
@@ -86,7 +112,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
             editingContext.delete(booking)
             DataStore.store.save(editing: editingContext)
-            self.dismiss(animated: true, completion: nil)
+            viewState.dismiss(self)
         #else
             send(email: .cancel)
         #endif
@@ -94,6 +120,25 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
 
     // MARK: EGEditTableViewController
     override var count: Int { return BookingTableCellType.count }
+
+    override func isCellEditable(at indexPath: IndexPath) -> Bool {
+        guard let type = BookingTableCellType(rawValue: indexPath.row) else {
+            fatalError("ERROR: Unable to find type for row \(indexPath.row)")
+        }
+        return type != .person
+    }
+
+    override func processCustomSelect(at indexPath: IndexPath) {
+        guard let type = BookingTableCellType(rawValue: indexPath.row) else {
+            fatalError("ERROR: Unable to find type for row \(indexPath.row)")
+        }
+        switch type {
+        case .person:
+            performSegue(withIdentifier: .person, sender: tableView.cellForRow(at: indexPath))
+        default:
+            break
+        }
+    }
 
     override var cellType: EGEditCellType {
         guard let activeRow = activePath?.row else  {
@@ -127,6 +172,11 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             let type = bookingTableCellType(forAdjusted: indexPath)
             cell.textLabel?.text = type.localizedName
             cell.detailTextLabel?.text = self.description(forRow: indexPath.row)
+            if type == .person {
+                cell.accessoryType = .disclosureIndicator
+            } else {
+                cell.accessoryType = .none
+            }
             return cell
         }
     }
@@ -247,18 +297,6 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         }
     }
 
-    // MARK: PersonEditViewControllerDelegate
-    func personControllerDidChangeState(_ state: PersonViewController.State) {
-        switch state {
-        case .add, .edit:
-            self.navigationItem.leftBarButtonItem?.isEnabled = false
-            self.navigationItem.rightBarButtonItem?.isEnabled = false
-        case .view:
-            self.navigationItem.leftBarButtonItem?.isEnabled = true
-            self.navigationItem.rightBarButtonItem?.isEnabled = true
-        }
-    }
-
     // MARK: Helpers
     private func description(forRow row: Int) -> String {
         if let BookingTableCellType = BookingTableCellType(rawValue: row) {
@@ -290,7 +328,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         case .sent:
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: { (action) in
-                self.dismiss(animated: true, completion: nil)
+                self.viewState.dismiss(self)
             })
             alertController.addAction(ok)
             present(alertController, animated: true, completion: nil)
@@ -315,7 +353,8 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
 
             })
         } else {
-            self.showSendMailErrorAlert()
+            let alert = unableToSendMailErrorAlert()
+            present(alert, animated: true, completion: nil)
         }
     }
 
@@ -331,13 +370,25 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         return mailComposerVC
     }
 
-    private func showSendMailErrorAlert() {
-        let title = NSLocalizedString("error", comment: "")
-        let message = NSLocalizedString("email.alert.unable-to-send-mail", comment: "")
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: nil)
-        alertController.addAction(ok)
-        present(alertController, animated: true, completion: nil)
+    // MARK: FetchedResultsController
+    func initializePersonResultsController() {
+        let request: NSFetchRequest<Person> = Person.fetchRequest()
+        let sort = NSSortDescriptor(key: "created", ascending: true)
+        request.sortDescriptors = [sort]
+        let frc = NSFetchedResultsController<Person>(fetchRequest: request, managedObjectContext: DataStore.store.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        frc.delegate = self
+        personResultsController = frc
+
+        do {
+            try frc.performFetch()
+        } catch {
+            fatalError("Failed to initialize FetchedResultsController: \(error)")
+        }
+    }
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        let indexPath = IndexPath(item: BookingTableCellType.person.rawValue, section: 0)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }
 
