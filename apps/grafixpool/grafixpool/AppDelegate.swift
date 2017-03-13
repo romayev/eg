@@ -42,9 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
             }
         }
 
-        let changeAction = UNNotificationAction(identifier: BookingNotification.update.rawValue, title: NSLocalizedString("edit-booking", comment: ""), options: [])
-        let cancelAction = UNNotificationAction(identifier: BookingNotification.cancel.rawValue, title: NSLocalizedString("cancel-booking", comment: ""), options: .destructive)
-        let category = UNNotificationCategory(identifier: "booking-actions", actions: [changeAction, cancelAction], intentIdentifiers: [], options: [])
+        let changeAction = UNNotificationAction(identifier: BookingNotification.update.rawValue, title: NSLocalizedString("edit-booking", comment: ""), options: [.foreground])
+        let cancelAction = UNNotificationAction(identifier: BookingNotification.cancel.rawValue, title: NSLocalizedString("cancel-booking", comment: ""), options: .foreground)
+        let category = UNNotificationCategory(identifier: "booking-actions", actions: [changeAction, cancelAction], intentIdentifiers: [], options: [.customDismissAction])
         center.setNotificationCategories([category])
 
         return true

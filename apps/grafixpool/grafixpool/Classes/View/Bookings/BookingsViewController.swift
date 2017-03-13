@@ -99,14 +99,16 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         case .add: break
         case .edit:
             if let alertBooking = alertBooking {
-                let n: UINavigationController = segue.destination as! UINavigationController
-                let c: BookingEditViewController = n.topViewController as! BookingEditViewController
-                c.booking = alertBooking
+                if let n: UINavigationController = segue.destination as? UINavigationController {
+                    if let c: BookingEditViewController = n.topViewController as? BookingEditViewController {
+                        c.booking = alertBooking
+                    }
+                }
                 self.alertBooking = nil
             } else if let indexPath = tableView?.indexPathForSelectedRow {
-                let n: UINavigationController = segue.destination as! UINavigationController
-                let c: BookingEditViewController = n.topViewController as! BookingEditViewController
-                c.booking = fetchedResultsController.object(at: indexPath)
+                if let c: BookingEditViewController = segue.destination as? BookingEditViewController {
+                    c.booking = fetchedResultsController.object(at: indexPath)
+                }
             }
         }
     }

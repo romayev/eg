@@ -14,99 +14,7 @@ import MessageUI
 
 class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, PersonViewControllerDelegate, MFMailComposeViewControllerDelegate {
     enum EGSegueIdentifier: String {
-        case person
-    }
-
-    enum CellMapping: Int {
-
-        case slides, project, inDate, reminder, outDate, confidentiality, jobType, comments
-        var editCellType: EGEditCellType {
-            switch self {
-            case .slides:
-                return .picker
-            case .inDate, .outDate:
-                return .date
-            case .project:
-                return .dropDownAdd
-            case .reminder, .confidentiality, .jobType:
-                return .dropDown
-            case .comments:
-                return .notes
-            }
-        }
-        var indexPathsForDependentMappings: [IndexPath]? {
-            switch self {
-            case .inDate:
-                return [IndexPath(item: CellMapping.reminder.rawValue, section: 0), IndexPath(item: CellMapping.outDate.rawValue, section: 0)]
-            default:
-                return nil
-            }
-        }
-        func values(withBooking booking: Booking, in context: NSManagedObjectContext) -> [String] {
-            switch self {
-            case .slides: return (0...100).map { String($0) }
-            case .project: return Project.recentProjectNames(context)
-            case .reminder: return Reminder.localizedValues(for: booking.inDate as! Date)
-            case .confidentiality: return Confidentiality.localizedValues
-            case .jobType: return JobType.Category.localizedValues
-            default: fatalError("\(self) type does not support multiple values")
-            }
-        }
-        func value(withBooking booking: Booking) -> String? {
-            switch self {
-            case .slides:
-                if booking.slideCount == 0 {
-                    return nil
-                } else {
-                    return String(booking.slideCount)
-                }
-            case .project:
-                if let code = booking.project?.code {
-                    return code == "default" ? NSLocalizedString("default-project", comment: "") : code
-                } else {
-                    fatalError("Booking does not have a project")
-                }
-            case .inDate:
-                return (booking.inDate?.format)!
-            case .outDate:
-                return (booking.outDate?.format)!
-            case .reminder:
-                let reminder = Reminder(difference: booking.reminder, date: booking.inDate as! Date)
-                return reminder.localizedName
-            case .confidentiality:
-                if let confidentiality = Confidentiality(coreDataValue: booking.confidentiality) {
-                    return confidentiality.localizedName
-                } else {
-                    return nil
-                }
-            case .jobType:
-                let values = booking.jobTypeValues
-                return values.count > 0 ? booking.jobTypeValues.joined(separator: ", ") : nil
-            case .comments:
-                return booking.notes
-            }
-        }
-
-        func processDidSelectValue(_ value: String, at index: Int, booking: Booking) {
-            let idx = Int16(index) + 1
-            switch self {
-            case .slides: booking.slideCount = Int16(index)
-            case .reminder: booking.reminder = Double(index * 3600)
-            case .confidentiality: booking.confidentiality = idx
-            case .jobType:
-                let jobType = JobType.jobType(forIndex: index + 1, context: booking.managedObjectContext!)
-                guard let jobTypes = booking.jobTypes else {
-                    fatalError("Booking doesn't have job types")
-                }
-                if (jobTypes.contains(jobType)) {
-                    booking.removeFromJobTypes(jobType)
-                } else {
-                    booking.addToJobTypes(jobType)
-                }
-            case .project: break
-            default: fatalError("Not a selectable cell type")
-            }
-        }
+        case person, dismiss
     }
 
     @IBOutlet var toolbar: UIToolbar!
@@ -135,9 +43,14 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         if booking.isInserted {
             toolbar.isHidden = true
             navigationItem.title = NSLocalizedString("add-booking", comment: "")
+            navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         } else {
             navigationItem.title = NSLocalizedString("edit-booking", comment: "")
         }
+    }
+
+    @objc private func cancel() {
+        performSegue(withIdentifier: .dismiss, sender: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -152,6 +65,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             if let c = segue.destination as? PersonViewController {
                 c.delegate = self
             }
+        case .dismiss: break
         }
     }
 
@@ -185,14 +99,14 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let activeRow = activePath?.row else  {
             fatalError("ERROR: Active cell undefined")
         }
-        guard let mapping = CellMapping(rawValue: activeRow) else {
+        guard let mapping = BookingTableCellType(rawValue: activeRow) else {
             fatalError("ERROR: Unable to find mapping for row \(activeRow)")
         }
         return mapping.editCellType
     }
 
     override func cell(atAdjusted indexPath: IndexPath) -> UITableViewCell {
-        guard let mapping = CellMapping(rawValue: indexPath.row) else {
+        guard let mapping = BookingTableCellType(rawValue: indexPath.row) else {
             fatalError("ERROR: Unable to find mapping for row \(indexPath.row)")
         }
         switch mapping {
@@ -222,7 +136,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let activeRow = activePath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        if let mapping = CellMapping(rawValue: activeRow) {
+        if let mapping = BookingTableCellType(rawValue: activeRow) {
             return mapping.values(withBooking: booking, in: editingContext)
         }
         return nil
@@ -232,7 +146,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let activeRow = activePath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        if let mapping = CellMapping(rawValue: activeRow) {
+        if let mapping = BookingTableCellType(rawValue: activeRow) {
             switch mapping {
             case .jobType:
                 if booking.jobTypeValues.count > 0 {
@@ -251,7 +165,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let activeRow = activePath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        if let mapping = CellMapping(rawValue: activeRow) {
+        if let mapping = BookingTableCellType(rawValue: activeRow) {
             mapping.processDidSelectValue(value, at: index, booking: booking)
         }
 
@@ -259,7 +173,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
     }
 
     override func editCellDidCollapse(at indexPath: IndexPath) {
-        if let mapping = CellMapping(rawValue: indexPath.row) {
+        if let mapping = BookingTableCellType(rawValue: indexPath.row) {
             if let indexPaths = mapping.indexPathsForDependentMappings {
                 let adjusted = indexPaths.map { adjustedPath(forIndexPath: $0) }
                 tableView.reloadRows(at: adjusted, with: .automatic)
@@ -344,10 +258,10 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             self.navigationItem.rightBarButtonItem?.isEnabled = true
         }
     }
-    
+
     // MARK: Helpers
     private func description(forRow row: Int) -> String {
-        if let mapping = CellMapping(rawValue: row) {
+        if let mapping = BookingTableCellType(rawValue: row) {
             if let value = mapping.value(withBooking: booking) {
                 return value
             }
@@ -424,17 +338,6 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: nil)
         alertController.addAction(ok)
         present(alertController, animated: true, completion: nil)
-    }
-}
-
-struct BookingMessage {
-    let recipients = [NSLocalizedString("booking.email.recipient", comment: "")]
-    var subject: String
-    var body: String
-
-    init(subject: String, body: String) {
-        self.subject = subject
-        self.body = body
     }
 }
 

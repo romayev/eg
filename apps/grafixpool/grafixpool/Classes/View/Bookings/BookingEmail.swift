@@ -7,6 +7,18 @@
 //
 
 import Foundation
+
+struct BookingMessage {
+    let recipients = [NSLocalizedString("booking.email.recipient", comment: "")]
+    var subject: String
+    var body: String
+
+    init(subject: String, body: String) {
+        self.subject = subject
+        self.body = body
+    }
+}
+
 enum BookingEmail {
     case add, update, cancel
 

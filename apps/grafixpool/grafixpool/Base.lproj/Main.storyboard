@@ -290,7 +290,7 @@
                         <outlet property="segmentedControl" destination="T4z-9H-zOr" id="TbD-dE-sKo"/>
                         <outlet property="slidesHeaderLabel" destination="6qw-mm-evF" id="DTf-LK-d85"/>
                         <outlet property="tableView" destination="9fd-6U-AhJ" id="7sD-ex-m7L"/>
-                        <segue destination="ae6-k8-eUX" kind="show" identifier="edit" id="7he-SI-pSx"/>
+                        <segue destination="Dnj-dT-QB2" kind="show" identifier="edit" id="Yzr-Na-Vjt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -643,11 +643,6 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="gJJ-dR-hMe">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="x3B-Xd-5hA">
-                            <connections>
-                                <segue destination="mBJ-aC-Lvl" kind="unwind" unwindAction="dismissWithSegue:" id="pBu-fQ-IWN"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="bym-fP-60E">
                             <connections>
                                 <action selector="save:" destination="Dnj-dT-QB2" id="w18-YQ-RAo"/>
@@ -659,6 +654,7 @@
                         <outlet property="nextBarButtonItem" destination="bym-fP-60E" id="0pC-M1-WL4"/>
                         <outlet property="tableView" destination="fRD-Ok-hes" id="OCU-4h-55n"/>
                         <outlet property="toolbar" destination="AZ1-YA-TbR" id="1PQ-hF-loP"/>
+                        <segue destination="mBJ-aC-Lvl" kind="unwind" identifier="dismiss" unwindAction="dismissWithSegue:" id="9LH-1W-foE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUN-SF-NCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -891,6 +887,6 @@
         <image name="Logo" width="367" height="63"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7he-SI-pSx"/>
+        <segue reference="Yzr-Na-Vjt"/>
     </inferredMetricsTieBreakers>
 </document>
