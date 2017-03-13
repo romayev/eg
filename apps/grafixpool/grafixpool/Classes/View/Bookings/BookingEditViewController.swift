@@ -99,22 +99,22 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let activeRow = activePath?.row else  {
             fatalError("ERROR: Active cell undefined")
         }
-        guard let mapping = BookingTableCellType(rawValue: activeRow) else {
-            fatalError("ERROR: Unable to find mapping for row \(activeRow)")
+        guard let type = BookingTableCellType(rawValue: activeRow) else {
+            fatalError("ERROR: Unable to find type for row \(activeRow)")
         }
-        return mapping.editCellType
+        return type.editCellType
     }
 
     override func cell(atAdjusted indexPath: IndexPath) -> UITableViewCell {
-        guard let mapping = BookingTableCellType(rawValue: indexPath.row) else {
-            fatalError("ERROR: Unable to find mapping for row \(indexPath.row)")
+        guard let type = BookingTableCellType(rawValue: indexPath.row) else {
+            fatalError("ERROR: Unable to find type for row \(indexPath.row)")
         }
-        switch mapping {
+        switch type {
         case .inDate, .outDate:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DateCell", for: indexPath) as! DateCell
             let type = bookingTableCellType(forAdjusted: indexPath)
             cell.titleLabel?.text = type.localizedName
-            switch mapping {
+            switch type {
             case .inDate:
                 cell.display(date: booking.inDate!, singleZone: isCurrentTimeZoneCET())
             case .outDate:
@@ -136,8 +136,8 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let activeRow = activePath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        if let mapping = BookingTableCellType(rawValue: activeRow) {
-            return mapping.values(withBooking: booking, in: editingContext)
+        if let type = BookingTableCellType(rawValue: activeRow) {
+            return type.values(withBooking: booking, in: editingContext)
         }
         return nil
     }
@@ -146,14 +146,14 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let activeRow = activePath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        if let mapping = BookingTableCellType(rawValue: activeRow) {
-            switch mapping {
+        if let type = BookingTableCellType(rawValue: activeRow) {
+            switch type {
             case .jobType:
                 if booking.jobTypeValues.count > 0 {
                     return booking.jobTypeValues
                 }
             default:
-                if let value = mapping.value(withBooking: booking) {
+                if let value = type.value(withBooking: booking) {
                     return [value]
                 }
             }
@@ -165,16 +165,16 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let activeRow = activePath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        if let mapping = BookingTableCellType(rawValue: activeRow) {
-            mapping.processDidSelectValue(value, at: index, booking: booking)
+        if let type = BookingTableCellType(rawValue: activeRow) {
+            type.processDidSelectValue(value, at: index, booking: booking)
         }
 
         tableView.reloadRows(at: [activePath!, editorPath!], with: .automatic)
     }
 
     override func editCellDidCollapse(at indexPath: IndexPath) {
-        if let mapping = BookingTableCellType(rawValue: indexPath.row) {
-            if let indexPaths = mapping.indexPathsForDependentMappings {
+        if let type = BookingTableCellType(rawValue: indexPath.row) {
+            if let indexPaths = type.indexPathsForDependentMappings {
                 let adjusted = indexPaths.map { adjustedPath(forIndexPath: $0) }
                 tableView.reloadRows(at: adjusted, with: .automatic)
             }
@@ -261,8 +261,8 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
 
     // MARK: Helpers
     private func description(forRow row: Int) -> String {
-        if let mapping = BookingTableCellType(rawValue: row) {
-            if let value = mapping.value(withBooking: booking) {
+        if let BookingTableCellType = BookingTableCellType(rawValue: row) {
+            if let value = BookingTableCellType.value(withBooking: booking) {
                 return value
             }
         }
