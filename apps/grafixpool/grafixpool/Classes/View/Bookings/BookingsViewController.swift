@@ -13,8 +13,8 @@ import UserNotifications
 
 class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITableViewDataSource, UITableViewDelegate {
     enum EGSegueIdentifier: String {
-        case add = "add"
-        case edit = "edit"
+        case add
+        case edit
     }
 
     private enum ViewState {
@@ -38,6 +38,7 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     @IBOutlet var slidesHeaderLabel: UILabel!
     @IBOutlet var inHeaderLabel: UILabel!
     @IBOutlet var outHeaderLabel: UILabel!
+    @IBOutlet var headersView: UIView!
     private var viewState: ViewState = .recent
     private var fetchState: FetchState = .noRecords
 
@@ -75,7 +76,7 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         super.viewDidLoad()
         title = NSLocalizedString("bookings", comment: "")
         navigationItem.title = NSLocalizedString("bookings", comment: "")
-        segmentedControl.setTitle(NSLocalizedString("recent", comment: ""), forSegmentAt: 0)
+        segmentedControl.setTitle(NSLocalizedString("upcoming", comment: ""), forSegmentAt: 0)
         segmentedControl.setTitle(NSLocalizedString("all", comment: ""), forSegmentAt: 1)
         noRecordsLabel.text = NSLocalizedString("no-bookings", comment: "")
         slidesHeaderLabel.text = NSLocalizedString("booking.slides", comment: "")
@@ -99,12 +100,12 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         case .edit:
             if let alertBooking = alertBooking {
                 let n: UINavigationController = segue.destination as! UINavigationController
-                let c: EditBookingViewController = n.topViewController as! EditBookingViewController
+                let c: BookingEditViewController = n.topViewController as! BookingEditViewController
                 c.booking = alertBooking
                 self.alertBooking = nil
             } else if let indexPath = tableView?.indexPathForSelectedRow {
                 let n: UINavigationController = segue.destination as! UINavigationController
-                let c: EditBookingViewController = n.topViewController as! EditBookingViewController
+                let c: BookingEditViewController = n.topViewController as! BookingEditViewController
                 c.booking = fetchedResultsController.object(at: indexPath)
             }
         }
@@ -184,8 +185,10 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         switch fetchState {
         case .records:
             noRecordsView.isHidden = true
+            headersView.isHidden = false
         case .noRecords:
             noRecordsView.isHidden = false
+            headersView.isHidden = true
         }
     }
     

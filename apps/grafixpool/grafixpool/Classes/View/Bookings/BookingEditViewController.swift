@@ -1,5 +1,5 @@
 //
-//  EditBookingViewController.swift
+//  BookingEditViewController.swift
 //  grafixpool
 //
 //  Created by Alex Romayev on 2/26/17.
@@ -12,8 +12,13 @@ import EGKit
 import CoreData
 import MessageUI
 
-class EditBookingViewController: EGEditTableViewController, MFMailComposeViewControllerDelegate {
+class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, PersonViewControllerDelegate, MFMailComposeViewControllerDelegate {
+    enum EGSegueIdentifier: String {
+        case person
+    }
+
     enum CellMapping: Int {
+
         case slides, project, inDate, reminder, outDate, confidentiality, jobType, comments
         var editCellType: EGEditCellType {
             switch self {
@@ -81,6 +86,7 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
                 return booking.notes
             }
         }
+
         func processDidSelectValue(_ value: String, at index: Int, booking: Booking) {
             let idx = Int16(index) + 1
             switch self {
@@ -102,7 +108,7 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
             }
         }
     }
-    
+
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet var nextBarButtonItem: UIBarButtonItem!
     @IBOutlet var deleteBarButtonItem: UIBarButtonItem!
@@ -131,6 +137,21 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
             navigationItem.title = NSLocalizedString("add-booking", comment: "")
         } else {
             navigationItem.title = NSLocalizedString("edit-booking", comment: "")
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {
+            fatalError("Invalid segue identifier \(segue.identifier)")
+        }
+        guard let EGSegueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
+            fatalError("Invalid segue identifier \(identifier)")
+        }
+        switch EGSegueIdentifier {
+        case .person:
+            if let c = segue.destination as? PersonViewController {
+                c.delegate = self
+            }
         }
     }
 
@@ -309,6 +330,18 @@ class EditBookingViewController: EGEditTableViewController, MFMailComposeViewCon
         set {
             booking.notes = newValue
             tableView.reloadRows(at: [activePath!], with: .none)
+        }
+    }
+
+    // MARK: PersonEditViewControllerDelegate
+    func personControllerDidChangeState(_ state: PersonViewController.State) {
+        switch state {
+        case .add, .edit:
+            self.navigationItem.leftBarButtonItem?.isEnabled = false
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        case .view:
+            self.navigationItem.leftBarButtonItem?.isEnabled = true
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
         }
     }
     

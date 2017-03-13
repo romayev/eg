@@ -17,8 +17,8 @@
         <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="jobTypes" inverseEntity="Booking" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" parentEntity="Record" syncable="YES" codeGenerationType="class">
-        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" attributeType="String" syncable="YES"/>
         <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="requestedBy" inverseEntity="Booking" syncable="YES"/>
     </entity>
     <entity name="Project" representedClassName="Project" parentEntity="Record" syncable="YES" codeGenerationType="class">

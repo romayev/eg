@@ -8,6 +8,7 @@
 
 "booking" = "Booking";
 "default-project" = "N/A";
+"edit" = "Edit";
 "enter-new" = "Enter New";
 "error" = "Error";
 "next" = "Next";
@@ -22,7 +23,7 @@
 "booking.out" = "OUT";
 
 "bookings" = "Bookings";
-"recent" = "Recent";
+"upcoming" = "Upcoming";
 "all" = "All";
 "add-booking" = "Add Booking";
 "edit-booking" = "Edit Booking";
@@ -66,3 +67,6 @@
 "email.alert.message.success" = "Booking was successfully submitted";
 "email.alert.message.error" = "Failed to submit due to error:";
 "email.alert.unable-to-send-mail" = "Your device could not send e-mail. Please check e-mail configuration and try again.";
+
+"person.edit.first-name-placeholder" = "Enter first name";
+"person.edit.last-name-placeholder" = "Enter last name";

@@ -53,7 +53,7 @@ extension Project {
         do {
             projects = try context.fetch(fetchRequest)
         } catch {
-            fatalError("Failed to fetch default project: \(error)")
+            fatalError("Failed to fetch projects: \(error)")
         }
         projects.insert(d, at: projects.count)
         return projects
