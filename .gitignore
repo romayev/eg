@@ -1,2 +1,18 @@
 apps/parser/.idea/vcs.xml
 apps/Ingredient Selector/Ingredient Selector.xcodeproj/project.xcworkspace/xcuserdata/alex.xcuserdatad/UserInterfaceState.xcuserstate
+
+**/build
+**/out
+.DS_Store
+.Trashes
+*.lock
+*.swp
+*~.nib
+
+build/
+
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.xccheckout
+xcuserdata
