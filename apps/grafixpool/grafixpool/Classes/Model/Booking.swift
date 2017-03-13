@@ -17,27 +17,32 @@ extension Booking {
 
     override public func awakeFromInsert() {
         super.awakeFromInsert()
-        bookingID = createBookingID() as String
 
-        if let nextHour = nextHourDate()?.timeIntervalSinceReferenceDate {
-            if let last = Booking.last(managedObjectContext!) {
-                confidentiality = last.confidentiality
-                reminder = last.reminder
-                inDate = NSDate(timeIntervalSinceReferenceDate: nextHour).addingTimeInterval(reminder)
-                person = last.person
-            } else {
-                confidentiality = Confidentiality.defaultValue.coreDataValue
-                reminder = 3600
-                inDate = NSDate(timeIntervalSinceReferenceDate: nextHour)
-            }
-            outDate = inDate
+        guard let nextHour = nextHourDate()?.timeIntervalSinceReferenceDate else {
+            preconditionFailure("Unable get get next hour date")
         }
+
+        if let last = Booking.last(managedObjectContext!) {
+            confidentiality = last.confidentiality
+            reminder = last.reminder
+            inDate = NSDate(timeIntervalSinceReferenceDate: nextHour).addingTimeInterval(reminder)
+            person = last.person
+        } else {
+            confidentiality = Confidentiality.defaultValue.coreDataValue
+            reminder = 3600
+            inDate = NSDate(timeIntervalSinceReferenceDate: nextHour)
+            person = Person.defaultPerson(managedObjectContext!)
+        }
+        outDate = inDate
         project = Project.last(context: managedObjectContext!)
+        bookingID = createBookingID() as String
     }
+
     func setPerson(person: Person) {
         self.person = person
         person.addToBookings(self)
     }
+
     private func nextHourDate() -> Date? {
         let calendar = NSCalendar.current
         let comps = calendar.dateComponents([.year, .month, .day, .hour], from: Date())
@@ -68,6 +73,9 @@ extension Booking {
         let jobTypes = jobTypeCategories
         return jobTypes.map { $0.localizedName }
     }
+    var slides: String {
+        return String.localizedStringWithFormat(NSLocalizedString("slides", comment: ""), slideCount)
+    }
 
     func add(jobType: JobType) {
         addToJobTypes(jobType)
@@ -86,6 +94,7 @@ extension Booking {
 extension Booking {
     static func last(_ context: NSManagedObjectContext) -> Booking? {
         let fetchRequest: NSFetchRequest<Booking> = Booking.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "bookingID != nil")
         let inDateSort = NSSortDescriptor(key: "inDate", ascending: false)
         fetchRequest.sortDescriptors = [inDateSort]
         fetchRequest.fetchLimit = 1

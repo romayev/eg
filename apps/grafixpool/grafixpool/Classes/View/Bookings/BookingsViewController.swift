@@ -168,6 +168,13 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if let tabBarController = tabBarController as? TabBarController {
+            let booking = fetchedResultsController.object(at: indexPath)
+            tabBarController.cancel(booking: booking)
+        }
+    }
+
     // MARK: Private
     override func updateFetchState() {
         if let count = fetchedResultsController.fetchedObjects?.count {

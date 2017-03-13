@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         let whiteColor = UIColor.white
 
         window?.tintColor = navbarTintColor
-        let tabBar = UITabBar.appearance()
-        tabBar.tintColor = whiteColor
-        tabBar.barTintColor = UIColor.black
+//        let tabBar = UITabBar.appearance()
+//        tabBar.tintColor = whiteColor
+//        tabBar.barTintColor = UIColor.black
 
         let navigationBar = UINavigationBar.appearance()
         navigationBar.tintColor = whiteColor

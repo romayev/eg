@@ -27,18 +27,19 @@ enum BookingEmail {
         var prefix: String
         switch self {
         case .add:
-            prefix = NSLocalizedString("booking.email.subject-new", comment: "")
+            prefix = NSLocalizedString("booking.email.status-new", comment: "")
         case .update:
-            prefix = NSLocalizedString("booking.email.subject-update", comment: "")
+            prefix = NSLocalizedString("booking.email.status-update", comment: "")
         case .cancel:
-            prefix = NSLocalizedString("booking.email.subject-cancel", comment: "")
+            prefix = NSLocalizedString("booking.email.status-cancel", comment: "")
         }
-        let title = "\(prefix): \(emailSubject(with: booking))"
+        let title = "[\(prefix)] \(emailSubject(with: booking))"
         return BookingMessage(subject: title, body: emailBody(with: booking))
     }
 
     func emailSubject(with booking: Booking) -> String {
-        let slides = String(booking.slideCount)
+        let slides = booking.slides
+
         guard let project = booking.project?.code else {
             preconditionFailure()
         }
@@ -74,12 +75,13 @@ enum BookingEmail {
             NSLocalizedString("booking.edit.out", comment: ""): booking.outDate?.inCETTimeZone.formatCET,
             NSLocalizedString("booking.edit.confidentiality", comment: ""): Confidentiality(rawValue: Int(booking.confidentiality))?.localizedName,
             NSLocalizedString("booking.edit.job-type", comment: ""): jobTypeValues,
-            NSLocalizedString("booking.edit.notes", comment: ""): booking.notes
+            NSLocalizedString("booking.edit.notes", comment: ""): booking.notes,
+            NSLocalizedString("booking.edit.slides", comment: ""): booking.slides
             ]
         )
         switch self {
         case .add:
-            let status = format(title: statusTitle, value: NSLocalizedString("booking.email.status-add", comment: ""))
+            let status = format(title: statusTitle, value: NSLocalizedString("booking.email.status-new", comment: ""))
             return "\(status)\(body)"
         case .update:
             let status = format(title: statusTitle, value: NSLocalizedString("booking.email.status-update", comment: ""))

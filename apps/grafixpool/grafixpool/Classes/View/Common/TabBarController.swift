@@ -42,11 +42,11 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
         case UNNotificationDismissActionIdentifier:
             break
         case UNNotificationDefaultActionIdentifier:
-            print("Default")
+            performSegue(withIdentifier: .notificationBookingEdit, sender: nil)
         case BookingNotification.update.rawValue:
             performSegue(withIdentifier: .notificationBookingEdit, sender: nil)
         case BookingNotification.cancel.rawValue:
-            send(email: .cancel)
+            cancel(booking: notificationBooking!)
         default:
             break
         }
@@ -56,6 +56,10 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert,.sound])
+    }
+
+    func cancel(booking: Booking) {
+        send(email: .cancel, booking: booking)
     }
 
     // MARK: MFMailComposeViewControllerDelegate
@@ -78,16 +82,13 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
         }
     }
 
-    fileprivate func send(email: BookingEmail) {
-        guard let notificationBooking = notificationBooking else {
-            fatalError("No booking")
-        }
-        let mailComposeViewController = configuredMailComposeViewController(email: email, booking: notificationBooking)
+    fileprivate func send(email: BookingEmail, booking: Booking) {
+        let mailComposeViewController = configuredMailComposeViewController(email: email, booking: booking)
         if MFMailComposeViewController.canSendMail() {
             self.present(mailComposeViewController, animated: true, completion: {
-                BookingNotification.cancel.processNotification(for: notificationBooking)
+                BookingNotification.cancel.processNotification(for: booking)
                 let editingContext = DataStore.store.editingContext
-                let booking = editingContext.object(with: notificationBooking.objectID)
+                let booking = editingContext.object(with: booking.objectID)
                 editingContext.delete(booking)
                 DataStore.store.save(editing: editingContext)
             })
@@ -108,5 +109,4 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
 
         return mailComposerVC
     }
-
 }

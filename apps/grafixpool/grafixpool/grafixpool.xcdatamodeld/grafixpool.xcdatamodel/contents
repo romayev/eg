@@ -14,12 +14,12 @@
     </entity>
     <entity name="JobType" representedClassName="JobType" syncable="YES" codeGenerationType="class">
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="jobTypes" inverseEntity="Booking" syncable="YES"/>
+        <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Booking" inverseName="jobTypes" inverseEntity="Booking" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" parentEntity="Record" syncable="YES" codeGenerationType="class">
         <attribute name="firstName" attributeType="String" syncable="YES"/>
         <attribute name="lastName" attributeType="String" syncable="YES"/>
-        <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Booking" inverseName="person" inverseEntity="Booking" syncable="YES"/>
+        <relationship name="bookings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Booking" inverseName="person" inverseEntity="Booking" syncable="YES"/>
     </entity>
     <entity name="Project" representedClassName="Project" parentEntity="Record" syncable="YES" codeGenerationType="class">
         <attribute name="code" attributeType="String" syncable="YES"/>
