@@ -134,6 +134,9 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
+        if !checkDates() {
+            return
+        }
         #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
             DataStore.store.save(editing: editingContext)
             viewState.dismiss(self)
@@ -150,6 +153,23 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         #else
             send(email: .cancel)
         #endif
+    }
+
+    private func checkDates() -> Bool {
+        let inDate = booking.inDate as! Date
+        let outDate = booking.outDate as! Date
+
+        if inDate > outDate {
+            let alertController = UIAlertController(
+                title: NSLocalizedString("booking.edit.invalid-dates-title", comment: ""),
+                message: NSLocalizedString("booking.edit.invalid-dates-desc", comment: ""), preferredStyle: .alert)
+            let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: nil)
+            alertController.addAction(ok)
+            present(alertController, animated: true, completion: nil)
+            return false
+        } else {
+            return true
+        }
     }
 
     // MARK: EGEditTableViewController

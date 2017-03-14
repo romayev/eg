@@ -43,6 +43,9 @@
 "booking.edit.notes" = "Comments";
 "booking.enter-project-code" = "Enter project code";
 
+"booking.edit.invalid-dates-title" = "Invalid Dates";
+"booking.edit.invalid-dates-desc" = "IN date cannot be after OUT date.";
+
 "job-type.adjust-to-smc" = "Adjust to SMC standard";
 "job-type.improve" = "Improve layout / visualization";
 "job-type.create-version" = "Create additional version";
