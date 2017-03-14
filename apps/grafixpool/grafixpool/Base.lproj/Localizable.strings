@@ -63,7 +63,7 @@
 
 "booking.email-update-message" = "Do you want to email these changes?";
 
-"booking.email.recipient" = "romayev@gmail.com";//"submit@executivegraphics.com";
+"booking.email.recipient" = "submit@executivegraphics.com"; // "romayev@gmail.com"
 "booking.email.status-new" = "New";
 "booking.email.status-update" = "Update";
 "booking.email.status-cancel" = "Cancel";
