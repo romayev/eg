@@ -29,9 +29,9 @@
             <key>NSStringFormatValueTypeKey</key>
             <string>d</string>
             <key>one</key>
-            <string>%d Hour Before at</string>
+            <string>%d Hour before IN</string>
             <key>other</key>
-            <string>%d Hours Before at</string>
+            <string>%d Hours before IN</string>
         </dict>
     </dict>
 </dict>

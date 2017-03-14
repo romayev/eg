@@ -169,9 +169,15 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if let tabBarController = tabBarController as? TabBarController {
-            let booking = fetchedResultsController.object(at: indexPath)
-            tabBarController.cancel(booking: booking)
+        let booking = fetchedResultsController.object(at: indexPath)
+        if isSimulator {
+            let editingContext = DataStore.store.editingContext
+            editingContext.delete(editingContext.object(with: booking.objectID))
+            DataStore.store.save(editing: editingContext)
+        } else {
+            if let tabBarController = tabBarController as? TabBarController {
+                tabBarController.cancel(booking: booking)
+            }
         }
     }
 

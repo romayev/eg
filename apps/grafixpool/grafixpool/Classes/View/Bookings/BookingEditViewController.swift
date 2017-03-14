@@ -137,12 +137,12 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         if !checkDates() {
             return
         }
-        #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
+        if isSimulator {
             DataStore.store.save(editing: editingContext)
             viewState.dismiss(self)
-        #else
+        } else {
             viewState.save(self)
-        #endif
+        }
     }
 
     @IBAction func deleteBooking(_ sender: UIBarButtonItem) {

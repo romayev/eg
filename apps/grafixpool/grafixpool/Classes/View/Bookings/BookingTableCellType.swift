@@ -11,7 +11,7 @@ import CoreData
 import EGKit
 
 enum BookingTableCellType: Int {
-    case person, slides, project, inDate, reminder, outDate, confidentiality, jobType, comments
+    case person, slides, project, inDate, outDate, reminder, confidentiality, jobType, comments
     
     var name: String {
         switch self {

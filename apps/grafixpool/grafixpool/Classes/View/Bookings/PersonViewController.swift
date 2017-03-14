@@ -35,7 +35,7 @@ class PersonViewController: EGViewController {
         super.viewDidLoad()
 
         firstNameTextField.placeholder = NSLocalizedString("person.edit.first-name-placeholder", comment: "")
-        lastNameTextField.placeholder = NSLocalizedString("person.edit.first-name-placeholder", comment: "")
+        lastNameTextField.placeholder = NSLocalizedString("person.edit.last-name-placeholder", comment: "")
 
         if let person = Person.defaultPerson(editingContext) {
             self.person = person
@@ -58,8 +58,14 @@ class PersonViewController: EGViewController {
             preconditionFailure("No person")
         }
 
-        person.firstName = firstNameTextField.text
-        person.lastName = lastNameTextField.text
-        DataStore.store.save(editing: editingContext)
+        if let firstName = firstNameTextField.text {
+            if let lastName = lastNameTextField.text {
+                if !firstName.isEmpty && !lastName.isEmpty {
+                    person.firstName = firstName
+                    person.lastName = lastName
+                    DataStore.store.save(editing: editingContext)
+                }
+            }
+        }
     }
 }

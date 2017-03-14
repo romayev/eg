@@ -167,10 +167,9 @@ struct Reminder {
         } else {
             let df = DateFormatter()
             df.timeStyle = .short
-            let fireDate = df.string(from: self.fireDate)
             let format = NSLocalizedString("hours-before", comment: "")
             let hoursBefore = String.localizedStringWithFormat(format, Int(difference / 3600))
-            return "\(hoursBefore) \(fireDate)"
+            return "\(hoursBefore)"
         }
     }
     static func localizedValues(for date: Date) -> [String] {
