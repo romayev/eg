@@ -29,6 +29,17 @@ extension NSDate {
         df.doesRelativeDateFormatting = true
         return "\(df.string(from: self as Date)) (CET)"
     }
+    var formatCETEmail: String {
+        guard let cet = TimeZone(abbreviation: "CET") else {
+            fatalError()
+        }
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "de_DE")
+        df.timeZone = cet
+        df.dateStyle = .short
+        df.timeStyle = .short
+        return "\(df.string(from: self as Date)) CET"
+    }
     var inCETTimeZone: NSDate {
         let current = TimeZone.current
         guard let cet = TimeZone(abbreviation: "CET") else {

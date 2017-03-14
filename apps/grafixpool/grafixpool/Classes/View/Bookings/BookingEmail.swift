@@ -33,7 +33,7 @@ enum BookingEmail {
         case .cancel:
             prefix = NSLocalizedString("booking.email.status-cancel", comment: "")
         }
-        let title = "[\(prefix)] \(emailSubject(with: booking))"
+        let title = "[\(prefix) \(NSLocalizedString("booking", comment: ""))] \(emailSubject(with: booking))"
         return BookingMessage(subject: title, body: emailBody(with: booking))
     }
 
@@ -46,10 +46,10 @@ enum BookingEmail {
         guard let person = booking.person?.formatted else {
             preconditionFailure()
         }
-        guard let inDate = booking.inDate?.inCETTimeZone.formatCET else {
+        guard let inDate = booking.inDate?.formatCETEmail else {
             preconditionFailure()
         }
-        guard let outDate = booking.outDate?.inCETTimeZone.formatCET else {
+        guard let outDate = booking.outDate?.formatCETEmail else {
             preconditionFailure()
         }
         guard let confidentiality = Confidentiality(rawValue: Int(booking.confidentiality))?.localizedName else {
@@ -71,8 +71,8 @@ enum BookingEmail {
             NSLocalizedString("booking.edit.booking-id", comment: ""): booking.bookingID,
             NSLocalizedString("booking.edit.person", comment: ""): booking.person?.formatted,
             NSLocalizedString("booking.edit.project", comment: ""): booking.project?.code,
-            NSLocalizedString("booking.edit.in", comment: ""): booking.inDate?.inCETTimeZone.formatCET,
-            NSLocalizedString("booking.edit.out", comment: ""): booking.outDate?.inCETTimeZone.formatCET,
+            NSLocalizedString("booking.edit.in", comment: ""): booking.inDate?.formatCETEmail,
+            NSLocalizedString("booking.edit.out", comment: ""): booking.outDate?.formatCETEmail,
             NSLocalizedString("booking.edit.confidentiality", comment: ""): Confidentiality(rawValue: Int(booking.confidentiality))?.localizedName,
             NSLocalizedString("booking.edit.job-type", comment: ""): jobTypeValues,
             NSLocalizedString("booking.edit.notes", comment: ""): booking.notes,
