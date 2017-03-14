@@ -101,6 +101,7 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
     private func configuredMailComposeViewController(email: BookingEmail, booking: Booking) -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.navigationBar.tintColor = UIColor.white
 
         let message = email.bookingMessage(with: booking)
         mailComposerVC.setToRecipients(message.recipients)

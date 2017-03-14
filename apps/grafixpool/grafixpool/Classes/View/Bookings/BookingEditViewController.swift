@@ -395,6 +395,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
     private func configuredMailComposeViewController(email: BookingEmail) -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.navigationBar.tintColor = UIColor.white
 
         let message = email.bookingMessage(with: booking)
         mailComposerVC.setToRecipients(message.recipients)

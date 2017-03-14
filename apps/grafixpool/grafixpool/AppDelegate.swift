@@ -21,13 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         let whiteColor = UIColor.white
 
         window?.tintColor = navbarTintColor
-//        let tabBar = UITabBar.appearance()
-//        tabBar.tintColor = whiteColor
-//        tabBar.barTintColor = UIColor.black
 
         let navigationBar = UINavigationBar.appearance()
         navigationBar.tintColor = whiteColor
         navigationBar.barTintColor = navbarTintColor
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 
         let font = UIFont(name: "Arial", size: 18.0) ?? UIFont.systemFont(ofSize: 18.0)
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: whiteColor, NSFontAttributeName: font]
