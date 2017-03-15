@@ -173,17 +173,17 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
     }
 
     // MARK: EGEditTableViewController
-    override var count: Int { return BookingTableCellType.count }
+    override var count: Int { return BookingAttribute.editCount }
 
     override func isCellEditable(at indexPath: IndexPath) -> Bool {
-        guard let type = BookingTableCellType(rawValue: indexPath.row) else {
+        guard let type = BookingAttribute(rawValue: indexPath.row) else {
             fatalError("ERROR: Unable to find type for row \(indexPath.row)")
         }
         return type != .person
     }
 
     override func processCustomSelect(at indexPath: IndexPath) {
-        guard let type = BookingTableCellType(rawValue: indexPath.row) else {
+        guard let type = BookingAttribute(rawValue: indexPath.row) else {
             fatalError("ERROR: Unable to find type for row \(indexPath.row)")
         }
         switch type {
@@ -198,20 +198,20 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let activeRow = activePath?.row else  {
             fatalError("ERROR: Active cell undefined")
         }
-        guard let type = BookingTableCellType(rawValue: activeRow) else {
+        guard let type = BookingAttribute(rawValue: activeRow) else {
             fatalError("ERROR: Unable to find type for row \(activeRow)")
         }
         return type.editCellType
     }
 
     override func cell(atAdjusted indexPath: IndexPath) -> UITableViewCell {
-        guard let type = BookingTableCellType(rawValue: indexPath.row) else {
+        guard let type = BookingAttribute(rawValue: indexPath.row) else {
             fatalError("ERROR: Unable to find type for row \(indexPath.row)")
         }
         switch type {
         case .inDate, .outDate:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DateCell", for: indexPath) as! DateCell
-            let type = bookingTableCellType(forAdjusted: indexPath)
+            let type = bookingAttribute(forAdjusted: indexPath)
             cell.titleLabel?.text = type.localizedName
             switch type {
             case .inDate:
@@ -223,7 +223,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-            let type = bookingTableCellType(forAdjusted: indexPath)
+            let type = bookingAttribute(forAdjusted: indexPath)
             cell.textLabel?.text = type.localizedName
             cell.detailTextLabel?.text = self.description(forRow: indexPath.row)
             if type == .person {
@@ -240,8 +240,8 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let activeRow = activePath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        if let type = BookingTableCellType(rawValue: activeRow) {
-            return type.values(withBooking: booking, in: editingContext)
+        if let type = BookingAttribute(rawValue: activeRow) {
+            return type.values(with: booking, in: editingContext)
         }
         return nil
     }
@@ -250,14 +250,14 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let activeRow = activePath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        if let type = BookingTableCellType(rawValue: activeRow) {
+        if let type = BookingAttribute(rawValue: activeRow) {
             switch type {
             case .jobType:
                 if booking.jobTypeValues.count > 0 {
                     return booking.jobTypeValues
                 }
             default:
-                if let value = type.value(withBooking: booking) {
+                if let value = type.value(with: booking) {
                     return [value]
                 }
             }
@@ -269,7 +269,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let activeRow = activePath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        if let type = BookingTableCellType(rawValue: activeRow) {
+        if let type = BookingAttribute(rawValue: activeRow) {
             type.processDidSelectValue(value, at: index, booking: booking)
         }
 
@@ -277,7 +277,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
     }
 
     override func editCellDidCollapse(at indexPath: IndexPath) {
-        if let type = BookingTableCellType(rawValue: indexPath.row) {
+        if let type = BookingAttribute(rawValue: indexPath.row) {
             if let indexPaths = type.indexPathsForDependentMappings {
                 let adjusted = indexPaths.map { adjustedPath(forIndexPath: $0) }
                 tableView.reloadRows(at: adjusted, with: .automatic)
@@ -302,7 +302,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             guard let activePath = activePath else  {
                 preconditionFailure("ERROR: Active cell undefined")
             }
-            let type = bookingTableCellType(forAdjusted: activePath)
+            let type = bookingAttribute(forAdjusted: activePath)
             assert(type == .inDate || type == .outDate, "Unexpected cell typefor row: \(activePath.row)")
 
             var result = Date().addingTimeInterval(3600 * 8)
@@ -324,7 +324,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             guard let activePath = activePath else  {
                 preconditionFailure("ERROR: Active cell undefined")
             }
-            let type = bookingTableCellType(forAdjusted: activePath)
+            let type = bookingAttribute(forAdjusted: activePath)
             assert(type == .inDate || type == .outDate, "Unexpected cell typefor row: \(activePath.row)")
             switch type {
             case .inDate:
@@ -353,17 +353,17 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
 
     // MARK: Helpers
     private func description(forRow row: Int) -> String {
-        if let BookingTableCellType = BookingTableCellType(rawValue: row) {
-            if let value = BookingTableCellType.value(withBooking: booking) {
+        if let bookingTableCellType = BookingAttribute(rawValue: row) {
+            if let value = bookingTableCellType.value(with: booking) {
                 return value
             }
         }
     return "--"
     }
 
-    private func bookingTableCellType(forAdjusted indexPath: IndexPath) -> BookingTableCellType {
-        guard let type = BookingTableCellType(rawValue: indexPath.row) else {
-            fatalError("Unable to get BookingTableCellType for row \(indexPath.row)")
+    private func bookingAttribute(forAdjusted indexPath: IndexPath) -> BookingAttribute {
+        guard let type = BookingAttribute(rawValue: indexPath.row) else {
+            fatalError("Unable to get BookingAttribute for row \(indexPath.row)")
         }
         return type
     }
@@ -442,7 +442,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
     }
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        let indexPath = IndexPath(item: BookingTableCellType.person.rawValue, section: 0)
+        let indexPath = IndexPath(item: BookingAttribute.person.rawValue, section: 0)
         if booking.person == nil {
             guard let person = Person.defaultPerson(editingContext) else {
                 preconditionFailure("No person")

@@ -22,7 +22,7 @@
 		FA6B7BB91E7724D0005DAE67 /* BookingEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BA81E7724D0005DAE67 /* BookingEmail.swift */; };
 		FA6B7BBA1E7724D0005DAE67 /* BookingNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BA91E7724D0005DAE67 /* BookingNotification.swift */; };
 		FA6B7BBB1E7724D0005DAE67 /* BookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAA1E7724D0005DAE67 /* BookingsViewController.swift */; };
-		FA6B7BBC1E7724D0005DAE67 /* BookingTableCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAB1E7724D0005DAE67 /* BookingTableCellType.swift */; };
+		FA6B7BBC1E7724D0005DAE67 /* BookingAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAB1E7724D0005DAE67 /* BookingAttribute.swift */; };
 		FA6B7BBD1E7724D0005DAE67 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAC1E7724D0005DAE67 /* PersonViewController.swift */; };
 		FA6B7BBE1E7724D0005DAE67 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAE1E7724D0005DAE67 /* Color.swift */; };
 		FA6B7BBF1E7724D0005DAE67 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAF1E7724D0005DAE67 /* Image.swift */; };
@@ -68,7 +68,7 @@
 		FA6B7BA81E7724D0005DAE67 /* BookingEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingEmail.swift; sourceTree = "<group>"; };
 		FA6B7BA91E7724D0005DAE67 /* BookingNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingNotification.swift; sourceTree = "<group>"; };
 		FA6B7BAA1E7724D0005DAE67 /* BookingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingsViewController.swift; sourceTree = "<group>"; };
-		FA6B7BAB1E7724D0005DAE67 /* BookingTableCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingTableCellType.swift; sourceTree = "<group>"; };
+		FA6B7BAB1E7724D0005DAE67 /* BookingAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingAttribute.swift; sourceTree = "<group>"; };
 		FA6B7BAC1E7724D0005DAE67 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		FA6B7BAE1E7724D0005DAE67 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FA6B7BAF1E7724D0005DAE67 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -162,11 +162,11 @@
 		FA6B7BA61E7724D0005DAE67 /* Bookings */ = {
 			isa = PBXGroup;
 			children = (
+				FA6B7BAB1E7724D0005DAE67 /* BookingAttribute.swift */,
 				FA6B7BA71E7724D0005DAE67 /* BookingEditViewController.swift */,
 				FA6B7BA81E7724D0005DAE67 /* BookingEmail.swift */,
 				FA6B7BA91E7724D0005DAE67 /* BookingNotification.swift */,
 				FA6B7BAA1E7724D0005DAE67 /* BookingsViewController.swift */,
-				FA6B7BAB1E7724D0005DAE67 /* BookingTableCellType.swift */,
 				FA6B7BAC1E7724D0005DAE67 /* PersonViewController.swift */,
 			);
 			path = Bookings;
@@ -285,7 +285,7 @@
 				FA6B7BC01E7724D0005DAE67 /* RecordsViewController.swift in Sources */,
 				FA6B7BB71E7724D0005DAE67 /* Record.swift in Sources */,
 				FA6B7BB31E7724D0005DAE67 /* Date.swift in Sources */,
-				FA6B7BBC1E7724D0005DAE67 /* BookingTableCellType.swift in Sources */,
+				FA6B7BBC1E7724D0005DAE67 /* BookingAttribute.swift in Sources */,
 				FA6B7BBD1E7724D0005DAE67 /* PersonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

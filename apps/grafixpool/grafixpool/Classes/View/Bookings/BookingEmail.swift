@@ -38,70 +38,72 @@ enum BookingEmail {
     }
 
     func emailSubject(with booking: Booking) -> String {
-        let slides = booking.slides
-
         guard let project = booking.project?.code else {
             preconditionFailure()
         }
         guard let person = booking.person?.formatted else {
             preconditionFailure()
         }
-        guard let inDate = booking.inDate?.formatCETEmail else {
-            preconditionFailure()
-        }
-        guard let outDate = booking.outDate?.formatCETEmail else {
-            preconditionFailure()
-        }
         guard let confidentiality = Confidentiality(rawValue: Int(booking.confidentiality))?.localizedName else {
             preconditionFailure()
         }
-        let inTitle = NSLocalizedString("booking.in", comment: "")
-        let outTitle = NSLocalizedString("booking.out", comment: "")
 
-        return "\(slides) / \(project) / \(person) / \(inTitle): \(inDate) / \(outTitle): \(outDate) / \(confidentiality)"
+        var array = [booking.slides, project, person, confidentiality]
+        array.insert(contentsOf: [BookingAttribute.inDate, BookingAttribute.outDate].map { $0.formattedForEmail(with: booking)! }, at: 3)
+        return array.joined(separator: " / ")
     }
 
     func emailBody(with booking: Booking) -> String {
+        var body = ""
+
         let statusTitle = NSLocalizedString("status", comment: "")
-
-        let values = booking.jobTypeValues
-        let jobTypeValues = values.count > 0 ? booking.jobTypeValues.joined(separator: ", ") : nil
-
-        let body = formatBody(values: [
-            NSLocalizedString("booking.edit.booking-id", comment: ""): booking.bookingID,
-            NSLocalizedString("booking.edit.person", comment: ""): booking.person?.formatted,
-            NSLocalizedString("booking.edit.project", comment: ""): booking.project?.code,
-            NSLocalizedString("booking.edit.in", comment: ""): booking.inDate?.formatCETEmail,
-            NSLocalizedString("booking.edit.out", comment: ""): booking.outDate?.formatCETEmail,
-            NSLocalizedString("booking.edit.confidentiality", comment: ""): Confidentiality(rawValue: Int(booking.confidentiality))?.localizedName,
-            NSLocalizedString("booking.edit.job-type", comment: ""): jobTypeValues,
-            NSLocalizedString("booking.edit.notes", comment: ""): booking.notes,
-            NSLocalizedString("booking.edit.slides", comment: ""): booking.slides
-            ]
-        )
         switch self {
         case .add:
-            let status = format(title: statusTitle, value: NSLocalizedString("booking.email.status-new", comment: ""))
-            return "\(status)\(body)"
+            body = "\(statusTitle): \(NSLocalizedString("booking.email.status-new", comment: ""))"
         case .update:
-            let status = format(title: statusTitle, value: NSLocalizedString("booking.email.status-update", comment: ""))
-            return "\(status)\(body)"
+            body = "\(statusTitle): \(NSLocalizedString("booking.email.status-update", comment: ""))"
         case .cancel:
-            let status = format(title: statusTitle, value: NSLocalizedString("booking.email.status-cancel", comment: ""))
-            return "\(status)\(body)"
+            body = "\(statusTitle): \(NSLocalizedString("booking.email.status-cancel", comment: ""))"
         }
-    }
-    private func format(title: String , value: String) -> String {
-        return "\(title): \(value)\n"
-    }
-    private func formatBody(values: [String: String?]) -> String {
-        var body = ""
-        let keys = values.keys.sorted()
-        for key in keys {
-            if let value = values[key] ?? nil {
-                body = "\(body)\(format(title: key, value: value))"
-            }
+        body += "\n"
+
+        if let bookingID = BookingAttribute.bookingID.formattedForEmail(with: booking) {
+            body += bookingID
+            body += "\n\n"
         }
+        if let slides = BookingAttribute.slides.formattedForEmail(with: booking) {
+            body += slides
+            body += "\n"
+        }
+        if let project = BookingAttribute.project.formattedForEmail(with: booking) {
+            body += project
+            body += "\n"
+        }
+        if let person = BookingAttribute.person.formattedForEmail(with: booking) {
+            body += person
+            body += "\n"
+        }
+        if let inDate = BookingAttribute.inDate.formattedForEmail(with: booking) {
+            body += inDate
+            body += "\n"
+        }
+        if let outDate = BookingAttribute.outDate.formattedForEmail(with: booking) {
+            body += outDate
+            body += "\n"
+        }
+        if let confidentiality = BookingAttribute.confidentiality.formattedForEmail(with: booking) {
+            body += confidentiality
+            body += "\n\n"
+        }
+        if let jobType = BookingAttribute.jobType.formattedForEmail(with: booking) {
+            body += jobType
+            body += "\n\n"
+        }
+        if let comments = BookingAttribute.comments.formattedForEmail(with: booking) {
+            body += comments
+            body += "\n\n"
+        }
+
         return body
     }
 }
