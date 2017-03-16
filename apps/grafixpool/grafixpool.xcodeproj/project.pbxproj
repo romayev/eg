@@ -28,12 +28,12 @@
 		FA6B7BBF1E7724D0005DAE67 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAF1E7724D0005DAE67 /* Image.swift */; };
 		FA6B7BC01E7724D0005DAE67 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BB01E7724D0005DAE67 /* RecordsViewController.swift */; };
 		FA6B7BC31E7724DC005DAE67 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7BC11E7724DC005DAE67 /* Localizable.stringsdict */; };
-		FA6B7BC41E7724DC005DAE67 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BC21E7724DC005DAE67 /* SecondViewController.swift */; };
 		FA6B7BC71E7724F2005DAE67 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7BC51E7724F2005DAE67 /* Localizable.strings */; };
 		FA6B7BCA1E7726B3005DAE67 /* grafixpool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BC81E7726B3005DAE67 /* grafixpool.xcdatamodeld */; };
 		FA6B7BCC1E7726E8005DAE67 /* EGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */; };
 		FA6B7BCD1E7726E8005DAE67 /* EGKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA6B7BD41E772E18005DAE67 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BD31E772E18005DAE67 /* TabBarController.swift */; };
+		FADA4A631E7A26E3001BFA54 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA4A621E7A26E3001BFA54 /* ContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,11 +74,11 @@
 		FA6B7BAF1E7724D0005DAE67 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		FA6B7BB01E7724D0005DAE67 /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		FA6B7BC11E7724DC005DAE67 /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; name = Localizable.stringsdict; path = grafixpool/Localizable.stringsdict; sourceTree = SOURCE_ROOT; };
-		FA6B7BC21E7724DC005DAE67 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = grafixpool/SecondViewController.swift; sourceTree = SOURCE_ROOT; };
 		FA6B7BC61E7724F2005DAE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA6B7BC91E7726B3005DAE67 /* grafixpool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = grafixpool.xcdatamodel; sourceTree = "<group>"; };
 		FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6B7BD31E772E18005DAE67 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		FADA4A621E7A26E3001BFA54 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +129,6 @@
 		FA6B7B9C1E7724D0005DAE67 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FA6B7BC21E7724DC005DAE67 /* SecondViewController.swift */,
 				FA6B7B9D1E7724D0005DAE67 /* Model */,
 				FA6B7BA51E7724D0005DAE67 /* View */,
 			);
@@ -155,6 +154,7 @@
 			children = (
 				FA6B7BA61E7724D0005DAE67 /* Bookings */,
 				FA6B7BAD1E7724D0005DAE67 /* Common */,
+				FADA4A5F1E79F20E001BFA54 /* More */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +189,14 @@
 				FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FADA4A5F1E79F20E001BFA54 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				FADA4A621E7A26E3001BFA54 /* ContactViewController.swift */,
+			);
+			path = More;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,12 +284,12 @@
 				FA6B7BB81E7724D0005DAE67 /* BookingEditViewController.swift in Sources */,
 				FA6B7BCA1E7726B3005DAE67 /* grafixpool.xcdatamodeld in Sources */,
 				FA6B7BB21E7724D0005DAE67 /* DataStore.swift in Sources */,
+				FADA4A631E7A26E3001BFA54 /* ContactViewController.swift in Sources */,
 				FA6B7BBE1E7724D0005DAE67 /* Color.swift in Sources */,
 				FA6B7BBF1E7724D0005DAE67 /* Image.swift in Sources */,
 				FA6B7BB11E7724D0005DAE67 /* Booking.swift in Sources */,
 				FA6B7BB61E7724D0005DAE67 /* Project.swift in Sources */,
 				FA6B7BD41E772E18005DAE67 /* TabBarController.swift in Sources */,
-				FA6B7BC41E7724DC005DAE67 /* SecondViewController.swift in Sources */,
 				FA6B7BC01E7724D0005DAE67 /* RecordsViewController.swift in Sources */,
 				FA6B7BB71E7724D0005DAE67 /* Record.swift in Sources */,
 				FA6B7BB31E7724D0005DAE67 /* Date.swift in Sources */,
