@@ -32,7 +32,11 @@ class Product : NSObject {
         notes = dictionary["productNotes"] as? String
         region = dictionary["region"] as? String
         valueProposition = dictionary["valueProposition"] as? String
-        priority = dictionary["priority"] as? Int
+        if let priorityString = dictionary["priority"] as? String {
+            priority = Int(priorityString)
+        } else {
+            priority = nil
+        }
         labelDeclaration = dictionary["labelDeclaration"] as? String
     }
 

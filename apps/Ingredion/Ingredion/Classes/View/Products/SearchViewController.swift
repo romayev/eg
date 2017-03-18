@@ -42,7 +42,7 @@ class SearchViewController : EGEditTableViewController, ProductsViewControllerDe
             return nil
         }
         let attribute = searchCriteria.attributes[activeRow]
-        return productType.dropDownValuesFor(attribute: attribute, in: searchCriteria)
+        return productType.dropDownValues(for: attribute, in: searchCriteria)
     }
     override var selectedItemsForEditCell: [String]? {
         guard let activeCellPath = self.activePath else {
@@ -149,7 +149,7 @@ class SearchViewController : EGEditTableViewController, ProductsViewControllerDe
     }
 
     private func searchCriteriaDidChange(reset: Bool = false) {
-        products = productType.productsWithSearchCriteria(searchCriteria)
+        products = productType.products(with: searchCriteria)
         productCountLabel.text = "\(products.count)"
     }
 

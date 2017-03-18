@@ -80,7 +80,7 @@ enum ProductType: Int {
     }()
 
     // MARK: Factory
-    func productWith(dictionary: Dictionary<String, Any>) -> Product {
+    func product(with dictionary: Dictionary<String, Any>) -> Product {
         switch self {
         case .beverages:
             return Beverage(dictionary)
@@ -92,22 +92,45 @@ enum ProductType: Int {
     }
     
     // MARK: Search
-    func dropDownValuesFor(attribute: String, in searchCriteria: SearchCriteria) -> [String] {
+    func dropDownValues(for attribute: String, in searchCriteria: SearchCriteria) -> [String] {
         var criteria = searchCriteria
         criteria.toggleValueForAttribute(attribute, value: SearchCriteria.ALL())
-        let products = productsWithSearchCriteria(criteria)
+        let products = self.products(with: criteria)
         var values = propertyValues(attribute, in: products)
         values.insert(NSLocalizedString(SearchCriteria.ALL(), comment: ""), at: 0)
         return values
     }
 
-    func productsWithSearchCriteria(_ searchCriteria: SearchCriteria) -> [Product] {
+    func products(with searchCriteria: SearchCriteria) -> [Product] {
         let filtered = products.filter { return searchCriteria.matches($0) }
         let unique = Array(Set(filtered))
-        // FIXME: Sort
-        return unique
+
+        let priority: SortDescriptor<Product> = {
+            if let priority1 = $0.priority {
+                if let priority2 = $1.priority {
+                    return priority1 < priority2
+                }
+            }
+            return false
+        }
+        let name: SortDescriptor<Product> = { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending  }
+        let sortColumns: SortDescriptor<Product> = combine(sortDescriptors: [priority, name])
+        return unique.sorted(by: sortColumns)
     }
 
+    func highPriorityProducts(in products: [Product]) -> [Product] {
+        guard let highestPriority = products.first?.priority else {
+            preconditionFailure("No priority or products")
+        }
+
+        let result = products.filter { $0.priority == highestPriority }
+        if result.count < 5 {
+            return Array(products.prefix(5))
+        } else {
+            return result
+        }
+    }
+    
     func propertyValues(_ property: String, in product: Product) -> String {
         let filtered = products.filter { $0.name == product.name }
         return propertyValues(property, in: filtered).joined(separator: ", ")

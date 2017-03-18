@@ -14,7 +14,7 @@
 "error" = "Error";
 "next" = "Next";
 "no" = "No";
-"no-bookings" = "There are no recent bookings";
+"no-bookings" = "There are no upcoming bookings";
 "none" = "None";
 "ok" = "OK";
 "reminder" = "Reminder";

@@ -51,6 +51,7 @@ class ProductsViewController: EGViewController, ExpertsViewControllerDelegate, U
             }
         }
         tableView?.tableFooterView = UIView()
+        usePriority = productType.usesPriority
         loadProducts()
     }
 
@@ -86,8 +87,7 @@ class ProductsViewController: EGViewController, ExpertsViewControllerDelegate, U
     private func loadProducts() {
         if let products = delegate?.products {
             if usePriority && segmentedControl?.selectedSegmentIndex == 0 {
-                // FIXME: productsWithHighPriority
-                self.products = products
+                self.products = productType.highPriorityProducts(in: products)
             } else {
                 self.products = products
             }

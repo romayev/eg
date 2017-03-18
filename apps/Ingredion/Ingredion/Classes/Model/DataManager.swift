@@ -22,7 +22,7 @@ final class DataManager {
                 var format = PropertyListSerialization.PropertyListFormat.xml
                 let array = try PropertyListSerialization.propertyList(from: plist, options: .mutableContainersAndLeaves, format: &format) as! [Dictionary<String, Any>]
                 for dict in array {
-                    let item = productType.productWith(dictionary: dict)
+                    let item = productType.product(with: dict)
                     r.append(item)
                 }
             } catch {

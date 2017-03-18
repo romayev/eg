@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         navigationBar.barTintColor = greenColor
 
         UIToolbar.appearance().tintColor = orangeColor
-        UIToolbar.appearance().tintColor = whiteColor
+        //UIToolbar.appearance().tintColor = whiteColor
 
         let font = UIFont(name: "GillSans", size: 22.0) ?? UIFont.systemFont(ofSize: 22.0)
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: whiteColor, NSFontAttributeName: font]

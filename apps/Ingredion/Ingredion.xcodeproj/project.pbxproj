@@ -15,6 +15,7 @@
 		FA6AEC151E5C8CE800222F9E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA6AEC131E5C8CE800222F9E /* Localizable.strings */; };
 		FA6B7BD01E772740005DAE67 /* EGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCF1E772740005DAE67 /* EGKit.framework */; };
 		FA6B7BD11E772740005DAE67 /* EGKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCF1E772740005DAE67 /* EGKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA747AAD1E7DA1CD00731879 /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA747AAC1E7DA1CD00731879 /* Sort.swift */; };
 		FAC253481E4D364F00E96896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC253471E4D364F00E96896 /* AppDelegate.swift */; };
 		FAC2534F1E4D364F00E96896 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC2534D1E4D364F00E96896 /* Main.storyboard */; };
 		FAC253511E4D365000E96896 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC253501E4D365000E96896 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		FA6AEC111E5BED5B00222F9E /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsViewController.swift; path = Products/ProductsViewController.swift; sourceTree = "<group>"; };
 		FA6AEC141E5C8CE800222F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA6B7BCF1E772740005DAE67 /* EGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA747AAC1E7DA1CD00731879 /* Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
 		FAC253441E4D364F00E96896 /* Ingredion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ingredion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC253471E4D364F00E96896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC2534E1E4D364F00E96896 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				FAC2536E1E51339900E96896 /* Product.swift */,
 				FAC2538C1E5B420900E96896 /* ProductType.swift */,
 				FA29EB931E5E4232001DFE8C /* SearchCriteria.swift */,
+				FA747AAC1E7DA1CD00731879 /* Sort.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				FA6AEC121E5BED5B00222F9E /* ProductsViewController.swift in Sources */,
 				FA6AEC0F1E5BED2B00222F9E /* ProductViewController.swift in Sources */,
 				FA29EB941E5E4232001DFE8C /* SearchCriteria.swift in Sources */,
+				FA747AAD1E7DA1CD00731879 /* Sort.swift in Sources */,
 				FAC253611E4E62FE00E96896 /* DataManager.swift in Sources */,
 				FAC2536D1E51324B00E96896 /* Confectionery.swift in Sources */,
 				FAC253481E4D364F00E96896 /* AppDelegate.swift in Sources */,
