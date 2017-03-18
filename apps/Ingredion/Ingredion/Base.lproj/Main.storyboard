@@ -28,7 +28,7 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="search-3" translatesAutoresizingMaskIntoConstraints="NO" id="8Qc-s7-Zkp">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="search-confectionery" translatesAutoresizingMaskIntoConstraints="NO" id="8Qc-s7-Zkp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8Qc-s7-Zkp" secondAttribute="height" multiplier="1200:250" id="DhD-kD-f0D"/>
@@ -959,10 +959,10 @@
         <image name="home" width="574" height="331"/>
         <image name="ingredion" width="321" height="210"/>
         <image name="more" width="100" height="130"/>
-        <image name="search-3" width="1200" height="250"/>
+        <image name="search-confectionery" width="1200" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ax8-gY-1Xq"/>
-        <segue reference="edo-qP-J2M"/>
+        <segue reference="d8V-Uy-Sca"/>
     </inferredMetricsTieBreakers>
 </document>

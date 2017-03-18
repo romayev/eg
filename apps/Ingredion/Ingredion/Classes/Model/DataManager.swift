@@ -16,7 +16,7 @@ final class DataManager {
 
     static func load(_ productType: ProductType) -> [Product] {
         var r = [Product]()
-        if let path = Bundle.main.path(forResource: productType.module, ofType: "plist") {
+        if let path = Bundle.main.path(forResource: productType.rawValue, ofType: "plist") {
             let plist = FileManager.default.contents(atPath: path)!
             do {
                 var format = PropertyListSerialization.PropertyListFormat.xml
@@ -26,7 +26,7 @@ final class DataManager {
                     r.append(item)
                 }
             } catch {
-                print("Error reading plist for \(productType.module).plist: \(error)")
+                print("Error reading plist for \(productType.rawValue).plist: \(error)")
             }
         }
         return r

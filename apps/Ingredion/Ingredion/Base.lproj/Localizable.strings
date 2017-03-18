@@ -26,16 +26,16 @@
 
 // Index
 "index.title" = "Home";
-"index.title.0" = "Batters & Breadings";
-"index.title.1" = "Beverages";
-"index.title.2" = "Carrageenan";
-"index.title.3" = "Confectionery";
-"index.title.4" = "Creamy Salad Dressing";
-"index.title.5" = "Hydrocolloids";
-"index.title.6" = "Meat";
-"index.title.7" = "Processed Cheese";
-"index.title.8" = "Yogurt";
-"index.title.9" = "Tomato-Based Sauces";
+"index.title.battersAndBreadings" = "Batters & Breadings";
+"index.title.beverages" = "Beverages";
+"index.title.carrageenan" = "Carrageenan";
+"index.title.confectionery" = "Confectionery";
+"index.title.creamySalad" = "Creamy Salad Dressing";
+"index.title.hydrocolloids" = "Hydrocolloids";
+"index.title.meat" = "Meat";
+"index.title.processedCheese" = "Processed Cheese";
+"index.title.tomatoBasedSauses" = "Yogurt";
+"index.title.yogurt" = "Tomato-Based Sauces";
 
 // Search
 "top" = "Top";

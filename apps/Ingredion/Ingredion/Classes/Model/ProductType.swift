@@ -8,25 +8,15 @@
 
 import Foundation
 
-enum ProductType: Int {
+enum ProductType: String {
     case battersAndBreadings, beverages, carrageenan, confectionery, creamySalad, hydrocolloids, meat, processedCheese, tomatoBasedSauses, yogurt
 
-    var module: String {
-        switch self {
-        case .beverages:
-            return "beverages"
-        case .confectionery:
-            return "confectionery"
-        default:
-            return "not implemented"
-        }
-    }
     var localizedName: String {
-        let key = "index.title.\(self.rawValue)"
+        let key = "index.title.\(rawValue)"
         return NSLocalizedString(key, comment: "")
     }
     var imageName: String {
-        return "search-\(self.rawValue)"
+        return "search-\(rawValue)"
     }
     var usesPriority: Bool {
         switch self {
@@ -73,11 +63,9 @@ enum ProductType: Int {
         }
     }
 
-    static let count: Int = {
-        var max: Int = 0
-        while let _ = ProductType(rawValue: max) { max += 1 }
-        return max
-    }()
+    static let all = [ProductType.battersAndBreadings, ProductType.beverages, ProductType.carrageenan, ProductType.confectionery, ProductType.creamySalad, ProductType.hydrocolloids,
+                      ProductType.meat, ProductType.processedCheese, ProductType.tomatoBasedSauses, ProductType.yogurt]
+    static var count: Int { return all.count }
 
     // MARK: Factory
     func product(with dictionary: Dictionary<String, Any>) -> Product {
