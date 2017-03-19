@@ -12,8 +12,7 @@ enum ProductType: String {
     case battersAndBreadings, beverages, carrageenan, confectionery, creamySalad, hydrocolloids, meat, processedCheese, tomatoBasedSauses, yogurt
 
     var localizedName: String {
-        let key = "index.title.\(rawValue)"
-        return NSLocalizedString(key, comment: "")
+        return NSLocalizedString(rawValue, comment: "")
     }
     var imageName: String {
         return "search-\(rawValue)"

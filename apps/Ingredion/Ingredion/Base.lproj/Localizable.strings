@@ -16,6 +16,21 @@
 "search" = "Search";
 "view" = "View";
 
+// Product Types
+"battersAndBreadings" = "Batters & Breadings";
+"beverages" = "Beverages";
+"carrageenan" = "Carrageenan";
+"confectionery" = "Confectionery";
+"creamySalad" = "Creamy Salad Dressing";
+"hydrocolloids" = "Hydrocolloids";
+"meat" = "Meat";
+"processedCheese" = "Processed Cheese";
+"tomatoBasedSauses" = "Yogurt";
+"yogurt" = "Tomato-Based Sauces";
+
+// Index
+"index.title" = "Home";
+
 // More
 "more.title-about" = "About";
 "more.title-contact" = "& Contact";
@@ -23,19 +38,6 @@
 "more.contact.name" = "Erhan Yildiz";
 "more.contact.title" = "Global Applications Director";
 "more.contact.email-phone" = "erhan.yildiz@ingredion.com\n+1 908-685-5271";
-
-// Index
-"index.title" = "Home";
-"index.title.battersAndBreadings" = "Batters & Breadings";
-"index.title.beverages" = "Beverages";
-"index.title.carrageenan" = "Carrageenan";
-"index.title.confectionery" = "Confectionery";
-"index.title.creamySalad" = "Creamy Salad Dressing";
-"index.title.hydrocolloids" = "Hydrocolloids";
-"index.title.meat" = "Meat";
-"index.title.processedCheese" = "Processed Cheese";
-"index.title.tomatoBasedSauses" = "Yogurt";
-"index.title.yogurt" = "Tomato-Based Sauces";
 
 // Search
 "top" = "Top";
