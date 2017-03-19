@@ -134,6 +134,11 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
+        if (!editingContext.hasChanges) {
+            viewState.dismiss(self)
+            return
+        }
+
         if !checkDates() {
             return
         }
@@ -146,13 +151,24 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
     }
 
     @IBAction func deleteBooking(_ sender: UIBarButtonItem) {
-        #if (arch(i386) || arch(x86_64)) && (os(iOS) || os(watchOS) || os(tvOS))
+        if isSimulator {
             editingContext.delete(booking)
             DataStore.store.save(editing: editingContext)
             viewState.dismiss(self)
-        #else
-            send(email: .cancel)
-        #endif
+        } else {
+            let alertController = UIAlertController(title: nil, message: NSLocalizedString("booking.email-update-message", comment: ""), preferredStyle: .actionSheet)
+            let yes = UIAlertAction(title: NSLocalizedString(NSLocalizedString("yes", comment: ""), comment: ""), style: .default, handler: { (action) in
+                self.send(email: .cancel)
+            })
+            let no = UIAlertAction(title: NSLocalizedString(NSLocalizedString("no", comment: ""), comment: ""), style: .default, handler: { (action) in
+                self.editingContext.delete(self.booking)
+                DataStore.store.save(editing: self.editingContext)
+                self.viewState.dismiss(self)
+            })
+            alertController.addAction(yes)
+            alertController.addAction(no)
+            present(alertController, animated: true, completion: nil)
+        }
     }
 
     private func checkDates() -> Bool {

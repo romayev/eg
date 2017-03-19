@@ -59,7 +59,19 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
     }
 
     func cancel(booking: Booking) {
-        send(email: .cancel, booking: booking)
+        let alertController = UIAlertController(title: nil, message: NSLocalizedString("booking.email-update-message", comment: ""), preferredStyle: .actionSheet)
+        let yes = UIAlertAction(title: NSLocalizedString(NSLocalizedString("yes", comment: ""), comment: ""), style: .default, handler: { (action) in
+            self.send(email: .cancel, booking: booking)
+        })
+        let no = UIAlertAction(title: NSLocalizedString(NSLocalizedString("no", comment: ""), comment: ""), style: .default, handler: { (action) in
+            let editingContext = DataStore.store.editingContext
+            editingContext.delete(booking)
+            DataStore.store.save(editing: editingContext)
+        })
+        alertController.addAction(yes)
+        alertController.addAction(no)
+        present(alertController, animated: true, completion: nil)
+
     }
 
     // MARK: MFMailComposeViewControllerDelegate

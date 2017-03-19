@@ -62,7 +62,7 @@
 
 "booking.notification.body-prefix" = "Booking IN";
 
-"booking.email-update-message" = "Do you want to email these changes?";
+"booking.email-update-message" = "Do you want to email this update?";
 
 "booking.email.recipient" = "romayev@gmail.com"; // "submit@executivegraphics.com"
 "booking.email.status-new" = "New";
@@ -70,7 +70,7 @@
 "booking.email.status-cancel" = "Cancel";
 
 "email.alert.title" = "Email";
-"email.alert.message.success" = "Booking was successfully submitted";
+"email.alert.message.success" = "Booking update was successfully submitted";
 "email.alert.message.error" = "Failed to submit due to error:";
 "email.alert.unable-to-send-mail" = "Your device could not send e-mail. Please check e-mail configuration and try again.";
 

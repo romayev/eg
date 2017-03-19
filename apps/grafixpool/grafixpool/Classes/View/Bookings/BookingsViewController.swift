@@ -27,6 +27,14 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
                 return nil
             }
         }
+        var sortOrderAssending: Bool {
+            switch self {
+            case .recent:
+                return true
+            case .all:
+                return false
+            }
+        }
     }
     private enum FetchState {
         case records, noRecords
@@ -58,7 +66,7 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         if let fromDate = viewState.fromDate {
             request.predicate = NSPredicate.init(format: "inDate >= %@", fromDate)
         }
-        let sort = NSSortDescriptor(key: "inDate", ascending: true)
+        let sort = NSSortDescriptor(key: "inDate", ascending: viewState.sortOrderAssending)
         request.sortDescriptors = [sort]
         let frc = NSFetchedResultsController<Booking>(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         frc.delegate = self
