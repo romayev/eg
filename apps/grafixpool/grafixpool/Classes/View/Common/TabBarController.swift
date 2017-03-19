@@ -65,7 +65,7 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
         })
         let no = UIAlertAction(title: NSLocalizedString(NSLocalizedString("no", comment: ""), comment: ""), style: .default, handler: { (action) in
             let editingContext = DataStore.store.editingContext
-            editingContext.delete(booking)
+            editingContext.delete(editingContext.object(with: booking.objectID))
             DataStore.store.save(editing: editingContext)
         })
         alertController.addAction(yes)
@@ -100,7 +100,8 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
             self.present(mailComposeViewController, animated: true, completion: {
                 BookingNotification.cancel.processNotification(for: booking)
                 let editingContext = DataStore.store.editingContext
-                let booking = editingContext.object(with: booking.objectID)
+                let booking: Booking = editingContext.object(with: booking.objectID) as! Booking
+                BookingNotification.cancel.processNotification(for: booking)
                 editingContext.delete(booking)
                 DataStore.store.save(editing: editingContext)
             })

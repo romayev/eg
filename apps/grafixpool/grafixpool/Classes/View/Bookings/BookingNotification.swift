@@ -16,11 +16,12 @@ enum BookingNotification: String {
         guard let bookingID = booking.bookingID else {
             preconditionFailure("Booking ID is not set")
         }
+        let center = UNUserNotificationCenter.current()
         switch self {
-        case .cancel: break
+        case .cancel:
+            center.removePendingNotificationRequests(withIdentifiers: [booking.bookingID!])
         case .add, .update:
             if booking.reminder > 0 {
-                let center = UNUserNotificationCenter.current()
                 let options: UNAuthorizationOptions = [.alert, .sound]
                 center.requestAuthorization(options: options) { (granted, error) in
                     if granted && error == nil {

@@ -146,6 +146,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             DataStore.store.save(editing: editingContext)
             viewState.dismiss(self)
         } else {
+            collapse()
             viewState.save(self)
         }
     }
@@ -161,6 +162,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
                 self.send(email: .cancel)
             })
             let no = UIAlertAction(title: NSLocalizedString(NSLocalizedString("no", comment: ""), comment: ""), style: .default, handler: { (action) in
+                BookingNotification.cancel.processNotification(for: self.booking)
                 self.editingContext.delete(self.booking)
                 DataStore.store.save(editing: self.editingContext)
                 self.viewState.dismiss(self)
@@ -398,6 +400,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         case .sent:
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: { (action) in
+                DataStore.store.save(editing: self.editingContext)
                 self.viewState.dismiss(self)
             })
             alertController.addAction(ok)
@@ -419,8 +422,6 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
                     BookingNotification.cancel.processNotification(for: self.booking)
                     self.editingContext.delete(self.booking)
                 }
-                DataStore.store.save(editing: self.editingContext)
-
             })
         } else {
             let alert = unableToSendMailErrorAlert()

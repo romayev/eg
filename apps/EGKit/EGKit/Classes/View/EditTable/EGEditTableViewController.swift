@@ -24,7 +24,7 @@ public enum EGEditCellType: String {
     }
 }
 
-public struct EGEditTableState {
+public struct EGEditInfo {
     public var activePath: IndexPath
     public var editorPath: IndexPath { return IndexPath(item: activePath.row + 1, section: activePath.section) }
     public func adjustedPath(forIndexPath indexPath: IndexPath) -> IndexPath {
@@ -36,22 +36,21 @@ public struct EGEditTableState {
 }
 
 public enum EGCollapseState {
-    case collapsed, edit(EGEditTableState)
+    case collapsed, edit
     func count(_ count: Int) -> Int {
         switch self {
         case .collapsed:
             return count
-        case .edit(_):
+        case .edit:
             return count + 1
         }
     }
 }
 
-
 open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate, EGAddPickerEditCellDelegate, EGDatePickerEditCellDelegate, EGNotesEditCellDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet public var tableView: UITableView!
 
-    public var editState: EGEditTableState?
+    private var editInfo: EGEditInfo?
     public var state: EGCollapseState = .collapsed
 
     // MARK: public vars
@@ -148,7 +147,7 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
             let activeCellPath = self.activePath
 
             state = .collapsed
-            editState = nil
+            editInfo = nil
 
             self.editorPath = nil
             let cell = tableView.cellForRow(at: editorPath) as! EGEditCell
@@ -165,9 +164,9 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
 
         if edit {
             self.editorPath = IndexPath(item: row + 1, section: section)
-            editState = EGEditTableState(activePath: self.activePath!)
-            if let editState = editState {
-                state = .edit(editState)
+            editInfo = EGEditInfo(activePath: self.activePath!)
+            if let editState = editInfo {
+                state = .edit
                 editorPath = editState.editorPath
                 tableView.insertRows(at: [editState.editorPath], with: .fade)
             }
@@ -221,6 +220,18 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
         return 44.0
     }
 
+    // MARK: public
+    public func collapse() {
+        switch state {
+        case .edit:
+            guard let activePath = activePath else {
+                preconditionFailure("No active path")
+            }
+            tableView(tableView, didSelectRowAt: activePath)
+        case .collapsed: break
+        }
+    }
+    
     // MARK: open
     open func isCellEditable(at indexPath: IndexPath) -> Bool {
         return true
