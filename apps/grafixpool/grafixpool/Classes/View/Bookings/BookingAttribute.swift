@@ -138,7 +138,8 @@ extension BookingAttribute {
             } else {
                 booking.addToJobTypes(jobType)
             }
-        case .project: break
+        case .project:
+            booking.project = Project.recentProject(at: index, in: booking.managedObjectContext!)
         default: fatalError("Not a selectable cell type")
         }
     }

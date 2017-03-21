@@ -22,15 +22,6 @@ extension Project {
         let project = Project(context: context)
         project.code = "default"
     }
-    static func last(context: NSManagedObjectContext) -> Project {
-        return recentProjects(context).first!
-    }
-    static func recentProjectNames(_ context: NSManagedObjectContext) -> [String] {
-        let projects = recentProjects(context)
-        var result = projects.map { $0.code! }
-        result[result.count - 1] = NSLocalizedString("default-project", comment: "")
-        return result
-    }
     private static func defaultProject(_ context: NSManagedObjectContext) -> Project {
         let fetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "code == %@", "default")
@@ -42,7 +33,7 @@ extension Project {
             fatalError("Failed to fetch default project: \(error)")
         }
     }
-    private static func recentProjects(_ context: NSManagedObjectContext) -> [Project] {
+    fileprivate static func recentProjects(_ context: NSManagedObjectContext) -> [Project] {
         var projects: [Project] = []
         let d = defaultProject(context)
 
@@ -67,5 +58,25 @@ extension Project {
         } catch {
             fatalError("Failed to fetch projects: \(error)")
         }
+    }
+}
+
+// MARK: Queries
+extension Project {
+    static func last(context: NSManagedObjectContext) -> Project {
+        return recentProjects(context).first!
+    }
+    static func recentProjectNames(_ context: NSManagedObjectContext) -> [String] {
+        let projects = recentProjects(context)
+        var result = projects.map { $0.code! }
+        result[result.count - 1] = NSLocalizedString("default-project", comment: "")
+        return result
+    }
+    static func recentProject(at index: Int, in context: NSManagedObjectContext) -> Project {
+        let projects = recentProjects(context)
+        guard index < projects.count else {
+            fatalError("Invalid index: \(index)")
+        }
+        return projects[index]
     }
 }
