@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0E706B1E80CF72001D334D /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = FA0E70691E80CF5E001D334D /* iTunesArtwork */; };
+		FA0E706C1E80CF72001D334D /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = FA0E706A1E80CF5E001D334D /* iTunesArtwork@2x */; };
 		FA6B7B8B1E7723E4005DAE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7B8A1E7723E4005DAE67 /* AppDelegate.swift */; };
 		FA6B7B901E7723E4005DAE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7B8E1E7723E4005DAE67 /* Main.storyboard */; };
 		FA6B7B921E7723E4005DAE67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7B911E7723E4005DAE67 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FA0E70691E80CF5E001D334D /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		FA0E706A1E80CF5E001D334D /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		FA6B7B871E7723E4005DAE67 /* grafixpool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grafixpool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6B7B8A1E7723E4005DAE67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA6B7B8F1E7723E4005DAE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				FA6B7BC81E7726B3005DAE67 /* grafixpool.xcdatamodeld */,
 				FA6B7BC51E7724F2005DAE67 /* Localizable.strings */,
 				FA6B7BC11E7724DC005DAE67 /* Localizable.stringsdict */,
+				FA0E70691E80CF5E001D334D /* iTunesArtwork */,
+				FA0E706A1E80CF5E001D334D /* iTunesArtwork@2x */,
 				FA6B7B961E7723E4005DAE67 /* Info.plist */,
 			);
 			path = grafixpool;
@@ -261,6 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6B7BC71E7724F2005DAE67 /* Localizable.strings in Resources */,
+				FA0E706B1E80CF72001D334D /* iTunesArtwork in Resources */,
+				FA0E706C1E80CF72001D334D /* iTunesArtwork@2x in Resources */,
 				FA6B7B951E7723E4005DAE67 /* LaunchScreen.storyboard in Resources */,
 				FA6B7BC31E7724DC005DAE67 /* Localizable.stringsdict in Resources */,
 				FA6B7B921E7723E4005DAE67 /* Assets.xcassets in Resources */,
