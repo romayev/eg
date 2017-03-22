@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0E70721E82BCD2001D334D /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = FA0E70701E82BCD2001D334D /* iTunesArtwork */; };
+		FA0E70731E82BCD2001D334D /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = FA0E70711E82BCD2001D334D /* iTunesArtwork@2x */; };
 		FA29EB941E5E4232001DFE8C /* SearchCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29EB931E5E4232001DFE8C /* SearchCriteria.swift */; };
 		FA6AEC0E1E5BED2B00222F9E /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6AEC0B1E5BED2B00222F9E /* IndexViewController.swift */; };
 		FA6AEC0F1E5BED2B00222F9E /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6AEC0C1E5BED2B00222F9E /* ProductViewController.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FA0E70701E82BCD2001D334D /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		FA0E70711E82BCD2001D334D /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		FA29EB931E5E4232001DFE8C /* SearchCriteria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCriteria.swift; sourceTree = "<group>"; };
 		FA6AEC0B1E5BED2B00222F9E /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IndexViewController.swift; path = Products/IndexViewController.swift; sourceTree = "<group>"; };
 		FA6AEC0C1E5BED2B00222F9E /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductViewController.swift; path = Products/ProductViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 				FA6AEC131E5C8CE800222F9E /* Localizable.strings */,
 				FAC253501E4D365000E96896 /* Assets.xcassets */,
 				FAC253551E4D365000E96896 /* Info.plist */,
+				FA0E70701E82BCD2001D334D /* iTunesArtwork */,
+				FA0E70711E82BCD2001D334D /* iTunesArtwork@2x */,
 			);
 			path = Ingredion;
 			sourceTree = "<group>";
@@ -250,7 +256,9 @@
 			files = (
 				FAC253541E4D365000E96896 /* LaunchScreen.storyboard in Resources */,
 				FA6AEC151E5C8CE800222F9E /* Localizable.strings in Resources */,
+				FA0E70721E82BCD2001D334D /* iTunesArtwork in Resources */,
 				FAC2536A1E4E6EB200E96896 /* beverages.plist in Resources */,
+				FA0E70731E82BCD2001D334D /* iTunesArtwork@2x in Resources */,
 				FAC2536B1E4E6EB200E96896 /* confectionery.plist in Resources */,
 				FAC253511E4D365000E96896 /* Assets.xcassets in Resources */,
 				FAC2534F1E4D364F00E96896 /* Main.storyboard in Resources */,
