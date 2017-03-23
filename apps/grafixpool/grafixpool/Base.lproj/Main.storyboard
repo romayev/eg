@@ -692,11 +692,20 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App developed by Executive Graphics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHD-qe-HET">
+                                <rect key="frame" x="16" y="496" width="288" height="15"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                <color key="textColor" red="0.49019607840000001" green="0.52941176469999995" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Fyh-u4-aYX" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="12" id="IY1-h4-pGk"/>
                             <constraint firstItem="Fyh-u4-aYX" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="30" id="KC9-5Y-7z8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IHD-qe-HET" secondAttribute="trailing" id="Lgh-qu-o5z"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="IHD-qe-HET" secondAttribute="bottom" constant="8" id="NVH-OB-IKM"/>
+                            <constraint firstItem="IHD-qe-HET" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="Ywg-W2-leS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Qol-vD-WRD"/>

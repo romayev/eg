@@ -64,7 +64,8 @@
 
 "booking.email-update-message" = "Do you want to email this update?";
 
-"booking.email.recipient" = "submit@executivegraphics.com"; // "romayev@gmail.com"
+"booking.email.recipient-prod" = "graphicpool.smc@siemens.com";
+"booking.email.recipient-dev" = "submit@executivegraphics.com";
 "booking.email.status-new" = "New";
 "booking.email.status-update" = "Update";
 "booking.email.status-cancel" = "Cancel";

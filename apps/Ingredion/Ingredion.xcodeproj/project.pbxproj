@@ -436,7 +436,7 @@
 				DEVELOPMENT_TEAM = MZT79G64Z7;
 				INFOPLIST_FILE = Ingredion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.executivegraphics.Ingredion;
+				PRODUCT_BUNDLE_IDENTIFIER = com.executivegraphics.IngredionProductExplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -449,7 +449,7 @@
 				DEVELOPMENT_TEAM = MZT79G64Z7;
 				INFOPLIST_FILE = Ingredion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.executivegraphics.Ingredion;
+				PRODUCT_BUNDLE_IDENTIFIER = com.executivegraphics.IngredionProductExplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

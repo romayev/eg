@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 
 struct BookingMessage {
-    let recipients = [NSLocalizedString("booking.email.recipient", comment: "")]
+    #if DEBUG
+    let recipients = [NSLocalizedString("booking.email.recipient-dev", comment: "")]
+    #else
+    let recipients = [NSLocalizedString("booking.email.recipient-prod", comment: "")]
+    #endif
     var subject: String
     var body: String
 
