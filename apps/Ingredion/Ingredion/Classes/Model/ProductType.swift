@@ -12,7 +12,7 @@ enum ProductType: String {
     case battersAndBreadings, beverages, carrageenan, confectionery, creamySalad, hydrocolloids, meat, processedCheese, tomatoBasedSauses, yogurt
 
     var localizedName: String {
-        return NSLocalizedString(rawValue, comment: "")
+        return rawValue.localized
     }
     var imageName: String {
         return "search-\(rawValue)"
@@ -84,7 +84,7 @@ enum ProductType: String {
         criteria.toggleValueForAttribute(attribute, value: SearchCriteria.ALL())
         let products = self.products(with: criteria)
         var values = propertyValues(attribute, in: products)
-        values.insert(NSLocalizedString(SearchCriteria.ALL(), comment: ""), at: 0)
+        values.insert(SearchCriteria.ALL(), at: 0)
         return values
     }
 

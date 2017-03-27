@@ -67,6 +67,7 @@
 "product.attribute.proteinContent" = "Protein Content";
 
 // Product - Confectionery
+"product.attribute.application" = "Application";
 "product.attribute.applications" = "Applications";
 "product.attribute.notes" = "Additional Features And Benefits";
 "product.attribute.selectionCriteria" = "Selection Criteria";

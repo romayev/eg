@@ -18,7 +18,7 @@ class IndexViewController: EGViewController, UITableViewDelegate, UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = NSLocalizedString("index.title", comment: "index.title")
+        self.navigationItem.title = "index.title".localized
         tableView.tableFooterView = nil
         if (self.traitCollection.userInterfaceIdiom == .pad) {
             showProductController(.beverages, animated: false)

@@ -144,8 +144,8 @@ public class EGEditDropDownAddCell: EGEditDropDownCell {
             row = .add
             let cell = tableView.dequeueReusableCell(withIdentifier: row.reuseIdentifier, for: indexPath) as! EGEditAddCell
             addCell = cell
-            cell.titleLabel.text = NSLocalizedString("enter-new", comment: "")
-            cell.textField.placeholder = NSLocalizedString("booking.enter-project-code", comment: "")
+            cell.titleLabel.text = "enter-new".localized
+            cell.textField.placeholder = "booking.enter-project-code".localized
             cell.delegate = addDelegate
             cell.accessoryType = row.accessoryType
             return cell

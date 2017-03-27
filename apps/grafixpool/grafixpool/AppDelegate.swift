@@ -36,8 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         let center = UNUserNotificationCenter.current()
         center.delegate = tabBarController
 
-        let changeAction = UNNotificationAction(identifier: BookingNotification.update.rawValue, title: NSLocalizedString("edit-booking", comment: ""), options: [.foreground])
-        let cancelAction = UNNotificationAction(identifier: BookingNotification.cancel.rawValue, title: NSLocalizedString("cancel-booking", comment: ""), options: .foreground)
+        let changeAction = UNNotificationAction(identifier: BookingNotification.update.rawValue, title: "edit-booking".localized, options: [.foreground])
+        let cancelAction = UNNotificationAction(identifier: BookingNotification.cancel.rawValue, title: "cancel-booking".localized, options: .foreground)
         let category = UNNotificationCategory(identifier: "booking-actions", actions: [changeAction, cancelAction], intentIdentifiers: [], options: [.customDismissAction])
         center.setNotificationCategories([category])
 

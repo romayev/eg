@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import EGKit
 
 extension JobType {
     static func createJobTypes(_ context: NSManagedObjectContext) {
@@ -56,15 +57,15 @@ extension JobType {
         var localizedName: String {
             switch self {
             case .adjustToSMC:
-                return NSLocalizedString("job-type.adjust-to-smc", comment: "")
+                return "job-type.adjust-to-smc".localized
             case.improve:
-                return NSLocalizedString("job-type.improve", comment: "")
+                return "job-type.improve".localized
             case .createVersion:
-                return NSLocalizedString("job-type.create-version", comment: "")
+                return "job-type.create-version".localized
             case .finalCheck:
-                return NSLocalizedString("job-type.final-check", comment: "")
+                return "job-type.final-check".localized
             case .translation:
-                return NSLocalizedString("job-type.translation", comment: "")
+                return "job-type.translation".localized
             }
         }
         var coreDataValue: Int16 {

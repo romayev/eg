@@ -11,9 +11,9 @@ import UIKit
 
 struct BookingMessage {
     #if DEBUG
-    let recipients = [NSLocalizedString("booking.email.recipient-dev", comment: "")]
+    let recipients = ["booking.email.recipient-dev".localized]
     #else
-    let recipients = [NSLocalizedString("booking.email.recipient-prod", comment: "")]
+    let recipients = ["booking.email.recipient-prod".localized]
     #endif
     var subject: String
     var body: String
@@ -31,13 +31,13 @@ enum BookingEmail {
         var prefix: String
         switch self {
         case .add:
-            prefix = NSLocalizedString("booking.email.status-new", comment: "")
+            prefix = "booking.email.status-new".localized
         case .update:
-            prefix = NSLocalizedString("booking.email.status-update", comment: "")
+            prefix = "booking.email.status-update".localized
         case .cancel:
-            prefix = NSLocalizedString("booking.email.status-cancel", comment: "")
+            prefix = "booking.email.status-cancel".localized
         }
-        let title = "[\(prefix) \(NSLocalizedString("booking", comment: ""))] \(emailSubject(with: booking))"
+        let title = "[\(prefix) \("booking".localized)] \(emailSubject(with: booking))"
         return BookingMessage(subject: title, body: emailBody(with: booking))
     }
 
@@ -60,14 +60,14 @@ enum BookingEmail {
     func emailBody(with booking: Booking) -> String {
         var body = ""
 
-        let statusTitle = NSLocalizedString("status", comment: "")
+        let statusTitle = "status".localized
         switch self {
         case .add:
-            body = "\(statusTitle): \(NSLocalizedString("booking.email.status-new", comment: ""))"
+            body = "\(statusTitle): \("booking.email.status-new".localized)"
         case .update:
-            body = "\(statusTitle): \(NSLocalizedString("booking.email.status-update", comment: ""))"
+            body = "\(statusTitle): \("booking.email.status-update".localized)"
         case .cancel:
-            body = "\(statusTitle): \(NSLocalizedString("booking.email.status-cancel", comment: ""))"
+            body = "\(statusTitle): \("booking.email.status-cancel".localized)"
         }
         body += "\n"
 
@@ -113,10 +113,10 @@ enum BookingEmail {
 }
 
 func unableToSendMailErrorAlert() -> UIAlertController {
-    let title = NSLocalizedString("error", comment: "")
-    let message = NSLocalizedString("email.alert.unable-to-send-mail", comment: "")
+    let title = "error".localized
+    let message = "email.alert.unable-to-send-mail".localized
     let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: nil)
+    let ok = UIAlertAction(title: "ok".localized, style: .default, handler: nil)
     alertController.addAction(ok)
     return alertController
 }

@@ -82,14 +82,14 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = NSLocalizedString("bookings", comment: "")
-        navigationItem.title = NSLocalizedString("bookings", comment: "")
-        segmentedControl.setTitle(NSLocalizedString("upcoming", comment: ""), forSegmentAt: 0)
-        segmentedControl.setTitle(NSLocalizedString("all", comment: ""), forSegmentAt: 1)
-        noRecordsLabel.text = NSLocalizedString("no-bookings", comment: "")
-        slidesHeaderLabel.text = NSLocalizedString("booking.slides", comment: "")
-        inHeaderLabel.text = NSLocalizedString("booking.in", comment: "")
-        outHeaderLabel.text = NSLocalizedString("booking.out", comment: "")
+        title = "bookings".localized
+        navigationItem.title = "bookings".localized
+        segmentedControl.setTitle("upcoming".localized, forSegmentAt: 0)
+        segmentedControl.setTitle("all".localized, forSegmentAt: 1)
+        noRecordsLabel.text = "no-bookings".localized
+        slidesHeaderLabel.text = "booking.slides".localized
+        inHeaderLabel.text = "booking.in".localized
+        outHeaderLabel.text = "booking.out".localized
 
         if alertBooking != nil {
             performSegue(withIdentifier: .edit, sender: nil)

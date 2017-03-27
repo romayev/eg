@@ -22,7 +22,7 @@ class ExpertsViewController: EGViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = NSLocalizedString("exerts", comment: "exerts")
+        navigationItem.title = "exerts".localized
         if let productType: ProductType = delegate?.productType {
             if (productType == .beverages) {
                 noInfoLabel.isHidden = false

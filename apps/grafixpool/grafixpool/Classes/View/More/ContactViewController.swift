@@ -17,7 +17,7 @@ class ContactViewController: EGViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = NSLocalizedString("contact", comment: "")
+        self.navigationItem.title = "contact".localized
         var inset = textView1.contentInset
         inset.left -= 6
         inset.right -= 6

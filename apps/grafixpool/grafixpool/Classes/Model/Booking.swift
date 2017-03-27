@@ -74,7 +74,7 @@ extension Booking {
         return jobTypes.map { $0.localizedName }
     }
     var slides: String {
-        return String.localizedStringWithFormat(NSLocalizedString("slides", comment: ""), slideCount)
+        return String.localizedStringWithFormat("slides".localized, slideCount)
     }
 
     func add(jobType: JobType) {
@@ -84,10 +84,10 @@ extension Booking {
 
     private func createBookingID() -> String {
         let df = DateFormatter()
-        df.dateFormat = "YYYYMMddhhmmss"
+        df.dateFormat = "YYYYMMdd-hhmmss"
         let string = df.string(from: created as! Date)
         let random = arc4random_uniform(9)
-        return "\(string)\(random)"
+        return "\(string)-\(random)"
     }
 }
 
@@ -123,11 +123,11 @@ enum Confidentiality: Int {
     var localizedName: String {
         switch self {
         case .restricted:
-            return NSLocalizedString("confidentiality.restricted", comment: "")
+            return "confidentiality.restricted".localized
         case .confidential:
-            return NSLocalizedString("confidentiality.confidential", comment: "")
+            return "confidentiality.confidential".localized
         case .strictlyConfidential:
-            return NSLocalizedString("confidentiality.strictly-confidential", comment: "")
+            return "confidentiality.strictly-confidential".localized
         }
     }
     var coreDataValue: Int16 {
@@ -163,11 +163,11 @@ struct Reminder {
     
     var localizedName: String {
         if difference == 0 {
-            return NSLocalizedString("none", comment: "")
+            return "none".localized
         } else {
             let df = DateFormatter()
             df.timeStyle = .short
-            let format = NSLocalizedString("hours-before", comment: "")
+            let format = "hours-before".localized
             let hoursBefore = String.localizedStringWithFormat(format, Int(difference / 3600))
             return "\(hoursBefore)"
         }

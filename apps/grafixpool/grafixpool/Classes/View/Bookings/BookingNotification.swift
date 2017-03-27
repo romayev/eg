@@ -53,13 +53,13 @@ enum BookingNotification: String {
         }
 
         let content = UNMutableNotificationContent()
-        content.title = NSLocalizedString("reminder", comment: "")
+        content.title = "reminder".localized
 
-        let subtitlePrefix = NSLocalizedString("booking", comment: "")
+        let subtitlePrefix = "booking".localized
         content.subtitle = "\(subtitlePrefix): \(bookingID)"
 
-        let inTitle = NSLocalizedString("booking.in", comment: "")
-        let outTitle = NSLocalizedString("booking.out", comment: "")
+        let inTitle = "booking.in".localized
+        let outTitle = "booking.out".localized
         content.body = "\(inTitle) \(inDate), \(outTitle) \(outDate)"
 
         content.sound = UNNotificationSound.default()

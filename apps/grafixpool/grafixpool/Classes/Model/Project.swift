@@ -69,7 +69,7 @@ extension Project {
     static func recentProjectNames(_ context: NSManagedObjectContext) -> [String] {
         let projects = recentProjects(context)
         var result = projects.map { $0.code! }
-        result[result.count - 1] = NSLocalizedString("default-project", comment: "")
+        result[result.count - 1] = "default-project".localized
         return result
     }
     static func recentProject(at index: Int, in context: NSManagedObjectContext) -> Project {
@@ -78,5 +78,16 @@ extension Project {
             fatalError("Invalid index: \(index)")
         }
         return projects[index]
+    }
+    static func project(with code: String, in context: NSManagedObjectContext) -> Project? {
+        let fetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "code == %@", code)
+        fetchRequest.fetchLimit = 1
+        do {
+            let projects = try context.fetch(fetchRequest)
+            return projects.first
+        } catch {
+            fatalError("Failed to fetch project: \(error)")
+        }
     }
 }

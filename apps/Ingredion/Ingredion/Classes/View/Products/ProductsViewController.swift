@@ -38,9 +38,9 @@ class ProductsViewController: EGViewController, ExpertsViewControllerDelegate, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = NSLocalizedString("products", comment: "")
-        segmentedControl?.setTitle(NSLocalizedString("top", comment: ""), forSegmentAt: 0)
-        segmentedControl?.setTitle(NSLocalizedString("all", comment: ""), forSegmentAt: 1)
+        title = "products".localized
+        segmentedControl?.setTitle("top".localized, forSegmentAt: 0)
+        segmentedControl?.setTitle("all".localized, forSegmentAt: 1)
 
         if let productType = delegate?.productType {
             if !productType.usesPriority {

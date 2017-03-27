@@ -16,9 +16,9 @@ class PersonViewController: EGViewController {
         func update(_ c: PersonViewController) {
             switch self {
             case .add:
-                c.navigationItem.title = NSLocalizedString("add-person", comment: "")
+                c.navigationItem.title = "add-person".localized
             case .edit:
-                c.navigationItem.title = NSLocalizedString("edit-person", comment: "")
+                c.navigationItem.title = "edit-person".localized
                 c.firstNameTextField.text = c.person?.firstName
                 c.lastNameTextField.text = c.person?.lastName
             }
@@ -34,8 +34,8 @@ class PersonViewController: EGViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        firstNameTextField.placeholder = NSLocalizedString("person.edit.first-name-placeholder", comment: "")
-        lastNameTextField.placeholder = NSLocalizedString("person.edit.last-name-placeholder", comment: "")
+        firstNameTextField.placeholder = "person.edit.first-name-placeholder".localized
+        lastNameTextField.placeholder = "person.edit.last-name-placeholder".localized
 
         if let person = Person.defaultPerson(editingContext) {
             self.person = person

@@ -75,7 +75,7 @@ class ProductViewController: EGViewController, UITableViewDataSource {
                 cell.detailLabel?.text = product?.detail
             default:
                 if let attribute = attributes?[row - 1] {
-                    cell.titleLabel?.text = NSLocalizedString("product.attribute." + attribute, comment: "")
+                    cell.titleLabel?.text = ("product.attribute." + attribute).localized
                     cell.detailLabel?.text = product?[attribute]
                 }
             }

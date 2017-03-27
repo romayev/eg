@@ -28,7 +28,7 @@ enum BookingAttribute: Int {
         }
     }
     var localizedName: String {
-        return NSLocalizedString("booking.edit." + name, comment: "")
+        return ("booking.edit." + name).localized
     }
 
     func value(with booking: Booking) -> String? {
@@ -43,7 +43,7 @@ enum BookingAttribute: Int {
             }
         case .project:
             if let code = booking.project?.code {
-                return code == "default" ? NSLocalizedString("default-project", comment: "") : code
+                return code == "default" ? "default-project".localized : code
             } else {
                 fatalError("Booking does not have a project")
             }

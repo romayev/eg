@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0E32381E8950620031B735 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E32371E8950620031B735 /* String.swift */; };
 		FA72E7591E64A45F00B14F4A /* EGSegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E7581E64A45F00B14F4A /* EGSegueHandler.swift */; };
 		FA72E75F1E64BD7000B14F4A /* KVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E75E1E64BD7000B14F4A /* KVC.swift */; };
 		FA72E7681E64CA1100B14F4A /* EGEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72E7671E64CA1100B14F4A /* EGEditTableViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0E32371E8950620031B735 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FA72E7581E64A45F00B14F4A /* EGSegueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EGSegueHandler.swift; sourceTree = "<group>"; };
 		FA72E75E1E64BD7000B14F4A /* KVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVC.swift; sourceTree = "<group>"; };
 		FA72E7671E64CA1100B14F4A /* EGEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EGEditTableViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0E32361E8950520031B735 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA0E32371E8950620031B735 /* String.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FA72E7641E64C9F800B14F4A /* EditTable */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +85,7 @@
 		FA89161A1E632AE400F7FC88 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FA0E32361E8950520031B735 /* Model */,
 				FA89161B1E632AE400F7FC88 /* View */,
 			);
 			path = Classes;
@@ -171,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0E32381E8950620031B735 /* String.swift in Sources */,
 				FA72E7591E64A45F00B14F4A /* EGSegueHandler.swift in Sources */,
 				FA89161D1E632AE400F7FC88 /* EGViewController.swift in Sources */,
 				FA72E7681E64CA1100B14F4A /* EGEditTableViewController.swift in Sources */,

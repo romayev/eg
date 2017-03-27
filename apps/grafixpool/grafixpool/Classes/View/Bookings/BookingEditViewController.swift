@@ -27,12 +27,12 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             switch self {
             case .add:
                 c.toolbar.isHidden = true
-                c.navigationItem.title = NSLocalizedString("add-booking", comment: "")
+                c.navigationItem.title = "add-booking".localized
                 c.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .cancel, target: c, action: #selector(cancel))
             case .edit(.show):
-                c.navigationItem.title = NSLocalizedString("edit-booking", comment: "")
+                c.navigationItem.title = "edit-booking".localized
             case .edit(.modal):
-                c.navigationItem.title = NSLocalizedString("edit-booking", comment: "")
+                c.navigationItem.title = "edit-booking".localized
                 c.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .cancel, target: c, action: #selector(cancel))
             case .none:
                 fatalError("Invalid state")
@@ -56,11 +56,11 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             case .add:
                 c.send(email: .add)
             case .edit:
-                let alertController = UIAlertController(title: nil, message: NSLocalizedString("booking.email-update-message", comment: ""), preferredStyle: .actionSheet)
-                let yes = UIAlertAction(title: NSLocalizedString(NSLocalizedString("yes", comment: ""), comment: ""), style: .default, handler: { (action) in
+                let alertController = UIAlertController(title: nil, message: "booking.email-update-message".localized, preferredStyle: .actionSheet)
+                let yes = UIAlertAction(title: "yes".localized, style: .default, handler: { (action) in
                     c.send(email: .update)
                 })
-                let no = UIAlertAction(title: NSLocalizedString(NSLocalizedString("no", comment: ""), comment: ""), style: .default, handler: { (action) in
+                let no = UIAlertAction(title: "no".localized, style: .default, handler: { (action) in
                     BookingNotification.update.processNotification(for: c.booking)
                     DataStore.store.save(editing: c.editingContext)
                     self.dismiss(c)
@@ -89,8 +89,8 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        nextBarButtonItem.title = NSLocalizedString("next", comment: "")
-        deleteBarButtonItem.title = NSLocalizedString("cancel-booking", comment: "")
+        nextBarButtonItem.title = "next".localized
+        deleteBarButtonItem.title = "cancel-booking".localized
         initializePersonResultsController()
     }
     
@@ -157,11 +157,11 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             DataStore.store.save(editing: editingContext)
             viewState.dismiss(self)
         } else {
-            let alertController = UIAlertController(title: nil, message: NSLocalizedString("booking.email-update-message", comment: ""), preferredStyle: .actionSheet)
-            let yes = UIAlertAction(title: NSLocalizedString(NSLocalizedString("yes", comment: ""), comment: ""), style: .default, handler: { (action) in
+            let alertController = UIAlertController(title: nil, message: "booking.email-update-message".localized, preferredStyle: .actionSheet)
+            let yes = UIAlertAction(title: "yes".localized, style: .default, handler: { (action) in
                 self.send(email: .cancel)
             })
-            let no = UIAlertAction(title: NSLocalizedString(NSLocalizedString("no", comment: ""), comment: ""), style: .default, handler: { (action) in
+            let no = UIAlertAction(title: "no".localized, style: .default, handler: { (action) in
                 BookingNotification.cancel.processNotification(for: self.booking)
                 self.editingContext.delete(self.booking)
                 DataStore.store.save(editing: self.editingContext)
@@ -179,9 +179,9 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
 
         if inDate > outDate {
             let alertController = UIAlertController(
-                title: NSLocalizedString("booking.edit.invalid-dates-title", comment: ""),
-                message: NSLocalizedString("booking.edit.invalid-dates-desc", comment: ""), preferredStyle: .alert)
-            let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: nil)
+                title: "booking.edit.invalid-dates-title".localized,
+                message: "booking.edit.invalid-dates-desc".localized, preferredStyle: .alert)
+            let ok = UIAlertAction(title: "ok".localized, style: .default, handler: nil)
             alertController.addAction(ok)
             present(alertController, animated: true, completion: nil)
             return false
@@ -287,8 +287,11 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let activeRow = activePath?.row else  {
             preconditionFailure("ERROR: Active cell undefined")
         }
-        if let type = BookingAttribute(rawValue: activeRow) {
-            type.processDidSelectValue(value, at: index, booking: booking)
+        if let attribute = BookingAttribute(rawValue: activeRow) {
+            if attribute == .project {
+                
+            }
+            attribute.processDidSelectValue(value, at: index, booking: booking)
         }
 
         tableView.reloadRows(at: [activePath!, editorPath!], with: .automatic)
@@ -305,6 +308,14 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
 
     // MARK: EGAddPickerEditCellDelegate
     override func editCellDidAdd(value: String) {
+        if Project.project(with: value, in: editingContext) != nil {
+            let alertController = UIAlertController(title: "booking.edit.duplicate-project-title".localized, message: "booking.edit.duplicate-project-desc".localized, preferredStyle: .alert)
+            let ok = UIAlertAction(title: "ok".localized, style: .default, handler: nil)
+            alertController.addAction(ok)
+            present(alertController, animated: true, completion: nil)
+            return;
+        }
+
         let project = Project(context: editingContext)
         project.code = value
         booking.project = project
@@ -389,17 +400,17 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
     // MARK: MFMailComposeViewControllerDelegate
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
-        let title = NSLocalizedString("email.alert.title", comment: "")
-        var message = NSLocalizedString("email.alert.message.success", comment: "")
+        let title = "email.alert.title".localized
+        var message = "email.alert.message.success".localized
         if error != nil {
-            let m = NSLocalizedString("email.alert.message.error", comment: "")
+            let m = "email.alert.message.error".localized
             message = "\(m) \(error)"
         }
 
         switch result {
         case .sent:
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: { (action) in
+            let ok = UIAlertAction(title: "ok".localized, style: .default, handler: { (action) in
                 DataStore.store.save(editing: self.editingContext)
                 self.viewState.dismiss(self)
             })

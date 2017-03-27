@@ -67,9 +67,9 @@ class SearchViewController : EGEditTableViewController, ProductsViewControllerDe
         // Localize
         navigationItem.title = productType.localizedName
         productImageView.image = UIImage(named: productType.imageName)
-        resetButton.setTitle(NSLocalizedString("reset", comment: ""), for: .normal)
-        viewButton.setTitle(NSLocalizedString("view", comment: ""), for: .normal)
-        headerLabel.text = NSLocalizedString("product-count", comment: "")
+        resetButton.setTitle("reset".localized, for: .normal)
+        viewButton.setTitle("view".localized, for: .normal)
+        headerLabel.text = "product-count".localized
 
         searchCriteria = SearchCriteria(attributes: productType.searchAttributes)
         searchCriteriaDidChange(reset: true)
@@ -100,7 +100,7 @@ class SearchViewController : EGEditTableViewController, ProductsViewControllerDe
 
     override func cell(atAdjusted indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = NSLocalizedString(productType.rawValue + ".search.title.\(indexPath.row)", comment: "")
+        cell.textLabel?.text = "\(productType.rawValue).search.title.\(indexPath.row)".localized
         cell.detailTextLabel?.text = self.descriptionForRow(indexPath.row)
         if (isCellEnabledAt(indexPath: indexPath)) {
             cell.textLabel?.alpha = 1.0

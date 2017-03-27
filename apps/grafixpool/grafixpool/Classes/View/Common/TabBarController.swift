@@ -59,11 +59,11 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
     }
 
     func cancel(booking: Booking) {
-        let alertController = UIAlertController(title: nil, message: NSLocalizedString("booking.email-update-message", comment: ""), preferredStyle: .actionSheet)
-        let yes = UIAlertAction(title: NSLocalizedString(NSLocalizedString("yes", comment: ""), comment: ""), style: .default, handler: { (action) in
+        let alertController = UIAlertController(title: nil, message: "booking.email-update-message".localized, preferredStyle: .actionSheet)
+        let yes = UIAlertAction(title: "yes".localized, style: .default, handler: { (action) in
             self.send(email: .cancel, booking: booking)
         })
-        let no = UIAlertAction(title: NSLocalizedString(NSLocalizedString("no", comment: ""), comment: ""), style: .default, handler: { (action) in
+        let no = UIAlertAction(title: "no".localized, style: .default, handler: { (action) in
             let editingContext = DataStore.store.editingContext
             editingContext.delete(editingContext.object(with: booking.objectID))
             DataStore.store.save(editing: editingContext)
@@ -77,17 +77,17 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
     // MARK: MFMailComposeViewControllerDelegate
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
-        let title = NSLocalizedString("email.alert.title", comment: "")
-        var message = NSLocalizedString("email.alert.message.success", comment: "")
+        let title = "email.alert.title".localized
+        var message = "email.alert.message.success".localized
         if error != nil {
-            let m = NSLocalizedString("email.alert.message.error", comment: "")
+            let m = "email.alert.message.error".localized
             message = "\(m) \(error)"
         }
 
         switch result {
         case .sent:
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let ok = UIAlertAction(title: NSLocalizedString(NSLocalizedString("ok", comment: ""), comment: ""), style: .default, handler: nil)
+            let ok = UIAlertAction(title: "ok".localized, style: .default, handler: nil)
             alertController.addAction(ok)
             present(alertController, animated: true, completion: nil)
         default: break

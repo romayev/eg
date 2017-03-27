@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import EGKit
 
 struct SearchCriteria {
-    static let ALL = { return NSLocalizedString("all", comment: "") }
+    static let ALL = { return "all".localized }
     
     let attributes: [String] // region, valueProposition, application, etc
     private var criteria: [String: [String]] // region: [APAC, MEX, SA, US & Canada]

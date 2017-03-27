@@ -22,25 +22,44 @@ class MoreViewController: EGViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (UIScreen.main.bounds.size.height <= 568.0) {
-            backgroundImageView.isHidden = true
-        }
-        navigationItem.title = NSLocalizedString("ingredion", comment: "ingredion")
-        titleAboutLabel.text = NSLocalizedString("more.title-about", comment: "more.title-about")
-        titleContactLabel.text = NSLocalizedString("more.title-contact", comment: "more.title-contact")
-        descLabel.text = NSLocalizedString("more.desc", comment: "more.desc")
-        contactNameLabel.text = NSLocalizedString("more.contact.name", comment: "more.contact.name")
-        contactTitleLabel.text = NSLocalizedString("more.contact.title", comment: "more.contact.title")
-        contactTextView.text = NSLocalizedString("more.contact.email-phone", comment: "more.contact.email-phone")
+        navigationItem.title = "ingredion".localized
+        titleAboutLabel.text = "more.title-about".localized
+        titleContactLabel.text = "more.title-contact".localized
+        descLabel.text = "more.desc".localized
+        contactNameLabel.text = "more.contact.name".localized
+        contactTitleLabel.text = "more.contact.title".localized
+        contactTextView.text = "more.contact.email-phone".localized
         let size = contactTextView.sizeThatFits(CGSize(width: contactTextView.frame.size.width, height: CGFloat.greatestFiniteMagnitude))
         contactTextViewHeightConstraint.constant = size.height
     }
 
-    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        if newCollection.horizontalSizeClass == .compact && newCollection.verticalSizeClass == .compact {
-            backgroundImageView.alpha = 0.0
-        } else {
+    override func viewWillLayoutSubviews() {
+        let size = view.bounds.size
+        let showBackgroundImage = size.height > 568.0
+        if showBackgroundImage {
             backgroundImageView.alpha = 1.0
+        } else {
+            backgroundImageView.alpha = 0.0
+        }
+        backgroundImageView.isHidden = !showBackgroundImage
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+
+        coordinator.animate(alongsideTransition: { _ in
+            self.backgroundImageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }) { _ in
+            UIView.animate(withDuration: 0.25, animations: { 
+                self.backgroundImageView.transform = CGAffineTransform.identity
+            })
         }
     }
+//    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+//        if newCollection.horizontalSizeClass == .compact && newCollection.verticalSizeClass == .compact {
+//            backgroundImageView.alpha = 0.0
+//        } else {
+//            backgroundImageView.alpha = 1.0
+//        }
+//    }
 }

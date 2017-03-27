@@ -47,6 +47,9 @@
 "booking.edit.invalid-dates-title" = "Invalid Dates";
 "booking.edit.invalid-dates-desc" = "IN date cannot be after OUT date.";
 
+"booking.edit.duplicate-project-title" = "Duplicate Project";
+"booking.edit.duplicate-project-desc" = "This project already exists. Please tap to select it from the list below.";
+
 "job-type.adjust-to-smc" = "Adjust to SMC standard";
 "job-type.improve" = "Improve layout / visualization";
 "job-type.create-version" = "Create additional version";
