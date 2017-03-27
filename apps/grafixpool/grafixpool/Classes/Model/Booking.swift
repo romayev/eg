@@ -84,10 +84,23 @@ extension Booking {
 
     private func createBookingID() -> String {
         let df = DateFormatter()
-        df.dateFormat = "YYYYMMdd-hhmmss"
-        let string = df.string(from: created as! Date)
-        let random = arc4random_uniform(9)
+        df.dateFormat = "YYYYMMdd-HHmmss"
+        let string = df.string(from: created?.inCETTimeZone as! Date)
+        let random = randomString(length: 1)
         return "\(string)-\(random)"
+    }
+
+    private func randomString(length: Int) -> String {
+        let letters : NSString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        let len = UInt32(letters.length)
+
+        var randomString = ""
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            randomString += NSString(characters: &nextChar, length: 1) as String
+        }
+        return randomString
     }
 }
 
