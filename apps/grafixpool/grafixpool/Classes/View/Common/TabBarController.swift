@@ -21,10 +21,10 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
         guard let identifier = segue.identifier else {
             fatalError("Invalid segue identifier \(segue.identifier)")
         }
-        guard let EGSegueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
+        guard let segueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
             fatalError("Invalid segue identifier \(identifier)")
         }
-        switch EGSegueIdentifier {
+        switch segueIdentifier {
         case .notificationBookingEdit:
             if let n: UINavigationController = segue.destination as? UINavigationController {
                 if let c: BookingEditViewController = n.topViewController as? BookingEditViewController {

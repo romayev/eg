@@ -36,7 +36,7 @@ extension NSDate {
         let df = DateFormatter()
         df.locale = Locale(identifier: "de_DE")
         df.timeZone = cet
-        df.dateFormat = "MM.dd, HH:mm"
+        df.dateFormat = "dd.MM. HH:mm"
         return "\(df.string(from: self as Date)) CET"
     }
     var inCETTimeZone: NSDate {

@@ -22,7 +22,11 @@ protocol SearchViewControllerDelegate: class {
     var productType: ProductType { get }
 }
 
-class SearchViewController : EGEditTableViewController, ProductsViewControllerDelegate, ExpertsViewControllerDelegate {
+class SearchViewController : EGEditTableViewController, EGSegueHandlerType, ProductsViewControllerDelegate, ExpertsViewControllerDelegate {
+    enum EGSegueIdentifier: String {
+        case products, experts
+    }
+
     @IBOutlet var productImageView: UIImageView!
     @IBOutlet var headerLabel: UILabel!
     @IBOutlet var productCountLabel: UILabel!
@@ -78,12 +82,18 @@ class SearchViewController : EGEditTableViewController, ProductsViewControllerDe
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let identifier = segue.identifier
-        if identifier == "products" {
+        guard let identifier = segue.identifier else {
+            fatalError("Invalid segue identifier \(segue.identifier)")
+        }
+        guard let segueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
+            fatalError("Invalid segue identifier \(identifier)")
+        }
+        switch segueIdentifier {
+        case .products:
             if let c = segue.destination as? ProductsViewController {
                 c.delegate = self
             }
-        } else if identifier == "experts" {
+        case .experts:
             if let c = (segue.destination as? UINavigationController)?.topViewController as? ExpertsViewController {
                 c.delegate = self
             }

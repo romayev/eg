@@ -100,10 +100,10 @@ class BookingsViewController: RecordsViewController, EGSegueHandlerType, UITable
         guard let identifier = segue.identifier else {
             fatalError("Invalid segue identifier \(segue.identifier)")
         }
-        guard let EGSegueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
+        guard let segueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
             fatalError("Invalid segue identifier \(identifier)")
         }
-        switch EGSegueIdentifier {
+        switch segueIdentifier {
         case .add: break
         case .edit:
             if let alertBooking = alertBooking {

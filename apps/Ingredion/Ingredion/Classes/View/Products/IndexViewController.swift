@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 import EGKit
 
-class IndexViewController: EGViewController, UITableViewDelegate, UITableViewDataSource, SearchViewControllerDelegate {
+class IndexViewController: EGViewController, EGSegueHandlerType, UITableViewDelegate, UITableViewDataSource, SearchViewControllerDelegate {
+    enum EGSegueIdentifier: String {
+        case search
+    }
+
     @IBOutlet var tableView: UITableView!
 
     // MARK: SearchViewControllerDelegate
@@ -35,8 +39,14 @@ class IndexViewController: EGViewController, UITableViewDelegate, UITableViewDat
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        if segue.identifier == "search" {
+        guard let identifier = segue.identifier else {
+            fatalError("Invalid segue identifier \(segue.identifier)")
+        }
+        guard let segueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
+            fatalError("Invalid segue identifier \(identifier)")
+        }
+        switch segueIdentifier {
+        case .search:
             let n = segue.destination as! UINavigationController
             let c = n.topViewController as! SearchViewController
             c.delegate = self

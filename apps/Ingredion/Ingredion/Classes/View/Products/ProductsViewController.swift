@@ -20,7 +20,11 @@ class ProductsCell: UITableViewCell {
     @IBOutlet var detailLabel: UILabel?
 }
 
-class ProductsViewController: EGViewController, ExpertsViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ProductsViewController: EGViewController, EGSegueHandlerType, ExpertsViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+    enum EGSegueIdentifier: String {
+        case product, experts
+    }
+
     weak var delegate: ProductsViewControllerDelegate?
 
     // MARK: ExpertsViewControllerDelegate
@@ -63,16 +67,22 @@ class ProductsViewController: EGViewController, ExpertsViewControllerDelegate, U
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let identifier = segue.identifier
-        if identifier == "product" {
+        guard let identifier = segue.identifier else {
+            fatalError("Invalid segue identifier \(segue.identifier)")
+        }
+        guard let segueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
+            fatalError("Invalid segue identifier \(identifier)")
+        }
+        switch segueIdentifier {
+        case .product:
             if let indexPath = tableView?.indexPathForSelectedRow {
                 let c: ProductViewController = segue.destination as! ProductViewController
                 c.product = products[indexPath.row]
-            } else if (identifier == "experts") {
-                let n: UINavigationController = segue.destination as! UINavigationController
-                let c: ExpertsViewController = n.topViewController as! ExpertsViewController
-                c.delegate = self
             }
+        case .experts:
+            let n: UINavigationController = segue.destination as! UINavigationController
+            let c: ExpertsViewController = n.topViewController as! ExpertsViewController
+            c.delegate = self
         }
     }
 

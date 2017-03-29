@@ -124,10 +124,10 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         guard let identifier = segue.identifier else {
             fatalError("Invalid segue identifier \(segue.identifier)")
         }
-        guard let EGSegueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
+        guard let segueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
             fatalError("Invalid segue identifier \(identifier)")
         }
-        switch EGSegueIdentifier {
+        switch segueIdentifier {
         case .person: break
         case .dismiss: break
         }
