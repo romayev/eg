@@ -52,7 +52,7 @@ enum BookingAttribute: Int {
         case .outDate:
             return (booking.outDate?.format)!
         case .reminder:
-            let reminder = Reminder(difference: booking.reminder, date: booking.inDate as! Date)
+            let reminder = Reminder(difference: booking.reminder, date: booking.inDate! as Date)
             return reminder.localizedName
         case .confidentiality:
             if let confidentiality = Confidentiality(coreDataValue: booking.confidentiality) {
@@ -115,7 +115,7 @@ extension BookingAttribute {
         switch self {
         case .slides: return (0...100).map { String($0) }
         case .project: return Project.recentProjectNames(context)
-        case .reminder: return Reminder.localizedValues(for: booking.inDate as! Date)
+        case .reminder: return Reminder.localizedValues(for: booking.inDate! as Date)
         case .confidentiality: return Confidentiality.localizedValues
         case .jobType: return JobType.Category.localizedValues
         default: fatalError("\(self) type does not support multiple values")

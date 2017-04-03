@@ -122,7 +122,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else {
-            fatalError("Invalid segue identifier \(segue.identifier)")
+            fatalError("Invalid segue identifier in \(segue)")
         }
         guard let segueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
             fatalError("Invalid segue identifier \(identifier)")
@@ -174,8 +174,8 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
     }
 
     private func checkDates() -> Bool {
-        let inDate = booking.inDate as! Date
-        let outDate = booking.outDate as! Date
+        let inDate = booking.inDate! as Date
+        let outDate = booking.outDate! as Date
 
         if inDate > outDate {
             let alertController = UIAlertController(
@@ -358,7 +358,7 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
             switch type {
             case .inDate:
                 booking.inDate = NSDate(timeIntervalSinceReferenceDate: newValue.timeIntervalSinceReferenceDate)
-                if (booking.outDate as! Date) < (booking.inDate as! Date) {
+                if (booking.outDate! as Date) < (booking.inDate! as Date) {
                     booking.outDate = booking.inDate
                 }
             case .outDate:
@@ -404,7 +404,8 @@ class BookingEditViewController: EGEditTableViewController, EGSegueHandlerType, 
         var message = "email.alert.message.success".localized
         if error != nil {
             let m = "email.alert.message.error".localized
-            message = "\(m) \(error)"
+            let e = String(describing: error)
+            message = "\(m) \(e)"
         }
 
         switch result {

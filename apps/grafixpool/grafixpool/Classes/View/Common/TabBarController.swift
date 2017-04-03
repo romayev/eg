@@ -19,7 +19,7 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else {
-            fatalError("Invalid segue identifier \(segue.identifier)")
+            fatalError("Invalid segue identifier in \(segue)")
         }
         guard let segueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
             fatalError("Invalid segue identifier \(identifier)")
@@ -81,7 +81,8 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
         var message = "email.alert.message.success".localized
         if error != nil {
             let m = "email.alert.message.error".localized
-            message = "\(m) \(error)"
+            let e = String(describing: error)
+            message = "\(m) \(e)"
         }
 
         switch result {

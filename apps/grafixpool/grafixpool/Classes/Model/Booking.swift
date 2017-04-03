@@ -85,7 +85,10 @@ extension Booking {
     private func createBookingID() -> String {
         let df = DateFormatter()
         df.dateFormat = "YYYYMMdd-HHmmss"
-        let string = df.string(from: created?.inCETTimeZone as! Date)
+        guard let created = created else {
+            preconditionFailure("Created is not set")
+        }
+        let string = df.string(from: created.inCETTimeZone as Date)
         let random = randomString(length: 1)
         return "\(string)-\(random)"
     }
@@ -132,9 +135,11 @@ extension Booking {
 }
 
 enum Confidentiality: Int {
-    case restricted = 1, confidential, strictlyConfidential
+    case unrestricted = 1, restricted, confidential, strictlyConfidential
     var localizedName: String {
         switch self {
+        case .unrestricted:
+            return "confidentiality.unrestricted".localized
         case .restricted:
             return "confidentiality.restricted".localized
         case .confidential:
@@ -148,7 +153,7 @@ enum Confidentiality: Int {
     }
 
     static let defaultValue = Confidentiality.confidential
-    static let all = [Confidentiality.restricted, Confidentiality.confidential, Confidentiality.strictlyConfidential]
+    static let all = [Confidentiality.unrestricted, Confidentiality.restricted, Confidentiality.confidential, Confidentiality.strictlyConfidential]
     static let localizedValues: [String] = {
         var values = [String]()
         for type in Confidentiality.all {

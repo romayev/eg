@@ -59,6 +59,7 @@
 "aspect-ratio.standard" = "Standard (4:3)";
 "aspect-ratio.widescreen" = "Widescreen (16:9)";
 
+"confidentiality.unrestricted" = "Unrestricted";
 "confidentiality.restricted" = "Restricted";
 "confidentiality.confidential" = "Confidential";
 "confidentiality.strictly-confidential" = "Strictly Confidential";

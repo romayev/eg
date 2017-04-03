@@ -14,7 +14,7 @@ extension JobType {
     static func createJobTypes(_ context: NSManagedObjectContext) {
         for (index, _) in JobType.Category.all.enumerated() {
             let record = JobType(context: context)
-            record.id = index + 1
+            record.id = Int16(index + 1)
         }
     }
     static func all(_ context: NSManagedObjectContext) -> Array<JobType> {

@@ -20,7 +20,7 @@ public extension EGSegueHandlerType where Self: UIViewController, EGSegueIdentif
 
     func EGSegueIdentifier(forSegue segue: UIStoryboardSegue) -> EGSegueIdentifier {
         guard let identifier = segue.identifier, let EGSegueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
-            fatalError("Couldn't handle segue identifier \(segue.identifier) for view controller of type \(type(of: self)).")
+            fatalError("Couldn't handle segue \(segue) for view controller of type \(type(of: self)).")
         }
         return EGSegueIdentifier
     }
