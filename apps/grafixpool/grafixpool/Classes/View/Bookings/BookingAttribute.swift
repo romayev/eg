@@ -118,7 +118,7 @@ extension BookingAttribute {
         case .reminder: return Reminder.localizedValues(for: booking.inDate! as Date)
         case .confidentiality: return Confidentiality.localizedValues
         case .jobType: return JobType.Category.localizedValues
-        default: fatalError("\(self) type does not support multiple values")
+        default: fatalError("\(self) attribute does not support multiple values")
         }
     }
 

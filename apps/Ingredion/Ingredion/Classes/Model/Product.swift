@@ -41,7 +41,7 @@ class Product : NSObject {
     }
 
     override var description: String {
-        return "\(name) [\(region), \(valueProposition)]"
+        return "\(name) [\(String(describing: region)), \(String(describing: valueProposition))]"
     }
 
     // MARK: Queries

@@ -40,7 +40,7 @@ class IndexViewController: EGViewController, EGSegueHandlerType, UITableViewDele
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else {
-            fatalError("Invalid segue identifier \(segue.identifier)")
+            fatalError("Invalid segue identifier \(String(describing: segue.identifier))")
         }
         guard let segueIdentifier = EGSegueIdentifier(rawValue: identifier) else {
             fatalError("Invalid segue identifier \(identifier)")
