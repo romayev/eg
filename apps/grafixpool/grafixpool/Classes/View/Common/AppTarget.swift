@@ -10,13 +10,15 @@ import Foundation
 import UIKit
 
 enum AppTarget {
-    case smc, hez
+    case smc, hez, mbic
 
     static var current: AppTarget {
         #if SMC
             return .smc
-        #else
+        #elseif HUZ
             return .hez
+        #else
+            return .mbic
         #endif
     }
 
@@ -53,6 +55,21 @@ enum AppTarget {
             navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: whiteColor, NSFontAttributeName: font]
             UILabel.appearance().targetFontName = "HelveticaNeue"
             UILabel.appearance().targetBoldFontName = "Helvetica-Bold"
+        case .mbic:
+            let navbarTintColor = UIColor.black
+            let whiteColor = UIColor.white
+
+            window.tintColor = UIColor.MBIC.grey
+
+            let navigationBar = UINavigationBar.appearance()
+            navigationBar.tintColor = whiteColor
+            navigationBar.barTintColor = navbarTintColor
+            navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+
+            let font = UIFont(name: "Arial", size: 18.0) ?? UIFont.systemFont(ofSize: 18.0)
+            navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: whiteColor, NSFontAttributeName: font]
+            UILabel.appearance().targetFontName = "GillSans"
+            UILabel.appearance().targetBoldFontName = "GillSans-Bold"
         }
     }
 }

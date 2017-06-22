@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  grafixpool
+
+  Created by Alex Romayev on 6/15/17.
+  Copyright © 2017 Executive Graphics. All rights reserved.
+*/
+
+"booking.email.recipient-prod" = "submit@executivegraphics.com";
+"job-type.adjust" = "Adjust to standard layout";
+"job-type.improve" = "Develop creative solutions";

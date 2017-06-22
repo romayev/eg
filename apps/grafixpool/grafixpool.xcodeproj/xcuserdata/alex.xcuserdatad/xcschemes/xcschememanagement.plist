@@ -14,9 +14,19 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>mbic.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>FA1FE8E91EFB550D00D19CBF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>FA6B7B861E7723E4005DAE67</key>
 		<dict>
 			<key>primary</key>

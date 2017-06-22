@@ -38,4 +38,9 @@ extension UIColor {
             return UIColor(red:0.13, green:0.53, blue:0.76, alpha:1.0)
         }
     }
+    struct MBIC {
+        static var grey: UIColor {
+            return UIColor(red:0.40, green:0.40, blue:0.40, alpha:1.0)
+        }
+    }
 }
