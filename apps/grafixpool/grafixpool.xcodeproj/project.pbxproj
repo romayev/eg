@@ -29,7 +29,6 @@
 		FA1FE8FE1EFB550D00D19CBF /* BookingAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAB1E7724D0005DAE67 /* BookingAttribute.swift */; };
 		FA1FE8FF1EFB550D00D19CBF /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAC1E7724D0005DAE67 /* PersonViewController.swift */; };
 		FA1FE9011EFB550D00D19CBF /* EGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */; };
-		FA1FE9031EFB550D00D19CBF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7BC51E7724F2005DAE67 /* Localizable.strings */; };
 		FA1FE9061EFB550D00D19CBF /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7BC11E7724DC005DAE67 /* Localizable.stringsdict */; };
 		FA1FE9071EFB550D00D19CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7B931E7723E4005DAE67 /* LaunchScreen.storyboard */; };
 		FA1FE9081EFB550D00D19CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7B8E1E7723E4005DAE67 /* Main.storyboard */; };
@@ -44,6 +43,7 @@
 		FA1FE9311EFB572D00D19CBF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA1FE9261EFB570800D19CBF /* Localizable.strings */; };
 		FA1FE9331EFB573500D19CBF /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = FA1FE9291EFB570800D19CBF /* iTunesArtwork */; };
 		FA1FE9341EFB573900D19CBF /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = FA1FE92A1EFB570800D19CBF /* iTunesArtwork@2x */; };
+		FA1FE9351EFB6E2B00D19CBF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7BC51E7724F2005DAE67 /* Localizable.strings */; };
 		FA6B7B8B1E7723E4005DAE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7B8A1E7723E4005DAE67 /* AppDelegate.swift */; };
 		FA6B7B901E7723E4005DAE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7B8E1E7723E4005DAE67 /* Main.storyboard */; };
 		FA6B7B921E7723E4005DAE67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7B911E7723E4005DAE67 /* Assets.xcassets */; };
@@ -65,7 +65,6 @@
 		FA6B7BBF1E7724D0005DAE67 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAF1E7724D0005DAE67 /* Image.swift */; };
 		FA6B7BC01E7724D0005DAE67 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BB01E7724D0005DAE67 /* RecordsViewController.swift */; };
 		FA6B7BC31E7724DC005DAE67 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7BC11E7724DC005DAE67 /* Localizable.stringsdict */; };
-		FA6B7BC71E7724F2005DAE67 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7BC51E7724F2005DAE67 /* Localizable.strings */; };
 		FA6B7BCA1E7726B3005DAE67 /* grafixpool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BC81E7726B3005DAE67 /* grafixpool.xcdatamodeld */; };
 		FA6B7BCC1E7726E8005DAE67 /* EGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */; };
 		FA6B7BCD1E7726E8005DAE67 /* EGKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -91,7 +90,6 @@
 		FA9500521EF33A0700FA2AC5 /* BookingAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAB1E7724D0005DAE67 /* BookingAttribute.swift */; };
 		FA9500531EF33A0700FA2AC5 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B7BAC1E7724D0005DAE67 /* PersonViewController.swift */; };
 		FA9500551EF33A0700FA2AC5 /* EGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */; };
-		FA9500571EF33A0700FA2AC5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7BC51E7724F2005DAE67 /* Localizable.strings */; };
 		FA95005B1EF33A0700FA2AC5 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7BC11E7724DC005DAE67 /* Localizable.stringsdict */; };
 		FA95005D1EF33A0700FA2AC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7B8E1E7723E4005DAE67 /* Main.storyboard */; };
 		FA95005F1EF33A0700FA2AC5 /* EGKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -463,7 +461,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1FE9341EFB573900D19CBF /* iTunesArtwork@2x in Resources */,
-				FA1FE9031EFB550D00D19CBF /* Localizable.strings in Resources */,
 				FA1FE9061EFB550D00D19CBF /* Localizable.stringsdict in Resources */,
 				FA1FE9071EFB550D00D19CBF /* LaunchScreen.storyboard in Resources */,
 				FA1FE9331EFB573500D19CBF /* iTunesArtwork in Resources */,
@@ -478,12 +475,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA6B7BC71E7724F2005DAE67 /* Localizable.strings in Resources */,
 				FA95006C1EF3463700FA2AC5 /* iTunesArtwork in Resources */,
 				FA95006D1EF3463A00FA2AC5 /* iTunesArtwork@2x in Resources */,
 				FA6B7B951E7723E4005DAE67 /* LaunchScreen.storyboard in Resources */,
 				FA6B7BC31E7724DC005DAE67 /* Localizable.stringsdict in Resources */,
 				FA6B7B921E7723E4005DAE67 /* Assets.xcassets in Resources */,
+				FA1FE9351EFB6E2B00D19CBF /* Localizable.strings in Resources */,
 				FA6B7B901E7723E4005DAE67 /* Main.storyboard in Resources */,
 				FA9500781EF353DC00FA2AC5 /* Common.strings in Resources */,
 			);
@@ -495,7 +492,6 @@
 			files = (
 				FA1FE9231EFB562300D19CBF /* iTunesArtwork@2x in Resources */,
 				FA1FE9211EFB561D00D19CBF /* Info.plist in Resources */,
-				FA9500571EF33A0700FA2AC5 /* Localizable.strings in Resources */,
 				FA95005B1EF33A0700FA2AC5 /* Localizable.stringsdict in Resources */,
 				FAAA05B51EF3572800FCAD85 /* LaunchScreen.storyboard in Resources */,
 				FA1FE9221EFB562000D19CBF /* iTunesArtwork in Resources */,
