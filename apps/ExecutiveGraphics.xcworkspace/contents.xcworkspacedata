@@ -2,13 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:EGKit/EGKit.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:grafixpool/grafixpool.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Ingredion/Ingredion.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:EGKit/EGKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:DefaultPlayground.playground">
