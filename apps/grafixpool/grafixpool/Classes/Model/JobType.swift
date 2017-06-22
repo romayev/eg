@@ -53,11 +53,11 @@ extension JobType {
 
 extension JobType {
     enum Category: Int {
-        case adjustToSMC = 1, improve, createVersion, finalCheck, translation
+        case adjust = 1, improve, createVersion, finalCheck, translation
         var localizedName: String {
             switch self {
-            case .adjustToSMC:
-                return "job-type.adjust-to-smc".localized
+            case .adjust:
+                return "job-type.adjust".localized
             case.improve:
                 return "job-type.improve".localized
             case .createVersion:
@@ -72,8 +72,8 @@ extension JobType {
             return Int16(rawValue)
         }
 
-        static let defaultValue = Category.adjustToSMC
-        static let all = [Category.adjustToSMC, Category.improve, Category.createVersion, Category.finalCheck, Category.translation]
+        static let defaultValue = Category.adjust
+        static let all = [Category.adjust, Category.improve, Category.createVersion, Category.finalCheck, Category.translation]
         static let localizedValues: [String] = {
             var values = [String]()
             for type in Category.all {

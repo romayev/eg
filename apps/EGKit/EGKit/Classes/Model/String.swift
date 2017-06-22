@@ -10,6 +10,7 @@ import Foundation
 
 extension String {
     public var localized: String {
-        return NSLocalizedString(self, comment: "")
+        let common = Bundle.main.localizedString(forKey: self, value: "", table: "Common")
+        return common == self ? NSLocalizedString(self, comment: "") : common
     }
 }

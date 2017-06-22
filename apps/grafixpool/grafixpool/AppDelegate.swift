@@ -17,19 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let navbarTintColor = UIColor.Siemens.blue3
-        let whiteColor = UIColor.white
-
-        window?.tintColor = navbarTintColor
-
-        let navigationBar = UINavigationBar.appearance()
-        navigationBar.tintColor = whiteColor
-        navigationBar.barTintColor = navbarTintColor
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-
-        let font = UIFont(name: "Arial", size: 18.0) ?? UIFont.systemFont(ofSize: 18.0)
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: whiteColor, NSFontAttributeName: font]
-
+        let target: AppTarget = AppTarget.current
+        target.customizeAppearance(application: application, window: window!)
         tabBarController = window?.rootViewController as! TabBarController;
         tabBarController.delegate = self
 

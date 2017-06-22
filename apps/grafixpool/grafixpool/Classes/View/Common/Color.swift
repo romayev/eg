@@ -30,4 +30,12 @@ extension UIColor {
             return UIColor(red:0.33, green:0.66, blue:0.73, alpha:1.0)
         }
     }
+    struct HUZ {
+        static var blue: UIColor {
+            return UIColor(red:0.12, green:0.21, blue:0.38, alpha:1.0)
+        }
+        static var lightBlue: UIColor {
+            return UIColor(red:0.13, green:0.53, blue:0.76, alpha:1.0)
+        }
+    }
 }

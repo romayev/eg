@@ -1,0 +1,81 @@
+/* 
+  Common.strings
+  grafixpool
+
+  Created by Alex Romayev on 6/15/17.
+  Copyright © 2017 Executive Graphics. All rights reserved.
+*/
+"booking" = "Booking";
+"contact" = "Contact";
+"default-project" = "N/A";
+"edit" = "Edit";
+"enter-new" = "Enter New";
+"error" = "Error";
+"next" = "Next";
+"no" = "No";
+"no-bookings" = "There are no upcoming bookings";
+"none" = "None";
+"ok" = "OK";
+"reminder" = "Reminder";
+"status" = "Status";
+"yes" = "Yes";
+
+"booking.slides" = "Slides";
+"booking.in" = "IN";
+"booking.out" = "OUT";
+
+"bookings" = "Bookings";
+"upcoming" = "Upcoming";
+"all" = "All";
+"add-booking" = "Add Booking";
+"edit-booking" = "Edit Booking";
+"cancel-booking" = "Cancel Booking";
+
+"booking.edit.booking-id" = "Booking ID";
+"booking.edit.person" = "Name";
+"booking.edit.slides" = "Number of Slides";
+"booking.edit.project" = "Project";
+"booking.edit.in" = "IN";
+"booking.edit.out" = "OUT";
+"booking.edit.notification" = "Reminder";
+"booking.edit.confidentiality" = "Confidentiality";
+"booking.edit.job-type" = "Job Type";
+"booking.edit.notes" = "Comments";
+"booking.enter-project-code" = "Enter project code";
+
+"booking.edit.invalid-dates-title" = "Invalid Dates";
+"booking.edit.invalid-dates-desc" = "IN date cannot be after OUT date.";
+
+"booking.edit.duplicate-project-title" = "Duplicate Project";
+"booking.edit.duplicate-project-desc" = "This project already exists. Please tap to select it from the list below.";
+
+"job-type.create-version" = "Create additional version";
+"job-type.final-check" = "Quick final check for SC meeting";
+"job-type.translation" = "Translation";
+
+"aspect-ratio.standard" = "Standard (4:3)";
+"aspect-ratio.widescreen" = "Widescreen (16:9)";
+
+"confidentiality.unrestricted" = "Unrestricted";
+"confidentiality.restricted" = "Restricted";
+"confidentiality.confidential" = "Confidential";
+"confidentiality.strictly-confidential" = "Strictly Confidential";
+
+"booking.notification.body-prefix" = "Booking IN";
+
+"booking.email-update-message" = "Do you want to email this update?";
+
+"booking.email.recipient-dev" = "submit@executivegraphics.com";
+"booking.email.status-new" = "New";
+"booking.email.status-update" = "Update";
+"booking.email.status-cancel" = "Cancel";
+
+"email.alert.title" = "Email";
+"email.alert.message.success" = "Booking update was successfully submitted";
+"email.alert.message.error" = "Failed to submit due to error:";
+"email.alert.unable-to-send-mail" = "Your device could not send e-mail. Please check e-mail configuration and try again.";
+
+"add-person" = "Add Person";
+"edit-person" = "Edit Person";
+"person.edit.first-name-placeholder" = "Enter first name";
+"person.edit.last-name-placeholder" = "Enter last name";

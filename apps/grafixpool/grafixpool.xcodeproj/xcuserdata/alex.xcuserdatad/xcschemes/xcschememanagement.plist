@@ -7,12 +7,22 @@
 		<key>grafixpool.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>h&amp;z.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>FA6B7B861E7723E4005DAE67</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA95003E1EF33A0700FA2AC5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
