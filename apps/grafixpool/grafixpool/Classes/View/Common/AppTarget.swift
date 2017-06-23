@@ -22,6 +22,14 @@ enum AppTarget {
         #endif
     }
 
+    var hasOwnGraphics: Bool {
+        switch self {
+        case .smc:
+            return true
+        case .hez, .mbic:
+            return false
+        }
+    }
     func customizeAppearance(application: UIApplication, window: UIWindow) {
         switch self {
 

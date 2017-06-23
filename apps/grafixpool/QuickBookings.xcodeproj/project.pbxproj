@@ -97,7 +97,6 @@
 		FA95005F1EF33A0700FA2AC5 /* EGKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA95006C1EF3463700FA2AC5 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = FA0E70691E80CF5E001D334D /* iTunesArtwork */; };
 		FA95006D1EF3463A00FA2AC5 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = FA0E706A1E80CF5E001D334D /* iTunesArtwork@2x */; };
-		FA95006F1EF351E400FA2AC5 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95006E1EF351E400FA2AC5 /* Language.swift */; };
 		FA9500781EF353DC00FA2AC5 /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA9500761EF353DC00FA2AC5 /* Common.strings */; };
 		FA9500791EF353DC00FA2AC5 /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA9500761EF353DC00FA2AC5 /* Common.strings */; };
 		FAAA05B51EF3572800FCAD85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6B7B931E7723E4005DAE67 /* LaunchScreen.storyboard */; };
@@ -187,7 +186,6 @@
 		FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6B7BD31E772E18005DAE67 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		FA9500631EF33A0700FA2AC5 /* h&z.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "h&z.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA95006E1EF351E400FA2AC5 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		FA9500771EF353DC00FA2AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Common.strings; sourceTree = "<group>"; };
 		FAAA05BA1EF36B4200FCAD85 /* AppTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppTarget.swift; path = grafixpool/Classes/View/Common/AppTarget.swift; sourceTree = SOURCE_ROOT; };
 		FADA4A621E7A26E3001BFA54 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
@@ -305,7 +303,6 @@
 				FA6B7B9F1E7724D0005DAE67 /* DataStore.swift */,
 				FA6B7BA01E7724D0005DAE67 /* Date.swift */,
 				FA6B7BA11E7724D0005DAE67 /* JobType.swift */,
-				FA95006E1EF351E400FA2AC5 /* Language.swift */,
 				FA6B7BA21E7724D0005DAE67 /* Person.swift */,
 				FA6B7BA31E7724D0005DAE67 /* Project.swift */,
 				FA6B7BA41E7724D0005DAE67 /* Record.swift */,
@@ -443,7 +440,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FA6B7B821E7723E4005DAE67 /* Build configuration list for PBXProject "grafixpool" */;
+			buildConfigurationList = FA6B7B821E7723E4005DAE67 /* Build configuration list for PBXProject "QuickBookings" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -550,7 +547,6 @@
 				FA6B7BBA1E7724D0005DAE67 /* BookingNotification.swift in Sources */,
 				FA6B7BB91E7724D0005DAE67 /* BookingEmail.swift in Sources */,
 				FA6B7BBB1E7724D0005DAE67 /* BookingsViewController.swift in Sources */,
-				FA95006F1EF351E400FA2AC5 /* Language.swift in Sources */,
 				FA6B7BB51E7724D0005DAE67 /* Person.swift in Sources */,
 				FA6B7B8B1E7723E4005DAE67 /* AppDelegate.swift in Sources */,
 				FA6B7BB41E7724D0005DAE67 /* JobType.swift in Sources */,
@@ -871,7 +867,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA6B7B821E7723E4005DAE67 /* Build configuration list for PBXProject "grafixpool" */ = {
+		FA6B7B821E7723E4005DAE67 /* Build configuration list for PBXProject "QuickBookings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA6B7B971E7723E4005DAE67 /* Debug */,

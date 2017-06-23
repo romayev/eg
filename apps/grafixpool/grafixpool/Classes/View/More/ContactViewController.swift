@@ -10,6 +10,7 @@ import UIKit
 import EGKit
 
 class ContactViewController: EGViewController {
+    @IBOutlet weak var stack1View: UIStackView!
     @IBOutlet var title1Label: UILabel!
     @IBOutlet var title2Label: UILabel!
     @IBOutlet var textView1: UITextView!
@@ -23,5 +24,9 @@ class ContactViewController: EGViewController {
         inset.right -= 6
         textView1.contentInset = inset
         textView2.contentInset = inset
+
+        if !AppTarget.current.hasOwnGraphics {
+            stack1View.isHidden = true
+        }
     }
 }
