@@ -80,6 +80,17 @@ enum AppTarget {
             UILabel.appearance().targetBoldFontName = "GillSans-Bold"
         }
     }
+
+    func bookingVendors() -> [Vendor] {
+        switch self {
+        case .smc:
+            return [Vendor(vendorID: 0, name: "grafixpool", email: "graphicpool.smc@siemens.com"), Vendor(vendorID: 1, name: "Executive Graphics", email: "submit@executivegraphics.com")]
+        case .hez:
+            return [Vendor(vendorID: 0, name: "H&Z", email: "graphicpool.smc@siemens.com"), Vendor(vendorID: 1, name: "Executive Graphics", email: "submit@executivegraphics.com")]
+        case .mbic:
+            return [Vendor(vendorID: 0, name: "grafixpool", email: "graphicpool.smc@siemens.com"), Vendor(vendorID: 1, name: "Executive Graphics", email: "submit@executivegraphics.com")]
+        }
+    }
 }
 
 extension UILabel {

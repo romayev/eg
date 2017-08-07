@@ -6,6 +6,5 @@
   Copyright © 2017 Executive Graphics. All rights reserved.
 */
 
-"booking.email.recipient-prod" = "graphicpool.smc@siemens.com";
 "job-type.adjust" = "Adjust to SMC standard";
 "job-type.improve" = "Improve layout / visualization";

@@ -27,6 +27,7 @@ extension Booking {
             reminder = last.reminder
             inDate = NSDate(timeIntervalSinceReferenceDate: nextHour).addingTimeInterval(reminder)
             person = last.person
+            vendorID = last.vendorID
         } else {
             confidentiality = Confidentiality.defaultValue.coreDataValue
             reminder = 3600
@@ -206,5 +207,22 @@ struct Reminder {
             values.append(type.localizedName)
         }
         return values
+    }
+}
+
+struct Vendor {
+    let vendorID: Int
+    let name: String
+    let email: String
+
+    static var vendors: [Vendor] {
+        return AppTarget.current.bookingVendors()
+    }
+    static func vendor(vendorID: Int) -> Vendor {
+        let vendors = self.vendors.filter { $0.vendorID == vendorID}
+        guard let first = vendors.first else {
+            fatalError("No vendor with id: \(vendorID)")
+        }
+        return first
     }
 }

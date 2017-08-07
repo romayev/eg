@@ -11,7 +11,7 @@ import CoreData
 import EGKit
 
 enum BookingAttribute: Int {
-    case person, slides, project, inDate, outDate, reminder, confidentiality, jobType, comments, bookingID
+    case person, slides, project, inDate, outDate, reminder, confidentiality, jobType, vendor, comments, bookingID
 
     var name: String {
         switch self {
@@ -25,6 +25,7 @@ enum BookingAttribute: Int {
         case .jobType: return "job-type"
         case .comments: return "notes"
         case .bookingID: return "booking-id"
+        case .vendor: return "vendor"
         }
     }
     var localizedName: String {
@@ -67,6 +68,8 @@ enum BookingAttribute: Int {
             return booking.notes
         case .bookingID:
             return booking.bookingID
+        case .vendor:
+            return Vendor.vendor(vendorID: Int(booking.vendorID)).name
         }
     }
 
@@ -94,7 +97,7 @@ extension BookingAttribute {
             return .date
         case .project:
             return .dropDownAdd
-        case .reminder, .confidentiality, .jobType:
+        case .reminder, .confidentiality, .jobType, .vendor:
             return .dropDown
         case .comments:
             return .notes
@@ -118,6 +121,7 @@ extension BookingAttribute {
         case .reminder: return Reminder.localizedValues(for: booking.inDate! as Date)
         case .confidentiality: return Confidentiality.localizedValues
         case .jobType: return JobType.Category.localizedValues
+        case .vendor: return Vendor.vendors.map { $0.name }
         default: fatalError("\(self) attribute does not support multiple values")
         }
     }
@@ -140,6 +144,8 @@ extension BookingAttribute {
             }
         case .project:
             booking.project = Project.recentProject(at: index, in: booking.managedObjectContext!)
+        case .vendor:
+            booking.vendorID = Int16(index)
         default: fatalError("Not a selectable cell type")
         }
     }

@@ -185,6 +185,7 @@
 		FA6B7BC91E7726B3005DAE67 /* grafixpool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = grafixpool.xcdatamodel; sourceTree = "<group>"; };
 		FA6B7BCB1E7726E8005DAE67 /* EGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6B7BD31E772E18005DAE67 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		FA70B27E1F38072600B90369 /* grafixpool_002.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = grafixpool_002.xcdatamodel; sourceTree = "<group>"; };
 		FA9500631EF33A0700FA2AC5 /* h&z.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "h&z.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9500771EF353DC00FA2AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Common.strings; sourceTree = "<group>"; };
 		FAAA05BA1EF36B4200FCAD85 /* AppTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppTarget.swift; path = grafixpool/Classes/View/Common/AppTarget.swift; sourceTree = SOURCE_ROOT; };
@@ -900,9 +901,10 @@
 		FA6B7BC81E7726B3005DAE67 /* grafixpool.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				FA70B27E1F38072600B90369 /* grafixpool_002.xcdatamodel */,
 				FA6B7BC91E7726B3005DAE67 /* grafixpool.xcdatamodel */,
 			);
-			currentVersion = FA6B7BC91E7726B3005DAE67 /* grafixpool.xcdatamodel */;
+			currentVersion = FA70B27E1F38072600B90369 /* grafixpool_002.xcdatamodel */;
 			path = grafixpool.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

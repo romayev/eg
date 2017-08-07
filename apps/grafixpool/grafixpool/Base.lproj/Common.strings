@@ -40,6 +40,7 @@
 "booking.edit.notification" = "Reminder";
 "booking.edit.confidentiality" = "Confidentiality";
 "booking.edit.job-type" = "Job Type";
+"booking.edit.vendor" = "Send To:";
 "booking.edit.notes" = "Comments";
 "booking.enter-project-code" = "Enter project code";
 
@@ -65,7 +66,6 @@
 
 "booking.email-update-message" = "Do you want to email this update?";
 
-"booking.email.recipient-dev" = "submit@executivegraphics.com";
 "booking.email.status-new" = "New";
 "booking.email.status-update" = "Update";
 "booking.email.status-cancel" = "Cancel";

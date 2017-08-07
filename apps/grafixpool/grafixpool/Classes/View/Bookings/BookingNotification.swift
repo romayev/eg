@@ -63,6 +63,7 @@ enum BookingNotification: String {
         content.body = "\(inTitle) \(inDate), \(outTitle) \(outDate)"
 
         content.sound = UNNotificationSound.default()
+        content.badge = 1
         //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
         let comps = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: booking.inDate! as Date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: false)

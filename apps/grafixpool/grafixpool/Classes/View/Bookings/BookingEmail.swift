@@ -10,17 +10,20 @@ import Foundation
 import UIKit
 
 struct BookingMessage {
-    #if DEBUG
-    let recipients = ["booking.email.recipient-dev".localized]
-    #else
-    let recipients = ["booking.email.recipient-prod".localized]
-    #endif
     var subject: String
     var body: String
 
     init(subject: String, body: String) {
         self.subject = subject
         self.body = body
+    }
+
+    func recipients(with booking: Booking) -> [String] {
+        #if DEBUG
+            return ["submit@executivegraphics.com"]
+        #else
+            return [Vendor.vendor(vendorID: Int(booking.vendorID)).email]
+        #endif
     }
 }
 

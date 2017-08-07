@@ -118,7 +118,7 @@ class TabBarController: UITabBarController, EGSegueHandlerType, UNUserNotificati
         mailComposerVC.navigationBar.tintColor = UIColor.white
 
         let message = email.bookingMessage(with: booking)
-        mailComposerVC.setToRecipients(message.recipients)
+        mailComposerVC.setToRecipients(message.recipients(with: booking))
         mailComposerVC.setSubject(message.subject)
         mailComposerVC.setMessageBody(message.body, isHTML: false)
 
