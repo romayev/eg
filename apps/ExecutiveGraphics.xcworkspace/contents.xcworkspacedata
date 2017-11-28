@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/alex/Projects/eg/apps/grafixpool/QuickBookings.xcodeproj">
+      location = "group:grafixpool/QuickBookings.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Ingredion/Ingredion.xcodeproj">

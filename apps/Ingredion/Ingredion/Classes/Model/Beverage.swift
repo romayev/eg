@@ -9,8 +9,8 @@
 import Foundation
 
 class Beverage : Product {
-    let segment: String?
-    let base: String?
+    @objc let segment: String?
+    @objc let base: String?
     let starchUseLabel: String?
     let fatContent: String?
     let proteinContent: String?

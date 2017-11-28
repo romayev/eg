@@ -138,6 +138,7 @@ class SearchViewController : EGEditTableViewController, EGSegueHandlerType, Prod
             if (reloadAll) {
                 tableView.reloadData()
             } else {
+                tableView.reloadData()
                 if let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows {
                     tableView.reloadRows(at: indexPathsForVisibleRows, with: .automatic)
                 }

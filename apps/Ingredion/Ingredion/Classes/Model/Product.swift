@@ -14,12 +14,12 @@ class Product : NSObject {
     var name: String = "ERROR"
     let detail: String?
     let notes: String?
-    let region: String?
-    let valueProposition: String?
+    @objc let region: String?
+    @objc let valueProposition: String?
     let priority: Int?
-    let labelDeclaration: String?
+    @objc let labelDeclaration: String?
 
-    subscript(key: String) -> String? {
+    @objc subscript(key: String) -> String? {
         return value(forKey: key) as? String
     }
 

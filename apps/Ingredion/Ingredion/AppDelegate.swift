@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         //UIToolbar.appearance().tintColor = whiteColor
 
         let font = UIFont(name: "GillSans", size: 22.0) ?? UIFont.systemFont(ofSize: 22.0)
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: whiteColor, NSFontAttributeName: font]
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: whiteColor, NSAttributedStringKey.font: font]
 
         let tabBarController: UITabBarController = window?.rootViewController as! UITabBarController;
         tabBarController.delegate = self

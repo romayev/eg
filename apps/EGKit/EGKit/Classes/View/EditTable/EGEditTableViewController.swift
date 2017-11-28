@@ -64,9 +64,11 @@ open class EGEditTableViewController: EGViewController, EGPickerEditCellDelegate
     public func adjustedPath(forIndexPath indexPath: IndexPath) -> IndexPath {
         if let editorPath = editorPath {
             if indexPath.section == editorPath.section && indexPath.row >= editorPath.row {
+                print("Adjusted index path: \(indexPath) to \(IndexPath(item: indexPath.row - 1, section: indexPath.section))")
                 return IndexPath(item: indexPath.row - 1, section: indexPath.section)
             }
         }
+        print("Did not adjust index path: \(indexPath)")
         return indexPath
     }
 

@@ -99,6 +99,7 @@ public class EGEditDropDownCell: EGEditCellBase, UITableViewDataSource, UITableV
         }
         row = checked ? .normal(.checked) : .normal(.unchecked)
         let cell = tableView.dequeueReusableCell(withIdentifier: row.reuseIdentifier, for: indexPath)
+        print("Drop down index path: \(indexPath)")
         cell.textLabel?.text = title
         cell.accessoryType = row.accessoryType
         return cell
@@ -108,14 +109,14 @@ public class EGEditDropDownCell: EGEditCellBase, UITableViewDataSource, UITableV
         let row = indexPath.row
         let all = row == 0
         for (other, _) in self.items.enumerated() {
-            let otherPath = NSIndexPath(row: other, section: 0)
-            if let cell = tableView.cellForRow(at: otherPath as IndexPath) {
+            let otherPath = IndexPath(row: other, section: 0)
+            if let cell = tableView.cellForRow(at: otherPath) {
                 let checked = (all && other == 0) || (!all && other == row)
                 cell.accessoryType = checked ? .checkmark : .none
             }
         }
-        delegate.editCellDidSelectValue(items[row], at: row)
         tableView.deselectRow(at: indexPath, animated: true)
+        delegate.editCellDidSelectValue(items[row], at: row)
     }
 }
 
